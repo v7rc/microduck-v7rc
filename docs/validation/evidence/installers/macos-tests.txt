@@ -2,20 +2,21 @@ test_control_and_single_peer_timeout (test_camera757.Camera757Tests.test_control
 test_header_and_fragment_boundaries (test_camera757.Camera757Tests.test_header_and_fragment_boundaries) ... ok
 test_invalid_image_and_id (test_camera757.Camera757Tests.test_invalid_image_and_id) ... ok
 test_real_udp_roundtrip_decodable_jpeg_and_expiry (test_camera757.Camera757Tests.test_real_udp_roundtrip_decodable_jpeg_and_expiry) ... == V7RC video: UDP 0, source 0, JPEG FF/45 640x360
-== V7RC video peer: 127.0.0.1:51587
+== V7RC video peer: 127.0.0.1:51432
 ok
 test_desktop_shutdown_requests_neutral_and_stops_owned_simulator (test_installer.InstallerTests.test_desktop_shutdown_requests_neutral_and_stops_owned_simulator) ... ok
 test_four_installer_languages_have_matching_keys (test_installer.InstallerTests.test_four_installer_languages_have_matching_keys) ... ok
 test_linux_setup_failure_never_writes_success_and_success_is_verified (test_installer.InstallerTests.test_linux_setup_failure_never_writes_success_and_success_is_verified) ... skipped 'Linux installer script targets Ubuntu'
 test_payload_contains_only_application_sources_and_detects_tampering (test_installer.InstallerTests.test_payload_contains_only_application_sources_and_detects_tampering) ... ok
+test_payload_normalizes_windows_shell_newlines (test_installer.InstallerTests.test_payload_normalizes_windows_shell_newlines) ... ok
 test_camera_on_requires_live_subscription_and_publisher (test_microduck_hud.HudTests.test_camera_on_requires_live_subscription_and_publisher) ... ok
 test_hud_distinguishes_expiry_and_stopped_publisher (test_microduck_hud.HudTests.test_hud_distinguishes_expiry_and_stopped_publisher) ... ok
 test_stick_axis_layout_is_raw_not_control_direction (test_microduck_hud.HudTests.test_stick_axis_layout_is_raw_not_control_direction) ... ok
 test_valid_unarmed_frames_count_as_receive_fps_but_invalid_do_not (test_microduck_hud.HudTests.test_valid_unarmed_frames_count_as_receive_fps_but_invalid_do_not) ... ok
 test_explicit_advertise_ip_and_invalid_override (test_platform_support.PlatformTests.test_explicit_advertise_ip_and_invalid_override) ... ok
-test_installer_preserves_wrong_revision_and_patches_idempotently (test_platform_support.PlatformTests.test_installer_preserves_wrong_revision_and_patches_idempotently) ... {"version": "0.1.0-preview.1", "files": 29, "bytes": 96510, "sha256": "1ee64c653e3156a7655b30192594c82b8d50838854e2fd1d380535b84af98095"}
-+ git -C /var/folders/8q/2cnvly8d533399w6x71hxtvw0000gn/T/tmp7gc04kt_/fake apply --check /var/folders/8q/2cnvly8d533399w6x71hxtvw0000gn/T/tmp7gc04kt_/fixture.patch
-+ git -C /var/folders/8q/2cnvly8d533399w6x71hxtvw0000gn/T/tmp7gc04kt_/fake apply /var/folders/8q/2cnvly8d533399w6x71hxtvw0000gn/T/tmp7gc04kt_/fixture.patch
+test_installer_preserves_wrong_revision_and_patches_idempotently (test_platform_support.PlatformTests.test_installer_preserves_wrong_revision_and_patches_idempotently) ... {"version": "0.1.0-preview.1", "files": 29, "bytes": 96510, "sha256": "fe57907bbea6f8b0672ef73c825b26025a97d64e594521f8618a3d7437228035"}
++ git -C /var/folders/8q/2cnvly8d533399w6x71hxtvw0000gn/T/tmpq61rqhc6/fake apply --check /var/folders/8q/2cnvly8d533399w6x71hxtvw0000gn/T/tmpq61rqhc6/fixture.patch
++ git -C /var/folders/8q/2cnvly8d533399w6x71hxtvw0000gn/T/tmpq61rqhc6/fake apply /var/folders/8q/2cnvly8d533399w6x71hxtvw0000gn/T/tmpq61rqhc6/fixture.patch
 ok
 test_linux_ip_selection_ignores_vpn_and_prefers_wifi (test_platform_support.PlatformTests.test_linux_ip_selection_ignores_vpn_and_prefers_wifi) ... ok
 test_owned_short_path_and_socket_are_consistent (test_platform_support.PlatformTests.test_owned_short_path_and_socket_are_consistent) ... ok
@@ -32,6 +33,6 @@ test_reject_corrupt_datagrams_and_other_protocols (test_v7rc_bridge.ProtocolTest
 test_startup_and_timeout_require_neutral (test_v7rc_bridge.ProtocolTests.test_startup_and_timeout_require_neutral) ... ok
 
 ----------------------------------------------------------------------
-Ran 27 tests in 3.901s
+Ran 28 tests in 3.298s
 
 OK (skipped=1)

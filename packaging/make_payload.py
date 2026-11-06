@@ -20,6 +20,11 @@ def sources():
     return sorted(set(files))
 
 
+def content(path):
+    # Every allowlisted payload file is text. Never ship Windows CRLF to /bin/sh.
+    return path.read_bytes().replace(b'\r\n',b'\n')
+
+
 def source_commit():
     result=subprocess.run(['git','-C',str(ROOT),'rev-parse','HEAD'],text=True,capture_output=True)
     return result.stdout.strip() if result.returncode==0 else 'source-archive'
@@ -28,7 +33,7 @@ def source_commit():
 def build(output):
     files=sources()
     manifest={'version':VERSION,'source_commit':source_commit(),
-              'files':{p.relative_to(ROOT).as_posix():{'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'executable':p.relative_to(ROOT).parts[0]=='scripts'} for p in files}}
+              'files':{p.relative_to(ROOT).as_posix():{'sha256':hashlib.sha256(content(p)).hexdigest(),'executable':p.relative_to(ROOT).parts[0]=='scripts'} for p in files}}
     output.parent.mkdir(parents=True,exist_ok=True)
     with zipfile.ZipFile(output,'w',compression=zipfile.ZIP_DEFLATED) as z:
         for p in files:
@@ -37,7 +42,7 @@ def build(output):
             entry.create_system=3
             entry.external_attr=(stat.S_IFREG | (0o755 if manifest['files'][name]['executable'] else 0o644)) << 16
             entry.compress_type=zipfile.ZIP_DEFLATED
-            z.writestr(entry,p.read_bytes())
+            z.writestr(entry,content(p))
         z.writestr('.installer-source.json',json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
     digest=hashlib.sha256(output.read_bytes()).hexdigest()
     output.with_suffix('.sha256').write_text(digest+'\n')

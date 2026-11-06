@@ -35,6 +35,11 @@ class InstallerTests(unittest.TestCase):
    p=target/'bridge/camera757.py';p.write_text(p.read_text()+'\n# changed\n')
    with self.assertRaises(RuntimeError):verify.verify(target)
 
+ def test_payload_normalizes_windows_shell_newlines(self):
+  with tempfile.TemporaryDirectory() as folder:
+   source=Path(folder)/'script';source.write_bytes(b'#!/bin/sh\r\necho ok\r\n')
+   self.assertEqual(payload.content(source),b'#!/bin/sh\necho ok\n')
+
  def test_four_installer_languages_have_matching_keys(self):
   values=json.loads((ROOT/'packaging/ui.json').read_text())
   self.assertEqual(set(values),{'zh-TW','zh-CN','en','ja'})

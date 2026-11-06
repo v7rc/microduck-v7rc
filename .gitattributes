@@ -1,2 +1,9 @@
 # Preserve captured command output exactly, including trailing blank lines.
 docs/validation/evidence/** -whitespace
+
+# Scripts embedded by Windows builds must remain executable Unix text in WSL.
+scripts/** text eol=lf
+bridge/** text eol=lf
+packaging/**/*.sh text eol=lf
+packaging/**/*.command text eol=lf
+*.py text eol=lf

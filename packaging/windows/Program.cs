@@ -87,6 +87,7 @@ sealed class Launcher:Window {
     void Materialize() {
         Assets.ValidatePayload();Directory.CreateDirectory(local);
         foreach(var name in new[]{"payload.zip","payload.sha256","install-linux.sh","app-icon.ico"})File.WriteAllBytes(Path.Combine(local,name),Assets.Read(name));
+        File.WriteAllText(Path.Combine(local,"install-linux.sh"),Encoding.UTF8.GetString(Assets.Read("install-linux.sh")).Replace("\r\n","\n"),new UTF8Encoding(false));
         var self=Environment.ProcessPath!;var destination=Path.Combine(local,"MicroduckV7RC.exe");
         if(!Path.GetFullPath(self).Equals(Path.GetFullPath(destination),StringComparison.OrdinalIgnoreCase)) {
             if(File.Exists(destination)&&FileVersionInfo.GetVersionInfo(destination).ProductVersion!=FileVersionInfo.GetVersionInfo(self).ProductVersion)throw new IOException("A different launcher version exists; keep it and choose a new install folder");
@@ -154,6 +155,7 @@ static class Program {
                 using var zip=new ZipArchive(new MemoryStream(Assets.Read("payload.zip")));
                 if(zip.Entries.Any(e=>e.FullName.StartsWith('/')||e.FullName.Split('/').Contains("..")))throw new Exception("Unsafe payload paths");
                 if((zip.GetEntry("scripts/setup")!.ExternalAttributes >> 16 & 0x49)==0)throw new Exception("Missing Unix executable bits");
+                using(var script=new StreamReader(zip.GetEntry("scripts/setup")!.Open()))if(script.ReadToEnd().Contains('\r'))throw new Exception("Shell script contains Windows newlines");
                 if(zip.GetEntry("scripts/desktop.py")==null)throw new Exception("Missing desktop supervisor");
                 if(args.Length>1)File.WriteAllText(args[1],"PASS: embedded payload, four languages, WSL arguments and startup verified\n");
                 return 0;

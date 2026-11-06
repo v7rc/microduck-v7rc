@@ -15,13 +15,13 @@
 ## 打包
 
 - packaging/make_payload.py 僅納入執行程式、補丁、版本清單與公開操作文件。排除上游 clone、.tools、.runtime、Git 資料、金鑰及測試快取。
-- ZIP 路徑固定 POSIX 格式、權限固定 Unix executable bits，因此 Windows 打出的 payload 也可在 Linux 解壓後執行。來源 manifest 列出各檔 SHA256。
+- ZIP 路徑固定 POSIX 格式、文字固定 LF 換行、權限固定 Unix executable bits，因此 Windows 打出的 payload 也可在 Linux 解壓後執行。來源 manifest 列出各檔 SHA256。
 - Mac binary 使用 arm64／x86_64 合併；本機為 ad-hoc code signature，沒有 Developer ID 或 Apple 公證。Windows EXE 沒有發行者簽章。這是需網路的 bootstrap installer，不是完整離線模擬器。
 - Preview installers workflow 會產生 DMG／EXE／SHA256，artifact 保存 30 天並需 GitHub 登入下載；本次沒有發布正式 GitHub Release。
 
 ## 已驗證與待驗收
 
-- Mac 本機 27 項測試通過，其中 Linux 專用安裝 transaction 在 Mac 略過；另有既有快取的 runtime 預編譯／策略檢查通過。
+- Mac 本機 28 項測試通過，其中 Linux 專用安裝 transaction 在 Mac 略過；另有既有快取的 runtime 預編譯／策略檢查通過。
 - 原生 Mac App 可開啟，顯示完整計畫、確認對話框；按取消回到未安裝狀態、Launch 保持停用。沒有因此執行安裝或寫入使用者的實際安裝目錄。
 - 本機 universal App 編譯、啟動 self-test、codesign 結構校驗與 DMG checksum 驗證通過。
 - Linux transaction 測試以假的 dpkg／id 及隔離 payload 檢查失敗不寫 success、成功後 receipt 正確；桌面 session 測試檢查 SIGHUP 後中立與程序清理。這些不是乾淨主機完整下載安裝的證據。
