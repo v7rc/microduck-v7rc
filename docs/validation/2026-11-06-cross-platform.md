@@ -37,3 +37,11 @@
 - [Microsoft WSL networking](https://learn.microsoft.com/en-us/windows/wsl/networking)
 - [WSLg](https://learn.microsoft.com/en-us/windows/wsl/tutorials/gui-apps)
 - [Hyper-V firewall](https://learn.microsoft.com/en-us/windows/security/operating-system-security/network-security/windows-firewall/hyper-v-firewall)
+
+## 2026-11-07：GitHub Actions 後續檢查
+
+初版 commit `c11a630` 的 [run 42250496155](https://github.com/v7rc/microduck-v7rc/actions/runs/42250496155)：Windows 啟動器檢查成功，Ubuntu 24.04 的 23 項測試及 Shell 語法檢查成功；macOS 14 在執行步驟前被取消，annotation 為 `The configuration 'macos-14-arm64-us-default' is not supported`。這是 runner 已退役，並非測試程式失敗。
+
+依 [GitHub 官方退役公告](https://github.blog/changelog/2026-10-01-github-actions-macos-14-runner-image-retirement/)，將矩陣改用 macos-15；同時升級 checkout@v6、setup-python@v6 使用 Node.js 24，並設 fail-fast=false，讓平台工作獨立完成、不因另一平台失敗而失去報告。新版遠端結果以 [最新 workflow 執行](https://github.com/v7rc/microduck-v7rc/actions/workflows/tests.yml) 為準。
+
+Windows 檢查範圍仍是 PowerShell 語法與模擬 WSL 參數測試，不包含實際 WSL GUI、robotd 或手機 Wi-Fi 驗收。
