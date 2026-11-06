@@ -1,0 +1,702 @@
+2026-11-06 13:52:36,752 INFO listening udp=0.0.0.0:6188 protocol=SRT socket=/tmp/microduck-m4-501/.runtime/duck-sim/duck-a.sock timeout=0.300s; waiting for neutral
+2026-11-06 13:52:36,753 INFO robotd connected; neutral SRT required
+2026-11-06 13:52:36,753 INFO status armed=False owner=None accepted=0 invalid=0 foreign=0 waiting_neutral=0
+2026-11-06 13:52:41,767 INFO status armed=False owner=None accepted=0 invalid=0 foreign=0 waiting_neutral=0
+2026-11-06 13:52:46,779 INFO status armed=False owner=None accepted=0 invalid=0 foreign=0 waiting_neutral=0
+2026-11-06 13:52:51,794 INFO status armed=False owner=None accepted=0 invalid=0 foreign=0 waiting_neutral=0
+2026-11-06 13:52:56,812 INFO status armed=False owner=None accepted=0 invalid=0 foreign=0 waiting_neutral=0
+2026-11-06 13:53:01,829 INFO status armed=False owner=None accepted=0 invalid=0 foreign=0 waiting_neutral=0
+2026-11-06 13:53:06,833 INFO status armed=False owner=None accepted=0 invalid=0 foreign=0 waiting_neutral=0
+2026-11-06 13:53:11,839 INFO status armed=False owner=None accepted=0 invalid=0 foreign=0 waiting_neutral=0
+2026-11-06 13:53:16,842 INFO status armed=False owner=None accepted=0 invalid=0 foreign=0 waiting_neutral=0
+2026-11-06 13:53:20,466 INFO armed sender=172.20.10.1 after neutral SRT frame
+2026-11-06 13:53:20,489 WARNING robotd disconnected: [Errno 32] Broken pipe; input discarded
+2026-11-06 13:53:20,510 INFO robotd connected; neutral SRT required
+2026-11-06 13:53:20,519 INFO armed sender=172.20.10.1 after neutral SRT frame
+2026-11-06 13:53:20,544 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:21,856 INFO status armed=True owner=172.20.10.1 accepted=46 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:53:22,691 INFO control channels=(1513, 1624, 1500, 1500) move={'vx': 0.054782608695652164, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:22,742 INFO control channels=(1524, 1884, 1500, 1500) move={'vx': 0.22434782608695653, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:22,793 INFO control channels=(1520, 1924, 1500, 1500) move={'vx': 0.2504347826086956, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:22,846 INFO control channels=(1513, 1986, 1500, 1500) move={'vx': 0.29086956521739127, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:22,898 INFO control channels=(1511, 2000, 1500, 1500) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:24,355 INFO control channels=(1504, 2000, 1553, 1608) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.007065217391304346, 'head_yaw': -0.0591304347826087, 'head_roll': 0.0}
+2026-11-06 13:53:24,409 INFO control channels=(1504, 2000, 1595, 1851) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.029891304347826084, 'head_yaw': -0.27043478260869563, 'head_roll': 0.0}
+2026-11-06 13:53:24,462 INFO control channels=(1504, 2000, 1619, 2000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.04293478260869564, 'head_yaw': -0.4, 'head_roll': 0.0}
+2026-11-06 13:53:24,724 INFO control channels=(1504, 2000, 1622, 2000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.04456521739130434, 'head_yaw': -0.4, 'head_roll': 0.0}
+2026-11-06 13:53:24,774 INFO control channels=(1504, 2000, 1628, 2000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.047826086956521734, 'head_yaw': -0.4, 'head_roll': 0.0}
+2026-11-06 13:53:24,825 INFO control channels=(1504, 2000, 1633, 2000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.050543478260869565, 'head_yaw': -0.4, 'head_roll': 0.0}
+2026-11-06 13:53:24,876 INFO control channels=(1504, 2000, 1635, 2000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.051630434782608696, 'head_yaw': -0.4, 'head_roll': 0.0}
+2026-11-06 13:53:25,033 INFO control channels=(1500, 1500, 1637, 2000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.05271739130434783, 'head_yaw': -0.4, 'head_roll': 0.0}
+2026-11-06 13:53:25,241 INFO control channels=(1500, 1500, 1639, 2000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.05380434782608696, 'head_yaw': -0.4, 'head_roll': 0.0}
+2026-11-06 13:53:25,291 INFO control channels=(1500, 1500, 1648, 2000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.05869565217391303, 'head_yaw': -0.4, 'head_roll': 0.0}
+2026-11-06 13:53:25,344 INFO control channels=(1500, 1500, 1651, 2000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.06032608695652173, 'head_yaw': -0.4, 'head_roll': 0.0}
+2026-11-06 13:53:25,552 INFO control channels=(1500, 1500, 1653, 2000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.06141304347826086, 'head_yaw': -0.4, 'head_roll': 0.0}
+2026-11-06 13:53:25,605 INFO control channels=(1500, 1500, 1546, 1704) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0032608695652173903, 'head_yaw': -0.1426086956521739, 'head_roll': 0.0}
+2026-11-06 13:53:25,656 INFO control channels=(1500, 1500, 1533, 1469) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:25,707 INFO control channels=(1500, 1500, 1537, 1351) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': 0.09478260869565217, 'head_roll': 0.0}
+2026-11-06 13:53:25,760 INFO control channels=(1500, 1500, 1508, 1162) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': 0.2591304347826087, 'head_roll': 0.0}
+2026-11-06 13:53:25,813 INFO control channels=(1500, 1500, 1456, 1071) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.0021739130434782587, 'head_yaw': 0.3382608695652174, 'head_roll': 0.0}
+2026-11-06 13:53:25,864 INFO control channels=(1500, 1500, 1389, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.03858695652173913, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:25,916 INFO control channels=(1500, 1500, 1378, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.04456521739130434, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:25,970 INFO control channels=(1500, 1500, 1360, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.05434782608695652, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:26,021 INFO control channels=(1500, 1500, 1349, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.06032608695652173, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:26,072 INFO control channels=(1500, 1500, 1324, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.07391304347826086, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:26,123 INFO control channels=(1500, 1500, 1320, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.07608695652173912, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:26,176 INFO control channels=(1500, 1500, 1316, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.07826086956521738, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:26,229 INFO control channels=(1500, 1500, 1313, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.07989130434782608, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:26,490 INFO control channels=(1577, 1506, 1313, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.06434782608695652} head={'neck_pitch': 0.0, 'head_pitch': 0.07989130434782608, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:26,544 INFO control channels=(1697, 1500, 1313, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.27304347826086955} head={'neck_pitch': 0.0, 'head_pitch': 0.07989130434782608, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:26,598 INFO control channels=(1795, 1496, 1313, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.44347826086956527} head={'neck_pitch': 0.0, 'head_pitch': 0.07989130434782608, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:26,649 INFO control channels=(1884, 1496, 1311, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.5982608695652174} head={'neck_pitch': 0.0, 'head_pitch': 0.08097826086956521, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:26,701 INFO control channels=(1906, 1504, 1304, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.6365217391304349} head={'neck_pitch': 0.0, 'head_pitch': 0.08478260869565217, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:26,753 INFO control channels=(1931, 1520, 1300, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.68} head={'neck_pitch': 0.0, 'head_pitch': 0.08695652173913043, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:26,804 INFO control channels=(1942, 1526, 1298, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.6991304347826088} head={'neck_pitch': 0.0, 'head_pitch': 0.08804347826086957, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:26,855 INFO control channels=(1944, 1526, 1298, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.702608695652174} head={'neck_pitch': 0.0, 'head_pitch': 0.08804347826086957, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:26,880 INFO status armed=True owner=172.20.10.1 accepted=213 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:53:26,906 INFO control channels=(1948, 1526, 1298, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.7095652173913044} head={'neck_pitch': 0.0, 'head_pitch': 0.08804347826086957, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:26,961 INFO control channels=(1953, 1526, 1298, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.7182608695652175} head={'neck_pitch': 0.0, 'head_pitch': 0.08804347826086957, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:27,012 INFO control channels=(1957, 1526, 1298, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.7252173913043479} head={'neck_pitch': 0.0, 'head_pitch': 0.08804347826086957, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:27,063 INFO control channels=(1960, 1526, 1298, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.7304347826086958} head={'neck_pitch': 0.0, 'head_pitch': 0.08804347826086957, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:27,167 INFO control channels=(1964, 1528, 1298, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.7373913043478262} head={'neck_pitch': 0.0, 'head_pitch': 0.08804347826086957, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:27,219 INFO control channels=(1966, 1651, 1298, 1000) move={'vx': 0.07239130434782608, 'vy': 0.0, 'vyaw': -0.7408695652173914} head={'neck_pitch': 0.0, 'head_pitch': 0.08804347826086957, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:27,271 INFO control channels=(1964, 1695, 1296, 1000) move={'vx': 0.10108695652173913, 'vy': 0.0, 'vyaw': -0.7373913043478262} head={'neck_pitch': 0.0, 'head_pitch': 0.08913043478260868, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:27,325 INFO control channels=(1957, 1811, 1289, 1000) move={'vx': 0.17673913043478262, 'vy': 0.0, 'vyaw': -0.7252173913043479} head={'neck_pitch': 0.0, 'head_pitch': 0.09293478260869564, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:27,377 INFO control channels=(1966, 1942, 1278, 1000) move={'vx': 0.26217391304347826, 'vy': 0.0, 'vyaw': -0.7408695652173914} head={'neck_pitch': 0.0, 'head_pitch': 0.09891304347826087, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:27,427 INFO control channels=(1993, 1991, 1271, 1000) move={'vx': 0.2941304347826087, 'vy': 0.0, 'vyaw': -0.7878260869565218} head={'neck_pitch': 0.0, 'head_pitch': 0.10271739130434782, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:27,480 INFO control channels=(2000, 2000, 1271, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.10271739130434782, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:27,534 INFO control channels=(2000, 2000, 1269, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.10380434782608695, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:29,351 INFO control channels=(1940, 2000, 1269, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.6956521739130435} head={'neck_pitch': 0.0, 'head_pitch': 0.10380434782608695, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:29,403 INFO control channels=(1844, 2000, 1269, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.528695652173913} head={'neck_pitch': 0.0, 'head_pitch': 0.10380434782608695, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:29,457 INFO control channels=(1808, 2000, 1269, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.46608695652173915} head={'neck_pitch': 0.0, 'head_pitch': 0.10380434782608695, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:29,512 INFO control channels=(1604, 2000, 1269, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.11130434782608696} head={'neck_pitch': 0.0, 'head_pitch': 0.10380434782608695, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:29,565 INFO control channels=(1487, 2000, 1276, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.09999999999999999, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:29,616 INFO control channels=(1349, 2000, 1282, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.19304347826086954} head={'neck_pitch': 0.0, 'head_pitch': 0.0967391304347826, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:29,668 INFO control channels=(1282, 2000, 1284, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.3095652173913044} head={'neck_pitch': 0.0, 'head_pitch': 0.09565217391304347, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:29,722 INFO control channels=(1200, 2000, 1289, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.45217391304347826} head={'neck_pitch': 0.0, 'head_pitch': 0.09293478260869564, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:29,775 INFO control channels=(1107, 2000, 1300, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.6139130434782609} head={'neck_pitch': 0.0, 'head_pitch': 0.08695652173913043, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:29,827 INFO control channels=(1062, 2000, 1302, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.6921739130434783} head={'neck_pitch': 0.0, 'head_pitch': 0.08586956521739131, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:29,877 INFO control channels=(1044, 2000, 1302, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.7234782608695652} head={'neck_pitch': 0.0, 'head_pitch': 0.08586956521739131, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:29,929 INFO control channels=(1000, 1960, 1302, 1000) move={'vx': 0.2739130434782609, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.08586956521739131, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:29,982 INFO control channels=(1000, 1920, 1304, 1000) move={'vx': 0.24782608695652172, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.08478260869565217, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:30,033 INFO control channels=(1000, 1893, 1307, 1000) move={'vx': 0.23021739130434782, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.08315217391304347, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:30,084 INFO control channels=(1000, 1884, 1309, 1000) move={'vx': 0.22434782608695653, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.08206521739130435, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:30,138 INFO control channels=(1000, 1884, 1311, 1000) move={'vx': 0.22434782608695653, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.08097826086956521, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:30,242 INFO control channels=(1000, 1884, 1313, 1000) move={'vx': 0.22434782608695653, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.07989130434782608, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:30,294 INFO control channels=(1000, 1884, 1316, 1000) move={'vx': 0.22434782608695653, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.07826086956521738, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:30,348 INFO control channels=(1000, 1884, 1318, 1000) move={'vx': 0.22434782608695653, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.07717391304347825, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:30,400 INFO control channels=(1000, 1780, 1322, 1000) move={'vx': 0.15652173913043477, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.07499999999999998, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:30,451 INFO control channels=(1000, 1748, 1324, 1000) move={'vx': 0.13565217391304346, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.07391304347826086, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:30,506 INFO control channels=(1000, 1684, 1333, 1000) move={'vx': 0.09391304347826086, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.06902173913043479, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:30,559 INFO control channels=(1000, 1551, 1338, 1000) move={'vx': 0.007173913043478258, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.06630434782608695, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:30,610 INFO control channels=(1000, 1478, 1340, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.06521739130434782, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:30,661 INFO control channels=(1000, 1364, 1349, 1000) move={'vx': -0.0626086956521739, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.06032608695652173, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:30,713 INFO control channels=(1000, 1296, 1356, 1000) move={'vx': -0.10695652173913041, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.05652173913043477, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:30,765 INFO control channels=(1049, 1189, 1364, 1000) move={'vx': -0.17673913043478262, 'vy': 0.0, 'vyaw': 0.7147826086956522} head={'neck_pitch': 0.0, 'head_pitch': 0.05217391304347826, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:30,817 INFO control channels=(1156, 1091, 1369, 1000) move={'vx': -0.24065217391304344, 'vy': 0.0, 'vyaw': 0.528695652173913} head={'neck_pitch': 0.0, 'head_pitch': 0.049456521739130434, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:30,867 INFO control channels=(1222, 1056, 1369, 1000) move={'vx': -0.2634782608695652, 'vy': 0.0, 'vyaw': 0.4139130434782609} head={'neck_pitch': 0.0, 'head_pitch': 0.049456521739130434, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:30,920 INFO control channels=(1324, 1002, 1369, 1000) move={'vx': -0.29869565217391303, 'vy': 0.0, 'vyaw': 0.23652173913043475} head={'neck_pitch': 0.0, 'head_pitch': 0.049456521739130434, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:30,971 INFO control channels=(1564, 1000, 1369, 1000) move={'vx': -0.3, 'vy': 0.0, 'vyaw': -0.04173913043478261} head={'neck_pitch': 0.0, 'head_pitch': 0.049456521739130434, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:31,021 INFO control channels=(1657, 1000, 1369, 1000) move={'vx': -0.3, 'vy': 0.0, 'vyaw': -0.20347826086956522} head={'neck_pitch': 0.0, 'head_pitch': 0.049456521739130434, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:31,075 INFO control channels=(1711, 1013, 1369, 1000) move={'vx': -0.2915217391304348, 'vy': 0.0, 'vyaw': -0.29739130434782607} head={'neck_pitch': 0.0, 'head_pitch': 0.049456521739130434, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:31,130 INFO control channels=(1851, 1056, 1360, 1000) move={'vx': -0.2634782608695652, 'vy': 0.0, 'vyaw': -0.5408695652173913} head={'neck_pitch': 0.0, 'head_pitch': 0.05434782608695652, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:31,181 INFO control channels=(1902, 1089, 1353, 1000) move={'vx': -0.24195652173913043, 'vy': 0.0, 'vyaw': -0.6295652173913044} head={'neck_pitch': 0.0, 'head_pitch': 0.05815217391304347, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:31,232 INFO control channels=(1928, 1118, 1351, 1000) move={'vx': -0.22304347826086957, 'vy': 0.0, 'vyaw': -0.6747826086956522} head={'neck_pitch': 0.0, 'head_pitch': 0.0592391304347826, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:31,287 INFO control channels=(1935, 1144, 1349, 1000) move={'vx': -0.20608695652173914, 'vy': 0.0, 'vyaw': -0.6869565217391305} head={'neck_pitch': 0.0, 'head_pitch': 0.06032608695652173, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:31,340 INFO control channels=(1940, 1187, 1349, 1000) move={'vx': -0.17804347826086955, 'vy': 0.0, 'vyaw': -0.6956521739130435} head={'neck_pitch': 0.0, 'head_pitch': 0.06032608695652173, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:31,392 INFO control channels=(1946, 1227, 1349, 1000) move={'vx': -0.1519565217391304, 'vy': 0.0, 'vyaw': -0.7060869565217391} head={'neck_pitch': 0.0, 'head_pitch': 0.06032608695652173, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:31,443 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:31,758 INFO control channels=(1500, 1500, 1539, 1775) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.20434782608695656, 'head_roll': 0.0}
+2026-11-06 13:53:31,809 INFO control channels=(1500, 1500, 1579, 2000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.021195652173913043, 'head_yaw': -0.4, 'head_roll': 0.0}
+2026-11-06 13:53:31,861 INFO control channels=(1500, 1500, 1588, 2000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.026086956521739126, 'head_yaw': -0.4, 'head_roll': 0.0}
+2026-11-06 13:53:31,884 INFO status armed=True owner=172.20.10.1 accepted=380 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:53:31,911 INFO control channels=(1500, 1500, 1591, 2000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.027717391304347822, 'head_yaw': -0.4, 'head_roll': 0.0}
+2026-11-06 13:53:32,277 INFO control channels=(1500, 1500, 1593, 2000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.028804347826086953, 'head_yaw': -0.4, 'head_roll': 0.0}
+2026-11-06 13:53:32,332 INFO control channels=(1500, 1500, 1611, 1937) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.03858695652173913, 'head_yaw': -0.34521739130434786, 'head_roll': 0.0}
+2026-11-06 13:53:32,385 INFO control channels=(1500, 1500, 1619, 1706) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.04293478260869564, 'head_yaw': -0.1443478260869565, 'head_roll': 0.0}
+2026-11-06 13:53:32,437 INFO control channels=(1500, 1500, 1617, 1402) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.04184782608695653, 'head_yaw': 0.050434782608695654, 'head_roll': 0.0}
+2026-11-06 13:53:32,488 INFO control channels=(1500, 1500, 1588, 1151) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.026086956521739126, 'head_yaw': 0.26869565217391306, 'head_roll': 0.0}
+2026-11-06 13:53:32,542 INFO control channels=(1500, 1500, 1553, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.007065217391304346, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:32,594 INFO control channels=(1500, 1500, 1511, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:32,851 INFO control channels=(1500, 1500, 1436, 1022) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.013043478260869565, 'head_yaw': 0.3808695652173913, 'head_roll': 0.0}
+2026-11-06 13:53:32,907 INFO control channels=(1500, 1500, 1336, 1169) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.06739130434782609, 'head_yaw': 0.2530434782608696, 'head_roll': 0.0}
+2026-11-06 13:53:32,960 INFO control channels=(1500, 1500, 1036, 1396) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.23043478260869565, 'head_yaw': 0.05565217391304348, 'head_roll': 0.0}
+2026-11-06 13:53:33,013 INFO control channels=(1500, 1500, 1000, 1476) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.25, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:33,537 INFO control channels=(1500, 1500, 1280, 1480) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.09782608695652173, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:33,587 INFO control channels=(1500, 1500, 1591, 1473) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.027717391304347822, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:33,639 INFO control channels=(1500, 1500, 1897, 1473) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.1940217391304348, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:33,689 INFO control channels=(1500, 1500, 2000, 1496) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.25, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:34,576 INFO control channels=(1500, 1500, 1844, 1422) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.16521739130434782, 'head_yaw': 0.03304347826086956, 'head_roll': 0.0}
+2026-11-06 13:53:34,628 INFO control channels=(1500, 1500, 1568, 1369) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.015217391304347828, 'head_yaw': 0.0791304347826087, 'head_roll': 0.0}
+2026-11-06 13:53:34,680 INFO control channels=(1500, 1500, 1416, 1351) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.02391304347826087, 'head_yaw': 0.09478260869565217, 'head_roll': 0.0}
+2026-11-06 13:53:34,734 INFO control channels=(1500, 1500, 1249, 1340) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.11467391304347825, 'head_yaw': 0.10434782608695653, 'head_roll': 0.0}
+2026-11-06 13:53:34,788 INFO control channels=(1500, 1500, 1162, 1338) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.16195652173913044, 'head_yaw': 0.10608695652173912, 'head_roll': 0.0}
+2026-11-06 13:53:34,839 INFO control channels=(1500, 1500, 1053, 1309) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.22119565217391304, 'head_yaw': 0.13130434782608696, 'head_roll': 0.0}
+2026-11-06 13:53:34,891 INFO control channels=(1500, 1500, 1000, 1300) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.25, 'head_yaw': 0.1391304347826087, 'head_roll': 0.0}
+2026-11-06 13:53:35,149 INFO control channels=(1500, 1500, 1000, 1302) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.25, 'head_yaw': 0.1373913043478261, 'head_roll': 0.0}
+2026-11-06 13:53:35,202 INFO control channels=(1500, 1500, 1000, 1309) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.25, 'head_yaw': 0.13130434782608696, 'head_roll': 0.0}
+2026-11-06 13:53:35,357 INFO control channels=(1500, 1500, 1118, 1333) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.1858695652173913, 'head_yaw': 0.11043478260869566, 'head_roll': 0.0}
+2026-11-06 13:53:35,407 INFO control channels=(1500, 1500, 1331, 1347) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.07010869565217391, 'head_yaw': 0.09826086956521739, 'head_roll': 0.0}
+2026-11-06 13:53:35,459 INFO control channels=(1500, 1500, 1393, 1347) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.03641304347826087, 'head_yaw': 0.09826086956521739, 'head_roll': 0.0}
+2026-11-06 13:53:35,509 INFO control channels=(1500, 1500, 1671, 1358) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.07119565217391305, 'head_yaw': 0.08869565217391302, 'head_roll': 0.0}
+2026-11-06 13:53:35,561 INFO control channels=(1500, 1500, 1762, 1402) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.12065217391304348, 'head_yaw': 0.050434782608695654, 'head_roll': 0.0}
+2026-11-06 13:53:35,611 INFO control channels=(1500, 1500, 1811, 1447) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.14728260869565218, 'head_yaw': 0.011304347826086955, 'head_roll': 0.0}
+2026-11-06 13:53:35,662 INFO control channels=(1500, 1500, 1817, 1456) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.15054347826086958, 'head_yaw': 0.003478260869565214, 'head_roll': 0.0}
+2026-11-06 13:53:35,713 INFO control channels=(1500, 1500, 1828, 1464) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.1565217391304348, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:35,763 INFO control channels=(1500, 1500, 1837, 1473) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.16141304347826088, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:35,867 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:36,331 INFO control channels=(1500, 1500, 1528, 1555) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.013043478260869566, 'head_roll': 0.0}
+2026-11-06 13:53:36,384 INFO control channels=(1500, 1500, 1584, 1800) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.02391304347826087, 'head_yaw': -0.22608695652173913, 'head_roll': 0.0}
+2026-11-06 13:53:36,438 INFO control channels=(1500, 1500, 1620, 2000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.04347826086956521, 'head_yaw': -0.4, 'head_roll': 0.0}
+2026-11-06 13:53:36,489 INFO control channels=(1500, 1500, 1626, 2000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0467391304347826, 'head_yaw': -0.4, 'head_roll': 0.0}
+2026-11-06 13:53:36,541 INFO control channels=(1500, 1500, 1633, 2000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.050543478260869565, 'head_yaw': -0.4, 'head_roll': 0.0}
+2026-11-06 13:53:36,592 INFO control channels=(1500, 1500, 1644, 2000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.05652173913043477, 'head_yaw': -0.4, 'head_roll': 0.0}
+2026-11-06 13:53:36,646 INFO control channels=(1500, 1500, 1662, 2000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.06630434782608695, 'head_yaw': -0.4, 'head_roll': 0.0}
+2026-11-06 13:53:36,697 INFO control channels=(1500, 1500, 1679, 2000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.07554347826086956, 'head_yaw': -0.4, 'head_roll': 0.0}
+2026-11-06 13:53:36,749 INFO control channels=(1500, 1500, 1682, 2000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.07717391304347825, 'head_yaw': -0.4, 'head_roll': 0.0}
+2026-11-06 13:53:36,896 INFO status armed=True owner=172.20.10.1 accepted=547 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:53:36,908 INFO control channels=(1500, 1500, 1684, 2000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.07826086956521738, 'head_yaw': -0.4, 'head_roll': 0.0}
+2026-11-06 13:53:37,061 INFO control channels=(1500, 1500, 1635, 1844) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.051630434782608696, 'head_yaw': -0.2643478260869565, 'head_roll': 0.0}
+2026-11-06 13:53:37,113 INFO control channels=(1500, 1500, 1604, 1557) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.034782608695652174, 'head_yaw': -0.014782608695652176, 'head_roll': 0.0}
+2026-11-06 13:53:37,166 INFO control channels=(1500, 1500, 1591, 1389) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.027717391304347822, 'head_yaw': 0.06173913043478261, 'head_roll': 0.0}
+2026-11-06 13:53:37,219 INFO control channels=(1500, 1500, 1586, 1218) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.024999999999999994, 'head_yaw': 0.2104347826086956, 'head_roll': 0.0}
+2026-11-06 13:53:37,272 INFO control channels=(1500, 1500, 1555, 1067) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.008152173913043478, 'head_yaw': 0.3417391304347826, 'head_roll': 0.0}
+2026-11-06 13:53:37,323 INFO control channels=(1500, 1500, 1526, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:53:37,432 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:38,109 INFO control channels=(1515, 1717, 1500, 1500) move={'vx': 0.11543478260869564, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:38,161 INFO control channels=(1515, 1922, 1500, 1500) move={'vx': 0.24913043478260868, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:38,215 INFO control channels=(1515, 1951, 1500, 1500) move={'vx': 0.26804347826086955, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:38,267 INFO control channels=(1515, 2000, 1500, 1500) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:39,620 INFO control channels=(1560, 2000, 1500, 1500) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.03478260869565217} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:39,673 INFO control channels=(1737, 2000, 1500, 1500) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.3426086956521739} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:39,724 INFO control channels=(1777, 2000, 1500, 1500) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.4121739130434783} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:39,778 INFO control channels=(1877, 2000, 1500, 1500) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.5860869565217391} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:39,829 INFO control channels=(2000, 2000, 1500, 1500) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.8} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:39,932 INFO control channels=(2000, 1980, 1500, 1500) move={'vx': 0.2869565217391304, 'vy': 0.0, 'vyaw': -0.8} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:40,187 INFO control channels=(2000, 1855, 1500, 1500) move={'vx': 0.20543478260869563, 'vy': 0.0, 'vyaw': -0.8} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:40,239 INFO control channels=(2000, 1835, 1500, 1500) move={'vx': 0.19239130434782611, 'vy': 0.0, 'vyaw': -0.8} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:40,291 INFO control channels=(2000, 1811, 1500, 1500) move={'vx': 0.17673913043478262, 'vy': 0.0, 'vyaw': -0.8} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:40,342 INFO control channels=(2000, 1786, 1500, 1500) move={'vx': 0.16043478260869562, 'vy': 0.0, 'vyaw': -0.8} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:40,395 INFO control channels=(2000, 1768, 1500, 1500) move={'vx': 0.14869565217391303, 'vy': 0.0, 'vyaw': -0.8} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:40,446 INFO control channels=(2000, 1757, 1500, 1500) move={'vx': 0.14152173913043478, 'vy': 0.0, 'vyaw': -0.8} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:40,551 INFO control channels=(2000, 1755, 1500, 1500) move={'vx': 0.14021739130434782, 'vy': 0.0, 'vyaw': -0.8} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:40,604 INFO control channels=(2000, 1744, 1500, 1500) move={'vx': 0.13304347826086954, 'vy': 0.0, 'vyaw': -0.8} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:40,655 INFO control channels=(2000, 1731, 1500, 1500) move={'vx': 0.12456521739130434, 'vy': 0.0, 'vyaw': -0.8} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:40,705 INFO control channels=(2000, 1720, 1500, 1500) move={'vx': 0.11739130434782608, 'vy': 0.0, 'vyaw': -0.8} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:40,759 INFO control channels=(2000, 1695, 1500, 1500) move={'vx': 0.10108695652173913, 'vy': 0.0, 'vyaw': -0.8} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:40,812 INFO control channels=(2000, 1671, 1500, 1500) move={'vx': 0.08543478260869565, 'vy': 0.0, 'vyaw': -0.8} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:40,862 INFO control channels=(2000, 1651, 1500, 1500) move={'vx': 0.07239130434782608, 'vy': 0.0, 'vyaw': -0.8} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:40,915 INFO control channels=(2000, 1648, 1500, 1500) move={'vx': 0.07043478260869564, 'vy': 0.0, 'vyaw': -0.8} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:41,123 INFO control channels=(2000, 1642, 1500, 1500) move={'vx': 0.06652173913043476, 'vy': 0.0, 'vyaw': -0.8} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:41,176 INFO control channels=(2000, 1628, 1500, 1500) move={'vx': 0.05739130434782608, 'vy': 0.0, 'vyaw': -0.8} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:41,228 INFO control channels=(2000, 1617, 1500, 1500) move={'vx': 0.05021739130434783, 'vy': 0.0, 'vyaw': -0.8} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:41,278 INFO control channels=(2000, 1613, 1500, 1500) move={'vx': 0.04760869565217391, 'vy': 0.0, 'vyaw': -0.8} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:41,333 INFO control channels=(2000, 1606, 1500, 1500) move={'vx': 0.043043478260869565, 'vy': 0.0, 'vyaw': -0.8} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:41,387 INFO control channels=(2000, 1604, 1500, 1500) move={'vx': 0.041739130434782605, 'vy': 0.0, 'vyaw': -0.8} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:41,438 INFO control channels=(2000, 1602, 1500, 1500) move={'vx': 0.040434782608695645, 'vy': 0.0, 'vyaw': -0.8} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:41,542 INFO control channels=(2000, 1602, 1524, 1735) move={'vx': 0.040434782608695645, 'vy': 0.0, 'vyaw': -0.8} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.16956521739130434, 'head_roll': 0.0}
+2026-11-06 13:53:41,592 INFO control channels=(2000, 1602, 1557, 1915) move={'vx': 0.040434782608695645, 'vy': 0.0, 'vyaw': -0.8} head={'neck_pitch': 0.0, 'head_pitch': -0.00923913043478261, 'head_yaw': -0.32608695652173914, 'head_roll': 0.0}
+2026-11-06 13:53:41,644 INFO control channels=(2000, 1602, 1584, 2000) move={'vx': 0.040434782608695645, 'vy': 0.0, 'vyaw': -0.8} head={'neck_pitch': 0.0, 'head_pitch': -0.02391304347826087, 'head_yaw': -0.4, 'head_roll': 0.0}
+2026-11-06 13:53:41,902 INFO status armed=True owner=172.20.10.1 accepted=714 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:53:42,109 INFO control channels=(2000, 1602, 1500, 1500) move={'vx': 0.040434782608695645, 'vy': 0.0, 'vyaw': -0.8} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:42,161 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:42,471 INFO control channels=(1478, 1582, 1500, 1500) move={'vx': 0.027391304347826086, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:42,523 INFO control channels=(1427, 1771, 1500, 1500) move={'vx': 0.15065217391304347, 'vy': 0.0, 'vyaw': 0.05739130434782608} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:42,573 INFO control channels=(1409, 1955, 1500, 1500) move={'vx': 0.27065217391304347, 'vy': 0.0, 'vyaw': 0.08869565217391304} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:42,626 INFO control channels=(1409, 2000, 1500, 1500) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.08869565217391304} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:42,680 INFO control channels=(1378, 2000, 1500, 1500) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.1426086956521739} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:42,732 INFO control channels=(1358, 2000, 1500, 1500) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.17739130434782605} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:42,783 INFO control channels=(1351, 2000, 1500, 1500) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.18956521739130433} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:42,834 INFO control channels=(1342, 2000, 1500, 1500) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.2052173913043478} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:42,887 INFO control channels=(1336, 2000, 1500, 1500) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.21565217391304348} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:42,939 INFO control channels=(1331, 2000, 1500, 1500) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.22434782608695653} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:43,354 INFO control channels=(1329, 2000, 1500, 1500) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.22782608695652176} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:43,825 INFO control channels=(1329, 2000, 1580, 1540) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.22782608695652176} head={'neck_pitch': 0.0, 'head_pitch': -0.021739130434782608, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:43,876 INFO control channels=(1329, 2000, 1653, 1682) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.22782608695652176} head={'neck_pitch': 0.0, 'head_pitch': -0.06141304347826086, 'head_yaw': -0.1234782608695652, 'head_roll': 0.0}
+2026-11-06 13:53:43,928 INFO control channels=(1329, 2000, 1700, 1742) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.22782608695652176} head={'neck_pitch': 0.0, 'head_pitch': -0.08695652173913043, 'head_yaw': -0.17565217391304347, 'head_roll': 0.0}
+2026-11-06 13:53:43,982 INFO control channels=(1329, 2000, 1724, 1717) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.22782608695652176} head={'neck_pitch': 0.0, 'head_pitch': -0.09999999999999999, 'head_yaw': -0.15391304347826085, 'head_roll': 0.0}
+2026-11-06 13:53:44,033 INFO control channels=(1329, 2000, 1811, 1615) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.22782608695652176} head={'neck_pitch': 0.0, 'head_pitch': -0.14728260869565218, 'head_yaw': -0.06521739130434784, 'head_roll': 0.0}
+2026-11-06 13:53:44,084 INFO control channels=(1329, 2000, 1868, 1588) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.22782608695652176} head={'neck_pitch': 0.0, 'head_pitch': -0.1782608695652174, 'head_yaw': -0.041739130434782605, 'head_roll': 0.0}
+2026-11-06 13:53:44,135 INFO control channels=(1327, 2000, 1911, 1588) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.23130434782608691} head={'neck_pitch': 0.0, 'head_pitch': -0.2016304347826087, 'head_yaw': -0.041739130434782605, 'head_roll': 0.0}
+2026-11-06 13:53:44,186 INFO control channels=(1327, 2000, 1944, 1604) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.23130434782608691} head={'neck_pitch': 0.0, 'head_pitch': -0.21956521739130436, 'head_yaw': -0.05565217391304348, 'head_roll': 0.0}
+2026-11-06 13:53:44,238 INFO control channels=(1324, 2000, 1953, 1617) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.23652173913043475} head={'neck_pitch': 0.0, 'head_pitch': -0.22445652173913044, 'head_yaw': -0.06695652173913046, 'head_roll': 0.0}
+2026-11-06 13:53:44,397 INFO control channels=(1324, 2000, 1953, 1620) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.23652173913043475} head={'neck_pitch': 0.0, 'head_pitch': -0.22445652173913044, 'head_yaw': -0.06956521739130433, 'head_roll': 0.0}
+2026-11-06 13:53:44,504 INFO control channels=(1324, 2000, 1951, 1622) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.23652173913043475} head={'neck_pitch': 0.0, 'head_pitch': -0.22336956521739132, 'head_yaw': -0.07130434782608695, 'head_roll': 0.0}
+2026-11-06 13:53:44,555 INFO control channels=(1324, 2000, 1951, 1624) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.23652173913043475} head={'neck_pitch': 0.0, 'head_pitch': -0.22336956521739132, 'head_yaw': -0.07304347826086956, 'head_roll': 0.0}
+2026-11-06 13:53:44,606 INFO control channels=(1324, 2000, 1946, 1626) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.23652173913043475} head={'neck_pitch': 0.0, 'head_pitch': -0.22065217391304348, 'head_yaw': -0.07478260869565216, 'head_roll': 0.0}
+2026-11-06 13:53:44,660 INFO control channels=(1324, 2000, 1942, 1628) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.23652173913043475} head={'neck_pitch': 0.0, 'head_pitch': -0.21847826086956523, 'head_yaw': -0.07652173913043478, 'head_roll': 0.0}
+2026-11-06 13:53:44,710 INFO control channels=(1324, 2000, 1937, 1631) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.23652173913043475} head={'neck_pitch': 0.0, 'head_pitch': -0.2157608695652174, 'head_yaw': -0.0791304347826087, 'head_roll': 0.0}
+2026-11-06 13:53:44,762 INFO control channels=(1324, 2000, 1933, 1631) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.23652173913043475} head={'neck_pitch': 0.0, 'head_pitch': -0.21358695652173912, 'head_yaw': -0.0791304347826087, 'head_roll': 0.0}
+2026-11-06 13:53:44,813 INFO control channels=(1324, 2000, 1917, 1631) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.23652173913043475} head={'neck_pitch': 0.0, 'head_pitch': -0.20489130434782607, 'head_yaw': -0.0791304347826087, 'head_roll': 0.0}
+2026-11-06 13:53:44,865 INFO control channels=(1324, 2000, 1813, 1584) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.23652173913043475} head={'neck_pitch': 0.0, 'head_pitch': -0.1483695652173913, 'head_yaw': -0.0382608695652174, 'head_roll': 0.0}
+2026-11-06 13:53:44,916 INFO control channels=(1324, 2000, 1467, 1447) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.23652173913043475} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': 0.011304347826086955, 'head_roll': 0.0}
+2026-11-06 13:53:44,971 INFO control channels=(1324, 2000, 1409, 1442) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.23652173913043475} head={'neck_pitch': 0.0, 'head_pitch': 0.027717391304347822, 'head_yaw': 0.01565217391304348, 'head_roll': 0.0}
+2026-11-06 13:53:45,021 INFO control channels=(1324, 2000, 1298, 1442) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.23652173913043475} head={'neck_pitch': 0.0, 'head_pitch': 0.08804347826086957, 'head_yaw': 0.01565217391304348, 'head_roll': 0.0}
+2026-11-06 13:53:45,074 INFO control channels=(1324, 2000, 1171, 1456) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.23652173913043475} head={'neck_pitch': 0.0, 'head_pitch': 0.15706521739130436, 'head_yaw': 0.003478260869565214, 'head_roll': 0.0}
+2026-11-06 13:53:45,125 INFO control channels=(1324, 2000, 1151, 1458) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.23652173913043475} head={'neck_pitch': 0.0, 'head_pitch': 0.16793478260869565, 'head_yaw': 0.0017391304347826103, 'head_roll': 0.0}
+2026-11-06 13:53:45,180 INFO control channels=(1324, 2000, 1102, 1467) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.23652173913043475} head={'neck_pitch': 0.0, 'head_pitch': 0.19456521739130436, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:45,234 INFO control channels=(1324, 2000, 1024, 1467) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.23652173913043475} head={'neck_pitch': 0.0, 'head_pitch': 0.23695652173913043, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:45,287 INFO control channels=(1324, 2000, 1000, 1467) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.23652173913043475} head={'neck_pitch': 0.0, 'head_pitch': 0.25, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:45,597 INFO control channels=(1324, 2000, 1000, 1458) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.23652173913043475} head={'neck_pitch': 0.0, 'head_pitch': 0.25, 'head_yaw': 0.0017391304347826103, 'head_roll': 0.0}
+2026-11-06 13:53:45,957 INFO control channels=(1324, 2000, 1000, 1456) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.23652173913043475} head={'neck_pitch': 0.0, 'head_pitch': 0.25, 'head_yaw': 0.003478260869565214, 'head_roll': 0.0}
+2026-11-06 13:53:46,011 INFO control channels=(1324, 2000, 1500, 1500) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.23652173913043475} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:46,218 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:53:46,921 INFO status armed=True owner=172.20.10.1 accepted=882 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:53:51,926 INFO status armed=True owner=172.20.10.1 accepted=1048 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:53:56,935 INFO status armed=True owner=172.20.10.1 accepted=1215 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:54:01,949 INFO status armed=True owner=172.20.10.1 accepted=1382 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:54:06,326 INFO control channels=(1500, 1500, 1531, 1733) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.16782608695652174, 'head_roll': 0.0}
+2026-11-06 13:54:06,380 INFO control channels=(1500, 1500, 1553, 2000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.007065217391304346, 'head_yaw': -0.4, 'head_roll': 0.0}
+2026-11-06 13:54:06,483 INFO control channels=(1500, 1500, 1557, 2000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.00923913043478261, 'head_yaw': -0.4, 'head_roll': 0.0}
+2026-11-06 13:54:06,590 INFO control channels=(1500, 1500, 1551, 2000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.005978260869565215, 'head_yaw': -0.4, 'head_roll': 0.0}
+2026-11-06 13:54:06,642 INFO control channels=(1500, 1500, 1508, 2000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.4, 'head_roll': 0.0}
+2026-11-06 13:54:06,694 INFO control channels=(1500, 1500, 1429, 1793) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.016847826086956518, 'head_yaw': -0.21999999999999997, 'head_roll': 0.0}
+2026-11-06 13:54:06,746 INFO control channels=(1500, 1500, 1389, 1544) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.03858695652173913, 'head_yaw': -0.003478260869565214, 'head_roll': 0.0}
+2026-11-06 13:54:06,799 INFO control channels=(1500, 1500, 1389, 1344) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.03858695652173913, 'head_yaw': 0.10086956521739131, 'head_roll': 0.0}
+2026-11-06 13:54:06,849 INFO control channels=(1500, 1500, 1389, 1236) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.03858695652173913, 'head_yaw': 0.19478260869565217, 'head_roll': 0.0}
+2026-11-06 13:54:06,901 INFO control channels=(1500, 1500, 1387, 1211) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.03967391304347826, 'head_yaw': 0.21652173913043474, 'head_roll': 0.0}
+2026-11-06 13:54:06,956 INFO control channels=(1500, 1500, 1378, 1204) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.04456521739130434, 'head_yaw': 0.22260869565217392, 'head_roll': 0.0}
+2026-11-06 13:54:06,956 INFO status armed=True owner=172.20.10.1 accepted=1549 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:54:07,010 INFO control channels=(1500, 1500, 1378, 1207) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.04456521739130434, 'head_yaw': 0.21999999999999997, 'head_roll': 0.0}
+2026-11-06 13:54:07,062 INFO control channels=(1500, 1500, 1378, 1211) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.04456521739130434, 'head_yaw': 0.21652173913043474, 'head_roll': 0.0}
+2026-11-06 13:54:07,112 INFO control channels=(1500, 1500, 1364, 1191) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.05217391304347826, 'head_yaw': 0.23391304347826092, 'head_roll': 0.0}
+2026-11-06 13:54:07,166 INFO control channels=(1500, 1500, 1356, 1167) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.05652173913043477, 'head_yaw': 0.2547826086956522, 'head_roll': 0.0}
+2026-11-06 13:54:07,217 INFO control channels=(1500, 1500, 1336, 1104) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.06739130434782609, 'head_yaw': 0.3095652173913044, 'head_roll': 0.0}
+2026-11-06 13:54:07,269 INFO control channels=(1500, 1500, 1318, 1024) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.07717391304347825, 'head_yaw': 0.3791304347826087, 'head_roll': 0.0}
+2026-11-06 13:54:07,321 INFO control channels=(1500, 1500, 1316, 1016) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.07826086956521738, 'head_yaw': 0.38608695652173913, 'head_roll': 0.0}
+2026-11-06 13:54:07,374 INFO control channels=(1500, 1500, 1313, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.07989130434782608, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:54:07,425 INFO control channels=(1500, 1500, 1302, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.08586956521739131, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:54:07,477 INFO control channels=(1500, 1500, 1298, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.08804347826086957, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:54:07,527 INFO control channels=(1500, 1500, 1296, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.08913043478260868, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:54:08,003 INFO control channels=(1546, 1360, 1500, 1500) move={'vx': -0.06521739130434782, 'vy': 0.0, 'vyaw': -0.01043478260869565} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:08,054 INFO control channels=(1611, 1100, 1500, 1500) move={'vx': -0.23478260869565218, 'vy': 0.0, 'vyaw': -0.12347826086956522} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:08,106 INFO control channels=(1617, 1000, 1500, 1500) move={'vx': -0.3, 'vy': 0.0, 'vyaw': -0.1339130434782609} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:08,210 INFO control channels=(1611, 1000, 1500, 1500) move={'vx': -0.3, 'vy': 0.0, 'vyaw': -0.12347826086956522} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:08,263 INFO control channels=(1600, 1000, 1500, 1500) move={'vx': -0.3, 'vy': 0.0, 'vyaw': -0.10434782608695653} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:08,315 INFO control channels=(1588, 1000, 1500, 1500) move={'vx': -0.3, 'vy': 0.0, 'vyaw': -0.08347826086956521} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:08,365 INFO control channels=(1566, 1000, 1500, 1500) move={'vx': -0.3, 'vy': 0.0, 'vyaw': -0.04521739130434783} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:08,420 INFO control channels=(1555, 1000, 1500, 1500) move={'vx': -0.3, 'vy': 0.0, 'vyaw': -0.026086956521739132} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:08,471 INFO control channels=(1542, 1000, 1500, 1500) move={'vx': -0.3, 'vy': 0.0, 'vyaw': -0.0034782608695652206} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:08,523 INFO control channels=(1540, 1000, 1500, 1500) move={'vx': -0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:08,838 INFO control channels=(1537, 1289, 1500, 1500) move={'vx': -0.11152173913043477, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:08,889 INFO control channels=(1535, 1548, 1500, 1500) move={'vx': 0.005217391304347826, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:08,940 INFO control channels=(1535, 1897, 1500, 1500) move={'vx': 0.23282608695652174, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:08,992 INFO control channels=(1535, 1942, 1500, 1500) move={'vx': 0.26217391304347826, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:09,045 INFO control channels=(1535, 2000, 1500, 1500) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:10,561 INFO control channels=(1458, 2000, 1500, 1500) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.0034782608695652206} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:10,715 INFO control channels=(1456, 2000, 1500, 1500) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.006956521739130428} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:10,765 INFO control channels=(1449, 2000, 1500, 1500) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.019130434782608688} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:10,818 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:11,030 INFO control channels=(1586, 1251, 1500, 1500) move={'vx': -0.13630434782608694, 'vy': 0.0, 'vyaw': -0.07999999999999999} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:11,082 INFO control channels=(1644, 1000, 1500, 1500) move={'vx': -0.3, 'vy': 0.0, 'vyaw': -0.18086956521739128} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:11,132 INFO control channels=(1646, 1000, 1500, 1500) move={'vx': -0.3, 'vy': 0.0, 'vyaw': -0.1843478260869565} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:11,183 INFO control channels=(1608, 1000, 1500, 1500) move={'vx': -0.3, 'vy': 0.0, 'vyaw': -0.1182608695652174} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:11,235 INFO control channels=(1584, 1000, 1500, 1500) move={'vx': -0.3, 'vy': 0.0, 'vyaw': -0.0765217391304348} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:11,285 INFO control channels=(1568, 1000, 1500, 1500) move={'vx': -0.3, 'vy': 0.0, 'vyaw': -0.04869565217391306} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:11,336 INFO control channels=(1555, 1000, 1500, 1500) move={'vx': -0.3, 'vy': 0.0, 'vyaw': -0.026086956521739132} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:11,389 INFO control channels=(1546, 1000, 1500, 1500) move={'vx': -0.3, 'vy': 0.0, 'vyaw': -0.01043478260869565} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:11,441 INFO control channels=(1540, 1000, 1500, 1500) move={'vx': -0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:11,966 INFO status armed=True owner=172.20.10.1 accepted=1716 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:54:12,696 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:12,956 INFO control channels=(1500, 1500, 1471, 1347) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': 0.09826086956521739, 'head_roll': 0.0}
+2026-11-06 13:54:13,013 INFO control channels=(1500, 1500, 1409, 1073) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.027717391304347822, 'head_yaw': 0.3365217391304348, 'head_roll': 0.0}
+2026-11-06 13:54:13,066 INFO control channels=(1500, 1500, 1398, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.033695652173913036, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:54:13,117 INFO control channels=(1500, 1500, 1380, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.04347826086956521, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:54:13,167 INFO control channels=(1500, 1500, 1376, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.04565217391304347, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:54:13,222 INFO control channels=(1500, 1500, 1364, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.05217391304347826, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:54:13,273 INFO control channels=(1500, 1500, 1351, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.0592391304347826, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:54:13,323 INFO control channels=(1500, 1500, 1342, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.06413043478260869, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:54:13,378 INFO control channels=(1500, 1500, 1340, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.06521739130434782, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:54:13,432 INFO control channels=(1500, 1500, 1327, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.07228260869565216, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:54:13,484 INFO control channels=(1500, 1500, 1322, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.07499999999999998, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:54:13,746 INFO control channels=(1500, 1500, 1378, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.04456521739130434, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:54:13,798 INFO control channels=(1500, 1500, 1453, 1202) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.003804347826086956, 'head_yaw': 0.22434782608695653, 'head_roll': 0.0}
+2026-11-06 13:54:13,852 INFO control channels=(1500, 1500, 1489, 1515) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:13,904 INFO control channels=(1500, 1500, 1544, 1733) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0021739130434782587, 'head_yaw': -0.16782608695652174, 'head_roll': 0.0}
+2026-11-06 13:54:13,954 INFO control channels=(1500, 1500, 1584, 1868) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.02391304347826087, 'head_yaw': -0.2852173913043478, 'head_roll': 0.0}
+2026-11-06 13:54:14,007 INFO control channels=(1500, 1500, 1608, 1968) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.03695652173913044, 'head_yaw': -0.3721739130434783, 'head_roll': 0.0}
+2026-11-06 13:54:14,061 INFO control channels=(1500, 1500, 1635, 2000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.051630434782608696, 'head_yaw': -0.4, 'head_roll': 0.0}
+2026-11-06 13:54:14,164 INFO control channels=(1500, 1500, 1620, 2000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.04347826086956521, 'head_yaw': -0.4, 'head_roll': 0.0}
+2026-11-06 13:54:14,217 INFO control channels=(1500, 1500, 1617, 2000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.04184782608695653, 'head_yaw': -0.4, 'head_roll': 0.0}
+2026-11-06 13:54:14,268 INFO control channels=(1500, 1500, 1613, 2000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.03967391304347826, 'head_yaw': -0.4, 'head_roll': 0.0}
+2026-11-06 13:54:14,319 INFO control channels=(1500, 1500, 1611, 2000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.03858695652173913, 'head_yaw': -0.4, 'head_roll': 0.0}
+2026-11-06 13:54:14,525 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:14,683 INFO control channels=(1620, 1568, 1500, 1500) move={'vx': 0.018260869565217393, 'vy': 0.0, 'vyaw': -0.13913043478260867} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:14,734 INFO control channels=(1697, 1562, 1500, 1500) move={'vx': 0.01434782608695652, 'vy': 0.0, 'vyaw': -0.27304347826086955} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:14,784 INFO control channels=(1771, 1560, 1500, 1500) move={'vx': 0.013043478260869563, 'vy': 0.0, 'vyaw': -0.4017391304347826} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:14,837 INFO control channels=(1828, 1560, 1500, 1500) move={'vx': 0.013043478260869563, 'vy': 0.0, 'vyaw': -0.5008695652173913} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:14,888 INFO control channels=(1877, 1560, 1500, 1500) move={'vx': 0.013043478260869563, 'vy': 0.0, 'vyaw': -0.5860869565217391} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:14,938 INFO control channels=(1920, 1560, 1500, 1500) move={'vx': 0.013043478260869563, 'vy': 0.0, 'vyaw': -0.6608695652173914} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:14,993 INFO control channels=(1953, 1560, 1500, 1500) move={'vx': 0.013043478260869563, 'vy': 0.0, 'vyaw': -0.7182608695652175} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:15,046 INFO control channels=(1973, 1560, 1500, 1500) move={'vx': 0.013043478260869563, 'vy': 0.0, 'vyaw': -0.7530434782608696} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:15,098 INFO control channels=(1988, 1560, 1500, 1500) move={'vx': 0.013043478260869563, 'vy': 0.0, 'vyaw': -0.7791304347826087} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:15,149 INFO control channels=(1993, 1560, 1500, 1500) move={'vx': 0.013043478260869563, 'vy': 0.0, 'vyaw': -0.7878260869565218} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:15,201 INFO control channels=(1995, 1560, 1500, 1500) move={'vx': 0.013043478260869563, 'vy': 0.0, 'vyaw': -0.7913043478260869} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:15,253 INFO control channels=(2000, 1560, 1500, 1500) move={'vx': 0.013043478260869563, 'vy': 0.0, 'vyaw': -0.8} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:16,968 INFO status armed=True owner=172.20.10.1 accepted=1883 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:54:17,124 INFO control channels=(1997, 1560, 1500, 1500) move={'vx': 0.013043478260869563, 'vy': 0.0, 'vyaw': -0.7947826086956522} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:17,229 INFO control channels=(1995, 1560, 1500, 1500) move={'vx': 0.013043478260869563, 'vy': 0.0, 'vyaw': -0.7913043478260869} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:17,334 INFO control channels=(1993, 1560, 1500, 1500) move={'vx': 0.013043478260869563, 'vy': 0.0, 'vyaw': -0.7878260869565218} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:17,802 WARNING robotd disconnected: [Errno 32] Broken pipe; input discarded
+2026-11-06 13:54:17,821 WARNING robotd unavailable: [Errno 2] No such file or directory
+2026-11-06 13:54:18,827 WARNING robotd unavailable: [Errno 2] No such file or directory
+2026-11-06 13:54:19,833 WARNING robotd unavailable: [Errno 2] No such file or directory
+2026-11-06 13:54:20,847 WARNING robotd unavailable: [Errno 2] No such file or directory
+2026-11-06 13:54:21,859 WARNING robotd unavailable: [Errno 2] No such file or directory
+2026-11-06 13:54:21,988 INFO status armed=False owner=172.20.10.1 accepted=1911 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:54:22,880 WARNING robotd unavailable: [Errno 2] No such file or directory
+2026-11-06 13:54:23,894 WARNING robotd unavailable: [Errno 2] No such file or directory
+2026-11-06 13:54:24,900 WARNING robotd unavailable: [Errno 2] No such file or directory
+2026-11-06 13:54:25,919 WARNING robotd unavailable: [Errno 2] No such file or directory
+2026-11-06 13:54:26,941 WARNING robotd unavailable: [Errno 2] No such file or directory
+2026-11-06 13:54:26,992 INFO status armed=False owner=172.20.10.1 accepted=1911 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:54:27,960 WARNING robotd unavailable: [Errno 2] No such file or directory
+2026-11-06 13:54:28,983 WARNING robotd unavailable: [Errno 2] No such file or directory
+2026-11-06 13:54:30,000 WARNING robotd unavailable: [Errno 2] No such file or directory
+2026-11-06 13:54:31,012 WARNING robotd unavailable: [Errno 2] No such file or directory
+2026-11-06 13:54:32,000 INFO status armed=False owner=172.20.10.1 accepted=1911 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:54:32,026 INFO robotd connected; neutral SRT required
+2026-11-06 13:54:37,005 INFO status armed=False owner=172.20.10.1 accepted=1911 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:54:42,015 INFO status armed=False owner=172.20.10.1 accepted=1911 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:54:47,017 INFO status armed=False owner=172.20.10.1 accepted=1911 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:54:48,642 INFO armed sender=172.20.10.1 after neutral SRT frame
+2026-11-06 13:54:48,692 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:49,104 WARNING UDP input expired; zeroing movement/head; neutral required
+2026-11-06 13:54:49,452 INFO armed sender=172.20.10.1 after neutral SRT frame
+2026-11-06 13:54:49,464 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:50,288 WARNING UDP input expired; zeroing movement/head; neutral required
+2026-11-06 13:54:51,152 INFO armed sender=172.20.10.1 after neutral SRT frame
+2026-11-06 13:54:51,200 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:51,655 WARNING UDP input expired; zeroing movement/head; neutral required
+2026-11-06 13:54:51,673 INFO armed sender=172.20.10.1 after neutral SRT frame
+2026-11-06 13:54:51,712 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:52,018 INFO status armed=True owner=172.20.10.1 accepted=1955 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:54:52,720 WARNING UDP input expired; zeroing movement/head; neutral required
+2026-11-06 13:54:52,787 INFO armed sender=172.20.10.1 after neutral SRT frame
+2026-11-06 13:54:52,802 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:53,359 WARNING UDP input expired; zeroing movement/head; neutral required
+2026-11-06 13:54:53,929 INFO armed sender=172.20.10.1 after neutral SRT frame
+2026-11-06 13:54:53,980 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:54,438 WARNING UDP input expired; zeroing movement/head; neutral required
+2026-11-06 13:54:56,176 INFO armed sender=172.20.10.1 after neutral SRT frame
+2026-11-06 13:54:56,226 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:54:56,689 WARNING UDP input expired; zeroing movement/head; neutral required
+2026-11-06 13:54:57,037 INFO status armed=False owner=172.20.10.1 accepted=1998 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:54:59,590 INFO armed sender=172.20.10.1 after neutral SRT frame
+2026-11-06 13:54:59,642 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:55:00,101 WARNING UDP input expired; zeroing movement/head; neutral required
+2026-11-06 13:55:02,039 INFO status armed=False owner=172.20.10.1 accepted=2006 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:55:07,046 INFO status armed=False owner=172.20.10.1 accepted=2006 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:55:12,058 INFO status armed=False owner=172.20.10.1 accepted=2006 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:55:17,069 INFO status armed=False owner=172.20.10.1 accepted=2006 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:55:22,091 INFO status armed=False owner=172.20.10.1 accepted=2006 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:55:27,092 INFO status armed=False owner=172.20.10.1 accepted=2006 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:55:32,103 INFO status armed=False owner=172.20.10.1 accepted=2006 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:55:37,112 INFO status armed=False owner=172.20.10.1 accepted=2006 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:55:42,129 INFO status armed=False owner=172.20.10.1 accepted=2006 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:55:47,144 INFO status armed=False owner=172.20.10.1 accepted=2006 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:55:52,151 INFO status armed=False owner=172.20.10.1 accepted=2006 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:55:57,162 INFO status armed=False owner=172.20.10.1 accepted=2006 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:56:02,164 INFO status armed=False owner=172.20.10.1 accepted=2006 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:56:07,185 INFO status armed=False owner=172.20.10.1 accepted=2006 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:56:12,193 INFO status armed=False owner=172.20.10.1 accepted=2006 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:56:17,197 INFO status armed=False owner=172.20.10.1 accepted=2006 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:56:22,222 INFO status armed=False owner=172.20.10.1 accepted=2006 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:56:27,238 INFO status armed=False owner=172.20.10.1 accepted=2006 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:56:32,247 INFO status armed=False owner=172.20.10.1 accepted=2006 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:56:35,831 INFO armed sender=172.20.10.1 after neutral SRT frame
+2026-11-06 13:56:35,861 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:56:36,349 WARNING UDP input expired; zeroing movement/head; neutral required
+2026-11-06 13:56:37,252 INFO status armed=False owner=172.20.10.1 accepted=2015 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:56:40,629 INFO armed sender=172.20.10.1 after neutral SRT frame
+2026-11-06 13:56:40,661 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:56:41,117 WARNING UDP input expired; zeroing movement/head; neutral required
+2026-11-06 13:56:42,056 INFO armed sender=172.20.10.1 after neutral SRT frame
+2026-11-06 13:56:42,089 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:56:42,271 INFO status armed=True owner=172.20.10.1 accepted=2031 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:56:47,285 INFO status armed=True owner=172.20.10.1 accepted=2198 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:56:52,288 INFO status armed=True owner=172.20.10.1 accepted=2365 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:56:57,266 INFO control channels=(1504, 1642, 1500, 1500) move={'vx': 0.06652173913043476, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:56:57,306 INFO status armed=True owner=172.20.10.1 accepted=2532 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:56:57,319 WARNING robotd disconnected: [Errno 32] Broken pipe; input discarded
+2026-11-06 13:56:57,338 WARNING robotd unavailable: [Errno 2] No such file or directory
+2026-11-06 13:56:58,350 WARNING robotd unavailable: [Errno 2] No such file or directory
+2026-11-06 13:56:59,350 WARNING robotd unavailable: [Errno 2] No such file or directory
+2026-11-06 13:57:00,362 WARNING robotd unavailable: [Errno 2] No such file or directory
+2026-11-06 13:57:01,381 WARNING robotd unavailable: [Errno 2] No such file or directory
+2026-11-06 13:57:02,312 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:57:02,403 WARNING robotd unavailable: [Errno 2] No such file or directory
+2026-11-06 13:57:03,408 WARNING robotd unavailable: [Errno 2] No such file or directory
+2026-11-06 13:57:04,424 WARNING robotd unavailable: [Errno 2] No such file or directory
+2026-11-06 13:57:05,429 WARNING robotd unavailable: [Errno 2] No such file or directory
+2026-11-06 13:57:06,449 WARNING robotd unavailable: [Errno 2] No such file or directory
+2026-11-06 13:57:07,312 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:57:07,465 WARNING robotd unavailable: [Errno 2] No such file or directory
+2026-11-06 13:57:08,466 WARNING robotd unavailable: [Errno 2] No such file or directory
+2026-11-06 13:57:09,483 WARNING robotd unavailable: [Errno 2] No such file or directory
+2026-11-06 13:57:10,507 WARNING robotd unavailable: [Errno 2] No such file or directory
+2026-11-06 13:57:11,521 WARNING robotd unavailable: [Errno 2] No such file or directory
+2026-11-06 13:57:12,330 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:57:12,530 WARNING robotd unavailable: robotd not healthy
+2026-11-06 13:57:13,542 INFO robotd connected; neutral SRT required
+2026-11-06 13:57:17,335 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:57:22,337 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:57:27,340 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:57:32,343 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:57:37,366 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:57:42,385 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:57:47,394 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:57:52,408 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:57:57,412 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:58:02,414 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:58:07,428 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:58:12,432 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:58:17,446 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:58:22,453 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:58:27,468 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:58:32,470 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:58:37,479 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:58:42,493 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:58:47,511 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:58:52,523 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:58:57,539 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:59:02,558 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:59:07,579 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:59:12,588 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:59:17,593 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:59:22,609 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:59:27,620 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:59:32,635 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:59:37,637 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:59:42,645 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:59:47,660 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:59:52,667 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 13:59:57,669 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 14:00:02,678 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 14:00:07,691 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 14:00:12,711 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 14:00:17,730 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 14:00:22,746 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 14:00:27,761 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 14:00:32,767 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 14:00:37,786 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 14:00:42,794 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 14:00:47,797 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 14:00:52,819 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 14:00:57,822 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 14:01:02,831 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 14:01:07,855 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 14:01:12,856 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 14:01:17,860 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=2 foreign=0 waiting_neutral=0
+2026-11-06 14:01:22,870 INFO status armed=False owner=172.20.10.1 accepted=2533 invalid=4 foreign=0 waiting_neutral=0
+2026-11-06 14:01:27,556 INFO armed sender=172.20.10.1 after neutral SRT frame
+2026-11-06 14:01:27,601 WARNING robotd disconnected: [Errno 32] Broken pipe; input discarded
+2026-11-06 14:01:27,601 INFO robotd connected; neutral SRT required
+2026-11-06 14:01:27,630 INFO armed sender=172.20.10.1 after neutral SRT frame
+2026-11-06 14:01:27,656 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:27,872 INFO status armed=True owner=172.20.10.1 accepted=2544 invalid=6 foreign=0 waiting_neutral=0
+2026-11-06 14:01:29,666 INFO control channels=(1500, 1500, 1504, 1600) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.052173913043478265, 'head_roll': 0.0}
+2026-11-06 14:01:29,719 INFO control channels=(1500, 1500, 1544, 1853) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0021739130434782587, 'head_yaw': -0.27217391304347827, 'head_roll': 0.0}
+2026-11-06 14:01:29,772 INFO control channels=(1500, 1500, 1575, 2000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.01902173913043478, 'head_yaw': -0.4, 'head_roll': 0.0}
+2026-11-06 14:01:30,338 INFO control channels=(1500, 1500, 1573, 1853) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.01793478260869565, 'head_yaw': -0.27217391304347827, 'head_roll': 0.0}
+2026-11-06 14:01:30,389 INFO control channels=(1500, 1500, 1555, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.008152173913043478, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:30,444 INFO control channels=(1500, 1500, 1487, 1156) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': 0.2643478260869565, 'head_roll': 0.0}
+2026-11-06 14:01:30,496 INFO control channels=(1500, 1500, 1478, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:30,548 INFO control channels=(1500, 1500, 1433, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.014673913043478261, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:30,598 INFO control channels=(1500, 1500, 1420, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.021739130434782608, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:30,652 INFO control channels=(1500, 1500, 1391, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.0375, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:30,705 INFO control channels=(1500, 1500, 1358, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.05543478260869564, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:30,857 INFO control channels=(1500, 1500, 1356, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.05652173913043477, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:30,908 INFO control channels=(1500, 1500, 1353, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.05815217391304347, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:31,013 INFO control channels=(1500, 1500, 1351, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.0592391304347826, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:31,065 INFO control channels=(1500, 1500, 1504, 1044) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': 0.3617391304347826, 'head_roll': 0.0}
+2026-11-06 14:01:31,117 INFO control channels=(1500, 1500, 1602, 1313) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.033695652173913036, 'head_yaw': 0.12782608695652173, 'head_roll': 0.0}
+2026-11-06 14:01:31,167 INFO control channels=(1500, 1500, 1604, 1342) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.034782608695652174, 'head_yaw': 0.1026086956521739, 'head_roll': 0.0}
+2026-11-06 14:01:31,220 INFO control channels=(1500, 1500, 1604, 1367) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.034782608695652174, 'head_yaw': 0.0808695652173913, 'head_roll': 0.0}
+2026-11-06 14:01:31,273 INFO control channels=(1500, 1500, 1615, 1367) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0407608695652174, 'head_yaw': 0.0808695652173913, 'head_roll': 0.0}
+2026-11-06 14:01:31,324 INFO control channels=(1438, 1726, 1666, 1353) move={'vx': 0.12130434782608696, 'vy': 0.0, 'vyaw': 0.03826086956521739} head={'neck_pitch': 0.0, 'head_pitch': -0.06847826086956521, 'head_yaw': 0.09304347826086956, 'head_roll': 0.0}
+2026-11-06 14:01:31,378 INFO control channels=(1400, 1879, 1691, 1353) move={'vx': 0.22108695652173913, 'vy': 0.0, 'vyaw': 0.10434782608695653} head={'neck_pitch': 0.0, 'head_pitch': -0.08206521739130435, 'head_yaw': 0.09304347826086956, 'head_roll': 0.0}
+2026-11-06 14:01:31,429 INFO control channels=(1382, 2000, 1695, 1353) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.13565217391304346} head={'neck_pitch': 0.0, 'head_pitch': -0.08423913043478261, 'head_yaw': 0.09304347826086956, 'head_roll': 0.0}
+2026-11-06 14:01:31,586 INFO control channels=(1389, 2000, 1695, 1353) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.12347826086956522} head={'neck_pitch': 0.0, 'head_pitch': -0.08423913043478261, 'head_yaw': 0.09304347826086956, 'head_roll': 0.0}
+2026-11-06 14:01:31,640 INFO control channels=(1391, 2000, 1693, 1353) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.12} head={'neck_pitch': 0.0, 'head_pitch': -0.08315217391304347, 'head_yaw': 0.09304347826086956, 'head_roll': 0.0}
+2026-11-06 14:01:31,692 INFO control channels=(1391, 2000, 1691, 1353) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.12} head={'neck_pitch': 0.0, 'head_pitch': -0.08206521739130435, 'head_yaw': 0.09304347826086956, 'head_roll': 0.0}
+2026-11-06 14:01:31,742 INFO control channels=(1391, 2000, 1686, 1353) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.12} head={'neck_pitch': 0.0, 'head_pitch': -0.07934782608695651, 'head_yaw': 0.09304347826086956, 'head_roll': 0.0}
+2026-11-06 14:01:32,211 INFO control channels=(1391, 2000, 1693, 1353) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.12} head={'neck_pitch': 0.0, 'head_pitch': -0.08315217391304347, 'head_yaw': 0.09304347826086956, 'head_roll': 0.0}
+2026-11-06 14:01:32,264 INFO control channels=(1391, 2000, 1695, 1353) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.12} head={'neck_pitch': 0.0, 'head_pitch': -0.08423913043478261, 'head_yaw': 0.09304347826086956, 'head_roll': 0.0}
+2026-11-06 14:01:32,315 INFO control channels=(1391, 2000, 1697, 1353) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.12} head={'neck_pitch': 0.0, 'head_pitch': -0.08532608695652173, 'head_yaw': 0.09304347826086956, 'head_roll': 0.0}
+2026-11-06 14:01:32,633 INFO control channels=(1336, 2000, 1697, 1353) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.21565217391304348} head={'neck_pitch': 0.0, 'head_pitch': -0.08532608695652173, 'head_yaw': 0.09304347826086956, 'head_roll': 0.0}
+2026-11-06 14:01:32,685 INFO control channels=(1220, 2000, 1697, 1353) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.4173913043478261} head={'neck_pitch': 0.0, 'head_pitch': -0.08532608695652173, 'head_yaw': 0.09304347826086956, 'head_roll': 0.0}
+2026-11-06 14:01:32,736 INFO control channels=(1160, 2000, 1704, 1353) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.5217391304347827} head={'neck_pitch': 0.0, 'head_pitch': -0.08913043478260868, 'head_yaw': 0.09304347826086956, 'head_roll': 0.0}
+2026-11-06 14:01:32,788 INFO control channels=(1144, 2000, 1706, 1353) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.5495652173913044} head={'neck_pitch': 0.0, 'head_pitch': -0.09021739130434782, 'head_yaw': 0.09304347826086956, 'head_roll': 0.0}
+2026-11-06 14:01:32,839 INFO control channels=(1131, 2000, 1708, 1353) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.5721739130434783} head={'neck_pitch': 0.0, 'head_pitch': -0.09130434782608694, 'head_yaw': 0.09304347826086956, 'head_roll': 0.0}
+2026-11-06 14:01:32,876 INFO status armed=True owner=172.20.10.1 accepted=2709 invalid=6 foreign=0 waiting_neutral=0
+2026-11-06 14:01:32,890 INFO control channels=(1111, 2000, 1708, 1353) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.6069565217391305} head={'neck_pitch': 0.0, 'head_pitch': -0.09130434782608694, 'head_yaw': 0.09304347826086956, 'head_roll': 0.0}
+2026-11-06 14:01:32,941 INFO control channels=(1082, 2000, 1708, 1353) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.6573913043478261} head={'neck_pitch': 0.0, 'head_pitch': -0.09130434782608694, 'head_yaw': 0.09304347826086956, 'head_roll': 0.0}
+2026-11-06 14:01:32,995 INFO control channels=(1049, 2000, 1708, 1353) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.7147826086956522} head={'neck_pitch': 0.0, 'head_pitch': -0.09130434782608694, 'head_yaw': 0.09304347826086956, 'head_roll': 0.0}
+2026-11-06 14:01:33,048 INFO control channels=(1020, 2000, 1708, 1353) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.7652173913043478} head={'neck_pitch': 0.0, 'head_pitch': -0.09130434782608694, 'head_yaw': 0.09304347826086956, 'head_roll': 0.0}
+2026-11-06 14:01:33,099 INFO control channels=(1000, 2000, 1708, 1353) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': -0.09130434782608694, 'head_yaw': 0.09304347826086956, 'head_roll': 0.0}
+2026-11-06 14:01:33,723 INFO control channels=(1000, 2000, 1711, 1353) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': -0.09293478260869564, 'head_yaw': 0.09304347826086956, 'head_roll': 0.0}
+2026-11-06 14:01:33,776 INFO control channels=(1000, 2000, 1719, 1360) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': -0.09728260869565217, 'head_yaw': 0.08695652173913043, 'head_roll': 0.0}
+2026-11-06 14:01:33,829 INFO control channels=(1007, 2000, 1722, 1378) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.7878260869565218} head={'neck_pitch': 0.0, 'head_pitch': -0.09891304347826087, 'head_yaw': 0.07130434782608695, 'head_roll': 0.0}
+2026-11-06 14:01:33,881 INFO control channels=(1013, 2000, 1724, 1382) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.7773913043478261} head={'neck_pitch': 0.0, 'head_pitch': -0.09999999999999999, 'head_yaw': 0.06782608695652173, 'head_roll': 0.0}
+2026-11-06 14:01:33,933 INFO control channels=(1013, 2000, 1731, 1382) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.7773913043478261} head={'neck_pitch': 0.0, 'head_pitch': -0.10380434782608695, 'head_yaw': 0.06782608695652173, 'head_roll': 0.0}
+2026-11-06 14:01:33,988 INFO control channels=(1013, 2000, 1739, 1382) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.7773913043478261} head={'neck_pitch': 0.0, 'head_pitch': -0.10815217391304346, 'head_yaw': 0.06782608695652173, 'head_roll': 0.0}
+2026-11-06 14:01:34,039 INFO control channels=(1013, 2000, 1742, 1384) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.7773913043478261} head={'neck_pitch': 0.0, 'head_pitch': -0.10978260869565216, 'head_yaw': 0.06608695652173914, 'head_roll': 0.0}
+2026-11-06 14:01:34,091 INFO control channels=(1013, 2000, 1746, 1384) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.7773913043478261} head={'neck_pitch': 0.0, 'head_pitch': -0.11195652173913043, 'head_yaw': 0.06608695652173914, 'head_roll': 0.0}
+2026-11-06 14:01:34,143 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:37,888 INFO status armed=True owner=172.20.10.1 accepted=2876 invalid=6 foreign=0 waiting_neutral=0
+2026-11-06 14:01:40,697 INFO control channels=(1471, 1611, 1500, 1500) move={'vx': 0.04630434782608695, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:40,747 INFO control channels=(1471, 1660, 1500, 1500) move={'vx': 0.07826086956521738, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:40,799 INFO control channels=(1469, 1726, 1500, 1500) move={'vx': 0.12130434782608696, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:40,853 INFO control channels=(1451, 1784, 1500, 1500) move={'vx': 0.15913043478260866, 'vy': 0.0, 'vyaw': 0.01565217391304348} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:40,907 INFO control channels=(1442, 1831, 1500, 1500) move={'vx': 0.18978260869565217, 'vy': 0.0, 'vyaw': 0.03130434782608696} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:40,958 INFO control channels=(1442, 1873, 1500, 1500) move={'vx': 0.21717391304347827, 'vy': 0.0, 'vyaw': 0.03130434782608696} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:41,009 INFO control channels=(1442, 1904, 1500, 1500) move={'vx': 0.2373913043478261, 'vy': 0.0, 'vyaw': 0.03130434782608696} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:41,063 INFO control channels=(1442, 1926, 1500, 1500) move={'vx': 0.2517391304347826, 'vy': 0.0, 'vyaw': 0.03130434782608696} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:41,116 INFO control channels=(1442, 1937, 1500, 1500) move={'vx': 0.2589130434782609, 'vy': 0.0, 'vyaw': 0.03130434782608696} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:41,167 INFO control channels=(1442, 1953, 1500, 1500) move={'vx': 0.2693478260869565, 'vy': 0.0, 'vyaw': 0.03130434782608696} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:41,220 INFO control channels=(1442, 1957, 1500, 1500) move={'vx': 0.27195652173913043, 'vy': 0.0, 'vyaw': 0.03130434782608696} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:41,275 INFO control channels=(1442, 1962, 1500, 1500) move={'vx': 0.2752173913043478, 'vy': 0.0, 'vyaw': 0.03130434782608696} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:41,328 INFO control channels=(1442, 1971, 1500, 1500) move={'vx': 0.2810869565217391, 'vy': 0.0, 'vyaw': 0.03130434782608696} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:41,380 INFO control channels=(1442, 1975, 1500, 1500) move={'vx': 0.283695652173913, 'vy': 0.0, 'vyaw': 0.03130434782608696} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:41,431 INFO control channels=(1442, 1977, 1500, 1500) move={'vx': 0.285, 'vy': 0.0, 'vyaw': 0.03130434782608696} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:41,484 INFO control channels=(1438, 1982, 1500, 1500) move={'vx': 0.2882608695652174, 'vy': 0.0, 'vyaw': 0.03826086956521739} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:41,537 INFO control channels=(1436, 1984, 1500, 1500) move={'vx': 0.2895652173913043, 'vy': 0.0, 'vyaw': 0.04173913043478261} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:41,692 INFO control channels=(1436, 1971, 1500, 1500) move={'vx': 0.2810869565217391, 'vy': 0.0, 'vyaw': 0.04173913043478261} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:41,745 INFO control channels=(1436, 1953, 1500, 1500) move={'vx': 0.2693478260869565, 'vy': 0.0, 'vyaw': 0.04173913043478261} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:41,796 INFO control channels=(1436, 1920, 1500, 1500) move={'vx': 0.24782608695652172, 'vy': 0.0, 'vyaw': 0.04173913043478261} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:41,846 INFO control channels=(1436, 1904, 1500, 1500) move={'vx': 0.2373913043478261, 'vy': 0.0, 'vyaw': 0.04173913043478261} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:41,897 INFO control channels=(1438, 1882, 1500, 1500) move={'vx': 0.22304347826086957, 'vy': 0.0, 'vyaw': 0.03826086956521739} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:41,948 INFO control channels=(1442, 1868, 1500, 1500) move={'vx': 0.21391304347826087, 'vy': 0.0, 'vyaw': 0.03130434782608696} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:42,054 INFO control channels=(1442, 1877, 1500, 1500) move={'vx': 0.21978260869565217, 'vy': 0.0, 'vyaw': 0.03130434782608696} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:42,106 INFO control channels=(1442, 1904, 1500, 1500) move={'vx': 0.2373913043478261, 'vy': 0.0, 'vyaw': 0.03130434782608696} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:42,156 INFO control channels=(1442, 1917, 1500, 1500) move={'vx': 0.24586956521739128, 'vy': 0.0, 'vyaw': 0.03130434782608696} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:42,208 INFO control channels=(1442, 1920, 1500, 1500) move={'vx': 0.24782608695652172, 'vy': 0.0, 'vyaw': 0.03130434782608696} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:42,262 INFO control channels=(1442, 1924, 1500, 1500) move={'vx': 0.2504347826086956, 'vy': 0.0, 'vyaw': 0.03130434782608696} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:42,902 INFO status armed=True owner=172.20.10.1 accepted=3044 invalid=6 foreign=0 waiting_neutral=0
+2026-11-06 14:01:43,095 INFO control channels=(1447, 1935, 1500, 1500) move={'vx': 0.2576086956521739, 'vy': 0.0, 'vyaw': 0.02260869565217391} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:43,146 INFO control channels=(1453, 1953, 1500, 1500) move={'vx': 0.2693478260869565, 'vy': 0.0, 'vyaw': 0.012173913043478259} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:43,197 INFO control channels=(1453, 1957, 1500, 1500) move={'vx': 0.27195652173913043, 'vy': 0.0, 'vyaw': 0.012173913043478259} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:43,250 INFO control channels=(1453, 1975, 1500, 1500) move={'vx': 0.283695652173913, 'vy': 0.0, 'vyaw': 0.012173913043478259} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:43,303 INFO control channels=(1453, 1997, 1500, 1500) move={'vx': 0.2980434782608696, 'vy': 0.0, 'vyaw': 0.012173913043478259} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:43,354 INFO control channels=(1453, 2000, 1500, 1500) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.012173913043478259} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:43,512 INFO control channels=(1458, 2000, 1500, 1500) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.0034782608695652206} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:43,562 INFO control channels=(1460, 2000, 1500, 1500) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:44,188 INFO control channels=(1460, 2000, 1487, 1276) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': 0.16, 'head_roll': 0.0}
+2026-11-06 14:01:44,241 INFO control channels=(1460, 2000, 1440, 1060) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.010869565217391302, 'head_yaw': 0.34782608695652173, 'head_roll': 0.0}
+2026-11-06 14:01:44,294 INFO control channels=(1460, 2000, 1400, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.03260869565217391, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:44,344 INFO control channels=(1460, 2000, 1378, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.04456521739130434, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:44,395 INFO control channels=(1460, 2000, 1376, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.04565217391304347, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:44,447 INFO control channels=(1460, 2000, 1367, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.050543478260869565, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:44,499 INFO control channels=(1460, 2000, 1358, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.05543478260869564, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:45,225 INFO control channels=(1442, 1980, 1358, 1000) move={'vx': 0.2869565217391304, 'vy': 0.0, 'vyaw': 0.03130434782608696} head={'neck_pitch': 0.0, 'head_pitch': 0.05543478260869564, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:45,276 INFO control channels=(1389, 1882, 1362, 1000) move={'vx': 0.22304347826086957, 'vy': 0.0, 'vyaw': 0.12347826086956522} head={'neck_pitch': 0.0, 'head_pitch': 0.05326086956521739, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:45,327 INFO control channels=(1351, 1835, 1362, 1000) move={'vx': 0.19239130434782611, 'vy': 0.0, 'vyaw': 0.18956521739130433} head={'neck_pitch': 0.0, 'head_pitch': 0.05326086956521739, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:45,379 INFO control channels=(1216, 1762, 1364, 1000) move={'vx': 0.14478260869565215, 'vy': 0.0, 'vyaw': 0.4243478260869565} head={'neck_pitch': 0.0, 'head_pitch': 0.05217391304347826, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:45,431 INFO control channels=(1116, 1731, 1367, 1000) move={'vx': 0.12456521739130434, 'vy': 0.0, 'vyaw': 0.5982608695652174} head={'neck_pitch': 0.0, 'head_pitch': 0.050543478260869565, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:45,482 INFO control channels=(1056, 1715, 1367, 1000) move={'vx': 0.11413043478260868, 'vy': 0.0, 'vyaw': 0.702608695652174} head={'neck_pitch': 0.0, 'head_pitch': 0.050543478260869565, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:45,536 INFO control channels=(1000, 1708, 1367, 1000) move={'vx': 0.10956521739130433, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.050543478260869565, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:45,591 INFO control channels=(1000, 1717, 1367, 1000) move={'vx': 0.11543478260869564, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.050543478260869565, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:45,642 INFO control channels=(1000, 1737, 1367, 1000) move={'vx': 0.12847826086956518, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.050543478260869565, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:45,693 INFO control channels=(1000, 1753, 1367, 1000) move={'vx': 0.13891304347826086, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.050543478260869565, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:45,744 INFO control channels=(1000, 1757, 1367, 1000) move={'vx': 0.14152173913043478, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.050543478260869565, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:45,795 INFO control channels=(1000, 1762, 1367, 1000) move={'vx': 0.14478260869565215, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.050543478260869565, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:45,846 INFO control channels=(1000, 1764, 1367, 1000) move={'vx': 0.14608695652173911, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.050543478260869565, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:46,307 INFO control channels=(1000, 1766, 1367, 1000) move={'vx': 0.14739130434782607, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.050543478260869565, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:46,409 INFO control channels=(1000, 1768, 1367, 1000) move={'vx': 0.14869565217391303, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.050543478260869565, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:46,516 INFO control channels=(1000, 1771, 1367, 1000) move={'vx': 0.15065217391304347, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.050543478260869565, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:46,567 INFO control channels=(1000, 1773, 1367, 1000) move={'vx': 0.1519565217391304, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.050543478260869565, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:46,669 INFO control channels=(1000, 1775, 1367, 1000) move={'vx': 0.1532608695652174, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.050543478260869565, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:46,879 INFO control channels=(1000, 1777, 1367, 1000) move={'vx': 0.15456521739130435, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.050543478260869565, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:47,089 INFO control channels=(1000, 1780, 1367, 1000) move={'vx': 0.15652173913043477, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.050543478260869565, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:47,453 INFO control channels=(1000, 1782, 1367, 1000) move={'vx': 0.1578260869565217, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.050543478260869565, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:47,707 INFO control channels=(1000, 1784, 1367, 1000) move={'vx': 0.15913043478260866, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.050543478260869565, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:47,862 INFO control channels=(1000, 1786, 1367, 1000) move={'vx': 0.16043478260869562, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.050543478260869565, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:47,908 INFO status armed=True owner=172.20.10.1 accepted=3210 invalid=6 foreign=0 waiting_neutral=0
+2026-11-06 14:01:48,228 INFO control channels=(1000, 1788, 1367, 1000) move={'vx': 0.16173913043478258, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.050543478260869565, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:48,382 INFO control channels=(1000, 1791, 1367, 1000) move={'vx': 0.16369565217391302, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.050543478260869565, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:48,587 INFO control channels=(1000, 1793, 1367, 1000) move={'vx': 0.16499999999999998, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.050543478260869565, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:48,741 INFO control channels=(1000, 1795, 1367, 1000) move={'vx': 0.16630434782608697, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.050543478260869565, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:48,795 INFO control channels=(1000, 1802, 1367, 1000) move={'vx': 0.1708695652173913, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.050543478260869565, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:48,845 INFO control channels=(1000, 1813, 1367, 1000) move={'vx': 0.17804347826086955, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.050543478260869565, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:48,897 INFO control channels=(1000, 1817, 1367, 1000) move={'vx': 0.1806521739130435, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.050543478260869565, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:48,951 INFO control channels=(1000, 1831, 1367, 1000) move={'vx': 0.18978260869565217, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.050543478260869565, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:49,003 INFO control channels=(1000, 1882, 1367, 1000) move={'vx': 0.22304347826086957, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.050543478260869565, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:49,053 INFO control channels=(1000, 1922, 1367, 1000) move={'vx': 0.24913043478260868, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.050543478260869565, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:49,108 INFO control channels=(1000, 1948, 1367, 1000) move={'vx': 0.26608695652173914, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.050543478260869565, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:49,162 INFO control channels=(1000, 1988, 1364, 1000) move={'vx': 0.29217391304347823, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.05217391304347826, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:49,215 INFO control channels=(1000, 2000, 1364, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.05217391304347826, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:50,721 INFO control channels=(1000, 2000, 1362, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.05326086956521739, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:50,825 INFO control channels=(1078, 2000, 1362, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.6643478260869565} head={'neck_pitch': 0.0, 'head_pitch': 0.05326086956521739, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:50,878 INFO control channels=(1136, 2000, 1362, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.5634782608695653} head={'neck_pitch': 0.0, 'head_pitch': 0.05326086956521739, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:50,932 INFO control channels=(1207, 2000, 1360, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.43999999999999995} head={'neck_pitch': 0.0, 'head_pitch': 0.05434782608695652, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:50,985 INFO control channels=(1258, 2000, 1360, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.35130434782608694} head={'neck_pitch': 0.0, 'head_pitch': 0.05434782608695652, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:51,037 INFO control channels=(1267, 2000, 1360, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.3356521739130435} head={'neck_pitch': 0.0, 'head_pitch': 0.05434782608695652, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:51,087 INFO control channels=(1269, 2000, 1358, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.33217391304347826} head={'neck_pitch': 0.0, 'head_pitch': 0.05543478260869564, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:51,139 INFO control channels=(1278, 2000, 1353, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.3165217391304348} head={'neck_pitch': 0.0, 'head_pitch': 0.05815217391304347, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:51,191 INFO control channels=(1291, 2000, 1351, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.2939130434782608} head={'neck_pitch': 0.0, 'head_pitch': 0.0592391304347826, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:51,242 INFO control channels=(1311, 2000, 1351, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.25913043478260867} head={'neck_pitch': 0.0, 'head_pitch': 0.0592391304347826, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:51,295 INFO control channels=(1313, 2000, 1351, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.25565217391304346} head={'neck_pitch': 0.0, 'head_pitch': 0.0592391304347826, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:51,348 INFO control channels=(1320, 2000, 1351, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.2434782608695652} head={'neck_pitch': 0.0, 'head_pitch': 0.0592391304347826, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:51,399 INFO control channels=(1342, 2000, 1351, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.2052173913043478} head={'neck_pitch': 0.0, 'head_pitch': 0.0592391304347826, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:51,450 INFO control channels=(1351, 2000, 1351, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.18956521739130433} head={'neck_pitch': 0.0, 'head_pitch': 0.0592391304347826, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:51,503 INFO control channels=(1400, 2000, 1351, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.10434782608695653} head={'neck_pitch': 0.0, 'head_pitch': 0.0592391304347826, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:51,556 INFO control channels=(1462, 2000, 1351, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.0592391304347826, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:51,607 INFO control channels=(1478, 2000, 1380, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.04347826086956521, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:51,659 INFO control channels=(1478, 2000, 1396, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.034782608695652174, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:51,712 INFO control channels=(1478, 2000, 1640, 1231) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.05434782608695652, 'head_yaw': 0.19913043478260872, 'head_roll': 0.0}
+2026-11-06 14:01:51,763 INFO control channels=(1478, 2000, 1737, 1362) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.10706521739130433, 'head_yaw': 0.08521739130434783, 'head_roll': 0.0}
+2026-11-06 14:01:51,813 INFO control channels=(1478, 2000, 1848, 1493) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.16739130434782606, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:51,868 INFO control channels=(1478, 2000, 1886, 1542) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.18804347826086956, 'head_yaw': -0.0017391304347826103, 'head_roll': 0.0}
+2026-11-06 14:01:51,922 INFO control channels=(1478, 2000, 1933, 1588) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.21358695652173912, 'head_yaw': -0.041739130434782605, 'head_roll': 0.0}
+2026-11-06 14:01:51,975 INFO control channels=(1478, 2000, 1944, 1593) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.21956521739130436, 'head_yaw': -0.04608695652173913, 'head_roll': 0.0}
+2026-11-06 14:01:52,128 INFO control channels=(1476, 2000, 1935, 1593) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.21467391304347827, 'head_yaw': -0.04608695652173913, 'head_roll': 0.0}
+2026-11-06 14:01:52,179 INFO control channels=(1473, 2000, 1931, 1593) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.2125, 'head_yaw': -0.04608695652173913, 'head_roll': 0.0}
+2026-11-06 14:01:52,230 INFO control channels=(1473, 2000, 1928, 1593) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.2108695652173913, 'head_yaw': -0.04608695652173913, 'head_roll': 0.0}
+2026-11-06 14:01:52,333 INFO control channels=(1471, 2000, 1926, 1593) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.20978260869565216, 'head_yaw': -0.04608695652173913, 'head_roll': 0.0}
+2026-11-06 14:01:52,437 INFO control channels=(1469, 2000, 1917, 1593) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.20489130434782607, 'head_yaw': -0.04608695652173913, 'head_roll': 0.0}
+2026-11-06 14:01:52,490 INFO control channels=(1469, 2000, 1855, 1593) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.17119565217391303, 'head_yaw': -0.04608695652173913, 'head_roll': 0.0}
+2026-11-06 14:01:52,543 INFO control channels=(1469, 2000, 1706, 1575) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.09021739130434782, 'head_yaw': -0.03043478260869565, 'head_roll': 0.0}
+2026-11-06 14:01:52,595 INFO control channels=(1469, 2000, 1571, 1571) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.016847826086956518, 'head_yaw': -0.02695652173913043, 'head_roll': 0.0}
+2026-11-06 14:01:52,645 INFO control channels=(1467, 2000, 1418, 1551) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.02282608695652174, 'head_yaw': -0.009565217391304344, 'head_roll': 0.0}
+2026-11-06 14:01:52,699 INFO control channels=(1467, 2000, 1240, 1531) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.11956521739130434, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:52,752 INFO control channels=(1462, 2000, 1027, 1524) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.23532608695652174, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:52,803 INFO control channels=(1462, 2000, 1002, 1524) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.24891304347826088, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:52,856 INFO control channels=(1462, 2000, 1000, 1524) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.25, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:52,922 INFO status armed=True owner=172.20.10.1 accepted=3378 invalid=6 foreign=0 waiting_neutral=0
+2026-11-06 14:01:54,000 INFO control channels=(1458, 2000, 1004, 1506) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.0034782608695652206} head={'neck_pitch': 0.0, 'head_pitch': 0.24782608695652172, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:54,055 INFO control channels=(1458, 2000, 1018, 1506) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.0034782608695652206} head={'neck_pitch': 0.0, 'head_pitch': 0.24021739130434783, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:54,263 INFO control channels=(1453, 2000, 1489, 1506) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.012173913043478259} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:54,315 INFO control channels=(1451, 2000, 1851, 1520) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.01565217391304348} head={'neck_pitch': 0.0, 'head_pitch': -0.16902173913043478, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:54,367 INFO control channels=(1447, 2000, 2000, 1551) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.02260869565217391} head={'neck_pitch': 0.0, 'head_pitch': -0.25, 'head_yaw': -0.009565217391304344, 'head_roll': 0.0}
+2026-11-06 14:01:54,419 INFO control channels=(1447, 2000, 2000, 1555) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.02260869565217391} head={'neck_pitch': 0.0, 'head_pitch': -0.25, 'head_yaw': -0.013043478260869566, 'head_roll': 0.0}
+2026-11-06 14:01:54,473 INFO control channels=(1447, 2000, 2000, 1557) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.02260869565217391} head={'neck_pitch': 0.0, 'head_pitch': -0.25, 'head_yaw': -0.014782608695652176, 'head_roll': 0.0}
+2026-11-06 14:01:54,524 INFO control channels=(1444, 2000, 2000, 1557) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.02782608695652174} head={'neck_pitch': 0.0, 'head_pitch': -0.25, 'head_yaw': -0.014782608695652176, 'head_roll': 0.0}
+2026-11-06 14:01:54,575 INFO control channels=(1442, 2000, 2000, 1557) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.03130434782608696} head={'neck_pitch': 0.0, 'head_pitch': -0.25, 'head_yaw': -0.014782608695652176, 'head_roll': 0.0}
+2026-11-06 14:01:54,682 INFO control channels=(1440, 2000, 2000, 1553) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.03478260869565217} head={'neck_pitch': 0.0, 'head_pitch': -0.25, 'head_yaw': -0.011304347826086955, 'head_roll': 0.0}
+2026-11-06 14:01:54,735 INFO control channels=(1440, 2000, 2000, 1551) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.03478260869565217} head={'neck_pitch': 0.0, 'head_pitch': -0.25, 'head_yaw': -0.009565217391304344, 'head_roll': 0.0}
+2026-11-06 14:01:54,786 INFO control channels=(1440, 2000, 2000, 1548) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.03478260869565217} head={'neck_pitch': 0.0, 'head_pitch': -0.25, 'head_yaw': -0.006956521739130435, 'head_roll': 0.0}
+2026-11-06 14:01:54,838 INFO control channels=(1440, 2000, 2000, 1546) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.03478260869565217} head={'neck_pitch': 0.0, 'head_pitch': -0.25, 'head_yaw': -0.005217391304347825, 'head_roll': 0.0}
+2026-11-06 14:01:54,992 INFO control channels=(1440, 2000, 2000, 1544) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.03478260869565217} head={'neck_pitch': 0.0, 'head_pitch': -0.25, 'head_yaw': -0.003478260869565214, 'head_roll': 0.0}
+2026-11-06 14:01:55,306 INFO control channels=(1440, 2000, 2000, 1504) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.03478260869565217} head={'neck_pitch': 0.0, 'head_pitch': -0.25, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 14:01:55,358 INFO control channels=(1440, 2000, 1824, 1382) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.03478260869565217} head={'neck_pitch': 0.0, 'head_pitch': -0.15434782608695652, 'head_yaw': 0.06782608695652173, 'head_roll': 0.0}
+2026-11-06 14:01:55,408 INFO control channels=(1440, 2000, 1635, 1336) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.03478260869565217} head={'neck_pitch': 0.0, 'head_pitch': -0.051630434782608696, 'head_yaw': 0.10782608695652174, 'head_roll': 0.0}
+2026-11-06 14:01:55,462 INFO control channels=(1440, 2000, 1591, 1260) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.03478260869565217} head={'neck_pitch': 0.0, 'head_pitch': -0.027717391304347822, 'head_yaw': 0.17391304347826086, 'head_roll': 0.0}
+2026-11-06 14:01:55,513 INFO control channels=(1440, 2000, 1631, 1120) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.03478260869565217} head={'neck_pitch': 0.0, 'head_pitch': -0.049456521739130434, 'head_yaw': 0.2956521739130435, 'head_roll': 0.0}
+2026-11-06 14:01:55,563 INFO control channels=(1440, 2000, 1648, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.03478260869565217} head={'neck_pitch': 0.0, 'head_pitch': -0.05869565217391303, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:55,618 INFO control channels=(1440, 2000, 1642, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.03478260869565217} head={'neck_pitch': 0.0, 'head_pitch': -0.05543478260869564, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:55,670 INFO control channels=(1440, 2000, 1575, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.03478260869565217} head={'neck_pitch': 0.0, 'head_pitch': -0.01902173913043478, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:55,721 INFO control channels=(1440, 2000, 1502, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.03478260869565217} head={'neck_pitch': 0.0, 'head_pitch': -0.0, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:56,136 INFO control channels=(1440, 2000, 1451, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.03478260869565217} head={'neck_pitch': 0.0, 'head_pitch': 0.004891304347826087, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:56,187 INFO control channels=(1440, 2000, 1447, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.03478260869565217} head={'neck_pitch': 0.0, 'head_pitch': 0.007065217391304346, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:56,241 INFO control channels=(1440, 2000, 1442, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.03478260869565217} head={'neck_pitch': 0.0, 'head_pitch': 0.009782608695652175, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:56,293 INFO control channels=(1440, 2000, 1440, 1000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.03478260869565217} head={'neck_pitch': 0.0, 'head_pitch': 0.010869565217391302, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 14:01:56,344 INFO control channels=(1440, 2000, 1626, 1364) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.03478260869565217} head={'neck_pitch': 0.0, 'head_pitch': -0.0467391304347826, 'head_yaw': 0.08347826086956522, 'head_roll': 0.0}
+2026-11-06 14:01:56,395 INFO control channels=(1440, 2000, 1660, 1602) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.03478260869565217} head={'neck_pitch': 0.0, 'head_pitch': -0.06521739130434782, 'head_yaw': -0.05391304347826086, 'head_roll': 0.0}
+2026-11-06 14:01:56,446 INFO control channels=(1440, 2000, 1644, 1724) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.03478260869565217} head={'neck_pitch': 0.0, 'head_pitch': -0.05652173913043477, 'head_yaw': -0.16, 'head_roll': 0.0}
+2026-11-06 14:01:56,498 INFO control channels=(1440, 2000, 1613, 1848) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.03478260869565217} head={'neck_pitch': 0.0, 'head_pitch': -0.03967391304347826, 'head_yaw': -0.2678260869565217, 'head_roll': 0.0}
+2026-11-06 14:01:56,549 INFO control channels=(1440, 2000, 1613, 1880) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.03478260869565217} head={'neck_pitch': 0.0, 'head_pitch': -0.03967391304347826, 'head_yaw': -0.2956521739130435, 'head_roll': 0.0}
+2026-11-06 14:01:56,603 INFO control channels=(1440, 2000, 1613, 1962) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.03478260869565217} head={'neck_pitch': 0.0, 'head_pitch': -0.03967391304347826, 'head_yaw': -0.36695652173913046, 'head_roll': 0.0}
+2026-11-06 14:01:56,654 INFO control channels=(1440, 2000, 1613, 2000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.03478260869565217} head={'neck_pitch': 0.0, 'head_pitch': -0.03967391304347826, 'head_yaw': -0.4, 'head_roll': 0.0}
+2026-11-06 14:01:56,705 INFO control channels=(1440, 2000, 1617, 2000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.03478260869565217} head={'neck_pitch': 0.0, 'head_pitch': -0.04184782608695653, 'head_yaw': -0.4, 'head_roll': 0.0}
+2026-11-06 14:01:56,807 INFO control channels=(1440, 2000, 1620, 2000) move={'vx': 0.3, 'vy': 0.0, 'vyaw': 0.03478260869565217} head={'neck_pitch': 0.0, 'head_pitch': -0.04347826086956521, 'head_yaw': -0.4, 'head_roll': 0.0}

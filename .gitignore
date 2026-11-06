@@ -1,0 +1,19 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+!.env.*.example
+.secrets/
+*.pem
+*.key
+.tools/
+.runtime/
+__pycache__/
+
+# Local dependency directories or sibling-checkout symlinks; never vendor their history.
+/microduck
+/microduck_rl
+/.tools
+/.runtime
+.venv/
+*.pyc

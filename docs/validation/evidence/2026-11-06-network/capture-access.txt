@@ -1,0 +1,4 @@
+tcpdump en0: BPF permission denied.
+pfctl -s info: /dev/pf permission denied.
+sudo -n: password required.
+No firewall, PF, VPN or route settings changed.

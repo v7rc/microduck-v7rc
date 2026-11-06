@@ -1,0 +1,2 @@
+PASS: existing V7RC SDK assembled 15 out-of-order fragments into byte-identical 640x360 full JPEG
+PASS: Apple ImageIO decoded assembled JPEG as 640x360 pixels

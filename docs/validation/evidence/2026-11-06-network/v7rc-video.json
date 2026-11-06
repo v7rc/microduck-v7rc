@@ -1,0 +1,26 @@
+{
+  "published_monotonic": 1171050.282156291,
+  "active": false,
+  "peer": [
+    "127.0.0.1",
+    49942
+  ],
+  "command_port": 8800,
+  "source_port": 1234,
+  "frames": 60,
+  "packets": 833,
+  "tx_fps": 0,
+  "invalid": 390,
+  "probes": 10,
+  "feedback": 0,
+  "last_datagram": {
+    "sender": [
+      "172.20.10.1",
+      54656
+    ],
+    "bytes": 20,
+    "prefix_hex": "5352543135303832",
+    "kind": null,
+    "monotonic": 1171050.26094175
+  }
+}

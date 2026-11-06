@@ -1,0 +1,158 @@
+2026-11-06 13:36:17,576 INFO listening udp=0.0.0.0:6188 protocol=SRT socket=/tmp/microduck-m4-501/.runtime/duck-sim/duck-a.sock timeout=0.300s; waiting for neutral
+2026-11-06 13:36:17,576 INFO robotd connected; neutral SRT required
+2026-11-06 13:36:17,576 INFO status armed=False owner=None accepted=0 invalid=0 foreign=0 waiting_neutral=0
+2026-11-06 13:36:22,577 INFO status armed=False owner=None accepted=0 invalid=0 foreign=0 waiting_neutral=0
+2026-11-06 13:36:27,599 INFO status armed=False owner=None accepted=0 invalid=0 foreign=0 waiting_neutral=0
+2026-11-06 13:36:32,622 INFO status armed=False owner=None accepted=0 invalid=0 foreign=0 waiting_neutral=0
+2026-11-06 13:36:37,629 INFO status armed=False owner=None accepted=0 invalid=0 foreign=0 waiting_neutral=0
+2026-11-06 13:36:42,651 INFO status armed=False owner=None accepted=0 invalid=0 foreign=0 waiting_neutral=0
+2026-11-06 13:36:47,656 INFO status armed=False owner=None accepted=0 invalid=0 foreign=0 waiting_neutral=0
+2026-11-06 13:36:52,663 INFO status armed=False owner=None accepted=0 invalid=0 foreign=0 waiting_neutral=0
+2026-11-06 13:36:57,684 INFO status armed=False owner=None accepted=0 invalid=0 foreign=0 waiting_neutral=0
+2026-11-06 13:37:02,692 INFO status armed=False owner=None accepted=0 invalid=0 foreign=0 waiting_neutral=0
+2026-11-06 13:37:07,705 INFO status armed=False owner=None accepted=0 invalid=0 foreign=0 waiting_neutral=0
+2026-11-06 13:37:12,709 INFO status armed=False owner=None accepted=0 invalid=0 foreign=0 waiting_neutral=0
+2026-11-06 13:37:17,714 INFO status armed=False owner=None accepted=0 invalid=0 foreign=0 waiting_neutral=0
+2026-11-06 13:37:22,737 INFO status armed=False owner=None accepted=0 invalid=0 foreign=0 waiting_neutral=0
+2026-11-06 13:37:27,739 INFO status armed=False owner=None accepted=0 invalid=0 foreign=0 waiting_neutral=0
+2026-11-06 13:37:32,739 INFO status armed=False owner=None accepted=0 invalid=0 foreign=0 waiting_neutral=0
+2026-11-06 13:37:34,103 INFO armed sender=172.20.10.2 after neutral SRT frame
+2026-11-06 13:37:34,129 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:37:35,158 INFO control channels=(1500, 2000, 1500, 1500) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:37:37,741 INFO status armed=True owner=172.20.10.2 accepted=38 invalid=0 foreign=0 waiting_neutral=0
+2026-11-06 13:37:42,758 INFO status armed=True owner=172.20.10.2 accepted=88 invalid=0 foreign=0 waiting_neutral=0
+2026-11-06 13:37:43,422 WARNING UDP input expired; zeroing movement/head; neutral required
+2026-11-06 13:37:46,119 INFO armed sender=172.20.10.2 after neutral SRT frame
+2026-11-06 13:37:46,140 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:37:46,648 INFO control channels=(1000, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:37:47,775 INFO status armed=True owner=172.20.10.2 accepted=110 invalid=0 foreign=0 waiting_neutral=11
+2026-11-06 13:37:52,674 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:37:52,779 INFO status armed=True owner=172.20.10.2 accepted=161 invalid=0 foreign=0 waiting_neutral=11
+2026-11-06 13:37:53,654 INFO control channels=(2000, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:37:57,793 INFO status armed=True owner=172.20.10.2 accepted=212 invalid=0 foreign=0 waiting_neutral=11
+2026-11-06 13:37:59,647 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:38:00,667 INFO control channels=(1500, 1500, 2000, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': -0.4, 'head_roll': 0.0}
+2026-11-06 13:38:02,663 INFO control channels=(1500, 1500, 1000, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:38:02,814 INFO status armed=True owner=172.20.10.2 accepted=265 invalid=0 foreign=0 waiting_neutral=11
+2026-11-06 13:38:04,660 INFO control channels=(1500, 1500, 1500, 2000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.25, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:38:06,655 INFO control channels=(1500, 1500, 1500, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.25, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:38:07,821 INFO status armed=True owner=172.20.10.2 accepted=317 invalid=0 foreign=0 waiting_neutral=11
+2026-11-06 13:38:08,959 WARNING UDP input expired; zeroing movement/head; neutral required
+2026-11-06 13:38:10,664 INFO armed sender=172.20.10.2 after neutral SRT frame
+2026-11-06 13:38:10,678 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:38:11,031 WARNING UDP input expired; zeroing movement/head; neutral required
+2026-11-06 13:38:12,842 INFO status armed=False owner=172.20.10.2 accepted=329 invalid=21 foreign=0 waiting_neutral=11
+2026-11-06 13:38:17,849 INFO status armed=False owner=172.20.10.2 accepted=329 invalid=21 foreign=0 waiting_neutral=11
+2026-11-06 13:38:22,849 INFO status armed=False owner=172.20.10.2 accepted=329 invalid=21 foreign=0 waiting_neutral=11
+2026-11-06 13:38:27,855 INFO status armed=False owner=172.20.10.2 accepted=329 invalid=21 foreign=0 waiting_neutral=11
+2026-11-06 13:38:32,857 INFO status armed=False owner=172.20.10.2 accepted=329 invalid=21 foreign=0 waiting_neutral=11
+2026-11-06 13:38:37,869 INFO status armed=False owner=172.20.10.2 accepted=329 invalid=21 foreign=0 waiting_neutral=11
+2026-11-06 13:38:42,874 INFO status armed=False owner=172.20.10.2 accepted=329 invalid=21 foreign=0 waiting_neutral=11
+2026-11-06 13:38:47,875 INFO status armed=False owner=172.20.10.2 accepted=329 invalid=21 foreign=0 waiting_neutral=11
+2026-11-06 13:38:52,877 INFO status armed=False owner=172.20.10.2 accepted=329 invalid=21 foreign=0 waiting_neutral=11
+2026-11-06 13:38:57,883 INFO status armed=False owner=172.20.10.2 accepted=329 invalid=21 foreign=0 waiting_neutral=11
+2026-11-06 13:39:02,888 INFO status armed=False owner=172.20.10.2 accepted=329 invalid=21 foreign=0 waiting_neutral=11
+2026-11-06 13:39:07,897 INFO status armed=False owner=172.20.10.2 accepted=329 invalid=21 foreign=0 waiting_neutral=11
+2026-11-06 13:39:12,899 INFO status armed=False owner=172.20.10.2 accepted=329 invalid=21 foreign=0 waiting_neutral=11
+2026-11-06 13:39:17,922 INFO status armed=False owner=172.20.10.2 accepted=329 invalid=21 foreign=0 waiting_neutral=11
+2026-11-06 13:39:22,938 INFO status armed=False owner=172.20.10.2 accepted=329 invalid=21 foreign=0 waiting_neutral=11
+2026-11-06 13:39:27,959 INFO status armed=False owner=172.20.10.2 accepted=329 invalid=21 foreign=0 waiting_neutral=11
+2026-11-06 13:39:32,960 INFO status armed=False owner=172.20.10.2 accepted=329 invalid=21 foreign=0 waiting_neutral=11
+2026-11-06 13:39:37,981 INFO status armed=False owner=172.20.10.2 accepted=329 invalid=21 foreign=0 waiting_neutral=11
+2026-11-06 13:39:42,982 INFO status armed=False owner=172.20.10.2 accepted=329 invalid=21 foreign=0 waiting_neutral=11
+2026-11-06 13:39:47,983 INFO status armed=False owner=172.20.10.2 accepted=329 invalid=21 foreign=0 waiting_neutral=11
+2026-11-06 13:39:48,780 INFO armed sender=172.20.10.2 after neutral SRT frame
+2026-11-06 13:39:48,800 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:39:49,825 INFO control channels=(1500, 2000, 1500, 1500) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:39:52,986 INFO status armed=True owner=172.20.10.2 accepted=373 invalid=21 foreign=0 waiting_neutral=11
+2026-11-06 13:39:57,997 INFO status armed=True owner=172.20.10.2 accepted=421 invalid=21 foreign=0 waiting_neutral=11
+2026-11-06 13:39:58,097 WARNING UDP input expired; zeroing movement/head; neutral required
+2026-11-06 13:40:00,798 INFO armed sender=172.20.10.2 after neutral SRT frame
+2026-11-06 13:40:00,842 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:40:01,351 INFO control channels=(1000, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:40:03,005 INFO status armed=True owner=172.20.10.2 accepted=445 invalid=21 foreign=0 waiting_neutral=22
+2026-11-06 13:40:07,322 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:40:08,007 INFO status armed=True owner=172.20.10.2 accepted=495 invalid=21 foreign=0 waiting_neutral=22
+2026-11-06 13:40:08,340 INFO control channels=(2000, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:40:13,014 INFO status armed=True owner=172.20.10.2 accepted=547 invalid=21 foreign=0 waiting_neutral=22
+2026-11-06 13:40:14,365 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:40:15,324 INFO control channels=(1500, 1500, 2000, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': -0.4, 'head_roll': 0.0}
+2026-11-06 13:40:17,372 INFO control channels=(1500, 1500, 1000, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:40:18,029 INFO status armed=True owner=172.20.10.2 accepted=599 invalid=21 foreign=0 waiting_neutral=22
+2026-11-06 13:40:19,365 INFO control channels=(1500, 1500, 1500, 2000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.25, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:40:21,353 INFO control channels=(1500, 1500, 1500, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.25, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:40:23,042 INFO status armed=True owner=172.20.10.2 accepted=652 invalid=21 foreign=0 waiting_neutral=22
+2026-11-06 13:40:23,649 WARNING UDP input expired; zeroing movement/head; neutral required
+2026-11-06 13:40:25,351 INFO armed sender=172.20.10.2 after neutral SRT frame
+2026-11-06 13:40:25,401 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:40:25,727 WARNING UDP input expired; zeroing movement/head; neutral required
+2026-11-06 13:40:28,056 INFO status armed=False owner=172.20.10.2 accepted=658 invalid=42 foreign=0 waiting_neutral=22
+2026-11-06 13:40:33,071 INFO status armed=False owner=172.20.10.2 accepted=658 invalid=42 foreign=0 waiting_neutral=22
+2026-11-06 13:40:38,073 INFO status armed=False owner=172.20.10.2 accepted=658 invalid=42 foreign=0 waiting_neutral=22
+2026-11-06 13:40:43,074 INFO status armed=False owner=172.20.10.2 accepted=658 invalid=42 foreign=0 waiting_neutral=22
+2026-11-06 13:40:48,076 INFO status armed=False owner=172.20.10.2 accepted=658 invalid=42 foreign=0 waiting_neutral=22
+2026-11-06 13:40:53,098 INFO status armed=False owner=172.20.10.2 accepted=658 invalid=42 foreign=0 waiting_neutral=22
+2026-11-06 13:40:54,898 INFO armed sender=172.20.10.2 after neutral SRT frame
+2026-11-06 13:40:54,941 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:40:55,909 INFO control channels=(1500, 2000, 1500, 1500) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:40:58,109 INFO status armed=True owner=172.20.10.2 accepted=692 invalid=42 foreign=0 waiting_neutral=22
+2026-11-06 13:41:03,118 INFO status armed=True owner=172.20.10.2 accepted=742 invalid=42 foreign=0 waiting_neutral=22
+2026-11-06 13:41:04,216 WARNING UDP input expired; zeroing movement/head; neutral required
+2026-11-06 13:41:06,923 INFO armed sender=172.20.10.2 after neutral SRT frame
+2026-11-06 13:41:06,929 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:41:07,440 INFO control channels=(1000, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:41:08,130 INFO status armed=True owner=172.20.10.2 accepted=763 invalid=42 foreign=0 waiting_neutral=33
+2026-11-06 13:41:13,134 INFO status armed=True owner=172.20.10.2 accepted=814 invalid=42 foreign=0 waiting_neutral=33
+2026-11-06 13:41:13,472 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:41:14,441 INFO control channels=(2000, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:41:18,141 INFO status armed=True owner=172.20.10.2 accepted=866 invalid=42 foreign=0 waiting_neutral=33
+2026-11-06 13:41:20,457 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:41:21,478 INFO control channels=(1500, 1500, 2000, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': -0.4, 'head_roll': 0.0}
+2026-11-06 13:41:23,155 INFO status armed=True owner=172.20.10.2 accepted=918 invalid=42 foreign=0 waiting_neutral=33
+2026-11-06 13:41:23,467 INFO control channels=(1500, 1500, 1000, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:41:25,460 INFO control channels=(1500, 1500, 1500, 2000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.25, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:41:27,505 INFO control channels=(1500, 1500, 1500, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.25, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:41:28,167 INFO status armed=True owner=172.20.10.2 accepted=971 invalid=42 foreign=0 waiting_neutral=33
+2026-11-06 13:41:29,773 WARNING UDP input expired; zeroing movement/head; neutral required
+2026-11-06 13:41:31,475 INFO armed sender=172.20.10.2 after neutral SRT frame
+2026-11-06 13:41:31,478 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:41:31,859 WARNING UDP input expired; zeroing movement/head; neutral required
+2026-11-06 13:41:33,174 INFO status armed=False owner=172.20.10.2 accepted=987 invalid=63 foreign=0 waiting_neutral=33
+2026-11-06 13:41:38,183 INFO status armed=False owner=172.20.10.2 accepted=987 invalid=63 foreign=0 waiting_neutral=33
+2026-11-06 13:41:43,192 INFO status armed=False owner=172.20.10.2 accepted=987 invalid=63 foreign=0 waiting_neutral=33
+2026-11-06 13:41:48,206 INFO status armed=False owner=172.20.10.2 accepted=987 invalid=63 foreign=0 waiting_neutral=33
+2026-11-06 13:41:53,207 INFO status armed=False owner=172.20.10.2 accepted=987 invalid=63 foreign=0 waiting_neutral=33
+2026-11-06 13:41:58,210 INFO status armed=False owner=172.20.10.2 accepted=987 invalid=63 foreign=0 waiting_neutral=33
+2026-11-06 13:41:58,739 INFO armed sender=172.20.10.2 after neutral SRT frame
+2026-11-06 13:41:58,788 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:42:01,753 INFO control channels=(1500, 2000, 1500, 1500) move={'vx': 0.3, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:42:03,213 INFO status armed=True owner=172.20.10.2 accepted=1033 invalid=63 foreign=0 waiting_neutral=33
+2026-11-06 13:42:08,220 INFO status armed=True owner=172.20.10.2 accepted=1083 invalid=63 foreign=0 waiting_neutral=33
+2026-11-06 13:42:10,051 WARNING UDP input expired; zeroing movement/head; neutral required
+2026-11-06 13:42:12,757 INFO armed sender=172.20.10.2 after neutral SRT frame
+2026-11-06 13:42:12,768 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:42:13,230 INFO status armed=True owner=172.20.10.2 accepted=1104 invalid=63 foreign=0 waiting_neutral=44
+2026-11-06 13:42:13,281 INFO control channels=(1000, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': 0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:42:18,234 INFO status armed=True owner=172.20.10.2 accepted=1155 invalid=63 foreign=0 waiting_neutral=44
+2026-11-06 13:42:19,314 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:42:20,277 INFO control channels=(2000, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.8} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:42:23,241 INFO status armed=True owner=172.20.10.2 accepted=1207 invalid=63 foreign=0 waiting_neutral=44
+2026-11-06 13:42:26,305 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:42:27,336 INFO control channels=(1500, 1500, 2000, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': -0.4, 'head_roll': 0.0}
+2026-11-06 13:42:28,248 INFO status armed=True owner=172.20.10.2 accepted=1259 invalid=63 foreign=0 waiting_neutral=44
+2026-11-06 13:42:29,331 INFO control channels=(1500, 1500, 1000, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': 0.4, 'head_roll': 0.0}
+2026-11-06 13:42:31,322 INFO control channels=(1500, 1500, 1500, 2000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.25, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:42:33,257 INFO status armed=True owner=172.20.10.2 accepted=1311 invalid=63 foreign=0 waiting_neutral=44
+2026-11-06 13:42:33,315 INFO control channels=(1500, 1500, 1500, 1000) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.25, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:42:35,611 WARNING UDP input expired; zeroing movement/head; neutral required
+2026-11-06 13:42:37,311 INFO armed sender=172.20.10.2 after neutral SRT frame
+2026-11-06 13:42:37,354 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': -0.0, 'head_roll': 0.0}
+2026-11-06 13:42:37,682 WARNING UDP input expired; zeroing movement/head; neutral required
+2026-11-06 13:42:38,263 INFO status armed=False owner=172.20.10.2 accepted=1336 invalid=84 foreign=0 waiting_neutral=44
+2026-11-06 13:42:43,275 INFO status armed=False owner=172.20.10.2 accepted=1336 invalid=84 foreign=0 waiting_neutral=44
+2026-11-06 13:42:48,300 INFO status armed=False owner=172.20.10.2 accepted=1336 invalid=84 foreign=0 waiting_neutral=44
+2026-11-06 13:42:53,303 INFO status armed=False owner=172.20.10.2 accepted=1336 invalid=84 foreign=0 waiting_neutral=44
+2026-11-06 13:42:58,327 INFO status armed=False owner=172.20.10.2 accepted=1336 invalid=84 foreign=0 waiting_neutral=44
+2026-11-06 13:43:03,328 INFO status armed=False owner=172.20.10.2 accepted=1336 invalid=84 foreign=0 waiting_neutral=44
+2026-11-06 13:43:08,329 INFO status armed=False owner=172.20.10.2 accepted=1336 invalid=84 foreign=0 waiting_neutral=44
+2026-11-06 13:43:11,979 INFO bridge stopped; neutral requested

@@ -1,0 +1,26 @@
+robot     healthy
+  loop      50.1 of 50.0 Hz · 2471 ticks · 0 missed · last 3 ms ago
+  bus       ok
+  imu       ready
+  battery   7.40 V (50%)
+  motors    32 °C max (left_hip_yaw) · 32 °C mean
+board     zero3 (not declared)
+central   not signed in: reachable on its own network only · `robotctl account login`
+
+software
+  updaterd  0.18.6 (rev unknown)
+  robotd    0.18.6 (rev unknown)
+  configd   0.18.6 (rev unknown)
+  daemon    none installed
+            source not checked yet (`robotctl update check` checks it now)
+
+units
+  updaterd  unknown · 0.18.6 (not a release)
+  robotd    unknown · 0.18.6 (not a release)
+  configd   unknown · 0.18.6 (not a release)
+  btd       unknown
+  padd      unknown
+  netpadd   unknown
+  mediad    unknown
+  tofd      unknown · 0.18.6 (not a release)
+  nfcd      unknown

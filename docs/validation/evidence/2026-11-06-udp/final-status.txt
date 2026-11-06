@@ -1,0 +1,30 @@
+robot     healthy
+  loop      50.0 of 50.0 Hz · 7078 ticks · 0 missed · last 12 ms ago
+  bus       ok
+  imu       ready
+  battery   7.40 V (50%)
+  motors    32 °C max (left_hip_yaw) · 32 °C mean
+board     zero3 (not declared)
+central   not signed in: reachable on its own network only · `robotctl account login`
+
+software
+  updaterd  0.18.6 (rev unknown)
+  robotd    0.18.6 (rev unknown)
+  configd   0.18.6 (rev unknown)
+  daemon    none installed
+            source not checked yet (`robotctl update check` checks it now)
+
+units
+  updaterd  unknown · 0.18.6 (not a release)
+  robotd    unknown · 0.18.6 (not a release)
+  configd   unknown · 0.18.6 (not a release)
+  btd       unknown
+  padd      unknown
+  netpadd   unknown
+  mediad    unknown
+  tofd      unknown · 0.18.6 (not a release)
+  nfcd      unknown
+COMMAND     PID        USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+python3.1 10801 louischuang    3u  IPv4 0x4e27227fd984cfca      0t0  UDP *:6188
+2026-11-06 13:45:52,001 INFO control channels=(1500, 1500, 1720, 1227) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': -0.1266304347826087, 'head_yaw': -0.15652173913043477, 'head_roll': 0.0}
+2026-11-06 13:45:52,730 INFO control channels=(1500, 1500, 1500, 1500) move={'vx': 0.0, 'vy': 0.0, 'vyaw': -0.0} head={'neck_pitch': 0.0, 'head_pitch': 0.0, 'head_yaw': -0.0, 'head_roll': 0.0}

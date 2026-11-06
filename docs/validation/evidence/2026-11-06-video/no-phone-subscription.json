@@ -1,0 +1,1 @@
+{"published_monotonic": 1170041.519167791, "active": false, "peer": ["127.0.0.1", 49942], "command_port": 8800, "source_port": 1234, "frames": 60, "packets": 833, "tx_fps": 0, "invalid": 0, "probes": 10, "feedback": 0, "last_datagram": {"sender": ["127.0.0.1", 49942], "bytes": 4, "prefix_hex": "ef000400", "kind": "probe", "monotonic": 1169932.838247458}}

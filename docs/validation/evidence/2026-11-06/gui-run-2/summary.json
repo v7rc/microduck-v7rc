@@ -1,0 +1,81 @@
+{
+  "started_at": "2026-11-06T05:16:07.995972+00:00",
+  "scope": "CPU MuJoCo physics + real robotd, no physical robot or V7RC",
+  "thresholds": {
+    "min_trunk_m": 0.095,
+    "max_tilt_deg": 30,
+    "min_forward_m": 0.3,
+    "min_signed_turn_deg": 30,
+    "min_realtime": 0.95,
+    "max_realtime": 1.05,
+    "max_idle_drift_m": 0.1
+  },
+  "phases": [
+    {
+      "name": "standing",
+      "duration_s": 10,
+      "command_vx_m_s": 0.0,
+      "command_vyaw_rad_s": 0.0,
+      "commands_sent": true,
+      "samples": 101,
+      "start_xyz_m": [
+        0.03268664704215984,
+        0.011387621753133785,
+        0.11547447989342326
+      ],
+      "end_xyz_m": [
+        0.03141623996425398,
+        0.014334801127427013,
+        0.11535605027690661
+      ],
+      "displacement_m": 0.003209330211719062,
+      "forward_displacement_m": -0.0015926846097774746,
+      "turn_deg": -0.9132794467286168,
+      "realtime_factor": 0.9998624897152979,
+      "min_trunk_m": 0.11532577752938253,
+      "max_tilt_deg": 1.4614359915982424,
+      "all_healthy": true,
+      "checks": {
+        "upright": true,
+        "realtime": true,
+        "healthy": true,
+        "idle_drift": true
+      },
+      "passed": true
+    },
+    {
+      "name": "walking",
+      "duration_s": 8,
+      "command_vx_m_s": 0.15,
+      "command_vyaw_rad_s": 0.0,
+      "commands_sent": true,
+      "samples": 81,
+      "start_xyz_m": [
+        0.03141623996425398,
+        0.014334801127427013,
+        0.11535605027690661
+      ],
+      "end_xyz_m": [
+        0.03703245996580871,
+        0.011700023899838569,
+        0.11377770498662254
+      ],
+      "displacement_m": 0.006203545610768251,
+      "forward_displacement_m": 0.005907065108273709,
+      "turn_deg": 0.681405745937426,
+      "realtime_factor": 0.9993335850198819,
+      "min_trunk_m": 0.11375473440246275,
+      "max_tilt_deg": 1.8610711129290252,
+      "all_healthy": true,
+      "checks": {
+        "upright": true,
+        "realtime": true,
+        "healthy": true,
+        "forward_movement": false
+      },
+      "passed": false
+    }
+  ],
+  "passed": false,
+  "error": "Phase failed: walking"
+}

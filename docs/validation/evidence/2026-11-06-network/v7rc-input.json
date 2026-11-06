@@ -1,0 +1,21 @@
+{
+  "published_monotonic": 1171050.7378415,
+  "last_received_monotonic": 1171013.28018025,
+  "port": 6188,
+  "pwm_min": 1000,
+  "pwm_center": 1500,
+  "pwm_max": 2000,
+  "channels": [
+    1500,
+    1500,
+    1500,
+    1500
+  ],
+  "fps": 0,
+  "received_total": 26825,
+  "armed": false,
+  "owner": "172.20.10.1",
+  "invalid": 48,
+  "robot_connected": true,
+  "timeout_s": 0.3
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "repository": "../20260920 V7RC-TOY/V7RC-TOY-Android",
+    "path": "apps/esp32-cam/camera757/Camera757ESP32/Protocol757.h",
+    "sha256": "62f3c1b7418836cbc01426e26df7664cd62b62e635a59eeb20f03fc5c4a3dec3",
+    "git_status": ""
+  },
+  {
+    "repository": "../20260920 V7RC-TOY/V7RC-TOY-Android",
+    "path": "apps/ameba-pro2/camera757/Camera757/Protocol757.h",
+    "sha256": "b6598e3d13b83922ca23fb4458dcb3b48d8c6d75a8721f64dfef6b28bc2de642",
+    "git_status": ""
+  },
+  {
+    "repository": "../20260920 V7RC-TOY/V7RC-TOY-Android",
+    "path": "ios-v7rc-ble-toy-sdk/Sources/V7RCToySDK/Camera757Codec.swift",
+    "sha256": "167cf0e82d2b61ede315356f04d0c17e334cb065c155be73e36759164f1047d2",
+    "git_status": ""
+  },
+  {
+    "repository": "../20260920 V7RC-TOY/V7RC-TOY-Android",
+    "path": "ios-v7rc-ble-toy-sdk/Sources/V7RCToySDK/Camera757JpegHeaders.swift",
+    "sha256": "fc2112c55bc2b3e14d91d678540ed10c087c74a6230dce3acf5ae3a5259400d7",
+    "git_status": ""
+  },
+  {
+    "repository": "../20260511V7RC-APP/V7RC%20IOS%20Version",
+    "path": "Vendor/V7RCToySDK/ios-v7rc-ble-toy-sdk/Sources/V7RCToySDK/Camera757Codec.swift",
+    "sha256": "167cf0e82d2b61ede315356f04d0c17e334cb065c155be73e36759164f1047d2",
+    "git_status": ""
+  },
+  {
+    "repository": "../20260511V7RC-APP/V7RC%20IOS%20Version",
+    "path": "Vendor/V7RCToySDK/ios-v7rc-ble-toy-sdk/Sources/V7RCToySDK/Camera757JpegHeaders.swift",
+    "sha256": "fc2112c55bc2b3e14d91d678540ed10c087c74a6230dce3acf5ae3a5259400d7",
+    "git_status": ""
+  },
+  {
+    "repository": "../20260511V7RC-APP/V7RC%20IOS%20Version",
+    "path": "Vendor/V7RCToySDK/ios-v7rc-ble-toy-sdk/Sources/V7RCToySDK/Camera757UDPClient.swift",
+    "sha256": "66b3dd7cccd9b900812e95b30888d04d17f4fc1e99d73496589dd5f576299481",
+    "git_status": ""
+  }
+]

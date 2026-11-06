@@ -1,0 +1,55 @@
+{"name": "standing", "duration_s": 10, "command_vx_m_s": 0.0, "command_vyaw_rad_s": 0.0, "commands_sent": true, "samples": 101, "start_xyz_m": [0.020290461914029223, 0.028514052168714915, 0.11516261300859808], "end_xyz_m": [0.018530235585098895, 0.030622558985222734, 0.11541812554792699], "displacement_m": 0.0027466702977094787, "forward_displacement_m": -0.0021866900490297384, "turn_deg": -0.8539032366154747, "realtime_factor": 0.9994597212596705, "min_trunk_m": 0.11511544481526566, "max_tilt_deg": 1.4357243114184528, "all_healthy": true, "checks": {"upright": true, "realtime": true, "healthy": true, "idle_drift": true}, "passed": true}
+{"name": "walking", "duration_s": 8, "command_vx_m_s": 0.15, "command_vyaw_rad_s": 0.0, "commands_sent": true, "samples": 81, "start_xyz_m": [0.018530235585098895, 0.030622558985222734, 0.11541812554792699], "end_xyz_m": [0.5723622661973948, -0.1464539938911362, 0.1171410135084128], "displacement_m": 0.5814516520835701, "forward_displacement_m": 0.580055706006829, "turn_deg": -9.516964791692644, "realtime_factor": 0.9999112266165916, "min_trunk_m": 0.11378489838272703, "max_tilt_deg": 3.582008668600616, "all_healthy": true, "checks": {"upright": true, "realtime": true, "healthy": true, "forward_movement": true}, "passed": true}
+{"name": "walk_expiry", "duration_s": 3, "command_vx_m_s": 0.0, "command_vyaw_rad_s": 0.0, "commands_sent": false, "samples": 31, "start_xyz_m": [0.5723622661973948, -0.1464539938911362, 0.1171410135084128], "end_xyz_m": [0.6089021280616664, -0.1682569588967138, 0.11547780632158496], "displacement_m": 0.04255033240874261, "forward_displacement_m": 0.04218168642586791, "turn_deg": 3.0268573704389508, "realtime_factor": 0.9991219939058396, "min_trunk_m": 0.11379761821698749, "max_tilt_deg": 2.8941098981033706, "all_healthy": true, "last_second_drift_m": 0.0003784707966598791, "checks": {"upright": true, "realtime": true, "healthy": true, "settled_after_expiry": true}, "passed": true}
+Traceback (most recent call last):
+  File "/Users/louischuang/CompanyStorage/嵐奕科技有限公司/第四處 技術處/正在進行中的專案/20261106 Microduck-Research/scripts/verify-simulator.py", line 130, in main
+    phase("turn_left", 6, vyaw=0.5)
+  File "/Users/louischuang/CompanyStorage/嵐奕科技有限公司/第四處 技術處/正在進行中的專案/20261106 Microduck-Research/scripts/verify-simulator.py", line 75, in phase
+    accepted = robot.rpc("robot.move", {"vx": vx, "vy": 0.0, "vyaw": vyaw})
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/louischuang/CompanyStorage/嵐奕科技有限公司/第四處 技術處/正在進行中的專案/20261106 Microduck-Research/scripts/verify-simulator.py", line 36, in rpc
+    reply = self.exchange(message)
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/louischuang/CompanyStorage/嵐奕科技有限公司/第四處 技術處/正在進行中的專案/20261106 Microduck-Research/scripts/verify-simulator.py", line 22, in exchange
+    self.file.flush()
+  File "/Users/louischuang/CompanyStorage/嵐奕科技有限公司/第四處 技術處/正在進行中的專案/20261106 Microduck-Research/.tools/python/cpython-3.12.16-macos-aarch64-none/lib/python3.12/socket.py", line 738, in write
+    return self._sock.send(b)
+           ^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/louischuang/CompanyStorage/嵐奕科技有限公司/第四處 技術處/正在進行中的專案/20261106 Microduck-Research/scripts/verify-simulator.py", line 141, in main
+    robot.rpc("robot.move", {"vx": 0.0, "vy": 0.0, "vyaw": 0.0})
+  File "/Users/louischuang/CompanyStorage/嵐奕科技有限公司/第四處 技術處/正在進行中的專案/20261106 Microduck-Research/scripts/verify-simulator.py", line 36, in rpc
+    reply = self.exchange(message)
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/louischuang/CompanyStorage/嵐奕科技有限公司/第四處 技術處/正在進行中的專案/20261106 Microduck-Research/scripts/verify-simulator.py", line 22, in exchange
+    self.file.flush()
+  File "/Users/louischuang/CompanyStorage/嵐奕科技有限公司/第四處 技術處/正在進行中的專案/20261106 Microduck-Research/.tools/python/cpython-3.12.16-macos-aarch64-none/lib/python3.12/socket.py", line 738, in write
+    return self._sock.send(b)
+           ^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/louischuang/CompanyStorage/嵐奕科技有限公司/第四處 技術處/正在進行中的專案/20261106 Microduck-Research/.tools/python/cpython-3.12.16-macos-aarch64-none/lib/python3.12/socket.py", line 738, in write
+    return self._sock.send(b)
+           ^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/louischuang/CompanyStorage/嵐奕科技有限公司/第四處 技術處/正在進行中的專案/20261106 Microduck-Research/scripts/verify-simulator.py", line 151, in <module>
+    main()
+  File "/Users/louischuang/CompanyStorage/嵐奕科技有限公司/第四處 技術處/正在進行中的專案/20261106 Microduck-Research/scripts/verify-simulator.py", line 146, in main
+    robot.close()
+  File "/Users/louischuang/CompanyStorage/嵐奕科技有限公司/第四處 技術處/正在進行中的專案/20261106 Microduck-Research/scripts/verify-simulator.py", line 42, in close
+    self.file.close()
+  File "/Users/louischuang/CompanyStorage/嵐奕科技有限公司/第四處 技術處/正在進行中的專案/20261106 Microduck-Research/.tools/python/cpython-3.12.16-macos-aarch64-none/lib/python3.12/socket.py", line 738, in write
+    return self._sock.send(b)
+           ^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe

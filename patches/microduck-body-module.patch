@@ -1,0 +1,22 @@
+diff --git a/scripts/duck-sim b/scripts/duck-sim
+index 80b4218..d93ce84 100755
+--- a/scripts/duck-sim
++++ b/scripts/duck-sim
+@@ -169,7 +169,7 @@ stop_one() {
+ down() {
+     stop_one robotd "$STATE/"
+     stop_one ether "$STATE/"
+-    stop_one body "body_server --port $PORT"
++    stop_one body "${MICRODUCK_BODY_MODULE:-mjlab_microduck.sim.body_server} --port $PORT"
+     i=0
+     while [ "$i" -lt 16 ]; do
+         stop_one "$(duck_name "$i")" "$STATE/$(duck_name "$i").sock"
+@@ -677,7 +677,7 @@ start_body() {
+         cam_args="--cameras $CAMERAS --frame-port $FRAME_PORT --camera-fps 30"
+     fi
+     # shellcheck disable=SC2086
+-    $SETSID nohup "$PY_BIN" -m mjlab_microduck.sim.body_server \
++    $SETSID nohup "$PY_BIN" -m "${MICRODUCK_BODY_MODULE:-mjlab_microduck.sim.body_server}" \
+         --port "$PORT" --ducks "$DUCKS" --keyframe "${DUCK_SIM_KEYFRAME:-SIT}" $HEADLESS $scene_arg \
+         $cam_args \
+         > "$STATE/body.log" 2>&1 &

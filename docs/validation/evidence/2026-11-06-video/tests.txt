@@ -1,0 +1,25 @@
+test_control_and_single_peer_timeout (test_camera757.Camera757Tests.test_control_and_single_peer_timeout) ... ok
+test_header_and_fragment_boundaries (test_camera757.Camera757Tests.test_header_and_fragment_boundaries) ... ok
+test_invalid_image_and_id (test_camera757.Camera757Tests.test_invalid_image_and_id) ... ok
+test_real_udp_roundtrip_decodable_jpeg_and_expiry (test_camera757.Camera757Tests.test_real_udp_roundtrip_decodable_jpeg_and_expiry) ... == V7RC video: UDP 0, source 0, JPEG FF/45 640x360
+== V7RC video peer: 127.0.0.1:65410
+ok
+test_camera_on_requires_live_subscription_and_publisher (test_microduck_hud.HudTests.test_camera_on_requires_live_subscription_and_publisher) ... ok
+test_hud_distinguishes_expiry_and_stopped_publisher (test_microduck_hud.HudTests.test_hud_distinguishes_expiry_and_stopped_publisher) ... ok
+test_stick_axis_layout_is_raw_not_control_direction (test_microduck_hud.HudTests.test_stick_axis_layout_is_raw_not_control_direction) ... ok
+test_valid_unarmed_frames_count_as_receive_fps_but_invalid_do_not (test_microduck_hud.HudTests.test_valid_unarmed_frames_count_as_receive_fps_but_invalid_do_not) ... ok
+test_udp_to_ipc_watchdog_rearm_reconnect_and_shutdown (test_v7rc_bridge.BridgeProcessTests.test_udp_to_ipc_watchdog_rearm_reconnect_and_shutdown) ... ok
+test_center_and_deadzone (test_v7rc_bridge.ProtocolTests.test_center_and_deadzone) ... ok
+test_ch3_pitch_and_ch4_yaw_are_independent (test_v7rc_bridge.ProtocolTests.test_ch3_pitch_and_ch4_yaw_are_independent) ... ok
+test_channel_direction_limits_and_inversion (test_v7rc_bridge.ProtocolTests.test_channel_direction_limits_and_inversion) ... ok
+test_explicit_source_ip (test_v7rc_bridge.ProtocolTests.test_explicit_source_ip) ... ok
+test_four_channels_in_order (test_v7rc_bridge.ProtocolTests.test_four_channels_in_order) ... ok
+test_invalid_and_other_senders_do_not_refresh_watchdog (test_v7rc_bridge.ProtocolTests.test_invalid_and_other_senders_do_not_refresh_watchdog) ... ok
+test_non_symmetric_endpoints (test_v7rc_bridge.ProtocolTests.test_non_symmetric_endpoints) ... ok
+test_reject_corrupt_datagrams_and_other_protocols (test_v7rc_bridge.ProtocolTests.test_reject_corrupt_datagrams_and_other_protocols) ... ok
+test_startup_and_timeout_require_neutral (test_v7rc_bridge.ProtocolTests.test_startup_and_timeout_require_neutral) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 1.518s
+
+OK

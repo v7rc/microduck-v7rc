@@ -1,0 +1,40 @@
+#!/bin/sh
+# Keep Unix sockets and the upstream shell's scene arguments on a short, space-free path.
+set -eu
+ROOT="$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)"
+SHORT="/tmp/microduck-m4-$(id -u)"
+if [ -L "$SHORT" ]; then
+    [ "$(readlink "$SHORT")" = "$ROOT" ] || {
+        echo "Another workspace owns $SHORT; refusing to replace it." >&2
+        exit 1
+    }
+elif [ -e "$SHORT" ]; then
+    echo "$SHORT exists and is not this workspace's symlink." >&2
+    exit 1
+else
+    ln -s "$ROOT" "$SHORT"
+fi
+export CARGO_HOME="$SHORT/.tools/cargo"
+export RUSTUP_HOME="$SHORT/.tools/rustup"
+export CARGO_TARGET_DIR="$SHORT/microduck/target"
+export UV_CACHE_DIR="$ROOT/.tools/uv-cache"
+export UV_PYTHON_INSTALL_DIR="$ROOT/.tools/python"
+export PATH="$ROOT/.tools/bin:$CARGO_HOME/bin:$ROOT/microduck_rl/.venv/bin:$PATH"
+export DUCK_SIM_RL="$SHORT/microduck_rl"
+export DUCK_SIM_STATE="$SHORT/.runtime/duck-sim"
+export MICRODUCK_BODY_MODULE=microduck_hud
+export MICRODUCK_HUD_FILE="$ROOT/.runtime/v7rc-input.json"
+export PYTHONPATH="$ROOT/bridge${PYTHONPATH:+:$PYTHONPATH}"
+mkdir -p "$ROOT/.runtime/duck-sim"
+if [ "${1:-}" = serve ]; then
+    # Keep a foreground owner alive: task runners may reap detached children when the
+    # startup command exits. Ctrl-C stops only this simulator's pidfile-owned processes.
+    shift
+    trap '"$ROOT/microduck/scripts/duck-sim" down; exit 0' INT TERM
+    "$ROOT/microduck/scripts/duck-sim" "$@"
+    while [ -f "$DUCK_SIM_STATE/body.pid" ] && kill -0 "$(cat "$DUCK_SIM_STATE/body.pid")" 2>/dev/null; do
+        sleep 2
+    done
+    exit 0
+fi
+exec "$ROOT/microduck/scripts/duck-sim" "$@"

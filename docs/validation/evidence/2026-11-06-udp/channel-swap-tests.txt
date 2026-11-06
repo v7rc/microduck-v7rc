@@ -1,0 +1,15 @@
+test_udp_to_ipc_watchdog_rearm_reconnect_and_shutdown (test_v7rc_bridge.BridgeProcessTests.test_udp_to_ipc_watchdog_rearm_reconnect_and_shutdown) ... ok
+test_center_and_deadzone (test_v7rc_bridge.ProtocolTests.test_center_and_deadzone) ... ok
+test_ch3_pitch_and_ch4_yaw_are_independent (test_v7rc_bridge.ProtocolTests.test_ch3_pitch_and_ch4_yaw_are_independent) ... ok
+test_channel_direction_limits_and_inversion (test_v7rc_bridge.ProtocolTests.test_channel_direction_limits_and_inversion) ... ok
+test_explicit_source_ip (test_v7rc_bridge.ProtocolTests.test_explicit_source_ip) ... ok
+test_four_channels_in_order (test_v7rc_bridge.ProtocolTests.test_four_channels_in_order) ... ok
+test_invalid_and_other_senders_do_not_refresh_watchdog (test_v7rc_bridge.ProtocolTests.test_invalid_and_other_senders_do_not_refresh_watchdog) ... ok
+test_non_symmetric_endpoints (test_v7rc_bridge.ProtocolTests.test_non_symmetric_endpoints) ... ok
+test_reject_corrupt_datagrams_and_other_protocols (test_v7rc_bridge.ProtocolTests.test_reject_corrupt_datagrams_and_other_protocols) ... ok
+test_startup_and_timeout_require_neutral (test_v7rc_bridge.ProtocolTests.test_startup_and_timeout_require_neutral) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 1.504s
+
+OK

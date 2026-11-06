@@ -1,0 +1,22 @@
+{
+  "files_sha256": {
+    "bridge/v7rc_udp.py": "bc075a85ae2ba2a13740b30d917b113214f261e09523b7346a49a257f7ebd2b8",
+    "bridge/microduck_hud.py": "ae3ccae007633693523d9b03910e859be0f9fcbc437ff03e47c9c1bfec3db9dd",
+    "scripts/microduck-sim": "9b7c0ad240111f0f9e4687f5d35eac7505b72907a62f6fddc4d52c0bc9c627d7",
+    "scripts/v7rc-bridge": "bde5f9f1bdc57a58867af5f4ada71c5b98d861c99d510baff69291b056e387b2",
+    "scripts/verify-v7rc-udp.py": "22b32f1aec1a34d35ac593beedec50841749b405d33b71a8e6bf23865a4ef5e3",
+    "tests/test_v7rc_bridge.py": "14cdc9f5d3330b4c11cbbf604d3635db8e8bc7f4849a7d18191b6ff057638a52",
+    "tests/test_microduck_hud.py": "48bde9da2b52d02eddc59bbe224349500bc0ae5deec37d58b933e86b06fb835e",
+    "patches/microduck-body-module.patch": "a9bbb425b5aa7507f66690e466e9bd404db8f3c202ec15549c5906e25b0c153d"
+  },
+  "mapping": {
+    "CH1": "turn",
+    "CH2": "forward/reverse",
+    "CH3": "head pitch inverted",
+    "CH4": "head yaw"
+  },
+  "tests_passed": 13,
+  "phone_source": "172.20.10.1 (user confirmed V7RC)",
+  "hud_fps_definition": "valid SRT frames in trailing one second",
+  "screenshot": "hud-window.png"
+}

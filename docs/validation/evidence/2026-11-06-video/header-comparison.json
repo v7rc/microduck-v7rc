@@ -1,0 +1,16 @@
+{
+  "esp32": {
+    "fragments": 15,
+    "different_byte_offsets": [
+      46
+    ],
+    "reason": "ESP32 height480 versus360; iOS supports both"
+  },
+  "ameba": {
+    "fragments": 15,
+    "different_byte_offsets": [
+      49
+    ],
+    "reason": "Ameba fullJPEG FF52 versus FF45; iOS supports both"
+  }
+}

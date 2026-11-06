@@ -1,0 +1,244 @@
+{
+  "started_at": "2026-11-06T05:18:57.545230+00:00",
+  "scope": "CPU MuJoCo physics + real robotd, no physical robot or V7RC",
+  "thresholds": {
+    "min_trunk_m": 0.095,
+    "max_tilt_deg": 30,
+    "min_forward_m": 0.6,
+    "min_signed_turn_deg": 30,
+    "min_realtime": 0.95,
+    "max_realtime": 1.05,
+    "max_idle_drift_m": 0.1
+  },
+  "phases": [
+    {
+      "name": "standing",
+      "duration_s": 10,
+      "command_vx_m_s": 0.0,
+      "command_vyaw_rad_s": 0.0,
+      "commands_sent": true,
+      "samples": 101,
+      "start_xyz_m": [
+        -0.49906018955091547,
+        -0.35270873897771887,
+        0.11542746702789772
+      ],
+      "end_xyz_m": [
+        -0.49664337937479575,
+        -0.35634626461459606,
+        0.11550823758753888
+      ],
+      "displacement_m": 0.00436721469432574,
+      "forward_displacement_m": -0.0028797509378207307,
+      "turn_deg": -1.7586310669202943,
+      "realtime_factor": 0.9994988803502441,
+      "min_trunk_m": 0.11540938610231342,
+      "max_tilt_deg": 1.3815610497739075,
+      "all_healthy": true,
+      "checks": {
+        "upright": true,
+        "realtime": true,
+        "healthy": true,
+        "idle_drift": true
+      },
+      "passed": true
+    },
+    {
+      "name": "walking",
+      "duration_s": 8,
+      "command_vx_m_s": 0.3,
+      "command_vyaw_rad_s": 0.0,
+      "commands_sent": true,
+      "samples": 81,
+      "start_xyz_m": [
+        -0.49664337937479575,
+        -0.35634626461459606,
+        0.11550823758753888
+      ],
+      "end_xyz_m": [
+        -1.323441699688636,
+        0.060491576459064604,
+        0.11431230445538319
+      ],
+      "displacement_m": 0.9259315569871988,
+      "forward_displacement_m": 0.8838366318644989,
+      "turn_deg": -31.0969799324272,
+      "realtime_factor": 1.0024072721859434,
+      "min_trunk_m": 0.11308131471489431,
+      "max_tilt_deg": 3.999101306529172,
+      "all_healthy": true,
+      "checks": {
+        "upright": true,
+        "realtime": true,
+        "healthy": true,
+        "forward_movement": true
+      },
+      "passed": true
+    },
+    {
+      "name": "walk_expiry",
+      "duration_s": 3,
+      "command_vx_m_s": 0.0,
+      "command_vyaw_rad_s": 0.0,
+      "commands_sent": false,
+      "samples": 31,
+      "start_xyz_m": [
+        -1.323441699688636,
+        0.060491576459064604,
+        0.11431230445538319
+      ],
+      "end_xyz_m": [
+        -1.3775691039871865,
+        0.12101476954544525,
+        0.11550608595628511
+      ],
+      "displacement_m": 0.08119626098208003,
+      "forward_displacement_m": 0.08046725809902543,
+      "turn_deg": -6.011183579571949,
+      "realtime_factor": 0.9983215027287381,
+      "min_trunk_m": 0.11431230445538319,
+      "max_tilt_deg": 3.092466900419022,
+      "all_healthy": true,
+      "last_second_drift_m": 0.0005508092809060369,
+      "checks": {
+        "upright": true,
+        "realtime": true,
+        "healthy": true,
+        "settled_after_expiry": true
+      },
+      "passed": true
+    },
+    {
+      "name": "turn_left",
+      "duration_s": 6,
+      "command_vx_m_s": 0.0,
+      "command_vyaw_rad_s": 0.5,
+      "commands_sent": true,
+      "samples": 61,
+      "start_xyz_m": [
+        -1.3775691039871865,
+        0.12101476954544525,
+        0.11550608595628511
+      ],
+      "end_xyz_m": [
+        -1.3784202160787,
+        0.12045525495514506,
+        0.11355922934649333
+      ],
+      "displacement_m": 0.0010185520944357162,
+      "forward_displacement_m": 0.00017964871036048883,
+      "turn_deg": 14.311309556826131,
+      "realtime_factor": 0.9991335292575863,
+      "min_trunk_m": 0.11354341644012779,
+      "max_tilt_deg": 1.1486567439342483,
+      "all_healthy": true,
+      "checks": {
+        "upright": true,
+        "realtime": true,
+        "healthy": true,
+        "correct_turn": false
+      },
+      "passed": false
+    },
+    {
+      "name": "left_expiry",
+      "duration_s": 3,
+      "command_vx_m_s": 0.0,
+      "command_vyaw_rad_s": 0.0,
+      "commands_sent": false,
+      "samples": 31,
+      "start_xyz_m": [
+        -1.3784202160787,
+        0.12045525495514506,
+        0.11355922934649333
+      ],
+      "end_xyz_m": [
+        -1.3794955583053337,
+        0.11763509138918701,
+        0.11541855818469492
+      ],
+      "displacement_m": 0.0030182252141181544,
+      "forward_displacement_m": -0.0005933314450907866,
+      "turn_deg": -13.852040666211634,
+      "realtime_factor": 0.9998262802374529,
+      "min_trunk_m": 0.11347802013210036,
+      "max_tilt_deg": 1.3133116717174325,
+      "all_healthy": true,
+      "last_second_drift_m": 0.0007020322953292152,
+      "checks": {
+        "upright": true,
+        "realtime": true,
+        "healthy": true,
+        "settled_after_expiry": true
+      },
+      "passed": true
+    },
+    {
+      "name": "turn_right",
+      "duration_s": 6,
+      "command_vx_m_s": 0.0,
+      "command_vyaw_rad_s": -0.5,
+      "commands_sent": true,
+      "samples": 61,
+      "start_xyz_m": [
+        -1.3794955583053337,
+        0.11763509138918701,
+        0.11541855818469492
+      ],
+      "end_xyz_m": [
+        -1.2917426788663473,
+        0.14693359175426496,
+        0.11545325188354984
+      ],
+      "displacement_m": 0.09251470139105324,
+      "forward_displacement_m": -0.03979330009517597,
+      "turn_deg": -223.1650599500928,
+      "realtime_factor": 0.9995521243554742,
+      "min_trunk_m": 0.11380166594513148,
+      "max_tilt_deg": 3.4540611081303125,
+      "all_healthy": true,
+      "checks": {
+        "upright": true,
+        "realtime": true,
+        "healthy": true,
+        "correct_turn": true
+      },
+      "passed": true
+    },
+    {
+      "name": "right_expiry",
+      "duration_s": 3,
+      "command_vx_m_s": 0.0,
+      "command_vyaw_rad_s": 0.0,
+      "commands_sent": false,
+      "samples": 31,
+      "start_xyz_m": [
+        -1.2940810942179957,
+        0.14472597963125555,
+        0.11521263663203377
+      ],
+      "end_xyz_m": [
+        -1.2889145131324595,
+        0.12251971377896402,
+        0.11547372068839341
+      ],
+      "displacement_m": 0.022799381641089935,
+      "forward_displacement_m": 0.022277451457973226,
+      "turn_deg": -25.321490009681053,
+      "realtime_factor": 0.9982553268539004,
+      "min_trunk_m": 0.1149819149372198,
+      "max_tilt_deg": 3.0905054948420174,
+      "all_healthy": true,
+      "last_second_drift_m": 0.0003920789445827257,
+      "checks": {
+        "upright": true,
+        "realtime": true,
+        "healthy": true,
+        "settled_after_expiry": true
+      },
+      "passed": true
+    }
+  ],
+  "passed": false,
+  "error": "Failed phases: turn_left"
+}

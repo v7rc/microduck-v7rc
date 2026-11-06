@@ -1,0 +1,22 @@
+== scene_backlash.xml: 1 duck(s), starting at SIT
+==   duck 0: robotd --sim 127.0.0.1:7801
+== duck 0: daemon connected from ('127.0.0.1', 50674)
+== duck 0: daemon disconnected
+== duck 0: daemon connected from ('127.0.0.1', 50676)
+== duck 0: daemon connected from ('127.0.0.1', 50677)
+== duck 0: daemon connected from ('127.0.0.1', 50681)
+== duck 0: daemon disconnected
+== duck 0: daemon connected from ('127.0.0.1', 50690)
+== duck 0: daemon disconnected
+== duck 0: daemon connected from ('127.0.0.1', 50745)
+== duck 0: daemon disconnected
+== duck 0: daemon connected from ('127.0.0.1', 50763)
+== duck 0: daemon disconnected
+== duck 0: daemon connected from ('127.0.0.1', 50768)
+== duck 0: daemon disconnected
+== duck 0: daemon connected from ('127.0.0.1', 50776)
+== duck 0: daemon disconnected
+== duck 0: daemon connected from ('127.0.0.1', 50812)
+== duck 0: daemon disconnected
+== duck 0: daemon connected from ('127.0.0.1', 51012)
+== duck 0: daemon disconnected

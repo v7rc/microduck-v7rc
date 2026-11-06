@@ -1,0 +1,4 @@
+#!/bin/sh
+set -eu
+ROOT="$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)"
+exec "$ROOT/microduck_rl/.venv/bin/python" "$ROOT/bridge/v7rc_udp.py" "$@"

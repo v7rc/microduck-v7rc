@@ -1,0 +1,279 @@
+== down
+== building the daemons from main
+warning: function `body_imu_mount` is never used
+    --> robotd/src/main.rs:1588:4
+     |
+1588 | fn body_imu_mount(board: robotd_params::board::Board) -> [f64; 4] {
+     |    ^^^^^^^^^^^^^^
+     |
+     = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: constant `WAKE_HZ` is never used
+  --> robotd/src/head_imu.rs:38:11
+   |
+38 | pub const WAKE_HZ: u32 = 15;
+   |           ^^^^^^^
+
+warning: constant `FUNC_CFG_ACCESS` is never used
+  --> robotd/src/head_imu.rs:58:7
+   |
+58 | const FUNC_CFG_ACCESS: u8 = 0x01;
+   |       ^^^^^^^^^^^^^^^
+
+warning: constant `FIFO_CTRL3` is never used
+  --> robotd/src/head_imu.rs:59:7
+   |
+59 | const FIFO_CTRL3: u8 = 0x09;
+   |       ^^^^^^^^^^
+
+warning: constant `FIFO_CTRL4` is never used
+  --> robotd/src/head_imu.rs:60:7
+   |
+60 | const FIFO_CTRL4: u8 = 0x0a;
+   |       ^^^^^^^^^^
+
+warning: constant `WHO_AM_I` is never used
+  --> robotd/src/head_imu.rs:61:7
+   |
+61 | const WHO_AM_I: u8 = 0x0f;
+   |       ^^^^^^^^
+
+warning: constant `CTRL1` is never used
+  --> robotd/src/head_imu.rs:62:7
+   |
+62 | const CTRL1: u8 = 0x10;
+   |       ^^^^^
+
+warning: constant `CTRL2` is never used
+  --> robotd/src/head_imu.rs:63:7
+   |
+63 | const CTRL2: u8 = 0x11;
+   |       ^^^^^
+
+warning: constant `CTRL3` is never used
+  --> robotd/src/head_imu.rs:64:7
+   |
+64 | const CTRL3: u8 = 0x12;
+   |       ^^^^^
+
+warning: constant `CTRL6` is never used
+  --> robotd/src/head_imu.rs:65:7
+   |
+65 | const CTRL6: u8 = 0x15;
+   |       ^^^^^
+
+warning: constant `CTRL8` is never used
+  --> robotd/src/head_imu.rs:66:7
+   |
+66 | const CTRL8: u8 = 0x17;
+   |       ^^^^^
+
+warning: constant `CTRL9` is never used
+  --> robotd/src/head_imu.rs:67:7
+   |
+67 | const CTRL9: u8 = 0x18;
+   |       ^^^^^
+
+warning: constant `FIFO_STATUS1` is never used
+  --> robotd/src/head_imu.rs:68:7
+   |
+68 | const FIFO_STATUS1: u8 = 0x1b;
+   |       ^^^^^^^^^^^^
+
+warning: constant `OUT_TEMP_L` is never used
+  --> robotd/src/head_imu.rs:69:7
+   |
+69 | const OUT_TEMP_L: u8 = 0x20;
+   |       ^^^^^^^^^^
+
+warning: constant `FIFO_DATA_OUT_TAG` is never used
+  --> robotd/src/head_imu.rs:70:7
+   |
+70 | const FIFO_DATA_OUT_TAG: u8 = 0x78;
+   |       ^^^^^^^^^^^^^^^^^
+
+warning: constant `EMB_FUNC_EN_A` is never used
+  --> robotd/src/head_imu.rs:72:7
+   |
+72 | const EMB_FUNC_EN_A: u8 = 0x04;
+   |       ^^^^^^^^^^^^^
+
+warning: constant `EMB_FUNC_FIFO_EN_A` is never used
+  --> robotd/src/head_imu.rs:73:7
+   |
+73 | const EMB_FUNC_FIFO_EN_A: u8 = 0x44;
+   |       ^^^^^^^^^^^^^^^^^^
+
+warning: constant `SFLP_ODR` is never used
+  --> robotd/src/head_imu.rs:74:7
+   |
+74 | const SFLP_ODR: u8 = 0x5e;
+   |       ^^^^^^^^
+
+warning: constant `EMB_FUNC_INIT_A` is never used
+  --> robotd/src/head_imu.rs:75:7
+   |
+75 | const EMB_FUNC_INIT_A: u8 = 0x66;
+   |       ^^^^^^^^^^^^^^^
+
+warning: constant `SFLP_ODR_MASK` is never used
+  --> robotd/src/head_imu.rs:77:7
+   |
+77 | const SFLP_ODR_MASK: u8 = 0b0011_1000;
+   |       ^^^^^^^^^^^^^
+
+warning: constant `SFLP_ODR_60HZ` is never used
+  --> robotd/src/head_imu.rs:78:7
+   |
+78 | const SFLP_ODR_60HZ: u8 = 0b010 << 3;
+   |       ^^^^^^^^^^^^^
+
+warning: constant `SFLP_GAME_BIT` is never used
+  --> robotd/src/head_imu.rs:79:7
+   |
+79 | const SFLP_GAME_BIT: u8 = 1 << 1;
+   |       ^^^^^^^^^^^^^
+
+warning: constant `WHO_AM_I_VALUE` is never used
+  --> robotd/src/head_imu.rs:81:7
+   |
+81 | const WHO_AM_I_VALUE: u8 = 0x70;
+   |       ^^^^^^^^^^^^^^
+
+warning: constant `CTRL3_BOOT` is never used
+  --> robotd/src/head_imu.rs:82:7
+   |
+82 | const CTRL3_BOOT: u8 = 1 << 7;
+   |       ^^^^^^^^^^
+
+warning: constant `CTRL3_SW_RESET` is never used
+  --> robotd/src/head_imu.rs:83:7
+   |
+83 | const CTRL3_SW_RESET: u8 = 1 << 0;
+   |       ^^^^^^^^^^^^^^
+
+warning: constant `CONFIG` is never used
+  --> robotd/src/head_imu.rs:88:7
+   |
+88 | const CONFIG: &[(u8, u8)] = &[
+   |       ^^^^^^
+
+warning: constant `TAG_GYRO` is never used
+   --> robotd/src/head_imu.rs:100:7
+    |
+100 | const TAG_GYRO: u8 = 0x01;
+    |       ^^^^^^^^
+
+warning: constant `TAG_ACCEL` is never used
+   --> robotd/src/head_imu.rs:101:7
+    |
+101 | const TAG_ACCEL: u8 = 0x02;
+    |       ^^^^^^^^^
+
+warning: constant `TAG_SFLP_GAME` is never used
+   --> robotd/src/head_imu.rs:102:7
+    |
+102 | const TAG_SFLP_GAME: u8 = 0x13;
+    |       ^^^^^^^^^^^^^
+
+warning: constant `RECORD` is never used
+   --> robotd/src/head_imu.rs:103:7
+    |
+103 | const RECORD: usize = 7;
+    |       ^^^^^^
+
+warning: constant `GYRO_RAD_PER_LSB` is never used
+   --> robotd/src/head_imu.rs:105:7
+    |
+105 | const GYRO_RAD_PER_LSB: f32 = 0.0175 * std::f32::consts::PI / 180.0;
+    |       ^^^^^^^^^^^^^^^^
+
+warning: constant `ACCEL_MS2_PER_LSB` is never used
+   --> robotd/src/head_imu.rs:106:7
+    |
+106 | const ACCEL_MS2_PER_LSB: f32 = 0.000122 * 9.806_65;
+    |       ^^^^^^^^^^^^^^^^^
+
+warning: constant `MOUNT` is never used
+   --> robotd/src/head_imu.rs:112:11
+    |
+112 | pub const MOUNT: [f32; 4] = [0.5, 0.5, -0.5, -0.5];
+    |           ^^^^^
+
+warning: function `rotate` is never used
+   --> robotd/src/head_imu.rs:115:4
+    |
+115 | fn rotate(q: [f32; 4], v: [f32; 3]) -> [f32; 3] {
+    |    ^^^^^^
+
+warning: function `mul` is never used
+   --> robotd/src/head_imu.rs:130:4
+    |
+130 | fn mul(a: [f32; 4], b: [f32; 4]) -> [f32; 4] {
+    |    ^^^
+
+warning: function `to_head` is never used
+   --> robotd/src/head_imu.rs:142:4
+    |
+142 | fn to_head(gyro: [f32; 3], accel: [f32; 3], quat: [f32; 4]) -> Sample {
+    |    ^^^^^^^
+
+warning: struct `Sample` is never constructed
+   --> robotd/src/head_imu.rs:153:12
+    |
+153 | pub struct Sample {
+    |            ^^^^^^
+
+warning: function `decode` is never used
+   --> robotd/src/head_imu.rs:165:8
+    |
+165 | pub fn decode(burst: &[u8], last: &mut ([f32; 3], [f32; 3])) -> Vec<Sample> {
+    |        ^^^^^^
+
+warning: function `f16_to_f32` is never used
+   --> robotd/src/head_imu.rs:195:8
+    |
+195 | pub fn f16_to_f32(h: u16) -> f32 {
+    |        ^^^^^^^^^^
+
+warning: function `temperature_c` is never used
+   --> robotd/src/head_imu.rs:208:8
+    |
+208 | pub fn temperature_c(raw: [u8; 2]) -> f32 {
+    |        ^^^^^^^^^^^^^
+
+warning: function `stamps` is never used
+   --> robotd/src/head_imu.rs:214:8
+    |
+214 | pub fn stamps(read_ns: u64, n: usize) -> impl Iterator<Item = u64> {
+    |        ^^^^^^
+
+warning: method `found` is never used
+   --> robotd/src/head_imu.rs:231:12
+    |
+224 | impl HeadImuStatus {
+    | ------------------ method in this implementation
+...
+231 |     pub fn found(&self, sensor: &str) {
+    |            ^^^^^
+
+== starting the body from /tmp/microduck-m4-501/microduck_rl — a MuJoCo window should open
+== starting tofd
+== starting configd
+== starting updaterd
+== starting robotd
+== standing up
+robot     healthy
+  loop      50.0 of 50.0 Hz · 319 ticks · 0 missed · last 16 ms ago
+  bus       ok
+== duck-a: standing (trunk 0.115 m, gravity z -1.000)
+
+  Your duck is up. From here:
+
+    scripts/duck-sim drive        walk it forward, then stop
+    scripts/duck-sim ctl health   or anything else robotctl does
+    scripts/duck-sim ctl robot do roulade
+    scripts/duck-sim log          what the daemon is saying
+    scripts/duck-sim ctl account login    reach it from anywhere, like a real duck
+    scripts/duck-sim down
+

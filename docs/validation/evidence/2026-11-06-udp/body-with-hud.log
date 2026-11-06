@@ -1,0 +1,18 @@
+== V7RC input HUD: /Users/louischuang/CompanyStorage/嵐奕科技有限公司/第四處 技術處/正在進行中的專案/20261106 Microduck-Research/.runtime/v7rc-input.json
+== scene_backlash.xml: 1 duck(s), starting at SIT
+==   duck 0: robotd --sim 127.0.0.1:7801
+== duck 0: daemon connected from ('127.0.0.1', 52486)
+== duck 0: daemon disconnected
+== HUD viewport: <MjrRect
+  bottom: 0
+  height: 1308
+  left: 0
+  width: 2016
+>
+2026-11-06 14:00:40.500 mjpython[20021:36163100] TSM AdjustCapsLockLEDForKeyTransitionHandling - _ISSetPhysicalKeyboardCapsLockLED Inhibit
+== duck 0: daemon connected from ('127.0.0.1', 52488)
+== duck 0: daemon connected from ('127.0.0.1', 52489)
+== duck 0: daemon connected from ('127.0.0.1', 52490)
+== duck 0: daemon disconnected
+== duck 0: daemon connected from ('127.0.0.1', 52494)
+== duck 0: daemon disconnected

@@ -1,0 +1,18 @@
+{
+  "interface": "en0",
+  "mac_ipv4": "172.20.10.2",
+  "udp_port": 6188,
+  "test_sender": "Python on the same Mac using its LAN IPv4; not an external phone",
+  "files_sha256": {
+    "bridge/v7rc_udp.py": "5f96846f7b9cdafef4cc2ebe88352b738c17d44b677f20c7100a7f9ed96393e7",
+    "scripts/v7rc-bridge": "bde5f9f1bdc57a58867af5f4ada71c5b98d861c99d510baff69291b056e387b2",
+    "scripts/verify-v7rc-udp.py": "ed69b44138ea12af1dd146d88d9acede507c712f128aa3a81955ae8b3c28f748",
+    "tests/test_v7rc_bridge.py": "10d45d60a5e0559f229625ee5d2c84b8dff4f18641fe3e911f0419298844a7da"
+  },
+  "automated_tests": {
+    "command": "microduck_rl/.venv/bin/python -m unittest discover -s tests -v",
+    "passed": 9,
+    "failed": 0
+  },
+  "phone_app_acceptance": "pending"
+}

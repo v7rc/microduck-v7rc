@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+"""Reuse sibling upstream checkouts/tools without moving their Git or installed Python paths."""
+import argparse
+from pathlib import Path
+
+root = Path(__file__).resolve().parents[1]
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--workspace', type=Path, default=root.parent)
+args = parser.parse_args()
+workspace = args.workspace.resolve()
+for name in ['microduck', 'microduck_rl', '.tools']:
+    source = workspace/name
+    target = root/name
+    if not source.is_dir():
+        parser.error(f'Missing {source}; follow docs/microduck/local-simulator-macos.md for a fresh install')
+    if target.is_symlink() and target.resolve() == source.resolve():
+        print(f'Already linked: {name}')
+        continue
+    if target.exists() or target.is_symlink():
+        parser.error(f'{target} already exists; refusing to replace it')
+    target.symlink_to(source, target_is_directory=True)
+    print(f'Linked {name} -> {source}')
