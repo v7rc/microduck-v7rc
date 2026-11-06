@@ -12,6 +12,10 @@
     <EmbeddedResource Include="../../dist/payload.zip" LogicalName="payload.zip" />
     <EmbeddedResource Include="../../dist/payload.sha256" LogicalName="payload.sha256" />
     <EmbeddedResource Include="../../docs/how-to.html" LogicalName="how-to.html" />
+    <EmbeddedResource Include="../../docs/INSTALL.zh-TW.md" LogicalName="INSTALL.zh-TW.md" />
+    <EmbeddedResource Include="../../docs/INSTALL.zh-CN.md" LogicalName="INSTALL.zh-CN.md" />
+    <EmbeddedResource Include="../../docs/INSTALL.en.md" LogicalName="INSTALL.en.md" />
+    <EmbeddedResource Include="../../docs/INSTALL.ja.md" LogicalName="INSTALL.ja.md" />
     <EmbeddedResource Include="../assets/app-icon.ico" LogicalName="app-icon.ico" />
   </ItemGroup>
 </Project>

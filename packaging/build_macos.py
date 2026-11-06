@@ -22,6 +22,7 @@ def main():
     if app.exists():shutil.rmtree(app) # Only this build's generated output directory.
     resources.mkdir(parents=True);binary.mkdir()
     for source,name in [(out/'payload.zip','payload.zip'),(out/'payload.sha256','payload.sha256'),(ROOT/'packaging/version.txt','version.txt'),(ROOT/'packaging/ui.json','ui.json'),(ROOT/'packaging/assets/AppIcon.icns','AppIcon.icns'),(ROOT/'packaging/macos/install.command','install.command'),(ROOT/'docs/how-to.html','how-to.html')]:shutil.copy2(source,resources/name)
+    for guide in ROOT.glob('docs/INSTALL.*.md'):shutil.copy2(guide,resources/guide.name)
     info={'CFBundleIdentifier':'com.v7rc.microduck-simulator','CFBundleName':'MicroduckV7RC','CFBundleDisplayName':'Microduck V7RC','CFBundleExecutable':'MicroduckV7RC','CFBundlePackageType':'APPL','CFBundleIconFile':'AppIcon.icns','CFBundleShortVersionString':'0.1.0','CFBundleVersion':'1','LSMinimumSystemVersion':'13.0','NSHighResolutionCapable':True}
     with (contents/'Info.plist').open('wb') as f:plistlib.dump(info,f)
     parts=[]

@@ -83,7 +83,7 @@ sealed class Launcher:Window {
         }catch(Exception e){details.Append("\n\n"+e.Message);if(report)MessageBox.Show(e.Message,T("error"));}
         details.Append("\n\n"+T("next")+"\n\n"+T("copy")+"\n\n"+T("unsigned"));plan.Text=details.ToString();SetBusy(false);status.Text=ready?T("ready"):T("checked");
     }
-    async Task Action(string key) {try{switch(key){case "check":await Check(true);break;case "install":await Install();break;case "launch":await Launch();break;case "stop":if(root.Length>0)await Commands.Run("wsl.exe",Commands.WslCommand(distro,root,"stop"));break;default:Directory.CreateDirectory(local);var guide=Path.Combine(local,"how-to.html");File.WriteAllBytes(guide,Assets.Read("how-to.html"));Process.Start(new ProcessStartInfo(new Uri(guide).AbsoluteUri+"#"+selected){UseShellExecute=true});break;}}catch(Exception e){SetBusy(false);status.Text=T("failed");MessageBox.Show(e.Message,T("error"));}}
+    async Task Action(string key) {try{switch(key){case "check":await Check(true);break;case "install":await Install();break;case "launch":await Launch();break;case "stop":if(root.Length>0)await Commands.Run("wsl.exe",Commands.WslCommand(distro,root,"stop"));break;default:Directory.CreateDirectory(local);var guide=Path.Combine(local,"how-to.html");File.WriteAllBytes(guide,Assets.Read("how-to.html"));foreach(var lang in languages)File.WriteAllBytes(Path.Combine(local,"INSTALL."+lang+".md"),Assets.Read("INSTALL."+lang+".md"));Process.Start(new ProcessStartInfo(new Uri(guide).AbsoluteUri+"#"+selected){UseShellExecute=true});break;}}catch(Exception e){SetBusy(false);status.Text=T("failed");MessageBox.Show(e.Message,T("error"));}}
     void Materialize() {
         Assets.ValidatePayload();Directory.CreateDirectory(local);
         foreach(var name in new[]{"payload.zip","payload.sha256","install-linux.sh","app-icon.ico"})File.WriteAllBytes(Path.Combine(local,name),Assets.Read(name));
@@ -148,7 +148,7 @@ static class Program {
             try {
                 Assets.ValidatePayload();
                 var ui=JsonSerializer.Deserialize<Dictionary<string,Dictionary<string,string>>>(Assets.Text("ui.json"))!;
-                foreach(var lang in new[]{"zh-TW","zh-CN","en","ja"})if(!ui[lang].ContainsKey("confirm"))throw new Exception("Missing localized consent");
+                foreach(var lang in new[]{"zh-TW","zh-CN","en","ja"}){if(!ui[lang].ContainsKey("confirm"))throw new Exception("Missing localized consent");if(Assets.Read("INSTALL."+lang+".md").Length==0)throw new Exception("Missing offline installation guide");}
                 var parts=Commands.WslCommand("Ubuntu-24.04","/home/user/repo with spaces","launch");
                 if(parts[3]!="/home/user/repo with spaces")throw new Exception("Path boundary broken");
                 using var zip=new ZipArchive(new MemoryStream(Assets.Read("payload.zip")));
