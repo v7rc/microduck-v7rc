@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 """Measure the live MuJoCo body while commanding the real robotd; no synthetic telemetry."""
+from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]/'bridge'))
+from platform_support import robot_socket
 import argparse
 import datetime
 import json
 import math
-from pathlib import Path
 import socket
 import time
 
@@ -49,7 +52,7 @@ class Connection:
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--socket", default=f"/tmp/microduck-m4-{__import__('os').getuid()}/.runtime/duck-sim/duck-a.sock")
+    parser.add_argument("--socket", default=str(robot_socket()))
     parser.add_argument("--port", type=int, default=7801)
     parser.add_argument("--walking-speed", type=float, default=0.3)
     parser.add_argument("--turning-speed", type=float, default=0.8)

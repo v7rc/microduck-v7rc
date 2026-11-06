@@ -2,7 +2,7 @@
 import json
 import math
 import os
-import subprocess
+from platform_support import advertised_ip
 from pathlib import Path
 import time
 
@@ -92,9 +92,8 @@ class HudViewer:
     def sync(self, *args, **kwargs):
         now = time.monotonic()
         if now>=self.next_ip:
-            try:
-                self.ip=subprocess.check_output(['/usr/sbin/ipconfig','getifaddr','en0'],text=True,stderr=subprocess.DEVNULL,timeout=.2).strip()
-            except (OSError,subprocess.SubprocessError):self.ip='Wi-Fi unavailable'
+            control=snapshot(self.path, now)
+            self.ip=advertised_ip(control.get('owner'))
             self.next_ip=now+5
         if now >= self.next_draw:
             viewport = self.viewer.viewport

@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 """Send real SRT UDP datagrams and observe robotd plus MuJoCo; not a phone test."""
+from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]/'bridge'))
+from platform_support import robot_socket
 import argparse
 import datetime
 import json
 import math
-from pathlib import Path
 import socket
 import threading
 import time
@@ -28,7 +31,7 @@ def main():
 
     body_call({"op":"hello","protocol":1,"joints":15})
     control = socket.socket(socket.AF_UNIX)
-    control.connect(f"/tmp/microduck-m4-{os.getuid()}/.runtime/duck-sim/duck-a.sock")
+    control.connect(str(robot_socket()))
     sf = control.makefile("rw")
     sf.write('{"jsonrpc":"2.0","id":1,"method":"robot.subscribe","params":{"hz":20}}\n');sf.flush()
     accepted=json.loads(sf.readline())

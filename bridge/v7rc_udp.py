@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """V7RC SRT datagrams to Microduck robotd; Python standard library only."""
+from platform_support import robot_socket
+
 import argparse
 from collections import deque
 from dataclasses import dataclass
@@ -258,7 +260,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--bind", default="0.0.0.0")
     parser.add_argument("--port", type=int, default=6188)
-    parser.add_argument("--socket", type=Path, default=Path(f"/tmp/microduck-m4-{os.getuid()}/.runtime/duck-sim/duck-a.sock"))
+    parser.add_argument("--socket", type=Path, default=robot_socket())
     parser.add_argument("--telemetry-file", type=Path, default=Path(__file__).resolve().parents[1] / ".runtime/v7rc-input.json")
     parser.add_argument("--source-ip", help="Only accept this phone IPv4 address")
     parser.add_argument("--hz", type=float, default=20)

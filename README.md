@@ -1,54 +1,47 @@
-# microduck-v7rc
+# Microduck × V7RC 整合
 
-Microduck 與 V7RC APP 的整合程式：SRT 四通道 Wi-Fi UDP 控制、頭部相機 UDP 影像傳輸，以及模擬器 HUD。
+[繁體中文](README.md) | [简体中文](README.zh-CN.md) | [English](README.en.md) | [日本語](README.ja.md)
 
-目前已在 MacBook Pro M4 Pro 驗證本機模擬、手機控制與一般 Wi-Fi 下 iOS V7RC 影像顯示。Windows 尚未移植，iPhone 個人熱點的相機通訊仍有已知限制。
+透過 V7RC APP，以 Wi-Fi UDP 控制 Microduck 模擬器，並回傳 640×360 頭部相機影像。包含 SRT 四通道橋接、接收 FPS、雙搖桿、連線 IP／Port 與相機送出影格 HUD。
 
-## 目錄
+## 平台與驗證範圍
 
-```text
-microduck-v7rc/
-├── bridge/                 # UDP 控制、Camera757 相機與 HUD
-├── scripts/                # 啟動、連結既有環境與驗證
-├── patches/                # 上游 runtime 啟動入口的兩行補丁
-├── tests/                  # 隔離測試與既有 iOS 接收器互通檢查
-├── docs/                   # 研究、安裝、操作與驗證證據
-└── upstream-revisions.json # 上游來源、驗證 commit 與補丁
+macOS Apple Silicon 已完成本機與手機控制／影像驗收。Linux 提供原生安裝與啟動，隔離容器測試另列於驗證紀錄；實際桌面、GPU 與手機網路仍待目標機驗收。Windows 11 使用 WSL2 Ubuntu＋WSLg，提供 PowerShell 啟動器；不是原生 Windows robotd，Windows 目標機仍待驗收。
+
+## 快速開始
+
+新環境先完成安裝指引。既有 Louis Mac 環境可執行 scripts/link-workspace 重用同層上游與工具；此命令不適用尚未安裝的全新機器。所有下列相對命令均從整合 Repo 根目錄執行。
+
 ```
-
-上游 `microduck`、`microduck_rl` 各自保留獨立 Git 歷史，沒有直接收進此 Repo。本機可以在此目錄 clone 指定版本，或以忽略的 symlink 連到工作區內既有 Repo；工具 `.tools/` 與執行資料 `.runtime/` 也不提交。版本清單不是 submodule，不會自動下載依賴；安裝步驟見下方文件。
-
-## 既有 Mac 環境啟動
-
-Louis 的研究工作區已安裝工具與上游 Repo，進入本 Repo 後執行：
-
-```sh
-scripts/link-workspace
 scripts/microduck-sim serve
 ```
 
-保留模擬器終端機，另開終端機在此 Repo 執行：
+保留模擬器終端機，另開第二個終端機啟動橋接。手機與電腦使用同一台 Wi-Fi 路由器；APP 的控制與相機 IP 都填模擬器右上顯示的 IPv4。
 
 ```sh
 scripts/v7rc-bridge
 ```
 
-V7RC 控制使用 SRT、四通道、UDP 6188；相機來源選 UDP、Port 8800。IP 填模擬器右上顯示的 Mac Wi-Fi IPv4，四通道先回到 1500。CH1 轉向、CH2 前後、CH3 頭部上下（反相）、CH4 頭部左右。
+## APP 設定與通道
 
-左上顯示控制接收 FPS、相機 ON/OFF、送出影格數與相機接收端 IP，並疊加兩個搖桿。相機提供 640×360 頭部視角；CAMERA ON 或送出影格數本身不表示手機已顯示，須分開驗收。
+IP 使用目前的 LAN IPv4，不使用固定範例 IP。控制：Wi-Fi UDP／SRT／6188；相機：UDP／8800。1234 是電腦的影像送出來源 Port，不是 APP 設定的目的 Port。
 
-停止模擬器使用 `scripts/microduck-sim down`；橋接終端機按 Ctrl-C。
+CH1 左右轉向；CH2 前後；CH3 頭部上下（反相）；CH4 頭部左右。範圍 1000–2000，中立 1500。啟動、失聯或重連後，四通道先回中才會重新啟用控制。
 
-## 安裝與驗證
+## 原始碼與上游
 
-- [從空環境安裝／Mac 操作](docs/microduck/local-simulator-macos.md)
-- [SRT 四通道操作](docs/integration/v7rc-wifi-udp.md)
-- [Camera757 相機設定與協定](docs/integration/v7rc-video-feasibility.md)
-- [相機手機驗收](docs/validation/2026-11-06-v7rc-video.md)
-- [個人熱點與一般 Wi-Fi 對照](docs/validation/2026-11-06-udp8800-network.md)
-- [本次獨立 Repo 整理](docs/repositories/microduck-v7rc-layout.md)
-- [完整文件索引](docs/README.md)
+bridge/ 為控制、相機、HUD 與平台共用程式；scripts/ 為安裝及啟動；windows/ 為 WSL 啟動器；tests/ 為測試。upstream-revisions.json 固定上游 commit。上游 Repo、.venv、.tools、.runtime 均不提交；本機依賴可以是 Repo 內的 clone 或連到既有環境的 symlink。上游 runtime 只有兩行啟動補丁；不修改模擬物理或行走策略。
 
-隔離測試：`microduck_rl/.venv/bin/python -m unittest discover -s tests -v`。真實模擬器測試另見操作文件，不要與手機同時送控制或訂閱相機。
+## 已知限制
 
-上游程式與模型的授權各自適用；尤其 STL 模型的 CC BY-NC-SA 4.0 限制請見上游 LICENSE-MODELS.md。本 Repo 不包含模型、策略、上游程式副本或其授權轉授權。
+個人熱點模式曾收不到 iOS 相機訂閱；同一 Wi-Fi 下已驗收正常。低速步行、速度追蹤及直線精度有上游限制，不能以收到 UDP 推定動作精度。CAMERA ON 與 TX FRAMES 代表訂閱有效／主機送出，仍須實際確認 APP 顯示。模型授權請閱讀上游 LICENSE-MODELS.md（含 CC BY-NC-SA 4.0）。
+
+## 文件與測試
+
+- [安裝指引](docs/INSTALL.zh-TW.md)
+- [操作指引 — HTML](docs/how-to.html#zh-TW)
+- [Validation](docs/validation/2026-11-06-cross-platform.md)
+
+```sh
+microduck_rl/.venv/bin/python -m unittest discover -s tests -v
+```

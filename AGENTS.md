@@ -45,3 +45,10 @@
 - HUD 入口為 `bridge/microduck_hud.py`，接收 FPS 是最近一秒有效 SRT 數；兩個原始搖桿軸為左 CH1/CH2、右 CH4/CH3。runtime 的啟動擴充補丁保存在 `patches/microduck-body-module.patch`。
 
 - 影像服務 `bridge/camera757.py` 隨模擬器啟動，640×360 完整 JPEG FF/45；UDP 8800 接收、1234 送出至相機訂閱來源 Port。`MICRODUCK_VIDEO=0` 可停用，勿與 `DUCK_SIM_CAMERAS` 同時啟用。HUD ON 與 TX FRAMES 不是手機解碼成功；查看 PEER，127.0.0.1 是本機測試。
+
+## 跨平台與四語入口
+
+- 共用路徑／IP 在 bridge/platform_support.py；既有 Mac 短路徑保留，其餘預設依 Repo hash 產生。不要另寫平台專用 IPC 預設路徑。
+- Linux 為原生 POSIX，Windows 為 WSL2 Ubuntu＋PowerShell 前端，不宣稱原生 Windows robotd 支援。
+- 公開 README／安裝／How-To 以 scripts/generate-docs.py 產生四語版本；修改文字後重新產生。歷史研究與原始驗證資料保留原文。
+- tests/linux.Dockerfile 的容器測試不代表完整 Linux GUI／WSL 驗收；目前的驗證界線見 docs/validation/2026-11-06-cross-platform.md。

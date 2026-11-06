@@ -1,0 +1,8 @@
+.git
+.tools
+.runtime
+microduck
+microduck_rl
+__pycache__
+**/__pycache__
+docs

@@ -1,4 +1,6 @@
 #!/bin/sh
 set -eu
 ROOT="$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)"
+platform_env="$(python3 "$ROOT/bridge/platform_support.py" shell-env)"
+eval "$platform_env"
 exec "$ROOT/microduck_rl/.venv/bin/python" "$ROOT/bridge/v7rc_udp.py" "$@"
