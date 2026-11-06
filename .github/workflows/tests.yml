@@ -5,7 +5,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-24.04, macos-15]
+        # The shared arm64 pool failed provisioning; keep the same checks on Intel.
+        os: [ubuntu-24.04, macos-15-intel]
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v6

@@ -45,3 +45,9 @@
 依 [GitHub 官方退役公告](https://github.blog/changelog/2026-10-01-github-actions-macos-14-runner-image-retirement/)，將矩陣改用 macos-15；同時升級 checkout@v6、setup-python@v6 使用 Node.js 24，並設 fail-fast=false，讓平台工作獨立完成、不因另一平台失敗而失去報告。新版遠端結果以 [最新 workflow 執行](https://github.com/v7rc/microduck-v7rc/actions/workflows/tests.yml) 為準。
 
 Windows 檢查範圍仍是 PowerShell 語法與模擬 WSL 參數測試，不包含實際 WSL GUI、robotd 或手機 Wi-Fi 驗收。
+
+## 2026-11-07：macOS runner 容量問題
+
+[run 42251084222](https://github.com/v7rc/microduck-v7rc/actions/runs/42251084222) 的 Windows、Ubuntu 均成功。macos-15（ARM64）排隊約 15 分鐘後取消，annotation 為 `The job was not acquired by Runner of type hosted even after multiple attempts`，另有 ARM64 capacity constraints 通知；沒有執行到任何測試步驟。
+
+改用 [官方支援的 macos-15-intel](https://github.com/actions/runner-images) 跑相同 Python／Shell 檢查，未刪除測試或將錯誤忽略。CI 的 macOS 架構因此是 x86_64；先前 MacBook Pro M4 的 23 項本機測試屬於 Apple Silicon，不能將兩者混稱 ARM64 CI 通過。新一輪結果以 workflow 頁面的最新 commit 為準。
