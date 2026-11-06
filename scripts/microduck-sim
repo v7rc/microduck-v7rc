@@ -8,6 +8,18 @@ eval "$platform_env"
 if [ "${1:-}" = doctor ]; then
     exec python3 "$ROOT/bridge/platform_support.py" doctor
 fi
+if [ "${1:-}" = prepare ]; then
+    # Installer mode builds without starting or stopping any robot process.
+    (cd "$ROOT/microduck" && cargo build --locked -p robotd -p robotctl -p tof -p sounds -p configd -p updater)
+    if [ ! -f "$ROOT/microduck/policies/velstand.onnx" ]; then
+        sh "$ROOT/microduck/scripts/seed-policies.sh" "$DUCK_SIM_STATE/policies"
+        [ -f "$DUCK_SIM_STATE/policies/current/velstand.onnx" ] || {
+            echo "Policy download incomplete; retry installation when the network is available." >&2
+            exit 1
+        }
+    fi
+    exit 0
+fi
 if [ "${1:-}" = serve ]; then
     # Keep a foreground owner alive: task runners may reap detached children when the
     # startup command exits. Ctrl-C stops only this simulator's pidfile-owned processes.

@@ -4,6 +4,18 @@
 
 macOS Apple Silicon has passed local simulation and phone control/video acceptance. Native Linux setup and launch paths are implemented; isolated container results are reported separately. Desktop graphics, GPU drivers and phone networking still require target-host acceptance. Windows 11 runs the Unix robot stack in WSL2 Ubuntu with WSLg and a PowerShell frontend. This is not native Windows robotd support; real Windows acceptance is pending.
 
+## Graphical installers and desktop launcher
+
+Download the unsigned preview from the installer workflow (GitHub artifact login required; retained for 30 days). Use the universal DMG on macOS 13+, or the self-contained EXE on Windows 11 x64. Windows includes its .NET runtime; the simulator runs inside WSL2 Ubuntu. This is an online installer: initial downloads need internet and roughly 20 GB of free space, not a complete offline simulator bundle.
+
+Mac: open Microduck V7RC inside the DMG, select a language and check the environment. The plan lists missing Apple developer tools, Homebrew/CMake/pkg-config, pinned upstreams, Rust, Python and dependencies. Installation starts only after confirming Install / repair. Complete system dialogs and password requests in the terminal. Only successful completion writes a ready receipt, copies the app to the user Applications directory and creates the desktop icon.
+
+Windows: open the EXE, inspect the environment and confirm installation. Missing WSL/Ubuntu triggers system installation; if Windows requests a reboot, complete it and reopen the installer. Initialize a normal Linux user in Ubuntu first, then install the simulator; Linux packages may require your sudo password. The desktop icon starts the simulator and bridge after success. The installer does not shut down unrelated WSL distributions or change firewall rules. Configure mirrored networking and the specific UDP rules described above for phone access.
+
+The desktop icon automatically launches a completed installation and leaves a terminal showing download/build/runtime output. Initial setup prebuilds the runtime and downloads policies. Ports 6188/8800/1234/7801 are checked before launch: another application using them causes a clear stop, never automatic termination of another project. Use Stop simulator or close the session terminal to stop.
+
+This preview has no publisher signature/notarization, so the OS may display trust prompts. Use organizational signing for production deployment. Mac data defaults to ~/Library/Application Support/MicroduckV7RC; the Windows frontend lives in %LocalAppData%/Programs/MicroduckV7RC and simulator data in Ubuntu ~/.local/share/microduck-v7rc. Installations use separate version directories and do not move or overwrite the research workspace.
+
 ## Prerequisites
 
 Recommended target: Ubuntu 24.04 desktop or WSL2 Ubuntu-24.04; Linux x86_64 or aarch64. Requires Git, curl, a C/C++ toolchain, CMake, pkg-config, OpenSSL/udev/ALSA development packages and OpenGL/EGL. Desktop use requires graphics drivers and DISPLAY/Wayland. Headless camera rendering requires a working EGL configuration. This installs single-robot simulation and inference, not a GPU training environment.

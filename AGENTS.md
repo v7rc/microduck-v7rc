@@ -52,3 +52,9 @@
 - Linux 為原生 POSIX，Windows 為 WSL2 Ubuntu＋PowerShell 前端，不宣稱原生 Windows robotd 支援。
 - 公開 README／安裝／How-To 以 scripts/generate-docs.py 產生四語版本；修改文字後重新產生。歷史研究與原始驗證資料保留原文。
 - tests/linux.Dockerfile 的容器測試不代表完整 Linux GUI／WSL 驗收；目前的驗證界線見 docs/validation/2026-11-06-cross-platform.md。
+
+## 圖形安裝包
+
+- packaging/version.txt 固定 preview 版本；packaging/make_payload.py 以允許清單建立 payload，必須保留 POSIX 路徑與 Unix executable bits。dist/、Windows bin/obj/ 不提交。
+- 發行前以 Preview installers workflow 編譯兩平台並取 SHA256。沒有憑證時只能標示未具發行者簽章的測試版，不宣稱已公證／Windows 實機驗收。
+- GUI 取得同意後才開始下載與套件安裝；ready receipt 必須等整個流程與校驗成功後才寫 true。桌面啟動器不可為排除 Port 衝突而停止其他工作區。

@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType><TargetFramework>net10.0-windows</TargetFramework><UseWPF>true</UseWPF>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable>
+    <AssemblyName>MicroduckV7RC</AssemblyName><ApplicationIcon>../assets/app-icon.ico</ApplicationIcon>
+    <Version>0.1.0-preview.1</Version><AssemblyVersion>0.1.0.0</AssemblyVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="../ui.json" LogicalName="ui.json" />
+    <EmbeddedResource Include="../version.txt" LogicalName="version.txt" />
+    <EmbeddedResource Include="../common/install-linux.sh" LogicalName="install-linux.sh" />
+    <EmbeddedResource Include="../../dist/payload.zip" LogicalName="payload.zip" />
+    <EmbeddedResource Include="../../dist/payload.sha256" LogicalName="payload.sha256" />
+    <EmbeddedResource Include="../../docs/how-to.html" LogicalName="how-to.html" />
+    <EmbeddedResource Include="../assets/app-icon.ico" LogicalName="app-icon.ico" />
+  </ItemGroup>
+</Project>

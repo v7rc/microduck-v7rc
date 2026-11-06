@@ -4,6 +4,12 @@
 
 Control the Microduck simulator with the V7RC app over Wi-Fi UDP and stream its 640×360 head camera. Includes a four-channel SRT bridge and an overlay showing input FPS, two joysticks, connection addresses, and camera frame counts.
 
+## Graphical installers and desktop launcher
+
+Download the unsigned preview from the installer workflow (GitHub artifact login required; retained for 30 days). Use the universal DMG on macOS 13+, or the self-contained EXE on Windows 11 x64. Windows includes its .NET runtime; the simulator runs inside WSL2 Ubuntu. This is an online installer: initial downloads need internet and roughly 20 GB of free space, not a complete offline simulator bundle.
+
+[Installer downloads](https://github.com/v7rc/microduck-v7rc/actions/workflows/installers.yml)
+
 ## Platforms and validation
 
 macOS Apple Silicon has passed local simulation and phone control/video acceptance. Native Linux setup and launch paths are implemented; isolated container results are reported separately. Desktop graphics, GPU drivers and phone networking still require target-host acceptance. Windows 11 runs the Unix robot stack in WSL2 Ubuntu with WSLg and a PowerShell frontend. This is not native Windows robotd support; real Windows acceptance is pending.

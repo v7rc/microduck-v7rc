@@ -1,0 +1,63 @@
+name: Preview installers
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'packaging/**'
+      - 'scripts/desktop*'
+      - 'scripts/verify-installation.py'
+      - '.github/workflows/installers.yml'
+permissions:
+  contents: read
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: '10.0.x'
+      - name: Assemble allowlisted application payload
+        run: python packaging/make_payload.py dist/payload.zip
+      - name: Publish self-contained Windows x64 setup and launcher
+        run: dotnet publish packaging/windows/MicroduckV7RC.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -p:EnableCompressionInSingleFile=true -o dist/windows
+      - name: Validate embedded payload and launcher
+        shell: pwsh
+        run: |
+          $process = Start-Process "$PWD/dist/windows/MicroduckV7RC.exe" -ArgumentList @('--self-test', "$PWD/dist/windows-self-test.txt") -Wait -PassThru
+          if ($process.ExitCode -ne 0) { Get-Content dist/windows-self-test.txt; throw "Installer self-test failed" }
+          Get-Content dist/windows-self-test.txt
+          $version = (Get-Content packaging/version.txt).Trim()
+          $name = "MicroduckV7RC-$version-Windows-x64.exe"
+          Copy-Item dist/windows/MicroduckV7RC.exe "dist/$name"
+          $hash = (Get-FileHash "dist/$name" -Algorithm SHA256).Hash.ToLowerInvariant()
+          "$hash  $name" | Set-Content "dist/$name.sha256"
+      - uses: actions/upload-artifact@v7
+        with:
+          name: MicroduckV7RC-Windows-x64-preview
+          path: |
+            dist/MicroduckV7RC-*-Windows-x64.exe
+            dist/MicroduckV7RC-*-Windows-x64.exe.sha256
+            dist/windows-self-test.txt
+          if-no-files-found: error
+          retention-days: 30
+  macos:
+    runs-on: macos-15-intel
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Build universal app and verified DMG
+        run: python packaging/build_macos.py
+      - uses: actions/upload-artifact@v7
+        with:
+          name: MicroduckV7RC-macOS-universal-preview
+          path: |
+            dist/MicroduckV7RC-*-macOS-universal.dmg
+            dist/MicroduckV7RC-*-macOS-universal.dmg.sha256
+          if-no-files-found: error
+          retention-days: 30

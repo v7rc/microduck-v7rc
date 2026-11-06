@@ -4,6 +4,18 @@
 
 macOS Apple Silicon ではシミュレーション、スマートフォン操作と映像表示を確認済みです。Linux ネイティブの導入・起動処理を実装し、分離コンテナーの試験結果は別途記録します。実機のデスクトップ、GPU、スマートフォン通信は対象 PC での確認が必要です。Windows 11 では WSL2 Ubuntu＋WSLg を使い、PowerShell 起動スクリプトを提供します。Windows ネイティブ版 robotd ではなく、Windows 実機での受け入れ確認は未実施です。
 
+## GUI インストーラーと起動アイコン
+
+インストーラー workflow から未署名プレビューを取得します（GitHub artifact はログインが必要で、保持期間は 30 日）。macOS 13 以降は universal DMG、Windows 11 x64 は .NET 同梱 EXE を使用します。Windows のシミュレーターは WSL2 Ubuntu 内で動作します。初回にネット接続と約 20 GB の空き容量が必要なオンライン導入版で、完全なオフライン配布ではありません。
+
+Mac：DMG 内の Microduck V7RC を開き、言語を選んで環境を確認します。必要な Apple 開発ツール、Homebrew／CMake／pkg-config、固定版上流、Rust、Python、依存関係を表示します。導入／修復を選び確認してから取得を開始します。端末でシステムの確認とパスワード入力を行ってください。全手順の成功後だけ完了状態を記録し、ユーザー Applications に App をコピーしてデスクトップアイコンを作成します。
+
+Windows：EXE を開き、環境確認後に導入を承認します。WSL／Ubuntu がなければシステム導入を開始します。再起動を求められたら完了後に再度開いてください。Ubuntu で一般 Linux ユーザーの初期設定後、シミュレーターを導入します。Linux パッケージには sudo パスワードが必要な場合があります。成功後はアイコンから本体とブリッジを起動できます。他の WSL を停止したりファイアウォールを自動変更したりしません。スマートフォン通信には前述の mirrored networking と UDP 規則を設定してください。
+
+導入済みならアイコンから自動起動し、端末に取得・ビルド・実行内容を表示します。初回導入時に runtime のビルドと方策取得を行います。6188／8800／1234／7801 が使用中なら通知して停止し、他プロジェクトを自動停止しません。停止ボタンまたは実行端末を閉じて終了できます。
+
+未署名／未公証プレビューのため、OS の信頼確認が表示される場合があります。本番配布には組織の署名を使用してください。Mac データは ~/Library/Application Support/MicroduckV7RC、Windows 本体は %LocalAppData%/Programs/MicroduckV7RC、シミュレーターは Ubuntu ~/.local/share/microduck-v7rc に置きます。バージョン別ディレクトリを使い、研究 Repo を移動・上書きしません。
+
 ## 前提条件
 
 推奨環境は Ubuntu 24.04 デスクトップ／WSL2 Ubuntu-24.04、Linux x86_64 または aarch64 です。Git、curl、C/C++ ツールチェーン、CMake、pkg-config、OpenSSL／udev／ALSA 開発パッケージ、OpenGL／EGL が必要です。GUI にはドライバーと DISPLAY／Wayland、ヘッドレスのカメラ描画には動作する EGL 構成が必要です。単体シミュレーションと推論用であり、GPU 学習環境の導入ではありません。

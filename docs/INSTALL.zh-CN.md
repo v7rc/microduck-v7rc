@@ -4,6 +4,18 @@
 
 macOS Apple Silicon 已完成本机与手机控制／图像验收。Linux 提供原生安装与启动，隔离容器测试见验证记录；实际桌面、GPU 与手机网络仍待目标机验收。Windows 11 使用 WSL2 Ubuntu＋WSLg，提供 PowerShell 启动器；并非原生 Windows robotd，Windows 目标机仍待验收。
 
+## 图形安装包与桌面启动
+
+从安装包 workflow 下载未签名测试版（GitHub artifact 需要登录，保留 30 天）。Mac 使用 macOS 13 以上的 universal DMG，Windows 使用 Windows 11 x64 EXE，内含 .NET 运行时；模拟器仍在 WSL2 Ubuntu 中执行。这是联网安装程序，首次需要网络及约 20 GB 空间，并非完整离线模拟器。
+
+Mac：打开 DMG 中的 Microduck V7RC App，选择语言并检查环境。计划会列出缺少的 Apple 开发工具、Homebrew／CMake／pkg-config，以及固定版本的上游、Rust、Python 和依赖。点击安装／修复并确认后才下载，请在终端完成系统对话框和密码操作。全部步骤成功后才写入完成状态，复制 App 到用户 Applications 并创建桌面图标。
+
+Windows：打开 EXE，检查环境后确认安装。缺少 WSL／Ubuntu 时会请求系统安装，需要重启时完成后重新打开安装程序。先在 Ubuntu 初始化普通 Linux 用户，再点击安装；Linux 系统软件包可能要求 sudo 密码。成功后桌面图标同时启动模拟器和桥接，不会自动停止其他 WSL 发行版或修改防火墙。手机通信仍需配置上文的 mirrored networking 和必要 UDP 规则。
+
+桌面图标自动启动已完成的安装，并保留终端显示下载、编译和运行信息。首次安装预编译 runtime 并取得策略；之后由同一图标启动。如果其他程序占用 6188／8800／1234／7801，会提示并停止，不会自动停止其他项目。可点击停止模拟器或关闭启动终端。
+
+当前为未签名／未公证测试版，系统可能提示发布者或信任问题；正式部署应使用组织签名。Mac 数据默认位于 ~/Library/Application Support/MicroduckV7RC；Windows 启动器位于 %LocalAppData%/Programs/MicroduckV7RC，模拟器位于 Ubuntu ~/.local/share/microduck-v7rc。版本目录分离，现有研究 Repo 不会被移动或覆盖。
+
 ## 前置条件
 
 建议 Ubuntu 24.04 桌面／WSL2 Ubuntu-24.04；Linux x86_64 或 aarch64。需要 Git、curl、C/C++ 工具链、CMake、pkg-config、OpenSSL／udev／ALSA 开发包及 OpenGL／EGL。桌面需要可用的图形驱动和 DISPLAY／Wayland；无窗口计算仍须按相机需求配置 EGL。本安装用于单机模拟与推理，并非 GPU 训练环境。

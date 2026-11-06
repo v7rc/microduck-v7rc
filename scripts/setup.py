@@ -42,6 +42,7 @@ def prepare_upstream(name, revision):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--check', action='store_true', help='Only inspect prerequisites; no downloads, symlinks or checkout changes')
+    parser.add_argument('--prepare-simulator', action='store_true', help='Build runtime and download policies without starting services')
     args = parser.parse_args()
     require_posix()
     missing = [name for name in ['git', 'curl', 'cc', 'cmake', 'pkg-config'] if not shutil.which(name)]
@@ -77,6 +78,8 @@ def main():
     run([uv, 'python', 'install', '3.12.16'], env=env)
     run([uv, 'sync', '--project', short/'microduck_rl', '--python', '3.12.16', '--locked'], env=env)
     run([ROOT/'microduck_rl/.venv/bin/python', '-c', 'import mujoco, numpy, PIL, onnxruntime; print("Python simulation dependencies OK")'], env=env)
+    if args.prepare_simulator:
+        run([ROOT/'scripts/microduck-sim', 'prepare'], env=env)
     print('Setup complete. Start scripts/microduck-sim serve, then scripts/v7rc-bridge in another terminal.')
 
 

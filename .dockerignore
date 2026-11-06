@@ -5,4 +5,11 @@ microduck
 microduck_rl
 __pycache__
 **/__pycache__
-docs
+docs/*
+!docs/INSTALL.*.md
+!docs/how-to.html
+
+dist
+packaging/windows/bin
+packaging/windows/obj
+packaging/assets/AppIcon.iconset

@@ -17,3 +17,7 @@ __pycache__/
 /.runtime
 .venv/
 *.pyc
+/dist/
+packaging/windows/bin/
+packaging/windows/obj/
+packaging/assets/AppIcon.iconset/

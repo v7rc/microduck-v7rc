@@ -23,3 +23,5 @@
 Repo 結構：[microduck-v7rc 獨立整合 Repo 與本機依賴配置](repositories/microduck-v7rc-layout.md)。
 
 跨平台操作： [繁中安裝](INSTALL.zh-TW.md) · [简中安装](INSTALL.zh-CN.md) · [English installation](INSTALL.en.md) · [日本語インストール](INSTALL.ja.md) · [四語離線 How-To](how-to.html) · [跨平台驗證範圍](validation/2026-11-06-cross-platform.md)。
+
+圖形安裝包：[Mac／Windows preview 安裝包與驗證範圍](validation/2026-11-07-installers.md)。公開使用步驟已同步至四語安裝指引與 How-To。

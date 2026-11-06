@@ -4,6 +4,18 @@
 
 macOS Apple Silicon 已完成本機與手機控制／影像驗收。Linux 提供原生安裝與啟動，隔離容器測試另列於驗證紀錄；實際桌面、GPU 與手機網路仍待目標機驗收。Windows 11 使用 WSL2 Ubuntu＋WSLg，提供 PowerShell 啟動器；不是原生 Windows robotd，Windows 目標機仍待驗收。
 
+## 圖形安裝包與桌面啟動
+
+從安裝包 workflow 下載未簽署測試版（GitHub artifact 需登入，保留 30 天）。Mac 使用 macOS 13 以上的 universal DMG；Windows 使用 Windows 11 x64 EXE，內含 .NET 執行環境，模擬器仍在 WSL2 Ubuntu 執行。這是網路安裝程式，第一次需要網路與約 20 GB 可用空間，不是離線的完整模擬器。
+
+Mac：開啟 DMG 裡的 Microduck V7RC App，選擇語言並按「檢查環境」。安裝計畫會列出缺少的 Apple 開發工具、Homebrew／CMake／pkg-config，以及固定版本的上游、Rust、Python 與依賴。按「安裝／修復」並確認後才開始下載，請跟著終端機完成系統對話框與密碼操作。程式只在所有步驟成功後寫入完成狀態，並複製 App 到使用者 Applications、建立桌面啟動圖示。
+
+Windows：開啟 EXE，先檢查環境並確認安裝。若缺少 WSL／Ubuntu，會請求系統安裝；需要重新開機時請完成後重開安裝程式。先在 Ubuntu 完成一般 Linux 使用者初始化，再按安裝；Linux 系統套件安裝可能要求 sudo 密碼。成功後桌面圖示會啟動模擬器與橋接，不會自動關閉其他 WSL 發行版或修改防火牆。手機連線仍須依前述 mirrored networking 與窄範圍 UDP 規則設定。
+
+桌面圖示會自動啟動已完成的安裝，並保留終端機顯示下載、編譯與執行訊息。初次安裝會先編譯 runtime 並取得策略；之後可由同一圖示啟動。若研究版或其他程式占用 6188／8800／1234／7801，會停止並提示，不會自動停止別的專案。停止可使用視窗中的「停止模擬器」或關閉啟動終端機。
+
+目前是未簽署／未公證測試版，系統可能顯示發行者或信任提示；正式部署應使用組織簽章。Mac 預設資料位於 ~/Library/Application Support/MicroduckV7RC；Windows 啟動器位於 %LocalAppData%/Programs/MicroduckV7RC，模擬資料位於 Ubuntu 的 ~/.local/share/microduck-v7rc。版本目錄彼此分開，既有研究 Repo 不會被搬移或覆寫。
+
 ## 前置條件
 
 建議 Ubuntu 24.04 桌面／WSL2 Ubuntu-24.04；Linux x86_64 或 aarch64。需 Git、curl、C/C++ 工具鏈、CMake、pkg-config、OpenSSL／udev／ALSA 開發套件與 OpenGL／EGL。桌面需要可用的圖形驅動與 DISPLAY／Wayland；無視窗運算仍須依相機需求配置 EGL。這是單機模擬與推論安裝，不是 GPU 訓練環境。

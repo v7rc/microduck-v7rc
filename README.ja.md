@@ -4,6 +4,12 @@
 
 V7RC アプリから Wi-Fi UDP で Microduck シミュレーターを操作し、640×360 の頭部カメラ映像を受信します。SRT 4 チャンネルブリッジ、受信 FPS、左右スティック、接続先 IP／Port、送信フレーム数の HUD を含みます。
 
+## GUI インストーラーと起動アイコン
+
+インストーラー workflow から未署名プレビューを取得します（GitHub artifact はログインが必要で、保持期間は 30 日）。macOS 13 以降は universal DMG、Windows 11 x64 は .NET 同梱 EXE を使用します。Windows のシミュレーターは WSL2 Ubuntu 内で動作します。初回にネット接続と約 20 GB の空き容量が必要なオンライン導入版で、完全なオフライン配布ではありません。
+
+[Installer downloads](https://github.com/v7rc/microduck-v7rc/actions/workflows/installers.yml)
+
 ## 対応環境と検証範囲
 
 macOS Apple Silicon ではシミュレーション、スマートフォン操作と映像表示を確認済みです。Linux ネイティブの導入・起動処理を実装し、分離コンテナーの試験結果は別途記録します。実機のデスクトップ、GPU、スマートフォン通信は対象 PC での確認が必要です。Windows 11 では WSL2 Ubuntu＋WSLg を使い、PowerShell 起動スクリプトを提供します。Windows ネイティブ版 robotd ではなく、Windows 実機での受け入れ確認は未実施です。

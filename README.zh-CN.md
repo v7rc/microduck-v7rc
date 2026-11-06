@@ -4,6 +4,12 @@
 
 通过 V7RC APP，以 Wi-Fi UDP 控制 Microduck 模拟器，并回传 640×360 头部相机图像。包含 SRT 四通道桥接、接收 FPS、双摇杆、连接 IP／Port 与相机发送帧 HUD。
 
+## 图形安装包与桌面启动
+
+从安装包 workflow 下载未签名测试版（GitHub artifact 需要登录，保留 30 天）。Mac 使用 macOS 13 以上的 universal DMG，Windows 使用 Windows 11 x64 EXE，内含 .NET 运行时；模拟器仍在 WSL2 Ubuntu 中执行。这是联网安装程序，首次需要网络及约 20 GB 空间，并非完整离线模拟器。
+
+[Installer downloads](https://github.com/v7rc/microduck-v7rc/actions/workflows/installers.yml)
+
 ## 平台与验证范围
 
 macOS Apple Silicon 已完成本机与手机控制／图像验收。Linux 提供原生安装与启动，隔离容器测试见验证记录；实际桌面、GPU 与手机网络仍待目标机验收。Windows 11 使用 WSL2 Ubuntu＋WSLg，提供 PowerShell 启动器；并非原生 Windows robotd，Windows 目标机仍待验收。
