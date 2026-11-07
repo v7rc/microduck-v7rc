@@ -6,16 +6,16 @@
 
 ## 下載與安裝
 
-**目前版本: `0.1.0-preview.2`** · [GitHub Release](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.2)
+**目前版本: `0.1.0-preview.3`** · [GitHub Release](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.3)
 
 | 平台 | 安裝包 | 校驗檔 |
 | --- | --- | --- |
-| macOS 13+ · Apple Silicon / Intel | [MicroduckV7RC-0.1.0-preview.2-macOS-universal.dmg](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.2/MicroduckV7RC-0.1.0-preview.2-macOS-universal.dmg) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.2/MicroduckV7RC-0.1.0-preview.2-macOS-universal.dmg.sha256) |
-| Windows 11 x64 · WSL2 Ubuntu | [MicroduckV7RC-0.1.0-preview.2-Windows-x64.exe](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.2/MicroduckV7RC-0.1.0-preview.2-Windows-x64.exe) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.2/MicroduckV7RC-0.1.0-preview.2-Windows-x64.exe.sha256) |
+| macOS 13+ · Apple Silicon / Intel | [MicroduckV7RC-0.1.0-preview.3-macOS-universal.dmg](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.3/MicroduckV7RC-0.1.0-preview.3-macOS-universal.dmg) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.3/MicroduckV7RC-0.1.0-preview.3-macOS-universal.dmg.sha256) |
+| Windows 11 x64 · WSL2 Ubuntu | [MicroduckV7RC-0.1.0-preview.3-Windows-x64.exe](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.3/MicroduckV7RC-0.1.0-preview.3-Windows-x64.exe) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.3/MicroduckV7RC-0.1.0-preview.3-Windows-x64.exe.sha256) |
 
 下載後開啟安裝包，檢查環境並確認安裝；完成後從桌面圖示啟動。Repo 已公開，可直接下載 Release 安裝包，無須登入 GitHub。
 
-Mac 已完成本機安裝、桌面啟動及 V7RC 控制／影像驗收；Windows 已通過建置與自我檢查，完整 WSL2 安裝與手機操作仍待 Windows 實機驗收。
+preview.2 已完成 Mac 安裝、桌面啟動及 V7RC 控制與影像驗收。preview.3 的比例控制校正已完成 Mac 模擬器 54 輪量測。Windows 的完整 WSL2 安裝與手機操作仍待實機驗收。
 
 ## 圖形安裝包與桌面啟動
 

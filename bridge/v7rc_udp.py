@@ -19,6 +19,23 @@ import time
 LOG = logging.getLogger("v7rc")
 FRAME = re.compile(rb"SRT([0-9]{4})([0-9]{4})([0-9]{4})([0-9]{4})#")
 
+# Input fractions are after the default 8% deadzone. Output fractions scale
+# with the configured limits, using the flat MuJoCo velstand v8 measurements.
+REVERSE_CURVE = ((0, 0), (17 / 92, .185 / .3), (42 / 92, .22 / .3),
+                 (67 / 92, .26 / .3), (1, 1))
+FORWARD_CURVE = ((0, 0), (17 / 92, .102 / .3), (42 / 92, .145 / .3),
+                 (67 / 92, .213 / .3), (1, 1))
+LEFT_CURVE = ((0, 0), (17 / 92, .22 / .8), (42 / 92, 42 / 92), (1, 1))
+RIGHT_CURVE = ((0, 0), (17 / 92, .165 / .8), (42 / 92, .21 / .8),
+               (67 / 92, .42 / .8), (1, .9))
+
+
+def interpolate_curve(travel, points):
+    for (left, low), (right, high) in zip(points, points[1:]):
+        if travel <= right:
+            return low + (high - low) * (travel - left) / (right - left)
+    return points[-1][1]
+
 
 @dataclass(frozen=True)
 class Config:
@@ -32,6 +49,7 @@ class Config:
     max_head_pitch: float = 0.25
     invert: tuple = (False, False, False, False)
     timeout: float = 0.3
+    drive_profile: str = "linear"
 
 
 def parse_srt(payload, cfg):
@@ -56,9 +74,62 @@ def map_channels(channels, cfg):
     a = tuple(axis(value, cfg) * (-1 if cfg.invert[i] else 1) for i, value in enumerate(channels))
     # Increasing steering/head-yaw PWM means right; robotd's positive yaw means left.
     move = {"vx": a[1] * cfg.max_forward, "vy": 0.0, "vyaw": -a[0] * cfg.max_turn}
+    if cfg.drive_profile == "velstand-v8":
+        travel = abs(a[1])
+        forward_curve = REVERSE_CURVE if a[1] < 0 else FORWARD_CURVE
+        yaw_curve = RIGHT_CURVE if a[0] > 0 else LEFT_CURVE
+        move["vx"] = math.copysign(cfg.max_forward * interpolate_curve(travel, forward_curve), a[1])
+        move["vyaw"] = math.copysign(cfg.max_turn * interpolate_curve(abs(a[0]), yaw_curve), -a[0])
     head = {"neck_pitch": 0.0, "head_pitch": -a[2] * cfg.max_head_pitch,
             "head_yaw": -a[3] * cfg.max_head_yaw, "head_roll": 0.0}
     return move, head
+
+
+class GaitStart:
+    """Briefly bring the simulated velstand policy out of its standing gait."""
+
+    def __init__(self):
+        self.reset()
+
+    def reset(self):
+        self.direction = None
+        self.started = None
+        self.mixed = False
+
+    def apply(self, move, channels, cfg, now):
+        if cfg.drive_profile != "velstand-v8":
+            return move
+        active = [axis for axis in ("vx", "vyaw") if move[axis]]
+        if not active:
+            self.reset()
+            return move
+        if len(active) > 1:
+            self.mixed = True
+            return move
+        component = active[0]
+        target = move[component]
+        direction = (component, target > 0)
+        limit = cfg.max_forward if component == "vx" else cfg.max_turn
+        if component == "vyaw" and target < 0:
+            limit = max(abs(target), limit * 0.825)
+        travel = abs(axis(channels[1 if component == "vx" else 0], cfg))
+        # At 25% raw stick travel, the default deadzone leaves about 18.5%.
+        # Smaller inputs receive a proportionally smaller assist.
+        assist = min(1.0, travel / 0.18)
+        if direction != self.direction:
+            self.started = now if self.direction is None and not self.mixed else None
+            self.direction = direction
+        if self.started is None or self.mixed:
+            return move
+        elapsed = now - self.started
+        if component == "vx" and target < 0:
+            hold, release = 1.75, 0.10
+        else:
+            hold, release = 0.55, 0.35
+        fade = min(1.0, max(0.0, (hold + release - elapsed) / release))
+        fade = fade * fade * (3.0 - 2.0 * fade)
+        boost = (math.copysign(limit, target) - target) * assist * fade
+        return {**move, component: target + boost}
 
 
 class InputState:
@@ -171,10 +242,12 @@ def run(args, cfg):
     next_telemetry = 0.0
     next_status = time.monotonic()
     last_command = None
+    gait_start = GaitStart()
 
     def expire_input(now):
         nonlocal last_command
         if state.expire(now):
+            gait_start.reset()
             LOG.warning("UDP input expired; zeroing movement/head; neutral required")
             if robot.connection:
                 try:
@@ -191,6 +264,7 @@ def run(args, cfg):
                 while state.received and state.received[0] <= now - 1:
                     state.received.popleft()
                 telemetry = {"published_monotonic": now, "last_received_monotonic": state.last_received_at,
+                             "drive_profile": cfg.drive_profile,
                              "port": args.port, "pwm_min": cfg.low, "pwm_center": cfg.center, "pwm_max": cfg.high,
                              "channels": state.last_received_channels, "fps": len(state.received),
                              "received_total": state.received_total, "armed": state.armed,
@@ -204,6 +278,7 @@ def run(args, cfg):
             expire_input(now)
             if robot.connection is None and now >= next_retry:
                 state.disarm()
+                gait_start.reset()
                 try:
                     robot.connect()
                     robot.send(*neutral)
@@ -218,6 +293,7 @@ def run(args, cfg):
             if now >= next_tick:
                 if state.armed and now - state.last_at < cfg.timeout and robot.connection:
                     move, head = map_channels(state.channels, cfg)
+                    move = gait_start.apply(move, state.channels, cfg, now)
                     try:
                         robot.send(move, head)
                         command = (move, head)
@@ -274,6 +350,7 @@ def main():
     parser.add_argument("--max-turn", type=float, default=0.8)
     parser.add_argument("--max-head-yaw", type=float, default=0.4)
     parser.add_argument("--max-head-pitch", type=float, default=0.25)
+    parser.add_argument("--drive-profile", choices=("linear", "velstand-v8"), default="linear")
     args = parser.parse_args()
     if not (1 <= args.port <= 65535 and 5 <= args.hz <= 50 and 0.1 <= args.timeout <= 0.5):
         parser.error("port 1..65535, hz 5..50, timeout 0.1..0.5 required")
@@ -284,7 +361,7 @@ def main():
         parser.error("Invalid command limit: forward <=0.3, turn <=1.5, head yaw <=0.5, pitch <=0.4")
     cfg = Config(args.pwm_min, args.pwm_center, args.pwm_max, args.deadzone,
                  args.max_forward, args.max_turn, args.max_head_yaw, args.max_head_pitch,
-                 tuple(i in args.invert for i in range(1, 5)), args.timeout)
+                 tuple(i in args.invert for i in range(1, 5)), args.timeout, args.drive_profile)
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
     try:
         run(args, cfg)

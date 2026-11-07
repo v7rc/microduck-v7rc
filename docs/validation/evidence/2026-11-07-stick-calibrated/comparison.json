@@ -1,0 +1,18 @@
+{
+  "before_success": 23,
+  "after_success": 48,
+  "before_early_25": {
+    "left": 3.9667391218381383,
+    "backward": 0.10594679063944654,
+    "forward": 0.1280561252538269,
+    "right": 2.7168283097972914
+  },
+  "after_early_25": {
+    "left": 38.772038735617016,
+    "backward": 4.351993194559331,
+    "forward": 13.323796020992713,
+    "right": 46.75884620256089
+  },
+  "after_valid": 54,
+  "after_falls": 0
+}

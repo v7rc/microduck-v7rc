@@ -1,0 +1,35 @@
+{
+  "date": "2026-11-07",
+  "host": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "mac_ver": "27.0.1"
+  },
+  "test_scope": "SRT through real bridge, CPU MuJoCo headless, camera disabled; not phone Wi-Fi performance",
+  "policy": "official seed-v8 velstand",
+  "script_sha256": {
+    "scripts/measure-stick-response.py": "38aa0a6a6d168a352260a5eb15ee6498a9295e7dfae950e662dc91c4b32f5efb",
+    "scripts/summarize-stick-response.py": "c15c93015faa317b4f07edc3df95826e103feb0dd295e2c1f4c2200550fe5b68",
+    "bridge/v7rc_udp.py": "db3a9a84a29a66f7203ed00c2f18082687a7a23b6d88c33c18f4ee1aec59007b",
+    "bridge/microduck_hud.py": "adcca9f882e1e108ab74f40f0a7e88c411169d7b7dd569a6dbba4999298abc8d"
+  },
+  "microduck": {
+    "commit": "98ce17e4868ba9370713c4d11f3d934e5a1b7687",
+    "status": "M scripts/duck-sim"
+  },
+  "microduck_rl": {
+    "commit": "bae39f5900b318f7e87fc485c30a31213cfa14eb",
+    "status": ""
+  },
+  "python": "3.12.16 (main, Oct 26 2026, 13:59:40) [Clang 23.1.3 ]",
+  "packages": {
+    "mujoco": "3.10.0",
+    "numpy": "2.4.1",
+    "onnxruntime": "1.24.4",
+    "matplotlib": "3.10.9"
+  },
+  "preview2_content_comparison": {
+    "bridge/v7rc_udp.py": true,
+    ".runtime/duck-sim/policies/current/velstand.onnx": true
+  }
+}

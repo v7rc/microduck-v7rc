@@ -1,0 +1,3378 @@
+{
+  "started_at": "2026-11-07T03:01:35.438830+00:00",
+  "scope": "Local SRT UDP sender -> bridge -> robotd -> headless CPU MuJoCo; no phone, camera or physical robot",
+  "runtime_commit": "98ce17e4868ba9370713c4d11f3d934e5a1b7687",
+  "rl_commit": "bae39f5900b318f7e87fc485c30a31213cfa14eb",
+  "integration_commit": "2aff421668ddad2bdb552f26bd9d5d4c04802094",
+  "policy_sha256": "2fc7f8ee6acd7d0d3f66a99927b5d5a56589aeed02ec714de329b252d5ccf492",
+  "configuration": {
+    "drive_profile": "velstand-v8",
+    "repeats": 3,
+    "levels": [
+      25,
+      50,
+      75,
+      100
+    ],
+    "neutral_seconds": 4,
+    "motion_seconds": 8,
+    "excluded_start_seconds": 2,
+    "sample_hz": 20,
+    "deadzone": 0.08,
+    "max_forward": 0.3,
+    "max_turn": 0.8,
+    "fresh_scene_per_trial": true
+  },
+  "trials": [
+    {
+      "name": "01-r1-neutral-0",
+      "repeat": 1,
+      "direction": "neutral",
+      "stick_percent": 0,
+      "channels": [
+        1500,
+        1500,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.0,
+        "vy": 0.0,
+        "vyaw": -0.0
+      },
+      "initial": {
+        "trunk_z": 0.11546035287793475,
+        "tilt_deg": 1.2252527036846055
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.000000000000163,
+        "wall_seconds": 8.001864500110969,
+        "realtime_factor": 0.9997669917916281,
+        "body_forward_m": -0.0021052205977468426,
+        "body_lateral_m": 0.0024215547074782433,
+        "turn_deg": -0.20195830042706805,
+        "vx_m_s": -0.00026315257471834995,
+        "vy_m_s": 0.00030269433843477424,
+        "yaw_rad_s": -0.00044060466177301696,
+        "yaw_deg_s": -0.02524478755338299,
+        "vx_wall_m_s": -0.0002630912580083864,
+        "yaw_wall_deg_s": -0.025238905310664448
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999851,
+        "wall_seconds": 5.998150458093733,
+        "realtime_factor": 1.0003083520360219,
+        "body_forward_m": -0.0014733737442305251,
+        "body_lateral_m": 0.0016724787424833812,
+        "turn_deg": -0.18851880706438243,
+        "vx_m_s": -0.00024556229070509363,
+        "vy_m_s": 0.00027874645708057046,
+        "yaw_rad_s": -0.0005483789808675835,
+        "yaw_deg_s": -0.03141980117739785,
+        "vx_wall_m_s": -0.0002456380103374027,
+        "yaw_wall_deg_s": -0.0314294895370623
+      },
+      "min_trunk_m": 0.11543362405223993,
+      "max_tilt_deg": 1.2283037354531239,
+      "loop_hz_min": 49.81976866694595,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "02-r1-deadzone-8",
+      "repeat": 1,
+      "direction": "deadzone",
+      "stick_percent": 8,
+      "channels": [
+        1540,
+        1540,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.0,
+        "vy": 0.0,
+        "vyaw": -0.0
+      },
+      "initial": {
+        "trunk_z": 0.11545802932730076,
+        "tilt_deg": 1.0875015597265119
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.000000000000114,
+        "wall_seconds": 8.009853541851044,
+        "realtime_factor": 0.9987698224693565,
+        "body_forward_m": -0.001918589142953135,
+        "body_lateral_m": 0.0022027138157225804,
+        "turn_deg": -0.5011696427641684,
+        "vx_m_s": -0.00023982364286913847,
+        "vy_m_s": 0.00027533922696531865,
+        "yaw_rad_s": -0.0010933825471597988,
+        "yaw_deg_s": -0.06264620534552016,
+        "vx_wall_m_s": -0.0002395286172123638,
+        "yaw_wall_deg_s": -0.06256913939132402
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999801,
+        "wall_seconds": 6.001298625022173,
+        "realtime_factor": 0.9997836093313275,
+        "body_forward_m": -0.0014305789726742563,
+        "body_lateral_m": 0.0017928998465548784,
+        "turn_deg": -0.3748502114425268,
+        "vx_m_s": -0.0002384298287790506,
+        "vy_m_s": 0.0002988166410924896,
+        "yaw_rad_s": -0.001090395065244872,
+        "yaw_deg_s": -0.0624750352404232,
+        "vx_wall_m_s": -0.00023837823478896965,
+        "yaw_wall_deg_s": -0.06246151622577219
+      },
+      "min_trunk_m": 0.11544246266721142,
+      "max_tilt_deg": 1.2298292997177709,
+      "loop_hz_min": 48.99229189573917,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "03-r1-forward-50",
+      "repeat": 1,
+      "direction": "forward",
+      "stick_percent": 50,
+      "channels": [
+        1500,
+        1750,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.145,
+        "vy": 0.0,
+        "vyaw": -0.0
+      },
+      "initial": {
+        "trunk_z": 0.11546890033415934,
+        "tilt_deg": 1.0719383431390175
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.000000000000043,
+        "wall_seconds": 8.000816875137389,
+        "realtime_factor": 0.9998979010330952,
+        "body_forward_m": 0.6380793924632531,
+        "body_lateral_m": -0.01846652815933589,
+        "turn_deg": -19.257398226143497,
+        "vx_m_s": 0.0797599240579062,
+        "vy_m_s": -0.0023083160199169742,
+        "yaw_rad_s": -0.04201312555173973,
+        "yaw_deg_s": -2.4071747782679243,
+        "vx_wall_m_s": 0.07975178065205948,
+        "yaw_wall_deg_s": -2.4069290082099037
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.99999999999973,
+        "wall_seconds": 5.992766541196033,
+        "realtime_factor": 1.0012070316362187,
+        "body_forward_m": 0.4745785412322778,
+        "body_lateral_m": -0.004794683453804228,
+        "turn_deg": -15.156009148627154,
+        "vx_m_s": 0.07909642353871651,
+        "vy_m_s": -0.0007991139089674073,
+        "yaw_rad_s": -0.044087043517656396,
+        "yaw_deg_s": -2.526001524771306,
+        "vx_wall_m_s": 0.0791918954242395,
+        "yaw_wall_deg_s": -2.5290504885248417
+      },
+      "min_trunk_m": 0.11306462336365934,
+      "max_tilt_deg": 4.015308395504111,
+      "loop_hz_min": 49.778105780539576,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.1450000086867414,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "04-r1-right-75",
+      "repeat": 1,
+      "direction": "right",
+      "stick_percent": 75,
+      "channels": [
+        1875,
+        1500,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.0,
+        "vy": 0.0,
+        "vyaw": -0.41999999999999993
+      },
+      "initial": {
+        "trunk_z": 0.11546798580512824,
+        "tilt_deg": 1.1305579556039669
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.00000000000017,
+        "wall_seconds": 7.999822792131454,
+        "realtime_factor": 1.0000221514742664,
+        "body_forward_m": 0.25560519098916445,
+        "body_lateral_m": -0.018973705533088258,
+        "turn_deg": -266.85674282217326,
+        "vx_m_s": 0.03195064887364488,
+        "vy_m_s": -0.0023717131916359815,
+        "yaw_rad_s": -0.5821910991743211,
+        "yaw_deg_s": -33.35709285277095,
+        "vx_wall_m_s": 0.0319513566276212,
+        "yaw_wall_deg_s": -33.357831761554884
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999858,
+        "wall_seconds": 5.997132749995217,
+        "realtime_factor": 1.0004781034744719,
+        "body_forward_m": 0.19627739976824973,
+        "body_lateral_m": -0.00027715726902480145,
+        "turn_deg": -203.26989976579213,
+        "vx_m_s": 0.03271289996137573,
+        "vy_m_s": -4.619287817080134e-05,
+        "yaw_rad_s": -0.5912881701853345,
+        "yaw_deg_s": -33.87831662763283,
+        "vx_wall_m_s": 0.03272854011250731,
+        "yaw_wall_deg_s": -33.89451396852175
+      },
+      "min_trunk_m": 0.11400848271438127,
+      "max_tilt_deg": 4.871020024148916,
+      "loop_hz_min": 49.608389291381485,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.0,
+        0.0,
+        -0.4200000126150393
+      ]
+    },
+    {
+      "name": "05-r1-backward-75",
+      "repeat": 1,
+      "direction": "backward",
+      "stick_percent": 75,
+      "channels": [
+        1500,
+        1125,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": -0.26,
+        "vy": 0.0,
+        "vyaw": -0.0
+      },
+      "initial": {
+        "trunk_z": 0.11546621260283606,
+        "tilt_deg": 1.1374740538705779
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.000000000000128,
+        "wall_seconds": 8.004166292026639,
+        "realtime_factor": 0.9994794845740947,
+        "body_forward_m": -0.4902346678531433,
+        "body_lateral_m": -0.03734782689254046,
+        "turn_deg": -10.415845058539142,
+        "vx_m_s": -0.06127933348164193,
+        "vy_m_s": -0.004668478361567483,
+        "yaw_rad_s": -0.022723848831135828,
+        "yaw_deg_s": -1.301980632317372,
+        "vx_wall_m_s": -0.06124743664327554,
+        "yaw_wall_deg_s": -1.301302931314021
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999815,
+        "wall_seconds": 6.0044939171057194,
+        "realtime_factor": 0.9992515743761349,
+        "body_forward_m": -0.4455718129555979,
+        "body_lateral_m": -0.03295156443205763,
+        "turn_deg": -12.61945701408465,
+        "vx_m_s": -0.07426196882593526,
+        "vy_m_s": -0.005491927405343107,
+        "yaw_rad_s": -0.03670851245161273,
+        "yaw_deg_s": -2.10324283568084,
+        "vx_wall_m_s": -0.07420638926558727,
+        "yaw_wall_deg_s": -2.1016687148494055
+      },
+      "min_trunk_m": 0.1145326878770307,
+      "max_tilt_deg": 3.440094143268086,
+      "loop_hz_min": 49.81386635381805,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        -0.26013355851669195,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "06-r1-left-100",
+      "repeat": 1,
+      "direction": "left",
+      "stick_percent": 100,
+      "channels": [
+        1000,
+        1500,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.0,
+        "vy": 0.0,
+        "vyaw": 0.8
+      },
+      "initial": {
+        "trunk_z": 0.11546693477100646,
+        "tilt_deg": 1.2237808959490426
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.00000000000015,
+        "wall_seconds": 8.00025620800443,
+        "realtime_factor": 0.9999679750250968,
+        "body_forward_m": 0.12583688168340737,
+        "body_lateral_m": -0.030550226013274756,
+        "turn_deg": 372.97161222811314,
+        "vx_m_s": 0.015729610210425626,
+        "vy_m_s": -0.0038187782516592734,
+        "yaw_rad_s": 0.8136978312314996,
+        "yaw_deg_s": 46.621451528513276,
+        "vx_wall_m_s": 0.015729106470053402,
+        "yaw_wall_deg_s": 46.61995847769812
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999837,
+        "wall_seconds": 5.995113250100985,
+        "realtime_factor": 1.0008151221995296,
+        "body_forward_m": 0.09780953745249107,
+        "body_lateral_m": -0.03479993115561686,
+        "turn_deg": 286.42872631844597,
+        "vx_m_s": 0.016301589575415623,
+        "vy_m_s": -0.005799988525936301,
+        "yaw_rad_s": 0.8331873910917924,
+        "yaw_deg_s": 47.73812105307563,
+        "vx_wall_m_s": 0.016314877362966166,
+        "yaw_wall_deg_s": 47.77703345530982
+      },
+      "min_trunk_m": 0.11418836451516078,
+      "max_tilt_deg": 3.665689357966659,
+      "loop_hz_min": 49.83981629630064,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.0,
+        0.0,
+        0.799999999993509
+      ]
+    },
+    {
+      "name": "07-r1-left-75",
+      "repeat": 1,
+      "direction": "left",
+      "stick_percent": 75,
+      "channels": [
+        1125,
+        1500,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.0,
+        "vy": 0.0,
+        "vyaw": 0.582608695652174
+      },
+      "initial": {
+        "trunk_z": 0.11547022024141378,
+        "tilt_deg": 1.211463934882274
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.00000000000022,
+        "wall_seconds": 8.003563959151506,
+        "realtime_factor": 0.9995547034834137,
+        "body_forward_m": 0.18644116986698528,
+        "body_lateral_m": -0.02062123878481898,
+        "turn_deg": 281.49879179661394,
+        "vx_m_s": 0.023305146233372518,
+        "vy_m_s": -0.0025776548481023015,
+        "yaw_rad_s": 0.6141350946545978,
+        "yaw_deg_s": 35.18734897457578,
+        "vx_wall_m_s": 0.02329476853293626,
+        "yaw_wall_deg_s": 35.17168017064949
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999908,
+        "wall_seconds": 5.999110625125468,
+        "realtime_factor": 1.000148251120877,
+        "body_forward_m": 0.1479031107254295,
+        "body_lateral_m": -0.015010814354637867,
+        "turn_deg": 213.58221929885238,
+        "vx_m_s": 0.02465051845423863,
+        "vy_m_s": -0.0025018023924396828,
+        "yaw_rad_s": 0.6212854917469344,
+        "yaw_deg_s": 35.597036549809275,
+        "vx_wall_m_s": 0.024654172921229667,
+        "yaw_wall_deg_s": 35.60231385037768
+      },
+      "min_trunk_m": 0.11398397910295381,
+      "max_tilt_deg": 4.2017170348614705,
+      "loop_hz_min": 49.798403612575385,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.0,
+        0.0,
+        0.5826087035545859
+      ]
+    },
+    {
+      "name": "08-r1-right-50",
+      "repeat": 1,
+      "direction": "right",
+      "stick_percent": 50,
+      "channels": [
+        1750,
+        1500,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.0,
+        "vy": 0.0,
+        "vyaw": -0.20999999999999996
+      },
+      "initial": {
+        "trunk_z": 0.115460704096616,
+        "tilt_deg": 1.0948156809657752
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.000000000000199,
+        "wall_seconds": 8.00417024991475,
+        "realtime_factor": 0.9994789903532354,
+        "body_forward_m": 0.25875406448810734,
+        "body_lateral_m": -0.021462803660726486,
+        "turn_deg": -187.85112576159713,
+        "vx_m_s": 0.03234425806101261,
+        "vy_m_s": -0.002682850457590744,
+        "yaw_rad_s": -0.4098275810147161,
+        "yaw_deg_s": -23.48139072019906,
+        "vx_wall_m_s": 0.032327406390545384,
+        "yaw_wall_deg_s": -23.469156689114385
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999886,
+        "wall_seconds": 6.003820208832622,
+        "realtime_factor": 0.9993637036586946,
+        "body_forward_m": 0.19631860393511924,
+        "body_lateral_m": -0.004931208502858989,
+        "turn_deg": -133.60333862930017,
+        "vx_m_s": 0.03271976732252049,
+        "vy_m_s": -0.0008218680838098471,
+        "yaw_rad_s": -0.3886363584563767,
+        "yaw_deg_s": -22.267223104883783,
+        "vx_wall_m_s": 0.03269894785428481,
+        "yaw_wall_deg_s": -22.253054552291115
+      },
+      "min_trunk_m": 0.11397741629574056,
+      "max_tilt_deg": 5.204917395833182,
+      "loop_hz_min": 49.86044779239949,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.0,
+        0.0,
+        -0.2100000219901531
+      ]
+    },
+    {
+      "name": "09-r1-backward-50",
+      "repeat": 1,
+      "direction": "backward",
+      "stick_percent": 50,
+      "channels": [
+        1500,
+        1250,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": -0.22,
+        "vy": 0.0,
+        "vyaw": -0.0
+      },
+      "initial": {
+        "trunk_z": 0.11546109561121187,
+        "tilt_deg": 1.1861121095371272
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.000000000000199,
+        "wall_seconds": 8.002109916880727,
+        "realtime_factor": 0.9997363299301755,
+        "body_forward_m": -0.38480428548190804,
+        "body_lateral_m": -0.028779031491459234,
+        "turn_deg": -7.402651448824882,
+        "vx_m_s": -0.04810053568523731,
+        "vy_m_s": -0.003597378936432315,
+        "yaw_rad_s": -0.016150080144939936,
+        "yaw_deg_s": -0.9253314311030872,
+        "vx_wall_m_s": -0.04808785301363458,
+        "yaw_wall_deg_s": -0.9250874489000374
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999886,
+        "wall_seconds": 5.995790000073612,
+        "realtime_factor": 1.0007021593361713,
+        "body_forward_m": -0.33775030239500414,
+        "body_lateral_m": -0.012003129832278966,
+        "turn_deg": -11.009793311619443,
+        "vx_m_s": -0.05629171706583509,
+        "vy_m_s": -0.002000521638713199,
+        "yaw_rad_s": -0.032026190541968834,
+        "yaw_deg_s": -1.8349655519366086,
+        "vx_wall_m_s": -0.05633124282052198,
+        "yaw_wall_deg_s": -1.8362539901304538
+      },
+      "min_trunk_m": 0.11452976047300584,
+      "max_tilt_deg": 3.358978453891893,
+      "loop_hz_min": 49.50243454606677,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        -0.22043283993868204,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "10-r1-left-25",
+      "repeat": 1,
+      "direction": "left",
+      "stick_percent": 25,
+      "channels": [
+        1375,
+        1500,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.0,
+        "vy": 0.0,
+        "vyaw": 0.21999999999999997
+      },
+      "initial": {
+        "trunk_z": 0.11545519307512146,
+        "tilt_deg": 1.170513584911433
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.00000000000022,
+        "wall_seconds": 8.003704083152115,
+        "realtime_factor": 0.9995372038854244,
+        "body_forward_m": 0.19740610470877215,
+        "body_lateral_m": 0.002680151374081131,
+        "turn_deg": 109.19900613326159,
+        "vx_m_s": 0.02467576308859584,
+        "vy_m_s": 0.00033501892176013217,
+        "yaw_rad_s": 0.23823527461635552,
+        "yaw_deg_s": 13.649875766657322,
+        "vx_wall_m_s": 0.02466434324131425,
+        "yaw_wall_deg_s": 13.643558657188075
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999908,
+        "wall_seconds": 5.9994129170663655,
+        "realtime_factor": 1.0000978567305931,
+        "body_forward_m": 0.1645993678062753,
+        "body_lateral_m": -0.003018497626552064,
+        "turn_deg": 67.79358816552967,
+        "vx_m_s": 0.02743322796771297,
+        "vy_m_s": -0.000503082937758685,
+        "yaw_rad_s": 0.19720355420492894,
+        "yaw_deg_s": 11.298931360921786,
+        "vx_wall_m_s": 0.027435912493711506,
+        "yaw_wall_deg_s": 11.30003703740396
+      },
+      "min_trunk_m": 0.11449330001136718,
+      "max_tilt_deg": 2.954216153122267,
+      "loop_hz_min": 49.85651992534344,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.0,
+        0.0,
+        0.22000003077362187
+      ]
+    },
+    {
+      "name": "11-r1-forward-100",
+      "repeat": 1,
+      "direction": "forward",
+      "stick_percent": 100,
+      "channels": [
+        1500,
+        2000,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.3,
+        "vy": 0.0,
+        "vyaw": -0.0
+      },
+      "initial": {
+        "trunk_z": 0.11550302168511356,
+        "tilt_deg": 1.1765673269685277
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.000000000000199,
+        "wall_seconds": 8.00321741704829,
+        "realtime_factor": 0.9995979845504087,
+        "body_forward_m": 0.9696736973610368,
+        "body_lateral_m": -0.04305712091879589,
+        "turn_deg": -18.82127126782679,
+        "vx_m_s": 0.12120921217012659,
+        "vy_m_s": -0.005382140114849353,
+        "yaw_rad_s": -0.0410616441293221,
+        "yaw_deg_s": -2.3526589084782903,
+        "vx_wall_m_s": 0.1211604841942014,
+        "yaw_wall_deg_s": -2.3517131032494634
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999886,
+        "wall_seconds": 6.0018189589027315,
+        "realtime_factor": 0.9996969320608802,
+        "body_forward_m": 0.7609644544930149,
+        "body_lateral_m": -0.02111245401506265,
+        "turn_deg": -15.41721105606268,
+        "vx_m_s": 0.12682740908217155,
+        "vy_m_s": -0.0035187423358438415,
+        "yaw_rad_s": -0.04484684906719516,
+        "yaw_deg_s": -2.569535176010495,
+        "vx_wall_m_s": 0.1267889717606771,
+        "yaw_wall_deg_s": -2.568756432280206
+      },
+      "min_trunk_m": 0.11289280778602274,
+      "max_tilt_deg": 3.8352221839617697,
+      "loop_hz_min": 49.71972780612828,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.2999999999978414,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "12-r1-backward-25",
+      "repeat": 1,
+      "direction": "backward",
+      "stick_percent": 25,
+      "channels": [
+        1500,
+        1375,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": -0.185,
+        "vy": 0.0,
+        "vyaw": -0.0
+      },
+      "initial": {
+        "trunk_z": 0.11546951324591459,
+        "tilt_deg": 1.1597875172854681
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.000000000000142,
+        "wall_seconds": 8.003943082876503,
+        "realtime_factor": 0.9995073574567519,
+        "body_forward_m": -0.28920877283549395,
+        "body_lateral_m": -0.02601562898328244,
+        "turn_deg": -4.728855862269778,
+        "vx_m_s": -0.0361510966044361,
+        "vy_m_s": -0.0032519536229102474,
+        "yaw_rad_s": -0.010316763081105206,
+        "yaw_deg_s": -0.5911069827837117,
+        "vx_wall_m_s": -0.03613328703626369,
+        "yaw_wall_deg_s": -0.5908157783363814
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.9999999999998295,
+        "wall_seconds": 6.0031707908492535,
+        "realtime_factor": 0.9994718139863258,
+        "body_forward_m": -0.2427368959889251,
+        "body_lateral_m": -0.009482630649764272,
+        "turn_deg": -8.012262139006417,
+        "vx_m_s": -0.04045614933148867,
+        "vy_m_s": -0.0015804384416274236,
+        "yaw_rad_s": -0.023306725809758257,
+        "yaw_deg_s": -1.3353770231677742,
+        "vx_wall_m_s": -0.04043478095924466,
+        "yaw_wall_deg_s": -1.334671695701155
+      },
+      "min_trunk_m": 0.11450382964980205,
+      "max_tilt_deg": 3.207999988363766,
+      "loop_hz_min": 49.89461596737773,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        -0.18573402393687966,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "13-r1-left-50",
+      "repeat": 1,
+      "direction": "left",
+      "stick_percent": 50,
+      "channels": [
+        1250,
+        1500,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.0,
+        "vy": 0.0,
+        "vyaw": 0.3652173913043478
+      },
+      "initial": {
+        "trunk_z": 0.11548855420105585,
+        "tilt_deg": 1.161551957105394
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.00000000000022,
+        "wall_seconds": 8.001672833925113,
+        "realtime_factor": 0.9997909394748308,
+        "body_forward_m": 0.18300063433165553,
+        "body_lateral_m": -0.029197730514168622,
+        "turn_deg": 170.850066502717,
+        "vx_m_s": 0.02287507929145631,
+        "vy_m_s": -0.003649716314270977,
+        "yaw_rad_s": 0.3727370234654504,
+        "yaw_deg_s": 21.356258312839035,
+        "vx_wall_m_s": 0.022870297015366352,
+        "yaw_wall_deg_s": 21.351793562260504
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999908,
+        "wall_seconds": 5.996970749925822,
+        "realtime_factor": 1.0005051300398828,
+        "body_forward_m": 0.14884782923964582,
+        "body_lateral_m": -0.02772113439314098,
+        "turn_deg": 118.42504212925991,
+        "vx_m_s": 0.02480797153994135,
+        "vy_m_s": -0.004620189065523568,
+        "yaw_rad_s": 0.3444844836614356,
+        "yaw_deg_s": 19.73750702154362,
+        "vx_wall_m_s": 0.024820502791594732,
+        "yaw_wall_deg_s": 19.7474770292526
+      },
+      "min_trunk_m": 0.11445254427445099,
+      "max_tilt_deg": 2.90819702795139,
+      "loop_hz_min": 49.85805829610788,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.0,
+        0.0,
+        0.36521740931378804
+      ]
+    },
+    {
+      "name": "14-r1-forward-75",
+      "repeat": 1,
+      "direction": "forward",
+      "stick_percent": 75,
+      "channels": [
+        1500,
+        1875,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.213,
+        "vy": 0.0,
+        "vyaw": -0.0
+      },
+      "initial": {
+        "trunk_z": 0.11546560366638167,
+        "tilt_deg": 1.0833395882190522
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.020000000000202,
+        "wall_seconds": 8.004989499924704,
+        "realtime_factor": 1.0018751430062012,
+        "body_forward_m": 0.81308202087451,
+        "body_lateral_m": -0.03486845712688896,
+        "turn_deg": 3.3591005830358163,
+        "vx_m_s": 0.10138179811402612,
+        "vy_m_s": -0.004347687921058364,
+        "yaw_rad_s": 0.0073101452717749,
+        "yaw_deg_s": 0.41884047170021593,
+        "vx_wall_m_s": 0.10157190348371574,
+        "yaw_wall_deg_s": 0.4196258574814386
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999886,
+        "wall_seconds": 6.000114457914606,
+        "realtime_factor": 0.9999809240447791,
+        "body_forward_m": 0.62231912203231,
+        "body_lateral_m": -0.02476848584736548,
+        "turn_deg": 1.5168836632542366,
+        "vx_m_s": 0.10371985367205364,
+        "vy_m_s": -0.004128080974560992,
+        "yaw_rad_s": 0.004412435715583309,
+        "yaw_deg_s": 0.2528139438757109,
+        "vx_wall_m_s": 0.10371787511676947,
+        "yaw_wall_deg_s": 0.2528091212082383
+      },
+      "min_trunk_m": 0.11314984847625548,
+      "max_tilt_deg": 3.331615765161216,
+      "loop_hz_min": 49.88800470639132,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.21300000494936389,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "15-r1-forward-25",
+      "repeat": 1,
+      "direction": "forward",
+      "stick_percent": 25,
+      "channels": [
+        1500,
+        1625,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.102,
+        "vy": 0.0,
+        "vyaw": -0.0
+      },
+      "initial": {
+        "trunk_z": 0.11546064423483275,
+        "tilt_deg": 1.2210875082310315
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.020000000000152,
+        "wall_seconds": 8.002201917115599,
+        "realtime_factor": 1.0022241481868241,
+        "body_forward_m": 0.455887370671683,
+        "body_lateral_m": 0.022904201578483923,
+        "turn_deg": -7.868794606461153,
+        "vx_m_s": 0.05684381180444817,
+        "vy_m_s": 0.0028558854836014326,
+        "yaw_rad_s": -0.01712423616532618,
+        "yaw_deg_s": -0.9811464596584792,
+        "vx_wall_m_s": 0.05697024086540521,
+        "yaw_wall_deg_s": -0.9833286747777376
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999837,
+        "wall_seconds": 5.998291250085458,
+        "realtime_factor": 1.0002848727817866,
+        "body_forward_m": 0.32173046953097534,
+        "body_lateral_m": 0.02085885219906453,
+        "turn_deg": -8.20743056317472,
+        "vx_m_s": 0.05362174492183068,
+        "vy_m_s": 0.0034764753665108496,
+        "yaw_rad_s": -0.02387444774270254,
+        "yaw_deg_s": -1.3679050938624906,
+        "vx_wall_m_s": 0.05363702029747082,
+        "yaw_wall_deg_s": -1.3682947727917993
+      },
+      "min_trunk_m": 0.11281927558864968,
+      "max_tilt_deg": 4.079538340747385,
+      "loop_hz_min": 49.89111586786706,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.10200001260322951,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "16-r1-right-100",
+      "repeat": 1,
+      "direction": "right",
+      "stick_percent": 100,
+      "channels": [
+        2000,
+        1500,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.0,
+        "vy": 0.0,
+        "vyaw": -0.7200000000000001
+      },
+      "initial": {
+        "trunk_z": 0.11547731295021262,
+        "tilt_deg": 1.2145199699045783
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.000000000000028,
+        "wall_seconds": 8.002220207825303,
+        "realtime_factor": 0.9997225510211399,
+        "body_forward_m": 0.2772602485366668,
+        "body_lateral_m": -0.024614071748998653,
+        "turn_deg": -396.31112433679635,
+        "vx_m_s": 0.034657531067083226,
+        "vy_m_s": -0.0030767589686248207,
+        "yaw_rad_s": -0.8646167477447125,
+        "yaw_deg_s": -49.53889054209937,
+        "vx_wall_m_s": 0.03464791537047886,
+        "yaw_wall_deg_s": -49.525146027504604
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999716,
+        "wall_seconds": 6.000190499937162,
+        "realtime_factor": 0.9999682510184555,
+        "body_forward_m": 0.2142429999397634,
+        "body_lateral_m": -0.01462075321157612,
+        "turn_deg": -308.0608197044203,
+        "vx_m_s": 0.03570716665662892,
+        "vy_m_s": -0.0024367922019294685,
+        "yaw_rad_s": -0.8961126000391688,
+        "yaw_deg_s": -51.34346995073915,
+        "vx_wall_m_s": 0.03570603299045374,
+        "yaw_wall_deg_s": -51.34183984785925
+      },
+      "min_trunk_m": 0.11423466547652486,
+      "max_tilt_deg": 3.844598631088675,
+      "loop_hz_min": 49.8847576511664,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.0,
+        0.0,
+        -0.7199999999953228
+      ]
+    },
+    {
+      "name": "17-r1-backward-100",
+      "repeat": 1,
+      "direction": "backward",
+      "stick_percent": 100,
+      "channels": [
+        1500,
+        1000,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": -0.3,
+        "vy": 0.0,
+        "vyaw": -0.0
+      },
+      "initial": {
+        "trunk_z": 0.1154458719448028,
+        "tilt_deg": 1.1650384954359345
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.000000000000142,
+        "wall_seconds": 8.003339957911521,
+        "realtime_factor": 0.9995826794901949,
+        "body_forward_m": -0.6331212751741103,
+        "body_lateral_m": -0.06878040134908989,
+        "turn_deg": -20.030291722772144,
+        "vx_m_s": -0.07914015939676239,
+        "vy_m_s": -0.008597550168636083,
+        "yaw_rad_s": -0.043699317587166865,
+        "yaw_deg_s": -2.5037864653464736,
+        "vx_wall_m_s": -0.07910713258509687,
+        "yaw_wall_deg_s": -2.502741583902312
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.979999999999826,
+        "wall_seconds": 5.998676500050351,
+        "realtime_factor": 0.9968865632193421,
+        "body_forward_m": -0.5864635753776486,
+        "body_lateral_m": -0.054100124239195135,
+        "turn_deg": -22.778651733733042,
+        "vx_m_s": -0.09807083200295412,
+        "vy_m_s": -0.009046843518260319,
+        "yaw_rad_s": -0.06648201871551301,
+        "yaw_deg_s": -3.809139085908646,
+        "vx_wall_m_s": -0.09776549466748641,
+        "yaw_wall_deg_s": -3.797279572175937
+      },
+      "min_trunk_m": 0.11442182408037138,
+      "max_tilt_deg": 3.80542133831213,
+      "loop_hz_min": 49.799362501827225,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        -0.29999999999832655,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "18-r1-right-25",
+      "repeat": 1,
+      "direction": "right",
+      "stick_percent": 25,
+      "channels": [
+        1625,
+        1500,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.0,
+        "vy": 0.0,
+        "vyaw": -0.16500000000000004
+      },
+      "initial": {
+        "trunk_z": 0.11545892137187991,
+        "tilt_deg": 1.2183453845323358
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.000000000000156,
+        "wall_seconds": 8.004823541035876,
+        "realtime_factor": 0.9993974206912879,
+        "body_forward_m": 0.2610211701136215,
+        "body_lateral_m": 0.01000120306576125,
+        "turn_deg": -157.65664790877702,
+        "vx_m_s": 0.03262764626420205,
+        "vy_m_s": 0.0012501503832201318,
+        "yaw_rad_s": -0.34395344920819226,
+        "yaw_deg_s": -19.707080988596744,
+        "vx_wall_m_s": 0.03260798551967127,
+        "yaw_wall_deg_s": -19.695205909357902
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999844,
+        "wall_seconds": 6.001019290881231,
+        "realtime_factor": 0.999830147041364,
+        "body_forward_m": 0.19988851400269342,
+        "body_lateral_m": 0.002158957739666494,
+        "turn_deg": -107.32161248360264,
+        "vx_m_s": 0.0333147523337831,
+        "vy_m_s": 0.000359826289944425,
+        "yaw_rad_s": -0.3121859160647273,
+        "yaw_deg_s": -17.88693541393424,
+        "vx_wall_m_s": 0.03330909372453299,
+        "yaw_wall_deg_s": -17.88389726503325
+      },
+      "min_trunk_m": 0.11416037942138507,
+      "max_tilt_deg": 4.0912575870507535,
+      "loop_hz_min": 49.949935767027014,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.0,
+        0.0,
+        -0.16500001943885212
+      ]
+    },
+    {
+      "name": "19-r2-neutral-0",
+      "repeat": 2,
+      "direction": "neutral",
+      "stick_percent": 0,
+      "channels": [
+        1500,
+        1500,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.0,
+        "vy": 0.0,
+        "vyaw": -0.0
+      },
+      "initial": {
+        "trunk_z": 0.11547744869891932,
+        "tilt_deg": 1.0645798293506967
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.000000000000142,
+        "wall_seconds": 8.001677292166278,
+        "realtime_factor": 0.999790382427972,
+        "body_forward_m": -0.001989355328396893,
+        "body_lateral_m": 0.001975971418248517,
+        "turn_deg": -0.5083459568936253,
+        "vx_m_s": -0.00024866941604960723,
+        "vy_m_s": 0.00024699642728106023,
+        "yaw_rad_s": -0.0011090388358743462,
+        "yaw_deg_s": -0.06354324461170203,
+        "vx_wall_m_s": -0.00024861729057037724,
+        "yaw_wall_deg_s": -0.06352992483104775
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.9999999999998295,
+        "wall_seconds": 6.000269208103418,
+        "realtime_factor": 0.9999551339957838,
+        "body_forward_m": -0.0014379137082354868,
+        "body_lateral_m": 0.0014507065196533065,
+        "turn_deg": -0.510275136035372,
+        "vx_m_s": -0.00023965228470592128,
+        "vy_m_s": 0.00024178441994222462,
+        "yaw_rad_s": -0.0014843302024799096,
+        "yaw_deg_s": -0.08504585600589776,
+        "vx_wall_m_s": -0.00023964153246550525,
+        "yaw_wall_deg_s": -0.08504204033816362
+      },
+      "min_trunk_m": 0.11543960184549465,
+      "max_tilt_deg": 1.2248272330399863,
+      "loop_hz_min": 49.90933345710848,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "20-r2-deadzone-8",
+      "repeat": 2,
+      "direction": "deadzone",
+      "stick_percent": 8,
+      "channels": [
+        1540,
+        1540,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.0,
+        "vy": 0.0,
+        "vyaw": -0.0
+      },
+      "initial": {
+        "trunk_z": 0.11548310347616633,
+        "tilt_deg": 1.197028882055473
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.00000000000022,
+        "wall_seconds": 8.002489458071068,
+        "realtime_factor": 0.9996889145454185,
+        "body_forward_m": -0.0020399207083436383,
+        "body_lateral_m": 0.002671824200623053,
+        "turn_deg": -0.18199677144233692,
+        "vx_m_s": -0.00025499008854294774,
+        "vy_m_s": 0.0003339780250778724,
+        "yaw_rad_s": -0.0003970553612085351,
+        "yaw_deg_s": -0.022749596430291487,
+        "vx_wall_m_s": -0.0002549107648353396,
+        "yaw_wall_deg_s": -0.022742519361744425
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999908,
+        "wall_seconds": 5.999795458046719,
+        "realtime_factor": 1.0000340914877213,
+        "body_forward_m": -0.0015080693162271683,
+        "body_lateral_m": 0.001959506493382611,
+        "turn_deg": -0.31080508752199865,
+        "vx_m_s": -0.0002513448860378652,
+        "vy_m_s": 0.00032658441556377354,
+        "yaw_rad_s": -0.0009040953515346839,
+        "yaw_deg_s": -0.0518008479203339,
+        "vx_wall_m_s": -0.0002513534547589614,
+        "yaw_wall_deg_s": -0.05180261388830473
+      },
+      "min_trunk_m": 0.11543712234002826,
+      "max_tilt_deg": 1.2247399512553752,
+      "loop_hz_min": 49.868108240641526,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "21-r2-right-25",
+      "repeat": 2,
+      "direction": "right",
+      "stick_percent": 25,
+      "channels": [
+        1625,
+        1500,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.0,
+        "vy": 0.0,
+        "vyaw": -0.16500000000000004
+      },
+      "initial": {
+        "trunk_z": 0.11547291711312449,
+        "tilt_deg": 1.0665561070076772
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.00000000000017,
+        "wall_seconds": 8.000582250067964,
+        "realtime_factor": 0.9999272240382518,
+        "body_forward_m": 0.24365169858519173,
+        "body_lateral_m": 0.02801916794457108,
+        "turn_deg": -146.72039039985677,
+        "vx_m_s": 0.030456462323148317,
+        "vy_m_s": 0.0035023959930713102,
+        "yaw_rad_s": -0.3200942365361157,
+        "yaw_deg_s": -18.340048799981705,
+        "vx_wall_m_s": 0.030454245824811304,
+        "yaw_wall_deg_s": -18.33871408529178
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999858,
+        "wall_seconds": 5.997237333096564,
+        "realtime_factor": 1.0004606565906684,
+        "body_forward_m": 0.19234223012899473,
+        "body_lateral_m": 0.023164290517633405,
+        "turn_deg": -101.17738686846889,
+        "vx_m_s": 0.032057038354833214,
+        "vy_m_s": 0.003860715086272326,
+        "yaw_rad_s": -0.29431308823648317,
+        "yaw_deg_s": -16.86289781141188,
+        "vx_wall_m_s": 0.032071805640828684,
+        "yaw_wall_deg_s": -16.870665816426477
+      },
+      "min_trunk_m": 0.11408751369258306,
+      "max_tilt_deg": 3.6769803459643833,
+      "loop_hz_min": 49.79650037664828,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.0,
+        0.0,
+        -0.1650000274385089
+      ]
+    },
+    {
+      "name": "22-r2-forward-25",
+      "repeat": 2,
+      "direction": "forward",
+      "stick_percent": 25,
+      "channels": [
+        1500,
+        1625,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.102,
+        "vy": 0.0,
+        "vyaw": -0.0
+      },
+      "initial": {
+        "trunk_z": 0.11543984353560707,
+        "tilt_deg": 1.203806717884551
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.000000000000128,
+        "wall_seconds": 8.001612458145246,
+        "realtime_factor": 0.9997984833490059,
+        "body_forward_m": 0.4665957496999676,
+        "body_lateral_m": 0.03896231071685505,
+        "turn_deg": -8.414334977613299,
+        "vx_m_s": 0.05832446871249502,
+        "vy_m_s": 0.004870288839606803,
+        "yaw_rad_s": -0.018357231215634134,
+        "yaw_deg_s": -1.0517918722016455,
+        "vx_wall_m_s": 0.05831271536088906,
+        "yaw_wall_deg_s": -1.0515799186260166
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.979999999999812,
+        "wall_seconds": 5.997036790940911,
+        "realtime_factor": 0.9971591318287668,
+        "body_forward_m": 0.32640710743599355,
+        "body_lateral_m": 0.03690679151887166,
+        "turn_deg": -5.037915919525425,
+        "vx_m_s": 0.0545831283337799,
+        "vy_m_s": 0.006171704267370037,
+        "yaw_rad_s": -0.01470371575825403,
+        "yaw_deg_s": -0.842460856107957,
+        "vx_wall_m_s": 0.05442806486181013,
+        "yaw_wall_deg_s": -0.8400675358763301
+      },
+      "min_trunk_m": 0.11279044098129581,
+      "max_tilt_deg": 3.6613664355814484,
+      "loop_hz_min": 49.86875789640614,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.10200000623947317,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "23-r2-right-75",
+      "repeat": 2,
+      "direction": "right",
+      "stick_percent": 75,
+      "channels": [
+        1875,
+        1500,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.0,
+        "vy": 0.0,
+        "vyaw": -0.41999999999999993
+      },
+      "initial": {
+        "trunk_z": 0.11547762685286837,
+        "tilt_deg": 1.1958309332360186
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.00000000000022,
+        "wall_seconds": 8.003892583074048,
+        "realtime_factor": 0.9995136637538016,
+        "body_forward_m": 0.26886869017023224,
+        "body_lateral_m": -0.002910200908690308,
+        "turn_deg": -280.4569868322783,
+        "vx_m_s": 0.03360858627127811,
+        "vy_m_s": -0.00036377511358627845,
+        "yaw_rad_s": -0.6118622288056879,
+        "yaw_deg_s": -35.05712335403382,
+        "vx_wall_m_s": 0.0335922411975909,
+        "yaw_wall_deg_s": -35.0400738042593
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999908,
+        "wall_seconds": 5.999512125039473,
+        "realtime_factor": 1.000081319105665,
+        "body_forward_m": 0.20855518102928147,
+        "body_lateral_m": -4.135967257022904e-05,
+        "turn_deg": -214.62097365919402,
+        "vx_m_s": 0.034759196838214115,
+        "vy_m_s": -6.893278761704946e-06,
+        "yaw_rad_s": -0.6243071056981693,
+        "yaw_deg_s": -35.770162276532886,
+        "vx_wall_m_s": 0.03476202342501463,
+        "yaw_wall_deg_s": -35.773071074138706
+      },
+      "min_trunk_m": 0.1138889665985894,
+      "max_tilt_deg": 4.057409441201492,
+      "loop_hz_min": 49.862864656478514,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.0,
+        0.0,
+        -0.4200000115987128
+      ]
+    },
+    {
+      "name": "24-r2-backward-100",
+      "repeat": 2,
+      "direction": "backward",
+      "stick_percent": 100,
+      "channels": [
+        1500,
+        1000,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": -0.3,
+        "vy": 0.0,
+        "vyaw": -0.0
+      },
+      "initial": {
+        "trunk_z": 0.11548752283594864,
+        "tilt_deg": 1.201384578672175
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.02000000000021,
+        "wall_seconds": 8.002895166864619,
+        "realtime_factor": 1.002137330650839,
+        "body_forward_m": -0.6230035277965552,
+        "body_lateral_m": -0.07089484961747569,
+        "turn_deg": -15.234488438651915,
+        "vx_m_s": -0.0776812378798677,
+        "vy_m_s": -0.008839756810158833,
+        "yaw_rad_s": -0.03315361385429915,
+        "yaw_deg_s": -1.8995621494577952,
+        "vx_wall_m_s": -0.07784726837058345,
+        "yaw_wall_deg_s": -1.9036221418630048
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999893,
+        "wall_seconds": 5.998516666935757,
+        "realtime_factor": 1.0002472833112748,
+        "body_forward_m": -0.5744399009641664,
+        "body_lateral_m": -0.05379643738020397,
+        "turn_deg": -17.967607437061975,
+        "vx_m_s": -0.09573998349402944,
+        "vy_m_s": -0.00896607289670082,
+        "yaw_rad_s": -0.05226565141375948,
+        "yaw_deg_s": -2.9946012395103825,
+        "vx_wall_m_s": -0.09576365839416923,
+        "yaw_wall_deg_s": -2.995341754420836
+      },
+      "min_trunk_m": 0.1145173971488592,
+      "max_tilt_deg": 3.848337386368546,
+      "loop_hz_min": 49.82061929722054,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        -0.2999999999975649,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "25-r2-right-50",
+      "repeat": 2,
+      "direction": "right",
+      "stick_percent": 50,
+      "channels": [
+        1750,
+        1500,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.0,
+        "vy": 0.0,
+        "vyaw": -0.20999999999999996
+      },
+      "initial": {
+        "trunk_z": 0.11545867035948337,
+        "tilt_deg": 1.206606233501403
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.000000000000185,
+        "wall_seconds": 8.00394191709347,
+        "realtime_factor": 0.9995075030361144,
+        "body_forward_m": 0.2497556734718097,
+        "body_lateral_m": -0.003909019159808934,
+        "turn_deg": -185.9089285666311,
+        "vx_m_s": 0.031219459183975493,
+        "vy_m_s": -0.0004886273949761055,
+        "yaw_rad_s": -0.40559036404282245,
+        "yaw_deg_s": -23.23861607082835,
+        "vx_wall_m_s": 0.03120408369511323,
+        "yaw_wall_deg_s": -23.22717112296856
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999872,
+        "wall_seconds": 6.001431583892554,
+        "realtime_factor": 0.9997614595996521,
+        "body_forward_m": 0.18873302713537793,
+        "body_lateral_m": 0.0011139608852889181,
+        "turn_deg": -136.18453004080064,
+        "vx_m_s": 0.03145550452256366,
+        "vy_m_s": 0.00018566014754815697,
+        "yaw_rad_s": -0.3961447399155249,
+        "yaw_deg_s": -22.697421673467257,
+        "vx_wall_m_s": 0.0314480011139217,
+        "yaw_wall_deg_s": -22.692007421414402
+      },
+      "min_trunk_m": 0.11392139157265423,
+      "max_tilt_deg": 4.664525256951056,
+      "loop_hz_min": 49.796430102291765,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.0,
+        0.0,
+        -0.21000001556357212
+      ]
+    },
+    {
+      "name": "26-r2-left-75",
+      "repeat": 2,
+      "direction": "left",
+      "stick_percent": 75,
+      "channels": [
+        1125,
+        1500,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.0,
+        "vy": 0.0,
+        "vyaw": 0.582608695652174
+      },
+      "initial": {
+        "trunk_z": 0.11545930119965261,
+        "tilt_deg": 1.0731354159073618
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.00000000000022,
+        "wall_seconds": 8.001597832888365,
+        "realtime_factor": 0.9998003107727338,
+        "body_forward_m": 0.18100999758441536,
+        "body_lateral_m": -0.04147364110773599,
+        "turn_deg": 257.6772619205539,
+        "vx_m_s": 0.022626249698051295,
+        "vy_m_s": -0.005184205138466856,
+        "yaw_rad_s": 0.5621645785046687,
+        "yaw_deg_s": 32.20965774006835,
+        "vx_wall_m_s": 0.02262173147973316,
+        "yaw_wall_deg_s": 32.20322581840373
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999908,
+        "wall_seconds": 5.997221041005105,
+        "realtime_factor": 1.0004633744488993,
+        "body_forward_m": 0.14760339934576153,
+        "body_lateral_m": -0.042706436843900214,
+        "turn_deg": 190.82028576531775,
+        "vx_m_s": 0.0246005665576273,
+        "vy_m_s": -0.007117739473983479,
+        "yaw_rad_s": 0.5550737110335523,
+        "yaw_deg_s": 31.80338096088678,
+        "vx_wall_m_s": 0.02461196583159855,
+        "yaw_wall_deg_s": 31.818117835012664
+      },
+      "min_trunk_m": 0.11446562371407057,
+      "max_tilt_deg": 3.4129629632548055,
+      "loop_hz_min": 49.804351920805885,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.0,
+        0.0,
+        0.5826087030634626
+      ]
+    },
+    {
+      "name": "27-r2-left-50",
+      "repeat": 2,
+      "direction": "left",
+      "stick_percent": 50,
+      "channels": [
+        1250,
+        1500,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.0,
+        "vy": 0.0,
+        "vyaw": 0.3652173913043478
+      },
+      "initial": {
+        "trunk_z": 0.1154627922888324,
+        "tilt_deg": 1.0818518011663674
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.000000000000213,
+        "wall_seconds": 8.004330874886364,
+        "realtime_factor": 0.9994589335506183,
+        "body_forward_m": 0.18320958836579937,
+        "body_lateral_m": -0.03989504096693445,
+        "turn_deg": 168.33896818886052,
+        "vx_m_s": 0.02290119854572431,
+        "vy_m_s": -0.004986880120866673,
+        "yaw_rad_s": 0.3672586567881917,
+        "yaw_deg_s": 21.042371023607004,
+        "vx_wall_m_s": 0.022888807475540594,
+        "yaw_wall_deg_s": 21.03098570263069
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.9999999999999005,
+        "wall_seconds": 6.002139874966815,
+        "realtime_factor": 0.9996434813230796,
+        "body_forward_m": 0.1508230564170438,
+        "body_lateral_m": -0.035726348416065326,
+        "turn_deg": 115.96131406556715,
+        "vx_m_s": 0.025137176069507716,
+        "vy_m_s": -0.005954391402677653,
+        "yaw_rad_s": 0.3373177892305653,
+        "yaw_deg_s": 19.326885677594845,
+        "vx_wall_m_s": 0.0251282141967539,
+        "yaw_wall_deg_s": 19.319995281884076
+      },
+      "min_trunk_m": 0.1145225603967913,
+      "max_tilt_deg": 3.003608106045565,
+      "loop_hz_min": 49.889050891608285,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.0,
+        0.0,
+        0.36521741441802447
+      ]
+    },
+    {
+      "name": "28-r2-forward-100",
+      "repeat": 2,
+      "direction": "forward",
+      "stick_percent": 100,
+      "channels": [
+        1500,
+        2000,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.3,
+        "vy": 0.0,
+        "vyaw": -0.0
+      },
+      "initial": {
+        "trunk_z": 0.11551568430816657,
+        "tilt_deg": 1.1515802079588082
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.000000000000163,
+        "wall_seconds": 7.999668665928766,
+        "realtime_factor": 1.0000414184743436,
+        "body_forward_m": 0.9605473331767476,
+        "body_lateral_m": -0.019994837080439243,
+        "turn_deg": -26.271439210181214,
+        "vx_m_s": 0.12006841664709099,
+        "vy_m_s": -0.0024993546350548543,
+        "yaw_rad_s": -0.05731538918189892,
+        "yaw_deg_s": -3.2839299012725847,
+        "vx_wall_m_s": 0.12007338969772537,
+        "yaw_wall_deg_s": -3.284065916638947
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.979999999999848,
+        "wall_seconds": 5.99502845807001,
+        "realtime_factor": 0.9974931798614013,
+        "body_forward_m": 0.7509845031019555,
+        "body_lateral_m": -0.0005190864728675806,
+        "turn_deg": -17.29644970166961,
+        "vx_m_s": 0.12558269282641718,
+        "vy_m_s": -8.680375800461435e-05,
+        "yaw_rad_s": -0.050481604715674464,
+        "yaw_deg_s": -2.8923828932558613,
+        "vx_wall_m_s": 0.12526787960298044,
+        "yaw_wall_deg_s": -2.885132209570509
+      },
+      "min_trunk_m": 0.11284543066734833,
+      "max_tilt_deg": 4.204222851759548,
+      "loop_hz_min": 49.79559396867955,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.2999999999979414,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "29-r2-left-25",
+      "repeat": 2,
+      "direction": "left",
+      "stick_percent": 25,
+      "channels": [
+        1375,
+        1500,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.0,
+        "vy": 0.0,
+        "vyaw": 0.21999999999999997
+      },
+      "initial": {
+        "trunk_z": 0.11547489889748028,
+        "tilt_deg": 1.2077794891939209
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 7.999999999999986,
+        "wall_seconds": 8.004343207925558,
+        "realtime_factor": 0.9994573935908605,
+        "body_forward_m": 0.1965782229987715,
+        "body_lateral_m": -0.002593383487410541,
+        "turn_deg": 105.75275088005772,
+        "vx_m_s": 0.024572277874846483,
+        "vy_m_s": -0.00032417293592631823,
+        "yaw_rad_s": 0.23071671198729268,
+        "yaw_deg_s": 13.219093860007238,
+        "vx_wall_m_s": 0.024558944799384433,
+        "yaw_wall_deg_s": 13.211921094955782
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999673,
+        "wall_seconds": 5.999375457875431,
+        "realtime_factor": 1.00010410118997,
+        "body_forward_m": 0.16321382932770997,
+        "body_lateral_m": -0.006865096637436162,
+        "turn_deg": 64.11422199788272,
+        "vx_m_s": 0.027202304887953145,
+        "vy_m_s": -0.0011441827729060893,
+        "yaw_rad_s": 0.18650071186961523,
+        "yaw_deg_s": 10.68570366631437,
+        "vx_wall_m_s": 0.02720513668026191,
+        "yaw_wall_deg_s": 10.686816060781702
+      },
+      "min_trunk_m": 0.11449484291043405,
+      "max_tilt_deg": 3.116248529684754,
+      "loop_hz_min": 48.97672381200834,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.0,
+        0.0,
+        0.2200000374313114
+      ]
+    },
+    {
+      "name": "30-r2-left-100",
+      "repeat": 2,
+      "direction": "left",
+      "stick_percent": 100,
+      "channels": [
+        1000,
+        1500,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.0,
+        "vy": 0.0,
+        "vyaw": 0.8
+      },
+      "initial": {
+        "trunk_z": 0.11546867999738725,
+        "tilt_deg": 1.0842379377717437
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.020000000000131,
+        "wall_seconds": 8.000144416932017,
+        "realtime_factor": 1.0024819030799108,
+        "body_forward_m": 0.13344000838654954,
+        "body_lateral_m": -0.03274350529906035,
+        "turn_deg": 377.4245378532648,
+        "vx_m_s": 0.0166384050357291,
+        "vy_m_s": -0.004082731334047358,
+        "yaw_rad_s": 0.8213592098949294,
+        "yaw_deg_s": 47.06041619117938,
+        "vx_wall_m_s": 0.016679699944432077,
+        "yaw_wall_deg_s": 47.17721558306615
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 6.019999999999818,
+        "wall_seconds": 6.000033792108297,
+        "realtime_factor": 1.0033276825736852,
+        "body_forward_m": 0.10297169381007977,
+        "body_lateral_m": -0.02296399918237418,
+        "turn_deg": 291.5919327729589,
+        "vx_m_s": 0.01710493252659184,
+        "vy_m_s": -0.003814617804381208,
+        "yaw_rad_s": 0.8453885878973829,
+        "yaw_deg_s": 48.43719813504447,
+        "vx_wall_m_s": 0.01716185231248464,
+        "yaw_wall_deg_s": 48.59838175519659
+      },
+      "min_trunk_m": 0.1146192030785348,
+      "max_tilt_deg": 3.57006963150445,
+      "loop_hz_min": 49.886693234011005,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.0,
+        0.0,
+        0.7999999999931382
+      ]
+    },
+    {
+      "name": "31-r2-backward-50",
+      "repeat": 2,
+      "direction": "backward",
+      "stick_percent": 50,
+      "channels": [
+        1500,
+        1250,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": -0.22,
+        "vy": 0.0,
+        "vyaw": -0.0
+      },
+      "initial": {
+        "trunk_z": 0.11547606701976765,
+        "tilt_deg": 1.1927630695103262
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 7.99999999999995,
+        "wall_seconds": 8.00413562497124,
+        "realtime_factor": 0.999483313981039,
+        "body_forward_m": -0.3770497193677608,
+        "body_lateral_m": -0.03700049426226844,
+        "turn_deg": -12.437461919221088,
+        "vx_m_s": -0.047131214920970395,
+        "vy_m_s": -0.004625061782783583,
+        "yaw_rad_s": -0.027134332635227795,
+        "yaw_deg_s": -1.5546827399026457,
+        "vx_wall_m_s": -0.047106862881164085,
+        "yaw_wall_deg_s": -1.5538794570670178
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999638,
+        "wall_seconds": 6.00231424998492,
+        "realtime_factor": 0.999614440382676,
+        "body_forward_m": -0.34967500328090856,
+        "body_lateral_m": -0.038169567454041375,
+        "turn_deg": -13.824699154129112,
+        "vx_m_s": -0.05827916721348828,
+        "vy_m_s": -0.006361594575673947,
+        "yaw_rad_s": -0.04021441972287377,
+        "yaw_deg_s": -2.3041165256883245,
+        "vx_wall_m_s": -0.058256697120079484,
+        "yaw_wall_deg_s": -2.3032281514024104
+      },
+      "min_trunk_m": 0.1145131169275272,
+      "max_tilt_deg": 3.9415689328001227,
+      "loop_hz_min": 48.89818334691684,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        -0.22043113758199134,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "32-r2-forward-75",
+      "repeat": 2,
+      "direction": "forward",
+      "stick_percent": 75,
+      "channels": [
+        1500,
+        1875,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.213,
+        "vy": 0.0,
+        "vyaw": -0.0
+      },
+      "initial": {
+        "trunk_z": 0.11546310972555464,
+        "tilt_deg": 1.2145621415461512
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 7.999999999999929,
+        "wall_seconds": 8.002416499890387,
+        "realtime_factor": 0.9996980287278859,
+        "body_forward_m": 0.797091163602359,
+        "body_lateral_m": -0.03911666867544068,
+        "turn_deg": -19.103309059864227,
+        "vx_m_s": 0.09963639545029576,
+        "vy_m_s": -0.004889583584430129,
+        "yaw_rad_s": -0.04167695514008703,
+        "yaw_deg_s": -2.3879136324830497,
+        "vx_wall_m_s": 0.09960630812121278,
+        "yaw_wall_deg_s": -2.38719255116575
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999616,
+        "wall_seconds": 6.003801292041317,
+        "realtime_factor": 0.9993668524561699,
+        "body_forward_m": 0.6157425577305125,
+        "body_lateral_m": -0.018527426901726745,
+        "turn_deg": -10.642043722593534,
+        "vx_m_s": 0.10262375962175864,
+        "vy_m_s": -0.0030879044836213216,
+        "yaw_rad_s": -0.030956450350077186,
+        "yaw_deg_s": -1.7736739537657025,
+        "vx_wall_m_s": 0.1025587836404155,
+        "yaw_wall_deg_s": -1.7725509564583202
+      },
+      "min_trunk_m": 0.11300010666097185,
+      "max_tilt_deg": 3.8467123798745146,
+      "loop_hz_min": 49.82428429797206,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.21300000457334076,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "33-r2-backward-25",
+      "repeat": 2,
+      "direction": "backward",
+      "stick_percent": 25,
+      "channels": [
+        1500,
+        1375,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": -0.185,
+        "vy": 0.0,
+        "vyaw": -0.0
+      },
+      "initial": {
+        "trunk_z": 0.11548214582536118,
+        "tilt_deg": 1.2030681707254847
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.020000000000195,
+        "wall_seconds": 8.004555250052363,
+        "realtime_factor": 1.0019294950769102,
+        "body_forward_m": -0.2908931412283995,
+        "body_lateral_m": -0.038293106773778285,
+        "turn_deg": -5.02506302133505,
+        "vx_m_s": -0.036270965240447935,
+        "vy_m_s": -0.004774701592740319,
+        "yaw_rad_s": -0.010935647735973634,
+        "yaw_deg_s": -0.6265664615130833,
+        "vx_wall_m_s": -0.03634094988931416,
+        "yaw_wall_deg_s": -0.6277754184159298
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999879,
+        "wall_seconds": 6.001293583074585,
+        "realtime_factor": 0.9997844492930068,
+        "body_forward_m": -0.24074626262690665,
+        "body_lateral_m": -0.02464702113662775,
+        "turn_deg": -8.357873618748323,
+        "vx_m_s": -0.04012437710448525,
+        "vy_m_s": -0.004107836856104707,
+        "yaw_rad_s": -0.024312068852122407,
+        "yaw_deg_s": -1.392978936458082,
+        "vx_wall_m_s": -0.04011572826663272,
+        "yaw_wall_deg_s": -1.3926786788635017
+      },
+      "min_trunk_m": 0.11458382047044328,
+      "max_tilt_deg": 3.281364764947217,
+      "loop_hz_min": 49.87205946544882,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        -0.1854546784394788,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "34-r2-forward-50",
+      "repeat": 2,
+      "direction": "forward",
+      "stick_percent": 50,
+      "channels": [
+        1500,
+        1750,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.145,
+        "vy": 0.0,
+        "vyaw": -0.0
+      },
+      "initial": {
+        "trunk_z": 0.11550483289445206,
+        "tilt_deg": 1.1865002113761551
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.000000000000234,
+        "wall_seconds": 8.004536499967799,
+        "realtime_factor": 0.9994332588816877,
+        "body_forward_m": 0.6357372845692477,
+        "body_lateral_m": -0.01960483530120466,
+        "turn_deg": -20.93817568508535,
+        "vx_m_s": 0.07946716057115363,
+        "vy_m_s": -0.0024506044126505104,
+        "yaw_rad_s": -0.045680013133218504,
+        "yaw_deg_s": -2.617271960635592,
+        "vx_wall_m_s": 0.07942212326370243,
+        "yaw_wall_deg_s": -2.6157886449976937
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999922,
+        "wall_seconds": 6.0024339579977095,
+        "realtime_factor": 0.9995945048267387,
+        "body_forward_m": 0.4728648432114023,
+        "body_lateral_m": -0.0011696326138643208,
+        "turn_deg": -21.766740869979856,
+        "vx_m_s": 0.07881080720190141,
+        "vy_m_s": -0.00019493876897738933,
+        "yaw_rad_s": -0.06331688260159472,
+        "yaw_deg_s": -3.62779014499669,
+        "vx_wall_m_s": 0.07877884979998022,
+        "yaw_wall_deg_s": -3.6263190936032887
+      },
+      "min_trunk_m": 0.1128444619813875,
+      "max_tilt_deg": 3.870482360657393,
+      "loop_hz_min": 49.90483426984696,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.14500000497240534,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "35-r2-right-100",
+      "repeat": 2,
+      "direction": "right",
+      "stick_percent": 100,
+      "channels": [
+        2000,
+        1500,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.0,
+        "vy": 0.0,
+        "vyaw": -0.7200000000000001
+      },
+      "initial": {
+        "trunk_z": 0.11549595364259038,
+        "tilt_deg": 1.1082625171471698
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.000000000000199,
+        "wall_seconds": 8.000842000124976,
+        "realtime_factor": 0.9998947610608029,
+        "body_forward_m": 0.283999960536655,
+        "body_lateral_m": -0.029409548949859872,
+        "turn_deg": -383.9781129910655,
+        "vx_m_s": 0.03549999506708099,
+        "vy_m_s": -0.0036761936187323925,
+        "yaw_rad_s": -0.8377102909110922,
+        "yaw_deg_s": -47.99726412388199,
+        "vx_wall_m_s": 0.03549625908525863,
+        "yaw_wall_deg_s": -47.99221294272123
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999886,
+        "wall_seconds": 6.001697500003502,
+        "realtime_factor": 0.9997171633519326,
+        "body_forward_m": 0.21641631688014148,
+        "body_lateral_m": -0.016728978868026878,
+        "turn_deg": -298.3401951853793,
+        "vx_m_s": 0.03606938614669093,
+        "vy_m_s": -0.0027881631446711993,
+        "yaw_rad_s": -0.8678364495045835,
+        "yaw_deg_s": -49.72336586423082,
+        "vx_wall_m_s": 0.03605918440241535,
+        "yaw_wall_deg_s": -49.70930227409916
+      },
+      "min_trunk_m": 0.11425488477233356,
+      "max_tilt_deg": 4.6982400123578705,
+      "loop_hz_min": 49.870800401899984,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.0,
+        0.0,
+        -0.7199999999951139
+      ]
+    },
+    {
+      "name": "36-r2-backward-75",
+      "repeat": 2,
+      "direction": "backward",
+      "stick_percent": 75,
+      "channels": [
+        1500,
+        1125,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": -0.26,
+        "vy": 0.0,
+        "vyaw": -0.0
+      },
+      "initial": {
+        "trunk_z": 0.11547265269822954,
+        "tilt_deg": 1.1323081061594835
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.02000000000018,
+        "wall_seconds": 8.004767625126988,
+        "realtime_factor": 1.0019029128122818,
+        "body_forward_m": -0.49315488682539205,
+        "body_lateral_m": -0.04827945855708429,
+        "turn_deg": -9.89930343251919,
+        "vx_m_s": -0.061490634267503855,
+        "vy_m_s": -0.006019882613102644,
+        "yaw_rad_s": -0.02154307213858258,
+        "yaw_deg_s": -1.2343271112866543,
+        "vx_wall_m_s": -0.061607645583286824,
+        "yaw_wall_deg_s": -1.2366759281612685
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999865,
+        "wall_seconds": 5.999062624992803,
+        "realtime_factor": 1.0001562535792103,
+        "body_forward_m": -0.44633059796409175,
+        "body_lateral_m": -0.03517647688680149,
+        "turn_deg": -11.840804204333791,
+        "vx_m_s": -0.07438843299401697,
+        "vy_m_s": -0.005862746147800381,
+        "yaw_rad_s": -0.03444350324160279,
+        "yaw_deg_s": -1.9734673673890095,
+        "vx_wall_m_s": -0.07440005645292413,
+        "yaw_wall_deg_s": -1.973775728728619
+      },
+      "min_trunk_m": 0.11463576566296013,
+      "max_tilt_deg": 3.632565892419593,
+      "loop_hz_min": 49.816442283072895,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        -0.26016636568248597,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "37-r3-neutral-0",
+      "repeat": 3,
+      "direction": "neutral",
+      "stick_percent": 0,
+      "channels": [
+        1500,
+        1500,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.0,
+        "vy": 0.0,
+        "vyaw": -0.0
+      },
+      "initial": {
+        "trunk_z": 0.11545920108709352,
+        "tilt_deg": 1.058120756965796
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.000000000000206,
+        "wall_seconds": 7.997595415916294,
+        "realtime_factor": 1.0003006633817868,
+        "body_forward_m": -0.001844780574691865,
+        "body_lateral_m": 0.001987001064291747,
+        "turn_deg": -0.47839007821941415,
+        "vx_m_s": -0.00023059757183647718,
+        "vy_m_s": 0.00024837513303646195,
+        "yaw_rad_s": -0.0010436852467252218,
+        "yaw_deg_s": -0.05979875977742523,
+        "vx_wall_m_s": -0.00023066690408225736,
+        "yaw_wall_deg_s": -0.05981673907476657
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.97999999999989,
+        "wall_seconds": 5.994864125037566,
+        "realtime_factor": 0.9975205234467959,
+        "body_forward_m": -0.0014934583745610482,
+        "body_lateral_m": 0.0017258687438468515,
+        "turn_deg": -0.26064332900047654,
+        "vx_m_s": -0.00024974220310385877,
+        "vy_m_s": 0.0002886068133523216,
+        "yaw_rad_s": -0.0007607164321767927,
+        "yaw_deg_s": -0.04358584096998015,
+        "vx_wall_m_s": -0.0002491229731669172,
+        "yaw_wall_deg_s": -0.0434777708992434
+      },
+      "min_trunk_m": 0.11543777191417348,
+      "max_tilt_deg": 1.2288519913933695,
+      "loop_hz_min": 49.80577411607587,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "38-r3-deadzone-8",
+      "repeat": 3,
+      "direction": "deadzone",
+      "stick_percent": 8,
+      "channels": [
+        1540,
+        1540,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.0,
+        "vy": 0.0,
+        "vyaw": -0.0
+      },
+      "initial": {
+        "trunk_z": 0.1154667205306013,
+        "tilt_deg": 1.1153106755607636
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.00000000000015,
+        "wall_seconds": 8.003067458979785,
+        "realtime_factor": 0.999616714591579,
+        "body_forward_m": -0.0020218643586827367,
+        "body_lateral_m": 0.002235763509279581,
+        "turn_deg": -0.3492774436784529,
+        "vx_m_s": -0.00025273304483533737,
+        "vy_m_s": 0.00027947043865994244,
+        "yaw_rad_s": -0.000762005174392243,
+        "yaw_deg_s": -0.043659680459805804,
+        "vx_wall_m_s": -0.00025263617594702614,
+        "yaw_wall_deg_s": -0.043642946341349236
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999837,
+        "wall_seconds": 5.9984899999108166,
+        "realtime_factor": 1.0002517300335656,
+        "body_forward_m": -0.0014293233981258315,
+        "body_lateral_m": 0.001763051182446597,
+        "turn_deg": -0.26789222244739275,
+        "vx_m_s": -0.00023822056635431173,
+        "vy_m_s": 0.0002938418637411075,
+        "yaw_rad_s": -0.0007792668870320321,
+        "yaw_deg_s": -0.04464870374123334,
+        "vx_wall_m_s": -0.0002382805336254761,
+        "yaw_wall_deg_s": -0.04465994316092478
+      },
+      "min_trunk_m": 0.11543539708230331,
+      "max_tilt_deg": 1.2199972204234772,
+      "loop_hz_min": 49.84398305543827,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "39-r3-right-100",
+      "repeat": 3,
+      "direction": "right",
+      "stick_percent": 100,
+      "channels": [
+        2000,
+        1500,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.0,
+        "vy": 0.0,
+        "vyaw": -0.7200000000000001
+      },
+      "initial": {
+        "trunk_z": 0.11547737529918035,
+        "tilt_deg": 1.1640440476141771
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.000000000000206,
+        "wall_seconds": 8.000732915941626,
+        "realtime_factor": 0.9999083938997689,
+        "body_forward_m": 0.2810769719856054,
+        "body_lateral_m": -0.05072160713394167,
+        "turn_deg": -381.6708305919112,
+        "vx_m_s": 0.03513462149819977,
+        "vy_m_s": -0.006340200891742546,
+        "yaw_rad_s": -0.8326765815812722,
+        "yaw_deg_s": -47.708853823987674,
+        "vx_wall_m_s": 0.035131402952541226,
+        "yaw_wall_deg_s": -47.70448340194236
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999893,
+        "wall_seconds": 5.996200665831566,
+        "realtime_factor": 1.0006336235860114,
+        "body_forward_m": 0.22090908055271521,
+        "body_lateral_m": -0.04547308237039319,
+        "turn_deg": -291.48364579380444,
+        "vx_m_s": 0.03681818009211986,
+        "vy_m_s": -0.007578847061732333,
+        "yaw_rad_s": -0.8478915558031497,
+        "yaw_deg_s": -48.5806076323016,
+        "vx_wall_m_s": 0.03684150895942023,
+        "yaw_wall_deg_s": -48.61138945112019
+      },
+      "min_trunk_m": 0.11421820332234987,
+      "max_tilt_deg": 5.017596838248968,
+      "loop_hz_min": 49.86467350918027,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.0,
+        0.0,
+        -0.7199999999938279
+      ]
+    },
+    {
+      "name": "40-r3-backward-50",
+      "repeat": 3,
+      "direction": "backward",
+      "stick_percent": 50,
+      "channels": [
+        1500,
+        1250,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": -0.22,
+        "vy": 0.0,
+        "vyaw": -0.0
+      },
+      "initial": {
+        "trunk_z": 0.11547072877020204,
+        "tilt_deg": 1.0837515220088105
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.020000000000145,
+        "wall_seconds": 8.004259374924004,
+        "realtime_factor": 1.0019665311103554,
+        "body_forward_m": -0.37936183120813977,
+        "body_lateral_m": -0.02162165242233645,
+        "turn_deg": -7.692722336979032,
+        "vx_m_s": -0.047301973966101356,
+        "vy_m_s": -0.0026959666362015035,
+        "yaw_rad_s": -0.016741063992767383,
+        "yaw_deg_s": -0.9591923113440016,
+        "vx_wall_m_s": -0.047394994769486914,
+        "yaw_wall_deg_s": -0.9610785928650731
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 6.019999999999833,
+        "wall_seconds": 6.0000906670466065,
+        "realtime_factor": 1.003318172017395,
+        "body_forward_m": -0.33098583583931684,
+        "body_lateral_m": -0.004944551774442738,
+        "turn_deg": -10.833294377662899,
+        "vx_m_s": -0.05498103585370864,
+        "vy_m_s": -0.0008213541153559594,
+        "yaw_rad_s": -0.03140808234684599,
+        "yaw_deg_s": -1.7995505610736213,
+        "vx_wall_m_s": -0.0551634723883658,
+        "yaw_wall_deg_s": -1.805521779389263
+      },
+      "min_trunk_m": 0.11459559881139011,
+      "max_tilt_deg": 3.8089963558223814,
+      "loop_hz_min": 49.895809868952306,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        -0.2203164578649601,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "41-r3-forward-50",
+      "repeat": 3,
+      "direction": "forward",
+      "stick_percent": 50,
+      "channels": [
+        1500,
+        1750,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.145,
+        "vy": 0.0,
+        "vyaw": -0.0
+      },
+      "initial": {
+        "trunk_z": 0.1154644349836006,
+        "tilt_deg": 1.0556543992216516
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.00000000000017,
+        "wall_seconds": 8.003278249874711,
+        "realtime_factor": 0.99959038661756,
+        "body_forward_m": 0.6443403492031131,
+        "body_lateral_m": -0.032000308373476095,
+        "turn_deg": -16.36312791252137,
+        "vx_m_s": 0.08054254365038742,
+        "vy_m_s": -0.004000038546684427,
+        "yaw_rad_s": -0.03569880724980981,
+        "yaw_deg_s": -2.045390989065128,
+        "vx_wall_m_s": 0.08050955234665245,
+        "yaw_wall_deg_s": -2.0445531695436845
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.979999999999855,
+        "wall_seconds": 5.998747749952599,
+        "realtime_factor": 0.9968747227364423,
+        "body_forward_m": 0.4765455831938211,
+        "body_lateral_m": -0.015380075341409866,
+        "turn_deg": -14.621348227345845,
+        "vx_m_s": 0.07968989685515597,
+        "vy_m_s": -0.0025719189534130836,
+        "yaw_rad_s": -0.04267402469027217,
+        "yaw_deg_s": -2.4450415095896654,
+        "vx_wall_m_s": 0.07944084383237929,
+        "yaw_wall_deg_s": -2.43740007695129
+      },
+      "min_trunk_m": 0.11303298027275427,
+      "max_tilt_deg": 3.9584023708892584,
+      "loop_hz_min": 49.842506004723575,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.14500000624556938,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "42-r3-backward-100",
+      "repeat": 3,
+      "direction": "backward",
+      "stick_percent": 100,
+      "channels": [
+        1500,
+        1000,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": -0.3,
+        "vy": 0.0,
+        "vyaw": -0.0
+      },
+      "initial": {
+        "trunk_z": 0.11547366916889766,
+        "tilt_deg": 1.0770926569795534
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 7.979999999999883,
+        "wall_seconds": 7.99892104184255,
+        "realtime_factor": 0.9976345507420701,
+        "body_forward_m": -0.626632639087808,
+        "body_lateral_m": -0.059131698682343095,
+        "turn_deg": -17.139410943797234,
+        "vx_m_s": -0.07852539336940065,
+        "vy_m_s": -0.007409987303551874,
+        "yaw_rad_s": -0.03748610937614222,
+        "yaw_deg_s": -2.1477958576187324,
+        "vx_wall_m_s": -0.07833964553592634,
+        "yaw_wall_deg_s": -2.142715355501143
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.9799999999995705,
+        "wall_seconds": 5.997987124836072,
+        "realtime_factor": 0.9970011398053821,
+        "body_forward_m": -0.5912241827780188,
+        "body_lateral_m": -0.07037187390932441,
+        "turn_deg": -18.48220464803829,
+        "vx_m_s": -0.0988669201970002,
+        "vy_m_s": -0.011767871891192218,
+        "yaw_rad_s": -0.05394236189560052,
+        "yaw_deg_s": -3.0906696735852206,
+        "vx_wall_m_s": -0.09857043212545696,
+        "yaw_wall_deg_s": -3.081401187326393
+      },
+      "min_trunk_m": 0.11451036738331866,
+      "max_tilt_deg": 4.450273549204454,
+      "loop_hz_min": 49.834959074285734,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        -0.2999999999979083,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "43-r3-backward-75",
+      "repeat": 3,
+      "direction": "backward",
+      "stick_percent": 75,
+      "channels": [
+        1500,
+        1125,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": -0.26,
+        "vy": 0.0,
+        "vyaw": -0.0
+      },
+      "initial": {
+        "trunk_z": 0.11549450453105817,
+        "tilt_deg": 1.2127520058004042
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 7.9999999999994955,
+        "wall_seconds": 8.002722959034145,
+        "realtime_factor": 0.9996597459329045,
+        "body_forward_m": -0.49403343779836073,
+        "body_lateral_m": -0.05080758538290378,
+        "turn_deg": -7.81481477308906,
+        "vx_m_s": -0.061754179724798984,
+        "vy_m_s": -0.006350948172863373,
+        "yaw_rad_s": -0.01704928102798828,
+        "yaw_deg_s": -0.9768518466361941,
+        "vx_wall_m_s": -0.06173316761398748,
+        "yaw_wall_deg_s": -0.9765194688224264
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999183,
+        "wall_seconds": 5.998833209043369,
+        "realtime_factor": 1.000194502983356,
+        "body_forward_m": -0.44854437978686523,
+        "body_lateral_m": -0.035051811419251615,
+        "turn_deg": -10.724959710727587,
+        "vx_m_s": -0.07475739663115438,
+        "vy_m_s": -0.005841968569876065,
+        "yaw_rad_s": -0.031197643182660082,
+        "yaw_deg_s": -1.787493285121508,
+        "vx_wall_m_s": -0.07477193716782708,
+        "yaw_wall_deg_s": -1.7878409578981929
+      },
+      "min_trunk_m": 0.11463720338064755,
+      "max_tilt_deg": 3.6910193062456025,
+      "loop_hz_min": 49.80086709943095,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        -0.26028440066961966,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "44-r3-left-100",
+      "repeat": 3,
+      "direction": "left",
+      "stick_percent": 100,
+      "channels": [
+        1000,
+        1500,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.0,
+        "vy": 0.0,
+        "vyaw": 0.8
+      },
+      "initial": {
+        "trunk_z": 0.11548877763434948,
+        "tilt_deg": 1.1808172085041633
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.0,
+        "wall_seconds": 8.004228624980897,
+        "realtime_factor": 0.9994717011246156,
+        "body_forward_m": 0.15093672011573925,
+        "body_lateral_m": -0.010781809874780418,
+        "turn_deg": 385.3407587181068,
+        "vx_m_s": 0.018867090014467406,
+        "vy_m_s": -0.0013477262343475523,
+        "yaw_rad_s": 0.8406831227205009,
+        "yaw_deg_s": 48.16759483976335,
+        "vx_wall_m_s": 0.018857122552030987,
+        "yaw_wall_deg_s": 48.14214795357954
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999687,
+        "wall_seconds": 6.002480917144567,
+        "realtime_factor": 0.9995866847093519,
+        "body_forward_m": 0.117946334584387,
+        "body_lateral_m": -0.0038080736822631036,
+        "turn_deg": 299.7440147210464,
+        "vx_m_s": 0.019657722430732192,
+        "vy_m_s": -0.0006346789470438837,
+        "yaw_rad_s": 0.8719199950048142,
+        "yaw_deg_s": 49.95733578684367,
+        "vx_wall_m_s": 0.019649597593472252,
+        "yaw_wall_deg_s": 49.93668765608293
+      },
+      "min_trunk_m": 0.11418942562754139,
+      "max_tilt_deg": 4.081622443917058,
+      "loop_hz_min": 49.916306601098384,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.0,
+        0.0,
+        0.799999999993138
+      ]
+    },
+    {
+      "name": "45-r3-backward-25",
+      "repeat": 3,
+      "direction": "backward",
+      "stick_percent": 25,
+      "channels": [
+        1500,
+        1375,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": -0.185,
+        "vy": 0.0,
+        "vyaw": -0.0
+      },
+      "initial": {
+        "trunk_z": 0.11549599167206485,
+        "tilt_deg": 1.1935018377418622
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.000000000000114,
+        "wall_seconds": 8.002826875075698,
+        "realtime_factor": 0.9996467654343006,
+        "body_forward_m": -0.2860512382487731,
+        "body_lateral_m": -0.0377696947168824,
+        "turn_deg": -6.695342129806532,
+        "vx_m_s": -0.03575640478109613,
+        "vy_m_s": -0.004721211839610233,
+        "yaw_rad_s": -0.014606970589076486,
+        "yaw_deg_s": -0.8369177662258046,
+        "vx_wall_m_s": -0.03574377438298231,
+        "yaw_wall_deg_s": -0.8366221379421258
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999801,
+        "wall_seconds": 6.003185915993527,
+        "realtime_factor": 0.9994692957975468,
+        "body_forward_m": -0.24430727371892336,
+        "body_lateral_m": -0.02473511942403589,
+        "turn_deg": -10.76556532836612,
+        "vx_m_s": -0.04071787895315524,
+        "vy_m_s": -0.004122519904006118,
+        "yaw_rad_s": -0.03131576013642325,
+        "yaw_deg_s": -1.7942608880610795,
+        "vx_wall_m_s": -0.040696269803679824,
+        "yaw_wall_deg_s": -1.7933086662674882
+      },
+      "min_trunk_m": 0.11460658510845098,
+      "max_tilt_deg": 3.4420087702965896,
+      "loop_hz_min": 49.937885609928145,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        -0.18581787325094287,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "46-r3-forward-25",
+      "repeat": 3,
+      "direction": "forward",
+      "stick_percent": 25,
+      "channels": [
+        1500,
+        1625,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.102,
+        "vy": 0.0,
+        "vyaw": -0.0
+      },
+      "initial": {
+        "trunk_z": 0.11547612511895042,
+        "tilt_deg": 1.136689154667277
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.02000000000023,
+        "wall_seconds": 8.005129083059728,
+        "realtime_factor": 1.0018576735972904,
+        "body_forward_m": 0.4572913526909341,
+        "body_lateral_m": 0.028205258766049852,
+        "turn_deg": -4.7983588117724825,
+        "vx_m_s": 0.05701887190659863,
+        "vy_m_s": 0.0035168651827991323,
+        "yaw_rad_s": -0.010442289271510008,
+        "yaw_deg_s": -0.5982991037122624,
+        "vx_wall_m_s": 0.0571247943594868,
+        "yaw_wall_deg_s": -0.5994105481605112
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999915,
+        "wall_seconds": 6.001946832984686,
+        "realtime_factor": 0.9996756330839067,
+        "body_forward_m": 0.3216245106972286,
+        "body_lateral_m": 0.02718980512580145,
+        "turn_deg": -5.37744143455887,
+        "vx_m_s": 0.05360408511620553,
+        "vy_m_s": 0.004531634187633639,
+        "yaw_rad_s": -0.0156423430610368,
+        "yaw_deg_s": -0.8962402390931578,
+        "vx_wall_m_s": 0.05358669772442638,
+        "yaw_wall_deg_s": -0.8959495284107244
+      },
+      "min_trunk_m": 0.11297401506578447,
+      "max_tilt_deg": 4.016880055549723,
+      "loop_hz_min": 49.84365292169787,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.10200001162051024,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "47-r3-left-50",
+      "repeat": 3,
+      "direction": "left",
+      "stick_percent": 50,
+      "channels": [
+        1250,
+        1500,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.0,
+        "vy": 0.0,
+        "vyaw": 0.3652173913043478
+      },
+      "initial": {
+        "trunk_z": 0.11545814846730637,
+        "tilt_deg": 1.0696886188811412
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.000000000000242,
+        "wall_seconds": 8.003943459130824,
+        "realtime_factor": 0.9995073104713048,
+        "body_forward_m": 0.18536713580402545,
+        "body_lateral_m": -0.04167664026071861,
+        "turn_deg": 169.7253506893901,
+        "vx_m_s": 0.02317089197550248,
+        "vy_m_s": -0.005209580032589669,
+        "yaw_rad_s": 0.37028327420397444,
+        "yaw_deg_s": 21.215668836173123,
+        "vx_wall_m_s": 0.023159475919655625,
+        "yaw_wall_deg_s": 21.205216098293274
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999929,
+        "wall_seconds": 6.000323417130858,
+        "realtime_factor": 0.9999461000502063,
+        "body_forward_m": 0.14586696234069474,
+        "body_lateral_m": -0.04055663925125456,
+        "turn_deg": 118.57418571240541,
+        "vx_m_s": 0.024311160390116077,
+        "vy_m_s": -0.006759439875209173,
+        "yaw_rad_s": 0.34491832475878614,
+        "yaw_deg_s": 19.762364285401137,
+        "vx_wall_m_s": 0.024309850019791628,
+        "yaw_wall_deg_s": 19.76129909495835
+      },
+      "min_trunk_m": 0.11447948723202733,
+      "max_tilt_deg": 2.9592075207018778,
+      "loop_hz_min": 49.77681529504708,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.0,
+        0.0,
+        0.3652174115304012
+      ]
+    },
+    {
+      "name": "48-r3-forward-100",
+      "repeat": 3,
+      "direction": "forward",
+      "stick_percent": 100,
+      "channels": [
+        1500,
+        2000,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.3,
+        "vy": 0.0,
+        "vyaw": -0.0
+      },
+      "initial": {
+        "trunk_z": 0.11545676818967913,
+        "tilt_deg": 1.2161414612957493
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.020000000000202,
+        "wall_seconds": 8.00355758308433,
+        "realtime_factor": 1.0020543885322477,
+        "body_forward_m": 0.9613555259058921,
+        "body_lateral_m": -0.020793322744448606,
+        "turn_deg": -32.229189380265765,
+        "vx_m_s": 0.11986976632242742,
+        "vy_m_s": -0.002592683633971083,
+        "yaw_rad_s": -0.07013783914394192,
+        "yaw_deg_s": -4.018602167115331,
+        "vx_wall_m_s": 0.12011602539572341,
+        "yaw_wall_deg_s": -4.026857937323118
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 6.019999999999889,
+        "wall_seconds": 6.005058291135356,
+        "realtime_factor": 1.0024881871482565,
+        "body_forward_m": 0.7481250101040804,
+        "body_lateral_m": -0.0036533321375885374,
+        "turn_deg": -28.780565288466207,
+        "vx_m_s": 0.12427325749237444,
+        "vy_m_s": -0.0006068658035861469,
+        "yaw_rad_s": -0.08344113369915883,
+        "yaw_deg_s": -4.780824798748627,
+        "vx_wall_m_s": 0.12458247261453892,
+        "yaw_wall_deg_s": -4.792720385570939
+      },
+      "min_trunk_m": 0.11290808268939742,
+      "max_tilt_deg": 3.9225342269407286,
+      "loop_hz_min": 49.81502227630158,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.299999999997906,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "49-r3-right-25",
+      "repeat": 3,
+      "direction": "right",
+      "stick_percent": 25,
+      "channels": [
+        1625,
+        1500,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.0,
+        "vy": 0.0,
+        "vyaw": -0.16500000000000004
+      },
+      "initial": {
+        "trunk_z": 0.11546337878090172,
+        "tilt_deg": 1.2145867520832878
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.000000000000213,
+        "wall_seconds": 8.00415000016801,
+        "realtime_factor": 0.9994815189410855,
+        "body_forward_m": 0.25665653597734567,
+        "body_lateral_m": 0.018709633860325814,
+        "turn_deg": -150.83863146691232,
+        "vx_m_s": 0.032082066997167355,
+        "vy_m_s": 0.0023387042325406643,
+        "yaw_rad_s": -0.3290788447874842,
+        "yaw_deg_s": -18.85482893336354,
+        "vx_wall_m_s": 0.032065433053098495,
+        "yaw_wall_deg_s": -18.845053061692514
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.9999999999999005,
+        "wall_seconds": 6.001668125158176,
+        "realtime_factor": 0.999722056414402,
+        "body_forward_m": 0.19886953214017028,
+        "body_lateral_m": 0.011072821622035475,
+        "turn_deg": -100.98233829625455,
+        "vx_m_s": 0.033144922023362264,
+        "vy_m_s": 0.0018454702703392765,
+        "yaw_rad_s": -0.2937457149387387,
+        "yaw_deg_s": -16.830389716042706,
+        "vx_wall_m_s": 0.03313570960489073,
+        "yaw_wall_deg_s": -16.825711817178018
+      },
+      "min_trunk_m": 0.11415258947762008,
+      "max_tilt_deg": 4.336469570290306,
+      "loop_hz_min": 49.85151725585344,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.0,
+        0.0,
+        -0.16500002163791444
+      ]
+    },
+    {
+      "name": "50-r3-right-75",
+      "repeat": 3,
+      "direction": "right",
+      "stick_percent": 75,
+      "channels": [
+        1875,
+        1500,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.0,
+        "vy": 0.0,
+        "vyaw": -0.41999999999999993
+      },
+      "initial": {
+        "trunk_z": 0.11546248117602831,
+        "tilt_deg": 1.2050410061092267
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.02000000000011,
+        "wall_seconds": 8.004622709006071,
+        "realtime_factor": 1.0019210513166021,
+        "body_forward_m": 0.27350441435691397,
+        "body_lateral_m": -0.015122044015990757,
+        "turn_deg": -281.51819669007193,
+        "vx_m_s": 0.03410279480759479,
+        "vy_m_s": -0.001885541647879121,
+        "yaw_rad_s": -0.6126458150272682,
+        "yaw_deg_s": -35.102019537414975,
+        "vx_wall_m_s": 0.03416830802645973,
+        "yaw_wall_deg_s": -35.169452318262714
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 6.019999999999797,
+        "wall_seconds": 6.002834083978087,
+        "realtime_factor": 1.0028596352625383,
+        "body_forward_m": 0.21119829208435398,
+        "body_lateral_m": -0.0051211557563947034,
+        "turn_deg": -216.44559501406897,
+        "vx_m_s": 0.03508277277148855,
+        "vy_m_s": -0.0008506903249825376,
+        "yaw_rad_s": -0.6275229708361882,
+        "yaw_deg_s": -35.95441777642463,
+        "vx_wall_m_s": 0.03518309670561352,
+        "yaw_wall_deg_s": -36.05723429734213
+      },
+      "min_trunk_m": 0.11410601705718568,
+      "max_tilt_deg": 4.019524897004652,
+      "loop_hz_min": 49.790128385090796,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.0,
+        0.0,
+        -0.42000001093017036
+      ]
+    },
+    {
+      "name": "51-r3-left-25",
+      "repeat": 3,
+      "direction": "left",
+      "stick_percent": 25,
+      "channels": [
+        1375,
+        1500,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.0,
+        "vy": 0.0,
+        "vyaw": 0.21999999999999997
+      },
+      "initial": {
+        "trunk_z": 0.11546131968958712,
+        "tilt_deg": 1.2123258290493264
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.000000000000206,
+        "wall_seconds": 8.001681874971837,
+        "realtime_factor": 0.999789809817747,
+        "body_forward_m": 0.17800257568899222,
+        "body_lateral_m": -0.015211519778607229,
+        "turn_deg": 102.35051805076344,
+        "vx_m_s": 0.022250321961123455,
+        "vy_m_s": -0.0019014399723258546,
+        "yaw_rad_s": 0.2232941913884581,
+        "yaw_deg_s": 12.7938147563451,
+        "vx_wall_m_s": 0.02224564516189526,
+        "yaw_wall_deg_s": 12.791125622089753
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999893,
+        "wall_seconds": 6.000372499926016,
+        "realtime_factor": 0.9999379205330791,
+        "body_forward_m": 0.1550223106488608,
+        "body_lateral_m": -0.006947953964673021,
+        "turn_deg": 70.62726675578084,
+        "vx_m_s": 0.02583705177481059,
+        "vy_m_s": -0.001157992327445524,
+        "yaw_rad_s": 0.2054463910954552,
+        "yaw_deg_s": 11.771211125963681,
+        "vx_wall_m_s": 0.025835447824409604,
+        "yaw_wall_deg_s": 11.77048037545197
+      },
+      "min_trunk_m": 0.1139319571351076,
+      "max_tilt_deg": 3.042383332926577,
+      "loop_hz_min": 49.911176821948246,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.0,
+        0.0,
+        0.22000002277114328
+      ]
+    },
+    {
+      "name": "52-r3-left-75",
+      "repeat": 3,
+      "direction": "left",
+      "stick_percent": 75,
+      "channels": [
+        1125,
+        1500,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.0,
+        "vy": 0.0,
+        "vyaw": 0.582608695652174
+      },
+      "initial": {
+        "trunk_z": 0.115456183476788,
+        "tilt_deg": 1.2112823220723328
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.000000000000114,
+        "wall_seconds": 8.005318500101566,
+        "realtime_factor": 0.9993356291693597,
+        "body_forward_m": 0.1890775219468684,
+        "body_lateral_m": -0.025619584720717965,
+        "turn_deg": 260.4966554958543,
+        "vx_m_s": 0.023634690243358212,
+        "vy_m_s": -0.0032024480900897,
+        "yaw_rad_s": 0.5683155411044969,
+        "yaw_deg_s": 32.56208193698133,
+        "vx_wall_m_s": 0.023618988044569307,
+        "yaw_wall_deg_s": 32.540448639557475
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999801,
+        "wall_seconds": 6.000328042078763,
+        "realtime_factor": 0.9999453293092208,
+        "body_forward_m": 0.15882109566172464,
+        "body_lateral_m": -0.020178909777330493,
+        "turn_deg": 193.18133890375685,
+        "vx_m_s": 0.026470182610288318,
+        "vy_m_s": -0.0033631516295551936,
+        "yaw_rad_s": 0.5619417362136137,
+        "yaw_deg_s": 32.19688981729388,
+        "vx_wall_m_s": 0.02646873546711996,
+        "yaw_wall_deg_s": 32.195129591086626
+      },
+      "min_trunk_m": 0.1144413929425088,
+      "max_tilt_deg": 3.381407696123377,
+      "loop_hz_min": 49.90844296138734,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.0,
+        0.0,
+        0.582608705882244
+      ]
+    },
+    {
+      "name": "53-r3-right-50",
+      "repeat": 3,
+      "direction": "right",
+      "stick_percent": 50,
+      "channels": [
+        1750,
+        1500,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.0,
+        "vy": 0.0,
+        "vyaw": -0.20999999999999996
+      },
+      "initial": {
+        "trunk_z": 0.11547888653827536,
+        "tilt_deg": 1.0878238672915594
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.000000000000135,
+        "wall_seconds": 8.000392792047933,
+        "realtime_factor": 0.9999509034046193,
+        "body_forward_m": 0.2583485866593747,
+        "body_lateral_m": -0.020423806682143025,
+        "turn_deg": -187.12199512572775,
+        "vx_m_s": 0.03229357333242129,
+        "vy_m_s": -0.0025529758352678352,
+        "yaw_rad_s": -0.40823686473058435,
+        "yaw_deg_s": -23.390249390715574,
+        "vx_wall_m_s": 0.03229198782791799,
+        "yaw_wall_deg_s": -23.389101009105385
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999822,
+        "wall_seconds": 5.996096167014912,
+        "realtime_factor": 1.0006510624373215,
+        "body_forward_m": 0.19439228990369947,
+        "body_lateral_m": -0.01370038984420725,
+        "turn_deg": -133.9226376241888,
+        "vx_m_s": 0.032398714983950874,
+        "vy_m_s": -0.0022833983073679426,
+        "yaw_rad_s": -0.3895651615829,
+        "yaw_deg_s": -22.320439604032128,
+        "vx_wall_m_s": 0.0324198085702944,
+        "yaw_wall_deg_s": -22.334971603842817
+      },
+      "min_trunk_m": 0.1138836656470198,
+      "max_tilt_deg": 4.297564265640661,
+      "loop_hz_min": 49.92305608980159,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.0,
+        0.0,
+        -0.21000002224307332
+      ]
+    },
+    {
+      "name": "54-r3-forward-75",
+      "repeat": 3,
+      "direction": "forward",
+      "stick_percent": 75,
+      "channels": [
+        1500,
+        1875,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.213,
+        "vy": 0.0,
+        "vyaw": -0.0
+      },
+      "initial": {
+        "trunk_z": 0.11546931191768488,
+        "tilt_deg": 1.0484021364278282
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.000000000000242,
+        "wall_seconds": 8.003881709184498,
+        "realtime_factor": 0.9995150216700727,
+        "body_forward_m": 0.7979531763925783,
+        "body_lateral_m": -0.040604641170659185,
+        "turn_deg": -15.295899555875874,
+        "vx_m_s": 0.09974414704906928,
+        "vy_m_s": -0.005075580146332245,
+        "yaw_rad_s": -0.03337047616304554,
+        "yaw_deg_s": -1.9119874444844265,
+        "vx_wall_m_s": 0.0996957732992134,
+        "yaw_wall_deg_s": -1.9110601720067584
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.979999999999926,
+        "wall_seconds": 5.998939084121957,
+        "realtime_factor": 0.9968429277483147,
+        "body_forward_m": 0.6088765546857668,
+        "body_lateral_m": -0.026624282067458677,
+        "turn_deg": -6.021352193418817,
+        "vx_m_s": 0.10181882185380843,
+        "vy_m_s": -0.004452221081514884,
+        "yaw_rad_s": -0.017573983477816406,
+        "yaw_deg_s": -1.0069150825115203,
+        "vx_wall_m_s": 0.10149737247663448,
+        "yaw_wall_deg_s": -1.0037361788447199
+      },
+      "min_trunk_m": 0.1129668433192121,
+      "max_tilt_deg": 3.7717576697083928,
+      "loop_hz_min": 49.84743365462602,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.21300000384304116,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "complete": true,
+  "finished_at": "2026-11-07T03:23:22.706248+00:00"
+}

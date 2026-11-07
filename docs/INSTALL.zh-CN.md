@@ -6,16 +6,16 @@ macOS Apple Silicon 已完成本机与手机控制／图像验收。Linux 提供
 
 ## 下载与安装
 
-**当前版本: `0.1.0-preview.2`** · [GitHub Release](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.2)
+**当前版本: `0.1.0-preview.3`** · [GitHub Release](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.3)
 
 | 平台 | 安装包 | 校验文件 |
 | --- | --- | --- |
-| macOS 13+ · Apple Silicon / Intel | [MicroduckV7RC-0.1.0-preview.2-macOS-universal.dmg](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.2/MicroduckV7RC-0.1.0-preview.2-macOS-universal.dmg) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.2/MicroduckV7RC-0.1.0-preview.2-macOS-universal.dmg.sha256) |
-| Windows 11 x64 · WSL2 Ubuntu | [MicroduckV7RC-0.1.0-preview.2-Windows-x64.exe](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.2/MicroduckV7RC-0.1.0-preview.2-Windows-x64.exe) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.2/MicroduckV7RC-0.1.0-preview.2-Windows-x64.exe.sha256) |
+| macOS 13+ · Apple Silicon / Intel | [MicroduckV7RC-0.1.0-preview.3-macOS-universal.dmg](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.3/MicroduckV7RC-0.1.0-preview.3-macOS-universal.dmg) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.3/MicroduckV7RC-0.1.0-preview.3-macOS-universal.dmg.sha256) |
+| Windows 11 x64 · WSL2 Ubuntu | [MicroduckV7RC-0.1.0-preview.3-Windows-x64.exe](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.3/MicroduckV7RC-0.1.0-preview.3-Windows-x64.exe) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.3/MicroduckV7RC-0.1.0-preview.3-Windows-x64.exe.sha256) |
 
 下载后打开安装包，检查环境并确认安装；完成后从桌面图标启动。Repo 已公开，可直接下载 Release 安装包，无需登录 GitHub。
 
-Mac 已完成本地安装、桌面启动及 V7RC 控制／影像验收；Windows 已通过构建与自检，完整 WSL2 安装与手机操作仍待 Windows 实机验收。
+preview.2 已完成 Mac 安装、桌面启动及 V7RC 控制与影像验收。preview.3 的比例控制校正已完成 Mac 模拟器 54 轮测量。Windows 的完整 WSL2 安装与手机操作仍待实机验收。
 
 ## 图形安装包与桌面启动
 

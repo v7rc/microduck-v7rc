@@ -3,7 +3,8 @@
     <OutputType>WinExe</OutputType><TargetFramework>net10.0-windows</TargetFramework><UseWPF>true</UseWPF>
     <EnableWindowsTargeting>true</EnableWindowsTargeting><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable>
     <AssemblyName>MicroduckV7RC</AssemblyName><ApplicationIcon>../assets/app-icon.ico</ApplicationIcon>
-    <Version>0.1.0-preview.1</Version><AssemblyVersion>0.1.0.0</AssemblyVersion>
+    <Version>$([System.IO.File]::ReadAllText('$(MSBuildThisFileDirectory)../version.txt').Trim())</Version>
+    <AssemblyVersion>0.1.0.0</AssemblyVersion>
   </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Include="../ui.json" LogicalName="ui.json" />

@@ -1,0 +1,759 @@
+{
+  "started_at": "2026-11-07T03:24:50.794810+00:00",
+  "destination": {
+    "ip": "127.0.0.1",
+    "port": 6188
+  },
+  "scope": "SRT from a Python sender on this Mac to its LAN IP; not V7RC phone or over-air Wi-Fi acceptance",
+  "phases": [
+    {
+      "name": "neutral_arm",
+      "seconds": 3,
+      "channels": [
+        1500,
+        1500,
+        1500,
+        1500
+      ],
+      "displacement_m": 0.001240582368916706,
+      "forward_m": -0.0008350938320125056,
+      "turn_deg": -0.25974040350658373,
+      "min_trunk_m": 0.11496001794769767,
+      "max_tilt_deg": 1.3318281641843717,
+      "end_move": {
+        "applied": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "requested": [
+          0.0,
+          0.0,
+          -0.0
+        ]
+      },
+      "end_head": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "end_head_joints": [
+        0.20346785918529334,
+        0.44653431523311593,
+        -0.055482049217116025,
+        0.008273647421583912
+      ],
+      "loop_hz_min": 49.93898290270304,
+      "checks": {
+        "upright": true,
+        "control_loop": true,
+        "not_fallen": true,
+        "mapped_move": true,
+        "applied_move": true,
+        "mapped_head": true
+      },
+      "passed": true
+    },
+    {
+      "name": "forward",
+      "seconds": 8,
+      "channels": [
+        1500,
+        2000,
+        1500,
+        1500
+      ],
+      "displacement_m": 0.9339103082474015,
+      "forward_m": 0.9132260938994613,
+      "turn_deg": -29.546733866514366,
+      "min_trunk_m": 0.11321823152370138,
+      "max_tilt_deg": 3.9577544973227785,
+      "end_move": {
+        "applied": [
+          0.2999999999999999,
+          0.0,
+          0.0
+        ],
+        "requested": [
+          0.3,
+          0.0,
+          -0.0
+        ]
+      },
+      "end_head": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "end_head_joints": [
+        0.2670598764031046,
+        0.4520505413707438,
+        0.056896237996208625,
+        -0.03669599428136046
+      ],
+      "loop_hz_min": 49.89883425515092,
+      "checks": {
+        "upright": true,
+        "control_loop": true,
+        "not_fallen": true,
+        "mapped_move": true,
+        "applied_move": true,
+        "mapped_head": true,
+        "actual_forward": true
+      },
+      "passed": true
+    },
+    {
+      "name": "packet_loss",
+      "seconds": 2,
+      "channels": null,
+      "displacement_m": 0.05899466337940351,
+      "forward_m": 0.0586311510539929,
+      "turn_deg": -1.1722615222844504,
+      "min_trunk_m": 0.11394972798590403,
+      "max_tilt_deg": 2.8530133680219705,
+      "end_move": {
+        "applied": [
+          3.392346364374496e-09,
+          0.0,
+          0.0
+        ],
+        "limited_by": [
+          "deadman"
+        ],
+        "requested": [
+          0.0,
+          0.0,
+          -0.0
+        ]
+      },
+      "end_head": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "end_head_joints": [
+        0.20328044992908934,
+        0.45313468021502845,
+        -0.05297645916959212,
+        0.006635201806385617
+      ],
+      "loop_hz_min": 49.86867509763502,
+      "first_zero_request_s": 0.40551587496884167,
+      "first_head_centered_s": 0.10526391584426165,
+      "checks": {
+        "upright": true,
+        "control_loop": true,
+        "not_fallen": true,
+        "mapped_move": true,
+        "applied_move": true,
+        "mapped_head": true,
+        "watchdog_zero": true,
+        "head_settled": true
+      },
+      "passed": true
+    },
+    {
+      "name": "nonneutral_after_timeout",
+      "seconds": 1,
+      "channels": [
+        1500,
+        2000,
+        1500,
+        1500
+      ],
+      "displacement_m": 0.00047210352795968566,
+      "forward_m": -0.00041611378817566706,
+      "turn_deg": 0.20535844517627538,
+      "min_trunk_m": 0.11544554691472397,
+      "max_tilt_deg": 1.1952796787321662,
+      "end_move": {
+        "applied": [
+          3.873374817130361e-14,
+          0.0,
+          0.0
+        ],
+        "limited_by": [
+          "deadman"
+        ],
+        "requested": [
+          0.0,
+          0.0,
+          -0.0
+        ]
+      },
+      "end_head": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "end_head_joints": [
+        0.20052154105592127,
+        0.4519083999873822,
+        -0.05383275067172322,
+        0.006903612319645363
+      ],
+      "loop_hz_min": 49.86867509763502,
+      "checks": {
+        "upright": true,
+        "control_loop": true,
+        "not_fallen": true,
+        "mapped_move": true,
+        "applied_move": true,
+        "mapped_head": true
+      },
+      "passed": true
+    },
+    {
+      "name": "neutral_rearm",
+      "seconds": 0.5,
+      "channels": [
+        1500,
+        1500,
+        1500,
+        1500
+      ],
+      "displacement_m": 0.00028699015980894363,
+      "forward_m": -0.00018134779310303848,
+      "turn_deg": 0.07832923868647881,
+      "min_trunk_m": 0.1154680070668364,
+      "max_tilt_deg": 1.1746461115525497,
+      "end_move": {
+        "applied": [
+          9.36524565094797e-17,
+          0.0,
+          0.0
+        ],
+        "requested": [
+          0.0,
+          0.0,
+          -0.0
+        ]
+      },
+      "end_head": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "end_head_joints": [
+        0.20004159436397406,
+        0.4514446149691971,
+        -0.054242524880217476,
+        0.006988717284323013
+      ],
+      "loop_hz_min": 50.031764431476304,
+      "checks": {
+        "upright": true,
+        "control_loop": true,
+        "not_fallen": true,
+        "mapped_move": true,
+        "applied_move": true,
+        "mapped_head": true
+      },
+      "passed": true
+    },
+    {
+      "name": "left",
+      "seconds": 6,
+      "channels": [
+        1000,
+        1500,
+        1500,
+        1500
+      ],
+      "displacement_m": 0.033336113694013285,
+      "forward_m": -0.019374124948324946,
+      "turn_deg": 275.761208830096,
+      "min_trunk_m": 0.11454833805942201,
+      "max_tilt_deg": 3.7719260002688895,
+      "end_move": {
+        "applied": [
+          7.916172896220614e-46,
+          0.0,
+          0.7999999999999998
+        ],
+        "requested": [
+          0.0,
+          0.0,
+          0.8
+        ]
+      },
+      "end_head": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "end_head_joints": [
+        0.3280247839639265,
+        0.3835566433749349,
+        -0.15813322264972865,
+        -0.07676441143445377
+      ],
+      "loop_hz_min": 49.80834371941067,
+      "checks": {
+        "upright": true,
+        "control_loop": true,
+        "not_fallen": true,
+        "mapped_move": true,
+        "applied_move": true,
+        "mapped_head": true,
+        "actual_left": true
+      },
+      "passed": true
+    },
+    {
+      "name": "neutral_before_right",
+      "seconds": 1,
+      "channels": [
+        1500,
+        1500,
+        1500,
+        1500
+      ],
+      "displacement_m": 0.007999683866358107,
+      "forward_m": 0.006146642959850863,
+      "turn_deg": 1.3899828801394472,
+      "min_trunk_m": 0.11486869661787281,
+      "max_tilt_deg": 2.9824965471438465,
+      "end_move": {
+        "applied": [
+          9.038671600953857e-51,
+          0.0,
+          1.1417981541647676e-05
+        ],
+        "requested": [
+          0.0,
+          0.0,
+          -0.0
+        ]
+      },
+      "end_head": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "end_head_joints": [
+        0.20535192142862047,
+        0.45446787440622627,
+        -0.06434650587761753,
+        0.010035318064024896
+      ],
+      "loop_hz_min": 49.97606356454725,
+      "checks": {
+        "upright": true,
+        "control_loop": true,
+        "not_fallen": true,
+        "mapped_move": true,
+        "applied_move": true,
+        "mapped_head": true
+      },
+      "passed": true
+    },
+    {
+      "name": "right",
+      "seconds": 6,
+      "channels": [
+        2000,
+        1500,
+        1500,
+        1500
+      ],
+      "displacement_m": 0.056410873033370605,
+      "forward_m": -0.05037658320470682,
+      "turn_deg": -295.40238023728404,
+      "min_trunk_m": 0.1142168112687154,
+      "max_tilt_deg": 5.082591807240221,
+      "end_move": {
+        "applied": [
+          7.640129240824276e-80,
+          0.0,
+          -0.7199999999999999
+        ],
+        "requested": [
+          0.0,
+          0.0,
+          -0.7200000000000001
+        ]
+      },
+      "end_head": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "end_head_joints": [
+        0.293335427488538,
+        0.38526773196686703,
+        -0.05246985245162704,
+        0.009119363482338114
+      ],
+      "loop_hz_min": 49.82038917701188,
+      "checks": {
+        "upright": true,
+        "control_loop": true,
+        "not_fallen": true,
+        "mapped_move": true,
+        "applied_move": true,
+        "mapped_head": true,
+        "actual_right": true
+      },
+      "passed": true
+    },
+    {
+      "name": "neutral_before_head",
+      "seconds": 1,
+      "channels": [
+        1500,
+        1500,
+        1500,
+        1500
+      ],
+      "displacement_m": 0.012937520041741053,
+      "forward_m": 0.007505516652303551,
+      "turn_deg": -6.982065156346573,
+      "min_trunk_m": 0.11553015779851863,
+      "max_tilt_deg": 3.648567061771989,
+      "end_move": {
+        "applied": [
+          1.7038057548346537e-84,
+          0.0,
+          -1.605653654294204e-05
+        ],
+        "requested": [
+          0.0,
+          0.0,
+          -0.0
+        ]
+      },
+      "end_head": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "end_head_joints": [
+        0.20537654993548551,
+        0.45141095926234903,
+        -0.06259127620902923,
+        0.0033310225225549276
+      ],
+      "loop_hz_min": 49.938340681315715,
+      "checks": {
+        "upright": true,
+        "control_loop": true,
+        "not_fallen": true,
+        "mapped_move": true,
+        "applied_move": true,
+        "mapped_head": true
+      },
+      "passed": true
+    },
+    {
+      "name": "head_yaw_right",
+      "seconds": 2,
+      "channels": [
+        1500,
+        1500,
+        1500,
+        2000
+      ],
+      "displacement_m": 0.0005607945356081713,
+      "forward_m": -0.00027647506823121916,
+      "turn_deg": -0.14552047533285267,
+      "min_trunk_m": 0.11548792162223516,
+      "max_tilt_deg": 1.483589680047712,
+      "end_move": {
+        "applied": [
+          2.2212567163417115e-94,
+          0.0,
+          -2.093295525971347e-15
+        ],
+        "requested": [
+          0.0,
+          0.0,
+          -0.0
+        ]
+      },
+      "end_head": [
+        0.0,
+        0.0,
+        -0.39999999987268525,
+        0.0
+      ],
+      "end_head_joints": [
+        0.19921548543651593,
+        0.4331702181370674,
+        -0.4516094187019813,
+        0.008401588269189918
+      ],
+      "loop_hz_min": 49.938340681315715,
+      "centered_head_reference": [
+        0.20537654993548551,
+        0.45141095926234903,
+        -0.06259127620902923,
+        0.0033310225225549276
+      ],
+      "head_joint_delta_rad": [
+        -0.006161064498969582,
+        -0.018240741125281623,
+        -0.3890181424929521,
+        0.005070565746634991
+      ],
+      "checks": {
+        "upright": true,
+        "control_loop": true,
+        "not_fallen": true,
+        "mapped_move": true,
+        "applied_move": true,
+        "mapped_head": true,
+        "actual_head_joint": true
+      },
+      "passed": true
+    },
+    {
+      "name": "head_yaw_left",
+      "seconds": 2,
+      "channels": [
+        1500,
+        1500,
+        1500,
+        1000
+      ],
+      "displacement_m": 0.0014444106033437451,
+      "forward_m": -0.0006444092422387864,
+      "turn_deg": -0.24014946001071158,
+      "min_trunk_m": 0.11544343548350075,
+      "max_tilt_deg": 1.46601384466608,
+      "end_move": {
+        "applied": [
+          5.655974804828343e-104,
+          0.0,
+          -5.330147869379568e-25
+        ],
+        "requested": [
+          0.0,
+          0.0,
+          -0.0
+        ]
+      },
+      "end_head": [
+        0.0,
+        0.0,
+        0.39999999960214144,
+        0.0
+      ],
+      "end_head_joints": [
+        0.20701135514820965,
+        0.4692417407582185,
+        0.34945262002470184,
+        0.009166003166770681
+      ],
+      "loop_hz_min": 49.8575072442958,
+      "centered_head_reference": [
+        0.20537654993548551,
+        0.45141095926234903,
+        -0.06259127620902923,
+        0.0033310225225549276
+      ],
+      "head_joint_delta_rad": [
+        0.001634805212724133,
+        0.017830781495869474,
+        0.41204389623373106,
+        0.005834980644215754
+      ],
+      "checks": {
+        "upright": true,
+        "control_loop": true,
+        "not_fallen": true,
+        "mapped_move": true,
+        "applied_move": true,
+        "mapped_head": true,
+        "actual_head_joint": true
+      },
+      "passed": true
+    },
+    {
+      "name": "head_pitch_positive",
+      "seconds": 2,
+      "channels": [
+        1500,
+        1500,
+        1000,
+        1500
+      ],
+      "displacement_m": 0.0011379400014782269,
+      "forward_m": -0.0011148932119453923,
+      "turn_deg": -0.4324206537632822,
+      "min_trunk_m": 0.11542865974479888,
+      "max_tilt_deg": 1.1677406443361782,
+      "end_move": {
+        "applied": [
+          7.373711461553126e-114,
+          0.0,
+          -6.948929900229631e-35
+        ],
+        "requested": [
+          0.0,
+          0.0,
+          -0.0
+        ]
+      },
+      "end_head": [
+        0.0,
+        0.24999999990053534,
+        1.5914343559926297e-10,
+        0.0
+      ],
+      "end_head_joints": [
+        0.26328846574836073,
+        0.681693142243903,
+        -0.055724956941269624,
+        0.01768056232270882
+      ],
+      "loop_hz_min": 49.93172874673841,
+      "centered_head_reference": [
+        0.20537654993548551,
+        0.45141095926234903,
+        -0.06259127620902923,
+        0.0033310225225549276
+      ],
+      "head_joint_delta_rad": [
+        0.05791191581287522,
+        0.23028218298155395,
+        0.006866319267759602,
+        0.01434953980015389
+      ],
+      "checks": {
+        "upright": true,
+        "control_loop": true,
+        "not_fallen": true,
+        "mapped_move": true,
+        "applied_move": true,
+        "mapped_head": true,
+        "actual_head_joint": true
+      },
+      "passed": true
+    },
+    {
+      "name": "head_pitch_negative",
+      "seconds": 2,
+      "channels": [
+        1500,
+        1500,
+        2000,
+        1500
+      ],
+      "displacement_m": 0.00022989897695807122,
+      "forward_m": 7.837668405611604e-05,
+      "turn_deg": 0.7167099670871999,
+      "min_trunk_m": 0.1153808534328218,
+      "max_tilt_deg": 1.2196341024788218,
+      "end_move": {
+        "applied": [
+          1.8775644407867082e-123,
+          0.0,
+          -1.769402525474272e-44
+        ],
+        "requested": [
+          0.0,
+          0.0,
+          -0.0
+        ]
+      },
+      "end_head": [
+        0.0,
+        -0.24999999984085658,
+        4.052261296414611e-20,
+        0.0
+      ],
+      "end_head_joints": [
+        0.12171913081902999,
+        0.22440187717555676,
+        -0.039828962245483,
+        0.0010469607292825738
+      ],
+      "loop_hz_min": 49.958714656977925,
+      "centered_head_reference": [
+        0.20537654993548551,
+        0.45141095926234903,
+        -0.06259127620902923,
+        0.0033310225225549276
+      ],
+      "head_joint_delta_rad": [
+        -0.08365741911645552,
+        -0.22700908208679227,
+        0.022762313963546228,
+        -0.0022840617932723536
+      ],
+      "checks": {
+        "upright": true,
+        "control_loop": true,
+        "not_fallen": true,
+        "mapped_move": true,
+        "applied_move": true,
+        "mapped_head": true,
+        "actual_head_joint": true
+      },
+      "passed": true
+    },
+    {
+      "name": "malformed_flood",
+      "seconds": 2,
+      "channels": null,
+      "displacement_m": 0.0009026659629479554,
+      "forward_m": -0.000667887511322949,
+      "turn_deg": -0.5078310926967242,
+      "min_trunk_m": 0.1153600260151772,
+      "max_tilt_deg": 1.1981994748907046,
+      "end_move": {
+        "applied": [
+          2.4477864408120765e-133,
+          0.0,
+          -2.3067754246452416e-54
+        ],
+        "limited_by": [
+          "deadman"
+        ],
+        "requested": [
+          0.0,
+          0.0,
+          -0.0
+        ]
+      },
+      "end_head": [
+        0.0,
+        -1.4474011154457044e-09,
+        5.282945309634807e-30,
+        0.0
+      ],
+      "end_head_joints": [
+        0.19878559499881265,
+        0.44618504142825927,
+        -0.055638380055970146,
+        0.007096451235463741
+      ],
+      "loop_hz_min": 49.96643504725701,
+      "first_zero_request_s": 0.10316033381968737,
+      "first_head_centered_s": 0.7019476669374853,
+      "checks": {
+        "upright": true,
+        "control_loop": true,
+        "not_fallen": true,
+        "mapped_move": true,
+        "applied_move": true,
+        "mapped_head": true,
+        "watchdog_zero": true,
+        "head_settled": true
+      },
+      "passed": true
+    }
+  ],
+  "passed": true
+}

@@ -6,16 +6,16 @@ V7RC アプリから Wi-Fi UDP で Microduck シミュレーターを操作し�
 
 ## ダウンロードと導入
 
-**現在のバージョン: `0.1.0-preview.2`** · [GitHub Release](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.2)
+**現在のバージョン: `0.1.0-preview.3`** · [GitHub Release](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.3)
 
 | プラットフォーム | インストーラー | チェックサム |
 | --- | --- | --- |
-| macOS 13+ · Apple Silicon / Intel | [MicroduckV7RC-0.1.0-preview.2-macOS-universal.dmg](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.2/MicroduckV7RC-0.1.0-preview.2-macOS-universal.dmg) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.2/MicroduckV7RC-0.1.0-preview.2-macOS-universal.dmg.sha256) |
-| Windows 11 x64 · WSL2 Ubuntu | [MicroduckV7RC-0.1.0-preview.2-Windows-x64.exe](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.2/MicroduckV7RC-0.1.0-preview.2-Windows-x64.exe) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.2/MicroduckV7RC-0.1.0-preview.2-Windows-x64.exe.sha256) |
+| macOS 13+ · Apple Silicon / Intel | [MicroduckV7RC-0.1.0-preview.3-macOS-universal.dmg](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.3/MicroduckV7RC-0.1.0-preview.3-macOS-universal.dmg) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.3/MicroduckV7RC-0.1.0-preview.3-macOS-universal.dmg.sha256) |
+| Windows 11 x64 · WSL2 Ubuntu | [MicroduckV7RC-0.1.0-preview.3-Windows-x64.exe](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.3/MicroduckV7RC-0.1.0-preview.3-Windows-x64.exe) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.3/MicroduckV7RC-0.1.0-preview.3-Windows-x64.exe.sha256) |
 
 取得したインストーラーを開き、環境を確認して導入を承認してください。完了後はデスクトップアイコンから起動できます。この Repo は公開されており、GitHub にログインせずに Release のインストーラーを取得できます。
 
-Mac では実際の導入、デスクトップ起動、V7RC 制御・映像の受入確認が完了しました。Windows はビルドとセルフテスト済みですが、WSL2 の完全な導入とスマートフォン操作は Windows 実機での確認が必要です。
+preview.2 では Mac での導入、デスクトップ起動、V7RC 制御・映像を確認済みです。preview.3 の走行制御の調整は Mac のシミュレーターで 54 試行を完了しました。Windows の WSL2 導入とスマートフォン操作は実機での確認が必要です。
 
 ## GUI インストーラーと起動アイコン
 

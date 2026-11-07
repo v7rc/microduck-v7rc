@@ -10,7 +10,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "bridge"))
-from v7rc_udp import Config, InputState, axis, map_channels, parse_srt
+from v7rc_udp import Config, GaitStart, InputState, axis, map_channels, parse_srt
 
 NEUTRAL = b"SRT1500150015001500#"
 FORWARD = b"SRT1500200015001500#"
@@ -48,6 +48,30 @@ class ProtocolTests(unittest.TestCase):
         self.assertEqual(axis(1000, cfg), -1)
         self.assertEqual(axis(1900, cfg), 1)
         self.assertEqual(axis(1450, cfg), 0)
+
+    def test_calibrated_start_fades_and_does_not_repeat_while_held(self):
+        cfg = Config(drive_profile="velstand-v8")
+        start = GaitStart()
+        channels = (1500, 1625, 1500, 1500)
+        move, _ = map_channels(channels, cfg)
+        self.assertAlmostEqual(start.apply(move, channels, cfg, 10)["vx"], .3)
+        self.assertEqual(start.apply(move, channels, cfg, 12), move)
+        self.assertEqual(start.apply(move, channels, cfg, 20), move)
+        center = (1500,) * 4
+        neutral, _ = map_channels(center, cfg)
+        self.assertEqual(start.apply(neutral, center, cfg, 21), neutral)
+        self.assertAlmostEqual(start.apply(move, channels, cfg, 22)["vx"], .3)
+
+    def test_calibrated_reversal_and_mixed_input_do_not_trigger_boost(self):
+        cfg = Config(drive_profile="velstand-v8")
+        start = GaitStart()
+        forward = (1500, 1625, 1500, 1500)
+        backward = (1500, 1375, 1500, 1500)
+        mixed = (1625, 1625, 1500, 1500)
+        start.apply(map_channels(forward, cfg)[0], forward, cfg, 10)
+        for now, channels in [(10.1, backward), (10.2, mixed), (10.3, forward)]:
+            move, _ = map_channels(channels, cfg)
+            self.assertEqual(start.apply(move, channels, cfg, now), move)
 
     def test_ch3_pitch_and_ch4_yaw_are_independent(self):
         move, head = map_channels((1500, 1500, 2000, 1500), Config())

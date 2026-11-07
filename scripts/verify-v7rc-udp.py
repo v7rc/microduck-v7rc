@@ -4,6 +4,7 @@ from pathlib import Path
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]/'bridge'))
 from platform_support import robot_socket
+from v7rc_udp import Config, map_channels
 import argparse
 import datetime
 import json
@@ -18,6 +19,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--host", required=True, help="Mac LAN IPv4, or loopback for a local test")
     parser.add_argument("--port", type=int, default=6188)
+    parser.add_argument("--drive-profile", choices=("linear", "velstand-v8"), default="velstand-v8")
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=True)
@@ -135,7 +137,9 @@ def main():
         phase('neutral_rearm',.5,center,zero,home)
         phase('left',6,(1000,1500,1500,1500),(0,0,.8),home,'left')
         phase('neutral_before_right',1,center,zero,home)
-        phase('right',6,(2000,1500,1500,1500),(0,0,-.8),home,'right')
+        right = (2000,1500,1500,1500)
+        expected_right, _ = map_channels(right, Config(drive_profile=args.drive_profile))
+        phase('right',6,right,tuple(expected_right.values()),home,'right')
         phase('neutral_before_head',1,center,zero,home)
         phase('head_yaw_right',2,(1500,1500,1500,2000),zero,(0,0,-.4,0),'head_yaw_right')
         phase('head_yaw_left',2,(1500,1500,1500,1000),zero,(0,0,.4,0),'head_yaw_left')

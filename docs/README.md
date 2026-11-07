@@ -1,5 +1,11 @@
 # 研究文件索引
 
+目前進度與未完成事項：[2026-11-07 工作盤點](integration/status-and-backlog-2026-11-07.md)。初期研究與歷史報告中的「未驗收」請依各自日期閱讀，最新驗收狀態以此盤點及其證據為準。
+
+比例控制實測：[不同搖桿幅度的實際走速與轉向速度](validation/2026-11-07-proportional-control.md)，含 54 輪實測、速度曲線與原始感測資料。
+
+VelStand v8 比例控制校正後，四個方向的持續運動由 23／48 增至 48／48。[原因、校正參數與 54 輪對照](validation/2026-11-07-proportional-control-calibrated.md)
+
 | 分類 | 內容 | 入口 |
 | --- | --- | --- |
 | repositories | 倉庫來源、用途、版本與本機位置 | [倉庫登錄](repositories/README.md) |

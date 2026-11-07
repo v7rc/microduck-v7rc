@@ -1,0 +1,686 @@
+{
+  "source_complete": true,
+  "groups": [
+    {
+      "direction": "forward",
+      "stick_percent": 25,
+      "unit": "m/s",
+      "command": 0.102,
+      "valid_trials": 3,
+      "total_trials": 3,
+      "actual_mean": 0.053936319457272036,
+      "actual_std": 0.0005602225086791001,
+      "actual_min": 0.05360408511620553,
+      "actual_max": 0.0545831283337799,
+      "actual_command_ratio": 0.5287874456595298,
+      "values": [
+        0.05362174492183068,
+        0.0545831283337799,
+        0.05360408511620553
+      ],
+      "invalid_trials": []
+    },
+    {
+      "direction": "forward",
+      "stick_percent": 50,
+      "unit": "m/s",
+      "command": 0.145,
+      "valid_trials": 3,
+      "total_trials": 3,
+      "actual_mean": 0.07919904253192463,
+      "actual_std": 0.0004484391240069177,
+      "actual_min": 0.07881080720190141,
+      "actual_max": 0.07968989685515597,
+      "actual_command_ratio": 0.5462002933236182,
+      "values": [
+        0.07909642353871651,
+        0.07881080720190141,
+        0.07968989685515597
+      ],
+      "invalid_trials": []
+    },
+    {
+      "direction": "forward",
+      "stick_percent": 75,
+      "unit": "m/s",
+      "command": 0.213,
+      "valid_trials": 3,
+      "total_trials": 3,
+      "actual_mean": 0.10272081171587356,
+      "actual_std": 0.0009542247246976141,
+      "actual_min": 0.10181882185380843,
+      "actual_max": 0.10371985367205364,
+      "actual_command_ratio": 0.4822573319994064,
+      "values": [
+        0.10371985367205364,
+        0.10262375962175864,
+        0.10181882185380843
+      ],
+      "invalid_trials": []
+    },
+    {
+      "direction": "forward",
+      "stick_percent": 100,
+      "unit": "m/s",
+      "command": 0.3,
+      "valid_trials": 3,
+      "total_trials": 3,
+      "actual_mean": 0.12556111980032106,
+      "actual_std": 0.001277212446113401,
+      "actual_min": 0.12427325749237444,
+      "actual_max": 0.12682740908217155,
+      "actual_command_ratio": 0.4185370660010702,
+      "values": [
+        0.12682740908217155,
+        0.12558269282641718,
+        0.12427325749237444
+      ],
+      "invalid_trials": []
+    },
+    {
+      "direction": "backward",
+      "stick_percent": 25,
+      "unit": "m/s",
+      "command": 0.185,
+      "valid_trials": 3,
+      "total_trials": 3,
+      "actual_mean": 0.040432801796376386,
+      "actual_std": 0.00029743897128745386,
+      "actual_min": 0.04012437710448525,
+      "actual_max": 0.04071787895315524,
+      "actual_command_ratio": 0.2185556853858183,
+      "values": [
+        0.04045614933148867,
+        0.04012437710448525,
+        0.04071787895315524
+      ],
+      "invalid_trials": []
+    },
+    {
+      "direction": "backward",
+      "stick_percent": 50,
+      "unit": "m/s",
+      "command": 0.22,
+      "valid_trials": 3,
+      "total_trials": 3,
+      "actual_mean": 0.05651730671101067,
+      "actual_std": 0.0016605979744050957,
+      "actual_min": 0.05498103585370864,
+      "actual_max": 0.05827916721348828,
+      "actual_command_ratio": 0.25689684868641216,
+      "values": [
+        0.05629171706583509,
+        0.05827916721348828,
+        0.05498103585370864
+      ],
+      "invalid_trials": []
+    },
+    {
+      "direction": "backward",
+      "stick_percent": 75,
+      "unit": "m/s",
+      "command": 0.26,
+      "valid_trials": 3,
+      "total_trials": 3,
+      "actual_mean": 0.07446926615036888,
+      "actual_std": 0.0002574153781739095,
+      "actual_min": 0.07426196882593526,
+      "actual_max": 0.07475739663115438,
+      "actual_command_ratio": 0.28642025442449565,
+      "values": [
+        0.07426196882593526,
+        0.07438843299401697,
+        0.07475739663115438
+      ],
+      "invalid_trials": []
+    },
+    {
+      "direction": "backward",
+      "stick_percent": 100,
+      "unit": "m/s",
+      "command": 0.3,
+      "valid_trials": 3,
+      "total_trials": 3,
+      "actual_mean": 0.09755924523132792,
+      "actual_std": 0.001625030478106057,
+      "actual_min": 0.09573998349402944,
+      "actual_max": 0.0988669201970002,
+      "actual_command_ratio": 0.3251974841044264,
+      "values": [
+        0.09807083200295412,
+        0.09573998349402944,
+        0.0988669201970002
+      ],
+      "invalid_trials": []
+    },
+    {
+      "direction": "left",
+      "stick_percent": 25,
+      "unit": "deg/s",
+      "command": 12.605071492878109,
+      "valid_trials": 3,
+      "total_trials": 3,
+      "actual_mean": 11.25194871773328,
+      "actual_std": 0.5442767106989879,
+      "actual_min": 10.68570366631437,
+      "actual_max": 11.771211125963681,
+      "actual_command_ratio": 0.8926525108636356,
+      "values": [
+        11.298931360921786,
+        10.68570366631437,
+        11.771211125963681
+      ],
+      "invalid_trials": []
+    },
+    {
+      "direction": "left",
+      "stick_percent": 50,
+      "unit": "deg/s",
+      "command": 20.925415126517024,
+      "valid_trials": 3,
+      "total_trials": 3,
+      "actual_mean": 19.608918994846533,
+      "actual_std": 0.24456403031029444,
+      "actual_min": 19.326885677594845,
+      "actual_max": 19.762364285401137,
+      "actual_command_ratio": 0.9370862597606389,
+      "values": [
+        19.73750702154362,
+        19.326885677594845,
+        19.762364285401137
+      ],
+      "invalid_trials": []
+    },
+    {
+      "direction": "left",
+      "stick_percent": 75,
+      "unit": "deg/s",
+      "command": 33.381019368491444,
+      "valid_trials": 3,
+      "total_trials": 3,
+      "actual_mean": 33.19910244266331,
+      "actual_std": 2.0859717859257194,
+      "actual_min": 31.80338096088678,
+      "actual_max": 35.597036549809275,
+      "actual_command_ratio": 0.9945502884792115,
+      "values": [
+        35.597036549809275,
+        31.80338096088678,
+        32.19688981729388
+      ],
+      "invalid_trials": []
+    },
+    {
+      "direction": "left",
+      "stick_percent": 100,
+      "unit": "deg/s",
+      "command": 45.836623610465864,
+      "valid_trials": 3,
+      "total_trials": 3,
+      "actual_mean": 48.71088499165459,
+      "actual_std": 1.1346395375863367,
+      "actual_min": 47.73812105307563,
+      "actual_max": 49.95733578684367,
+      "actual_command_ratio": 1.0627066558308287,
+      "values": [
+        47.73812105307563,
+        48.43719813504447,
+        49.95733578684367
+      ],
+      "invalid_trials": []
+    },
+    {
+      "direction": "right",
+      "stick_percent": 25,
+      "unit": "deg/s",
+      "command": 9.453803619658585,
+      "valid_trials": 3,
+      "total_trials": 3,
+      "actual_mean": 17.193407647129607,
+      "actual_std": 0.6008325611706613,
+      "actual_min": 16.830389716042706,
+      "actual_max": 17.88693541393424,
+      "actual_command_ratio": 1.8186762004847454,
+      "values": [
+        17.88693541393424,
+        16.86289781141188,
+        16.830389716042706
+      ],
+      "invalid_trials": []
+    },
+    {
+      "direction": "right",
+      "stick_percent": 50,
+      "unit": "deg/s",
+      "command": 12.032113697747286,
+      "valid_trials": 3,
+      "total_trials": 3,
+      "actual_mean": 22.428361460794388,
+      "actual_std": 0.23452728514626642,
+      "actual_min": 22.267223104883783,
+      "actual_max": 22.697421673467257,
+      "actual_command_ratio": 1.864041682467939,
+      "values": [
+        22.267223104883783,
+        22.697421673467257,
+        22.320439604032128
+      ],
+      "invalid_trials": []
+    },
+    {
+      "direction": "right",
+      "stick_percent": 75,
+      "unit": "deg/s",
+      "command": 24.064227395494573,
+      "valid_trials": 3,
+      "total_trials": 3,
+      "actual_mean": 35.20096556019678,
+      "actual_std": 1.1491464969356657,
+      "actual_min": 33.87831662763283,
+      "actual_max": 35.95441777642463,
+      "actual_command_ratio": 1.462792259301343,
+      "values": [
+        33.87831662763283,
+        35.770162276532886,
+        35.95441777642463
+      ],
+      "invalid_trials": []
+    },
+    {
+      "direction": "right",
+      "stick_percent": 100,
+      "unit": "deg/s",
+      "command": 41.25296124941928,
+      "valid_trials": 3,
+      "total_trials": 3,
+      "actual_mean": 49.88248114909052,
+      "actual_std": 1.388286823054773,
+      "actual_min": 48.5806076323016,
+      "actual_max": 51.34346995073915,
+      "actual_command_ratio": 1.2091854654383805,
+      "values": [
+        51.34346995073915,
+        49.72336586423082,
+        48.5806076323016
+      ],
+      "invalid_trials": []
+    }
+  ],
+  "valid_trials": 54,
+  "total_trials": 54,
+  "mapping_ok_trials": 54,
+  "baseline": [
+    {
+      "name": "01-r1-neutral-0",
+      "repeat": 1,
+      "direction": "neutral",
+      "stick_percent": 0,
+      "channels": [
+        1500,
+        1500,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.0,
+        "vy": 0.0,
+        "vyaw": -0.0
+      },
+      "initial": {
+        "trunk_z": 0.11546035287793475,
+        "tilt_deg": 1.2252527036846055
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.000000000000163,
+        "wall_seconds": 8.001864500110969,
+        "realtime_factor": 0.9997669917916281,
+        "body_forward_m": -0.0021052205977468426,
+        "body_lateral_m": 0.0024215547074782433,
+        "turn_deg": -0.20195830042706805,
+        "vx_m_s": -0.00026315257471834995,
+        "vy_m_s": 0.00030269433843477424,
+        "yaw_rad_s": -0.00044060466177301696,
+        "yaw_deg_s": -0.02524478755338299,
+        "vx_wall_m_s": -0.0002630912580083864,
+        "yaw_wall_deg_s": -0.025238905310664448
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999851,
+        "wall_seconds": 5.998150458093733,
+        "realtime_factor": 1.0003083520360219,
+        "body_forward_m": -0.0014733737442305251,
+        "body_lateral_m": 0.0016724787424833812,
+        "turn_deg": -0.18851880706438243,
+        "vx_m_s": -0.00024556229070509363,
+        "vy_m_s": 0.00027874645708057046,
+        "yaw_rad_s": -0.0005483789808675835,
+        "yaw_deg_s": -0.03141980117739785,
+        "vx_wall_m_s": -0.0002456380103374027,
+        "yaw_wall_deg_s": -0.0314294895370623
+      },
+      "min_trunk_m": 0.11543362405223993,
+      "max_tilt_deg": 1.2283037354531239,
+      "loop_hz_min": 49.81976866694595,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "02-r1-deadzone-8",
+      "repeat": 1,
+      "direction": "deadzone",
+      "stick_percent": 8,
+      "channels": [
+        1540,
+        1540,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.0,
+        "vy": 0.0,
+        "vyaw": -0.0
+      },
+      "initial": {
+        "trunk_z": 0.11545802932730076,
+        "tilt_deg": 1.0875015597265119
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.000000000000114,
+        "wall_seconds": 8.009853541851044,
+        "realtime_factor": 0.9987698224693565,
+        "body_forward_m": -0.001918589142953135,
+        "body_lateral_m": 0.0022027138157225804,
+        "turn_deg": -0.5011696427641684,
+        "vx_m_s": -0.00023982364286913847,
+        "vy_m_s": 0.00027533922696531865,
+        "yaw_rad_s": -0.0010933825471597988,
+        "yaw_deg_s": -0.06264620534552016,
+        "vx_wall_m_s": -0.0002395286172123638,
+        "yaw_wall_deg_s": -0.06256913939132402
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999801,
+        "wall_seconds": 6.001298625022173,
+        "realtime_factor": 0.9997836093313275,
+        "body_forward_m": -0.0014305789726742563,
+        "body_lateral_m": 0.0017928998465548784,
+        "turn_deg": -0.3748502114425268,
+        "vx_m_s": -0.0002384298287790506,
+        "vy_m_s": 0.0002988166410924896,
+        "yaw_rad_s": -0.001090395065244872,
+        "yaw_deg_s": -0.0624750352404232,
+        "vx_wall_m_s": -0.00023837823478896965,
+        "yaw_wall_deg_s": -0.06246151622577219
+      },
+      "min_trunk_m": 0.11544246266721142,
+      "max_tilt_deg": 1.2298292997177709,
+      "loop_hz_min": 48.99229189573917,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "19-r2-neutral-0",
+      "repeat": 2,
+      "direction": "neutral",
+      "stick_percent": 0,
+      "channels": [
+        1500,
+        1500,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.0,
+        "vy": 0.0,
+        "vyaw": -0.0
+      },
+      "initial": {
+        "trunk_z": 0.11547744869891932,
+        "tilt_deg": 1.0645798293506967
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.000000000000142,
+        "wall_seconds": 8.001677292166278,
+        "realtime_factor": 0.999790382427972,
+        "body_forward_m": -0.001989355328396893,
+        "body_lateral_m": 0.001975971418248517,
+        "turn_deg": -0.5083459568936253,
+        "vx_m_s": -0.00024866941604960723,
+        "vy_m_s": 0.00024699642728106023,
+        "yaw_rad_s": -0.0011090388358743462,
+        "yaw_deg_s": -0.06354324461170203,
+        "vx_wall_m_s": -0.00024861729057037724,
+        "yaw_wall_deg_s": -0.06352992483104775
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.9999999999998295,
+        "wall_seconds": 6.000269208103418,
+        "realtime_factor": 0.9999551339957838,
+        "body_forward_m": -0.0014379137082354868,
+        "body_lateral_m": 0.0014507065196533065,
+        "turn_deg": -0.510275136035372,
+        "vx_m_s": -0.00023965228470592128,
+        "vy_m_s": 0.00024178441994222462,
+        "yaw_rad_s": -0.0014843302024799096,
+        "yaw_deg_s": -0.08504585600589776,
+        "vx_wall_m_s": -0.00023964153246550525,
+        "yaw_wall_deg_s": -0.08504204033816362
+      },
+      "min_trunk_m": 0.11543960184549465,
+      "max_tilt_deg": 1.2248272330399863,
+      "loop_hz_min": 49.90933345710848,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "20-r2-deadzone-8",
+      "repeat": 2,
+      "direction": "deadzone",
+      "stick_percent": 8,
+      "channels": [
+        1540,
+        1540,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.0,
+        "vy": 0.0,
+        "vyaw": -0.0
+      },
+      "initial": {
+        "trunk_z": 0.11548310347616633,
+        "tilt_deg": 1.197028882055473
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.00000000000022,
+        "wall_seconds": 8.002489458071068,
+        "realtime_factor": 0.9996889145454185,
+        "body_forward_m": -0.0020399207083436383,
+        "body_lateral_m": 0.002671824200623053,
+        "turn_deg": -0.18199677144233692,
+        "vx_m_s": -0.00025499008854294774,
+        "vy_m_s": 0.0003339780250778724,
+        "yaw_rad_s": -0.0003970553612085351,
+        "yaw_deg_s": -0.022749596430291487,
+        "vx_wall_m_s": -0.0002549107648353396,
+        "yaw_wall_deg_s": -0.022742519361744425
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999908,
+        "wall_seconds": 5.999795458046719,
+        "realtime_factor": 1.0000340914877213,
+        "body_forward_m": -0.0015080693162271683,
+        "body_lateral_m": 0.001959506493382611,
+        "turn_deg": -0.31080508752199865,
+        "vx_m_s": -0.0002513448860378652,
+        "vy_m_s": 0.00032658441556377354,
+        "yaw_rad_s": -0.0009040953515346839,
+        "yaw_deg_s": -0.0518008479203339,
+        "vx_wall_m_s": -0.0002513534547589614,
+        "yaw_wall_deg_s": -0.05180261388830473
+      },
+      "min_trunk_m": 0.11543712234002826,
+      "max_tilt_deg": 1.2247399512553752,
+      "loop_hz_min": 49.868108240641526,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "37-r3-neutral-0",
+      "repeat": 3,
+      "direction": "neutral",
+      "stick_percent": 0,
+      "channels": [
+        1500,
+        1500,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.0,
+        "vy": 0.0,
+        "vyaw": -0.0
+      },
+      "initial": {
+        "trunk_z": 0.11545920108709352,
+        "tilt_deg": 1.058120756965796
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.000000000000206,
+        "wall_seconds": 7.997595415916294,
+        "realtime_factor": 1.0003006633817868,
+        "body_forward_m": -0.001844780574691865,
+        "body_lateral_m": 0.001987001064291747,
+        "turn_deg": -0.47839007821941415,
+        "vx_m_s": -0.00023059757183647718,
+        "vy_m_s": 0.00024837513303646195,
+        "yaw_rad_s": -0.0010436852467252218,
+        "yaw_deg_s": -0.05979875977742523,
+        "vx_wall_m_s": -0.00023066690408225736,
+        "yaw_wall_deg_s": -0.05981673907476657
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.97999999999989,
+        "wall_seconds": 5.994864125037566,
+        "realtime_factor": 0.9975205234467959,
+        "body_forward_m": -0.0014934583745610482,
+        "body_lateral_m": 0.0017258687438468515,
+        "turn_deg": -0.26064332900047654,
+        "vx_m_s": -0.00024974220310385877,
+        "vy_m_s": 0.0002886068133523216,
+        "yaw_rad_s": -0.0007607164321767927,
+        "yaw_deg_s": -0.04358584096998015,
+        "vx_wall_m_s": -0.0002491229731669172,
+        "yaw_wall_deg_s": -0.0434777708992434
+      },
+      "min_trunk_m": 0.11543777191417348,
+      "max_tilt_deg": 1.2288519913933695,
+      "loop_hz_min": 49.80577411607587,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "38-r3-deadzone-8",
+      "repeat": 3,
+      "direction": "deadzone",
+      "stick_percent": 8,
+      "channels": [
+        1540,
+        1540,
+        1500,
+        1500
+      ],
+      "command": {
+        "vx": 0.0,
+        "vy": 0.0,
+        "vyaw": -0.0
+      },
+      "initial": {
+        "trunk_z": 0.1154667205306013,
+        "tilt_deg": 1.1153106755607636
+      },
+      "whole_motion": {
+        "samples": 161,
+        "sim_seconds": 8.00000000000015,
+        "wall_seconds": 8.003067458979785,
+        "realtime_factor": 0.999616714591579,
+        "body_forward_m": -0.0020218643586827367,
+        "body_lateral_m": 0.002235763509279581,
+        "turn_deg": -0.3492774436784529,
+        "vx_m_s": -0.00025273304483533737,
+        "vy_m_s": 0.00027947043865994244,
+        "yaw_rad_s": -0.000762005174392243,
+        "yaw_deg_s": -0.043659680459805804,
+        "vx_wall_m_s": -0.00025263617594702614,
+        "yaw_wall_deg_s": -0.043642946341349236
+      },
+      "steady": {
+        "samples": 121,
+        "sim_seconds": 5.999999999999837,
+        "wall_seconds": 5.9984899999108166,
+        "realtime_factor": 1.0002517300335656,
+        "body_forward_m": -0.0014293233981258315,
+        "body_lateral_m": 0.001763051182446597,
+        "turn_deg": -0.26789222244739275,
+        "vx_m_s": -0.00023822056635431173,
+        "vy_m_s": 0.0002938418637411075,
+        "yaw_rad_s": -0.0007792668870320321,
+        "yaw_deg_s": -0.04464870374123334,
+        "vx_wall_m_s": -0.0002382805336254761,
+        "yaw_wall_deg_s": -0.04465994316092478
+      },
+      "min_trunk_m": 0.11543539708230331,
+      "max_tilt_deg": 1.2199972204234772,
+      "loop_hz_min": 49.84398305543827,
+      "completed": true,
+      "upright": true,
+      "mapping_ok": true,
+      "mean_applied": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ]
+}
