@@ -13,7 +13,7 @@ macOS Apple Silicon has passed local simulation and phone control/video acceptan
 | macOS 13+ · Apple Silicon / Intel | [MicroduckV7RC-0.1.0-preview.2-macOS-universal.dmg](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.2/MicroduckV7RC-0.1.0-preview.2-macOS-universal.dmg) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.2/MicroduckV7RC-0.1.0-preview.2-macOS-universal.dmg.sha256) |
 | Windows 11 x64 · WSL2 Ubuntu | [MicroduckV7RC-0.1.0-preview.2-Windows-x64.exe](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.2/MicroduckV7RC-0.1.0-preview.2-Windows-x64.exe) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.2/MicroduckV7RC-0.1.0-preview.2-Windows-x64.exe.sha256) |
 
-Open the downloaded installer, check prerequisites and confirm installation. Launch from the desktop icon after setup completes. This repository is private; downloads require a GitHub account with repository access.
+Open the downloaded installer, check prerequisites and confirm installation. Launch from the desktop icon after setup completes. This repository is public; Release installers can be downloaded without signing in to GitHub.
 
 Mac installation, desktop launch and V7RC control/video were accepted on the local Mac. Windows build and self-tests passed; full WSL2 installation and phone operation still require acceptance on a Windows machine.
 

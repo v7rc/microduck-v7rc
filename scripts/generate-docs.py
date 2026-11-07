@@ -167,10 +167,10 @@ VERSION = (ROOT/'packaging/version.txt').read_text().strip()
 RELEASE = f'https://github.com/v7rc/microduck-v7rc/releases/tag/v{VERSION}'
 DOWNLOAD = f'https://github.com/v7rc/microduck-v7rc/releases/download/v{VERSION}'
 RELEASE_TEXT = {
-    'zh-TW': ('目前版本', '平台', '安裝包', '校驗檔', '下載與安裝', '下載後開啟安裝包，檢查環境並確認安裝；完成後從桌面圖示啟動。Repo 目前為私有，下載需要具有 Repo 存取權限的 GitHub 帳號。', 'Mac 已完成本機安裝、桌面啟動及 V7RC 控制／影像驗收；Windows 已通過建置與自我檢查，完整 WSL2 安裝與手機操作仍待 Windows 實機驗收。'),
-    'zh-CN': ('当前版本', '平台', '安装包', '校验文件', '下载与安装', '下载后打开安装包，检查环境并确认安装；完成后从桌面图标启动。Repo 目前为私有，下载需要具有 Repo 访问权限的 GitHub 账号。', 'Mac 已完成本地安装、桌面启动及 V7RC 控制／影像验收；Windows 已通过构建与自检，完整 WSL2 安装与手机操作仍待 Windows 实机验收。'),
-    'en': ('Current version', 'Platform', 'Installer', 'Checksum', 'Download and install', 'Open the downloaded installer, check prerequisites and confirm installation. Launch from the desktop icon after setup completes. This repository is private; downloads require a GitHub account with repository access.', 'Mac installation, desktop launch and V7RC control/video were accepted on the local Mac. Windows build and self-tests passed; full WSL2 installation and phone operation still require acceptance on a Windows machine.'),
-    'ja': ('現在のバージョン', 'プラットフォーム', 'インストーラー', 'チェックサム', 'ダウンロードと導入', '取得したインストーラーを開き、環境を確認して導入を承認してください。完了後はデスクトップアイコンから起動できます。この Repo は非公開のため、取得には Repo へのアクセス権を持つ GitHub アカウントが必要です。', 'Mac では実際の導入、デスクトップ起動、V7RC 制御・映像の受入確認が完了しました。Windows はビルドとセルフテスト済みですが、WSL2 の完全な導入とスマートフォン操作は Windows 実機での確認が必要です。'),
+    'zh-TW': ('目前版本', '平台', '安裝包', '校驗檔', '下載與安裝', '下載後開啟安裝包，檢查環境並確認安裝；完成後從桌面圖示啟動。Repo 已公開，可直接下載 Release 安裝包，無須登入 GitHub。', 'Mac 已完成本機安裝、桌面啟動及 V7RC 控制／影像驗收；Windows 已通過建置與自我檢查，完整 WSL2 安裝與手機操作仍待 Windows 實機驗收。'),
+    'zh-CN': ('当前版本', '平台', '安装包', '校验文件', '下载与安装', '下载后打开安装包，检查环境并确认安装；完成后从桌面图标启动。Repo 已公开，可直接下载 Release 安装包，无需登录 GitHub。', 'Mac 已完成本地安装、桌面启动及 V7RC 控制／影像验收；Windows 已通过构建与自检，完整 WSL2 安装与手机操作仍待 Windows 实机验收。'),
+    'en': ('Current version', 'Platform', 'Installer', 'Checksum', 'Download and install', 'Open the downloaded installer, check prerequisites and confirm installation. Launch from the desktop icon after setup completes. This repository is public; Release installers can be downloaded without signing in to GitHub.', 'Mac installation, desktop launch and V7RC control/video were accepted on the local Mac. Windows build and self-tests passed; full WSL2 installation and phone operation still require acceptance on a Windows machine.'),
+    'ja': ('現在のバージョン', 'プラットフォーム', 'インストーラー', 'チェックサム', 'ダウンロードと導入', '取得したインストーラーを開き、環境を確認して導入を承認してください。完了後はデスクトップアイコンから起動できます。この Repo は公開されており、GitHub にログインせずに Release のインストーラーを取得できます。', 'Mac では実際の導入、デスクトップ起動、V7RC 制御・映像の受入確認が完了しました。Windows はビルドとセルフテスト済みですが、WSL2 の完全な導入とスマートフォン操作は Windows 実機での確認が必要です。'),
 }
 
 
