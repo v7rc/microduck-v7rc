@@ -4,9 +4,22 @@
 
 macOS Apple Silicon 已完成本机与手机控制／图像验收。Linux 提供原生安装与启动，隔离容器测试见验证记录；实际桌面、GPU 与手机网络仍待目标机验收。Windows 11 使用 WSL2 Ubuntu＋WSLg，提供 PowerShell 启动器；并非原生 Windows robotd，Windows 目标机仍待验收。
 
+## 下载与安装
+
+**当前版本: `0.1.0-preview.2`** · [GitHub Release](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.2)
+
+| 平台 | 安装包 | 校验文件 |
+| --- | --- | --- |
+| macOS 13+ · Apple Silicon / Intel | [MicroduckV7RC-0.1.0-preview.2-macOS-universal.dmg](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.2/MicroduckV7RC-0.1.0-preview.2-macOS-universal.dmg) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.2/MicroduckV7RC-0.1.0-preview.2-macOS-universal.dmg.sha256) |
+| Windows 11 x64 · WSL2 Ubuntu | [MicroduckV7RC-0.1.0-preview.2-Windows-x64.exe](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.2/MicroduckV7RC-0.1.0-preview.2-Windows-x64.exe) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.2/MicroduckV7RC-0.1.0-preview.2-Windows-x64.exe.sha256) |
+
+下载后打开安装包，检查环境并确认安装；完成后从桌面图标启动。Repo 目前为私有，下载需要具有 Repo 访问权限的 GitHub 账号。
+
+Mac 已完成本地安装、桌面启动及 V7RC 控制／影像验收；Windows 已通过构建与自检，完整 WSL2 安装与手机操作仍待 Windows 实机验收。
+
 ## 图形安装包与桌面启动
 
-从安装包 workflow 下载未签名测试版（GitHub artifact 需要登录，保留 30 天）。Mac 使用 macOS 13 以上的 universal DMG，Windows 使用 Windows 11 x64 EXE，内含 .NET 运行时；模拟器仍在 WSL2 Ubuntu 中执行。这是联网安装程序，首次需要网络及约 20 GB 空间，并非完整离线模拟器。
+从 GitHub Release 下载当前版本的未签名测试版。Mac 使用 macOS 13 以上的 universal DMG，Windows 使用 Windows 11 x64 EXE，内含 .NET 运行时；模拟器仍在 WSL2 Ubuntu 中执行。这是联网安装程序，首次需要网络及约 20 GB 空间，并非完整离线模拟器。
 
 Mac：打开 DMG 中的 Microduck V7RC App，选择语言并检查环境。计划会列出缺少的 Apple 开发工具、Homebrew／CMake／pkg-config，以及固定版本的上游、Rust、Python 和依赖。点击安装／修复并确认后才下载，请在终端完成系统对话框和密码操作。全部步骤成功后才写入完成状态，复制 App 到用户 Applications 并创建桌面图标。
 

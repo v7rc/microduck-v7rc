@@ -4,11 +4,22 @@
 
 透過 V7RC APP，以 Wi-Fi UDP 控制 Microduck 模擬器，並回傳 640×360 頭部相機影像。包含 SRT 四通道橋接、接收 FPS、雙搖桿、連線 IP／Port 與相機送出影格 HUD。
 
+## 下載與安裝
+
+**目前版本: `0.1.0-preview.2`** · [GitHub Release](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.2)
+
+| 平台 | 安裝包 | 校驗檔 |
+| --- | --- | --- |
+| macOS 13+ · Apple Silicon / Intel | [MicroduckV7RC-0.1.0-preview.2-macOS-universal.dmg](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.2/MicroduckV7RC-0.1.0-preview.2-macOS-universal.dmg) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.2/MicroduckV7RC-0.1.0-preview.2-macOS-universal.dmg.sha256) |
+| Windows 11 x64 · WSL2 Ubuntu | [MicroduckV7RC-0.1.0-preview.2-Windows-x64.exe](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.2/MicroduckV7RC-0.1.0-preview.2-Windows-x64.exe) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.2/MicroduckV7RC-0.1.0-preview.2-Windows-x64.exe.sha256) |
+
+下載後開啟安裝包，檢查環境並確認安裝；完成後從桌面圖示啟動。Repo 目前為私有，下載需要具有 Repo 存取權限的 GitHub 帳號。
+
+Mac 已完成本機安裝、桌面啟動及 V7RC 控制／影像驗收；Windows 已通過建置與自我檢查，完整 WSL2 安裝與手機操作仍待 Windows 實機驗收。
+
 ## 圖形安裝包與桌面啟動
 
-從安裝包 workflow 下載未簽署測試版（GitHub artifact 需登入，保留 30 天）。Mac 使用 macOS 13 以上的 universal DMG；Windows 使用 Windows 11 x64 EXE，內含 .NET 執行環境，模擬器仍在 WSL2 Ubuntu 執行。這是網路安裝程式，第一次需要網路與約 20 GB 可用空間，不是離線的完整模擬器。
-
-[Installer downloads](https://github.com/v7rc/microduck-v7rc/actions/workflows/installers.yml)
+從 GitHub Release 下載目前版本的未簽署測試版。Mac 使用 macOS 13 以上的 universal DMG；Windows 使用 Windows 11 x64 EXE，內含 .NET 執行環境，模擬器仍在 WSL2 Ubuntu 執行。這是網路安裝程式，第一次需要網路與約 20 GB 可用空間，不是離線的完整模擬器。
 
 ## 平台與驗證範圍
 

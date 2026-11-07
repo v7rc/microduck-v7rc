@@ -4,11 +4,22 @@
 
 Control the Microduck simulator with the V7RC app over Wi-Fi UDP and stream its 640×360 head camera. Includes a four-channel SRT bridge and an overlay showing input FPS, two joysticks, connection addresses, and camera frame counts.
 
+## Download and install
+
+**Current version: `0.1.0-preview.2`** · [GitHub Release](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.2)
+
+| Platform | Installer | Checksum |
+| --- | --- | --- |
+| macOS 13+ · Apple Silicon / Intel | [MicroduckV7RC-0.1.0-preview.2-macOS-universal.dmg](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.2/MicroduckV7RC-0.1.0-preview.2-macOS-universal.dmg) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.2/MicroduckV7RC-0.1.0-preview.2-macOS-universal.dmg.sha256) |
+| Windows 11 x64 · WSL2 Ubuntu | [MicroduckV7RC-0.1.0-preview.2-Windows-x64.exe](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.2/MicroduckV7RC-0.1.0-preview.2-Windows-x64.exe) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.2/MicroduckV7RC-0.1.0-preview.2-Windows-x64.exe.sha256) |
+
+Open the downloaded installer, check prerequisites and confirm installation. Launch from the desktop icon after setup completes. This repository is private; downloads require a GitHub account with repository access.
+
+Mac installation, desktop launch and V7RC control/video were accepted on the local Mac. Windows build and self-tests passed; full WSL2 installation and phone operation still require acceptance on a Windows machine.
+
 ## Graphical installers and desktop launcher
 
-Download the unsigned preview from the installer workflow (GitHub artifact login required; retained for 30 days). Use the universal DMG on macOS 13+, or the self-contained EXE on Windows 11 x64. Windows includes its .NET runtime; the simulator runs inside WSL2 Ubuntu. This is an online installer: initial downloads need internet and roughly 20 GB of free space, not a complete offline simulator bundle.
-
-[Installer downloads](https://github.com/v7rc/microduck-v7rc/actions/workflows/installers.yml)
+Download the current unsigned preview from GitHub Releases. Use the universal DMG on macOS 13+, or the self-contained EXE on Windows 11 x64. Windows includes its .NET runtime; the simulator runs inside WSL2 Ubuntu. This is an online installer: initial downloads need internet and roughly 20 GB of free space, not a complete offline simulator bundle.
 
 ## Platforms and validation
 

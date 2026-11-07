@@ -4,9 +4,22 @@
 
 macOS Apple Silicon ではシミュレーション、スマートフォン操作と映像表示を確認済みです。Linux ネイティブの導入・起動処理を実装し、分離コンテナーの試験結果は別途記録します。実機のデスクトップ、GPU、スマートフォン通信は対象 PC での確認が必要です。Windows 11 では WSL2 Ubuntu＋WSLg を使い、PowerShell 起動スクリプトを提供します。Windows ネイティブ版 robotd ではなく、Windows 実機での受け入れ確認は未実施です。
 
+## ダウンロードと導入
+
+**現在のバージョン: `0.1.0-preview.2`** · [GitHub Release](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.2)
+
+| プラットフォーム | インストーラー | チェックサム |
+| --- | --- | --- |
+| macOS 13+ · Apple Silicon / Intel | [MicroduckV7RC-0.1.0-preview.2-macOS-universal.dmg](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.2/MicroduckV7RC-0.1.0-preview.2-macOS-universal.dmg) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.2/MicroduckV7RC-0.1.0-preview.2-macOS-universal.dmg.sha256) |
+| Windows 11 x64 · WSL2 Ubuntu | [MicroduckV7RC-0.1.0-preview.2-Windows-x64.exe](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.2/MicroduckV7RC-0.1.0-preview.2-Windows-x64.exe) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.2/MicroduckV7RC-0.1.0-preview.2-Windows-x64.exe.sha256) |
+
+取得したインストーラーを開き、環境を確認して導入を承認してください。完了後はデスクトップアイコンから起動できます。この Repo は非公開のため、取得には Repo へのアクセス権を持つ GitHub アカウントが必要です。
+
+Mac では実際の導入、デスクトップ起動、V7RC 制御・映像の受入確認が完了しました。Windows はビルドとセルフテスト済みですが、WSL2 の完全な導入とスマートフォン操作は Windows 実機での確認が必要です。
+
 ## GUI インストーラーと起動アイコン
 
-インストーラー workflow から未署名プレビューを取得します（GitHub artifact はログインが必要で、保持期間は 30 日）。macOS 13 以降は universal DMG、Windows 11 x64 は .NET 同梱 EXE を使用します。Windows のシミュレーターは WSL2 Ubuntu 内で動作します。初回にネット接続と約 20 GB の空き容量が必要なオンライン導入版で、完全なオフライン配布ではありません。
+GitHub Release から現在の未署名プレビューを取得します。macOS 13 以降は universal DMG、Windows 11 x64 は .NET 同梱 EXE を使用します。Windows のシミュレーターは WSL2 Ubuntu 内で動作します。初回にネット接続と約 20 GB の空き容量が必要なオンライン導入版で、完全なオフライン配布ではありません。
 
 Mac：DMG 内の Microduck V7RC を開き、言語を選んで環境を確認します。必要な Apple 開発ツール、Homebrew／CMake／pkg-config、固定版上流、Rust、Python、依存関係を表示します。導入／修復を選び確認してから取得を開始します。端末でシステムの確認とパスワード入力を行ってください。全手順の成功後だけ完了状態を記録し、ユーザー Applications に App をコピーしてデスクトップアイコンを作成します。
 

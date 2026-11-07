@@ -4,11 +4,22 @@
 
 V7RC アプリから Wi-Fi UDP で Microduck シミュレーターを操作し、640×360 の頭部カメラ映像を受信します。SRT 4 チャンネルブリッジ、受信 FPS、左右スティック、接続先 IP／Port、送信フレーム数の HUD を含みます。
 
+## ダウンロードと導入
+
+**現在のバージョン: `0.1.0-preview.2`** · [GitHub Release](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.2)
+
+| プラットフォーム | インストーラー | チェックサム |
+| --- | --- | --- |
+| macOS 13+ · Apple Silicon / Intel | [MicroduckV7RC-0.1.0-preview.2-macOS-universal.dmg](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.2/MicroduckV7RC-0.1.0-preview.2-macOS-universal.dmg) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.2/MicroduckV7RC-0.1.0-preview.2-macOS-universal.dmg.sha256) |
+| Windows 11 x64 · WSL2 Ubuntu | [MicroduckV7RC-0.1.0-preview.2-Windows-x64.exe](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.2/MicroduckV7RC-0.1.0-preview.2-Windows-x64.exe) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.2/MicroduckV7RC-0.1.0-preview.2-Windows-x64.exe.sha256) |
+
+取得したインストーラーを開き、環境を確認して導入を承認してください。完了後はデスクトップアイコンから起動できます。この Repo は非公開のため、取得には Repo へのアクセス権を持つ GitHub アカウントが必要です。
+
+Mac では実際の導入、デスクトップ起動、V7RC 制御・映像の受入確認が完了しました。Windows はビルドとセルフテスト済みですが、WSL2 の完全な導入とスマートフォン操作は Windows 実機での確認が必要です。
+
 ## GUI インストーラーと起動アイコン
 
-インストーラー workflow から未署名プレビューを取得します（GitHub artifact はログインが必要で、保持期間は 30 日）。macOS 13 以降は universal DMG、Windows 11 x64 は .NET 同梱 EXE を使用します。Windows のシミュレーターは WSL2 Ubuntu 内で動作します。初回にネット接続と約 20 GB の空き容量が必要なオンライン導入版で、完全なオフライン配布ではありません。
-
-[Installer downloads](https://github.com/v7rc/microduck-v7rc/actions/workflows/installers.yml)
+GitHub Release から現在の未署名プレビューを取得します。macOS 13 以降は universal DMG、Windows 11 x64 は .NET 同梱 EXE を使用します。Windows のシミュレーターは WSL2 Ubuntu 内で動作します。初回にネット接続と約 20 GB の空き容量が必要なオンライン導入版で、完全なオフライン配布ではありません。
 
 ## 対応環境と検証範囲
 
