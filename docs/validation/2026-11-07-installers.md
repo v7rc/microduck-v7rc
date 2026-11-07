@@ -40,3 +40,6 @@
 - 手機來源接入後接收控制 788 包、約 31 FPS；相機向同一手機送出 130 幀／1,739 包，約 8 FPS，收到 533 次回饋。使用者回覆「我測試，已經測試成功了」，作為本次 Mac 安裝版 V7RC 控制與觀看影像的人工作業驗收。
 - 首次本機 sender 測試與手機重疊，不能算通過。該次亦出現 MuJoCo `_simulate.cpython-312-darwin.so` 的 SIGSEGV 報告，桌面 supervisor 停止自己的服務。當時同時進行 UI 自動化擷取，根因尚未確認；不能將其宣稱為已修復，或把手機成功操作擴張為長時間穩定性驗收。
 - 修正後本機測試：28 項，Mac 略過 1 項 Linux transaction，結果 OK。Windows 新版 EXE 的編譯與內嵌資源檢查以新一輪 CI 為準；Windows WSL／UAC／桌面圖示與手機驗收仍須 Windows 目標機測試。
+
+- 手機暫停後另開隔離 session：14 個控制測試階段全部通過；前進實測 0.921 m、左轉 276.2 度、右轉 -306.1 度，頭部四方向、失聯中立與重新中立解鎖通過。之後相機 5.07 秒完成 39 幀 JPEG 解碼，640×360。證據：[控制結果](evidence/installers/macos-preview2-control.json)、[影像結果](evidence/installers/macos-preview2-video.json)。完成後停止該 session 並重啟，確認 running、robot_connected、owner=null，以便手機重新取得控制。
+- preview.2 共用下載修正已提交 `827905a`。Windows runner 的原生 EXE 編譯與內嵌 payload／四語／WSL 參數 self-test 通過：[安裝包 workflow](https://github.com/v7rc/microduck-v7rc/actions/runs/42323508633)。Mac、Linux 與 Windows launcher 檢查全部通過：[跨平台 workflow](https://github.com/v7rc/microduck-v7rc/actions/runs/42323508599)。以上不是 Windows 完整 WSL 安裝及手機驗收。
