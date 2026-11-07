@@ -5,6 +5,7 @@ export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PAT
 app_root="${1:?application root}"
 version="${2:?version}"
 state="${3:?installer status path}"
+exec > >(tee -a "${state%/*}/install-${version}.log") 2>&1
 trap 'code=$?; if [[ $code -ne 0 ]]; then printf "{\"status\":\"failed\",\"exit_code\":%s}\n" "$code" > "$state"; fi' EXIT
 printf '{"status":"installing"}\n' > "$state"
 if ! xcode-select -p >/dev/null 2>&1; then

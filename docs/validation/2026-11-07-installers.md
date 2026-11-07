@@ -29,3 +29,14 @@
 - Mac 未在這台已有研究環境的機器重複下載整套依賴；乾淨 Mac 的系統套件安裝及最後桌面圖示啟動仍需目標機驗收。
 
 證據：[Mac 測試](evidence/installers/macos-tests.txt)、[Mac 安裝計畫畫面](evidence/installers/macos-installer-preview.png)。下載與最新建置狀態見 [Preview installers](https://github.com/v7rc/microduck-v7rc/actions/workflows/installers.yml)。
+
+
+## 2026-11-07：Mac 實際安裝與 preview.2 修正
+
+- 使用先前 CI 成品 `0.1.0-preview.1` DMG 執行 GUI 安裝，解壓／完整性校驗成功，但 Python `urllib` 存取固定版本的 uv 官方安裝網址得到 HTTP 403。ready 保持 false，沒有建立成功圖示；同網址以 curl 可取得 HTTP 200。
+- `scripts/setup.py` 改成 `curl --fail --location --retry 3` 下載官方 uv／rustup 安裝腳本，保留先下載到檔案再執行的流程。Windows WSL2 與 Mac 共用此修正。Mac helper 新增持久安裝日誌。preview.2 使用獨立版本目錄，不覆寫失敗的 preview.1。
+- 重新建置 universal preview.2 DMG，實際按「繼續安裝」，從網路下載獨立 uv、Rust 1.94.1、Python 3.12.16、兩個固定上游與 locked Python 套件；完成 `cargo build --locked` 及 seed-v8 策略下載。沒有連結研究工作區的 upstream／tools／venv；本機既有 Apple CLT、cmake、pkg-config 無須重裝，因此不代表缺少系統工具的乾淨 Mac 驗收。
+- GUI 顯示「安裝成功，已建立啟動圖示」，成功收據 ready=true；關閉安裝器後在 Finder 桌面開啟 `Microduck V7RC.app`，確認指向使用者 Applications 下的版本化 App，桌面 session running、robot_connected=true，UDP 6188／8800 正常監聽。
+- 手機來源接入後接收控制 788 包、約 31 FPS；相機向同一手機送出 130 幀／1,739 包，約 8 FPS，收到 533 次回饋。使用者回覆「我測試，已經測試成功了」，作為本次 Mac 安裝版 V7RC 控制與觀看影像的人工作業驗收。
+- 首次本機 sender 測試與手機重疊，不能算通過。該次亦出現 MuJoCo `_simulate.cpython-312-darwin.so` 的 SIGSEGV 報告，桌面 supervisor 停止自己的服務。當時同時進行 UI 自動化擷取，根因尚未確認；不能將其宣稱為已修復，或把手機成功操作擴張為長時間穩定性驗收。
+- 修正後本機測試：28 項，Mac 略過 1 項 Linux transaction，結果 OK。Windows 新版 EXE 的編譯與內嵌資源檢查以新一輪 CI 為準；Windows WSL／UAC／桌面圖示與手機驗收仍須 Windows 目標機測試。

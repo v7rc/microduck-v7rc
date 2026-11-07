@@ -5,6 +5,7 @@ on:
     paths:
       - 'packaging/**'
       - 'scripts/desktop*'
+      - 'scripts/setup*'
       - 'scripts/verify-installation.py'
       - '.github/workflows/installers.yml'
 permissions:

@@ -8,7 +8,6 @@ import platform
 import shutil
 import subprocess
 import sys
-import urllib.request
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT/'bridge'))
@@ -63,12 +62,13 @@ def main():
     if not uv.exists():
         installer = tools/'install-uv.sh'
         # Fixed uv release. Download to a file for review, never curl | shell.
-        urllib.request.urlretrieve('https://astral.sh/uv/0.13.7/install.sh', installer)
+        run(['curl', '--fail', '--location', '--retry', '3', '--output', installer,
+             'https://astral.sh/uv/0.13.7/install.sh'])
         run(['sh', installer], env=env)
     rustup = tools/'cargo/bin/rustup'
     if not rustup.exists():
         installer = tools/'install-rustup.sh'
-        urllib.request.urlretrieve('https://sh.rustup.rs', installer)
+        run(['curl', '--fail', '--location', '--retry', '3', '--output', installer, 'https://sh.rustup.rs'])
         run(['sh', installer, '-y', '--no-modify-path', '--profile', 'minimal', '--default-toolchain', '1.94.1'], env=env)
     else:
         run([rustup, 'toolchain', 'install', '1.94.1', '--profile', 'minimal'], env=env)
