@@ -3,6 +3,8 @@ on:
   workflow_dispatch:
   push:
     paths:
+      - 'THIRD_PARTY_NOTICES.md'
+      - 'licenses/**'
       - 'packaging/**'
       - 'scripts/desktop*'
       - 'scripts/console*'

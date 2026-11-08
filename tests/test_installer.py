@@ -26,6 +26,8 @@ class InstallerTests(unittest.TestCase):
    out=Path(folder)/'payload.zip';payload.build(out)
    with zipfile.ZipFile(out) as z:
     names=z.namelist();self.assertIn('scripts/desktop.py',names)
+    for name in ('THIRD_PARTY_NOTICES.md', 'licenses/Apache-2.0.txt'):
+     self.assertEqual(z.read(name), payload.content(ROOT/name))
     self.assertTrue(z.getinfo('scripts/setup').external_attr >> 16 & 0o111)
     self.assertFalse(any('\\' in n for n in names))
     self.assertFalse(any(n.split('/')[0] in {'.runtime','.tools','microduck','microduck_rl','.git'} for n in names))

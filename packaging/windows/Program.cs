@@ -15,6 +15,9 @@ static class Assets {
     public static byte[] Read(string name) {using var s=Assembly.GetExecutingAssembly().GetManifestResourceStream(name) ?? throw new InvalidOperationException("Missing resource: "+name);using var b=new MemoryStream();s.CopyTo(b);return b.ToArray();}
     public static string Text(string name)=>Encoding.UTF8.GetString(Read(name)).Trim();
     public static string Version=>Text("version.txt");
+    public static IEnumerable<string> Notices=>Assembly.GetExecutingAssembly().GetManifestResourceNames()
+        .Where(name=>name.StartsWith("notices/",StringComparison.Ordinal));
+
     public static void ValidatePayload() {var expected=Text("payload.sha256");var actual=Convert.ToHexString(SHA256.HashData(Read("payload.zip"))).ToLowerInvariant();if(expected!=actual)throw new InvalidDataException("Payload SHA256 mismatch");}
 }
 
@@ -66,7 +69,7 @@ sealed class Launcher:Window {
         languageRow.Children.Add(languageLabel);languageRow.Children.Add(language);top.Children.Add(languageRow);
         var bottom=new StackPanel();DockPanel.SetDock(bottom,Dock.Bottom);panel.Children.Add(bottom);bottom.Children.Add(status);
         var row=new WrapPanel();bottom.Children.Add(row);
-        foreach(var key in new[]{"check","install","launch","stop","help"}) {var b=new Button{Content=key,Padding=new Thickness(12,7,12,7),Margin=new Thickness(0,0,9,4)};buttons[key]=b;row.Children.Add(b);b.Click+=async(_,_)=>await Action(key);}
+        foreach(var key in new[]{"check","install","launch","stop","help","notices"}) {var b=new Button{Content=key,Padding=new Thickness(12,7,12,7),Margin=new Thickness(0,0,9,4)};buttons[key]=b;row.Children.Add(b);b.Click+=async(_,_)=>await Action(key);}
         panel.Children.Add(plan);
         Loaded+=async(_,_)=>{await Check(false);if(ready&&!Environment.GetCommandLineArgs().Contains("--no-auto-launch"))await Launch();};
     }
@@ -106,9 +109,17 @@ sealed class Launcher:Window {
         }catch(Exception e){details.Append("\n\n"+e.Message);if(report)Dialog("error",e.Message);}
         details.Append("\n\n"+T("next")+"\n\n"+T("copy")+"\n\n"+T("unsigned"));plan.Text=details.ToString();SetBusy(false);status.Text=ready?T("ready"):T("checked");
     }
-    async Task Action(string key) {try{switch(key){case "check":await Check(true);break;case "install":await Install();break;case "launch":await Launch();break;case "stop":if(root.Length>0)await Commands.Run("wsl.exe",Commands.WslCommand(distro,root,"stop"));break;default:Directory.CreateDirectory(local);var guide=Path.Combine(local,"how-to.html");File.WriteAllBytes(guide,Assets.Read("how-to.html"));foreach(var lang in languages)File.WriteAllBytes(Path.Combine(local,"INSTALL."+lang+".md"),Assets.Read("INSTALL."+lang+".md"));Process.Start(new ProcessStartInfo(new Uri(guide).AbsoluteUri+"#"+selected){UseShellExecute=true});break;}}catch(Exception e){SetBusy(false);status.Text=T("failed");Dialog("error",e.Message);}}
+    async Task Action(string key) {try{switch(key){case "check":await Check(true);break;case "install":await Install();break;case "launch":await Launch();break;case "stop":if(root.Length>0)await Commands.Run("wsl.exe",Commands.WslCommand(distro,root,"stop"));break;case "notices":Process.Start(new ProcessStartInfo(WriteNotices()){UseShellExecute=true});break;default:Directory.CreateDirectory(local);var guide=Path.Combine(local,"how-to.html");File.WriteAllBytes(guide,Assets.Read("how-to.html"));foreach(var lang in languages)File.WriteAllBytes(Path.Combine(local,"INSTALL."+lang+".md"),Assets.Read("INSTALL."+lang+".md"));Process.Start(new ProcessStartInfo(new Uri(guide).AbsoluteUri+"#"+selected){UseShellExecute=true});break;}}catch(Exception e){SetBusy(false);status.Text=T("failed");Dialog("error",e.Message);}}
+    string WriteNotices() {
+        var folder=Path.Combine(local,"ThirdPartyNotices");
+        Directory.CreateDirectory(folder);
+        foreach(var resource in Assets.Notices)
+            File.WriteAllBytes(Path.Combine(folder,Path.GetFileName(resource)),Assets.Read(resource));
+        return folder;
+    }
     void Materialize() {
         try{Assets.ValidatePayload();}catch(InvalidDataException e){throw new IOException(T("integrity"),e);}Directory.CreateDirectory(local);
+        WriteNotices();
         foreach(var name in new[]{"payload.zip","payload.sha256","install-linux.sh","app-icon.ico"})File.WriteAllBytes(Path.Combine(local,name),Assets.Read(name));
         File.WriteAllText(Path.Combine(local,"install-linux.sh"),Encoding.UTF8.GetString(Assets.Read("install-linux.sh")).Replace("\r\n","\n"),new UTF8Encoding(false));
         var self=Environment.ProcessPath!;var destination=Path.Combine(local,"MicroduckV7RC.exe");
@@ -163,6 +174,10 @@ static class Program {
         if(args.Contains("--self-test")) {
             try {
                 Assets.ValidatePayload();
+                foreach(var name in new[]{"THIRD_PARTY_NOTICES.txt","Apache-2.0.txt",
+                    "DotNet-Runtime-LICENSE.txt","DotNet-Runtime-NOTICES.txt","WPF-LICENSE.txt","WPF-NOTICES.txt"})
+                    if(Assets.Read("notices/"+name).Length==0)throw new Exception("Empty notice: "+name);
+
                 var ui=JsonSerializer.Deserialize<Dictionary<string,Dictionary<string,string>>>(Assets.Text("ui.json"))!;
                 foreach(var lang in new[]{"zh-TW","zh-CN","en","ja"}){if(!ui[lang].ContainsKey("confirm"))throw new Exception("Missing localized consent");if(Assets.Read("INSTALL."+lang+".md").Length==0)throw new Exception("Missing offline installation guide");}
                 var parts=Commands.WslCommand("Ubuntu-24.04","/home/user/repo with spaces","launch");
@@ -172,7 +187,9 @@ static class Program {
                 if((zip.GetEntry("scripts/setup")!.ExternalAttributes >> 16 & 0x49)==0)throw new Exception("Missing Unix executable bits");
                 using(var script=new StreamReader(zip.GetEntry("scripts/setup")!.Open()))if(script.ReadToEnd().Contains('\r'))throw new Exception("Shell script contains Windows newlines");
                 if(zip.GetEntry("scripts/desktop.py")==null)throw new Exception("Missing desktop supervisor");
-                if(args.Length>1)File.WriteAllText(args[1],"PASS: embedded payload, four languages, WSL arguments and startup verified\n");
+                if(zip.GetEntry("THIRD_PARTY_NOTICES.md")==null||zip.GetEntry("licenses/Apache-2.0.txt")==null)
+                    throw new Exception("Missing third-party notices in application payload");
+                if(args.Length>1)File.WriteAllText(args[1],"PASS: embedded payload, third-party notices, four languages, WSL arguments and startup verified\n");
                 return 0;
             }catch(Exception e){if(args.Length>1)File.WriteAllText(args[1],e.ToString());return 1;}
         }

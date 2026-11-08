@@ -23,6 +23,10 @@ def main():
     resources.mkdir(parents=True);binary.mkdir()
     for source,name in [(out/'payload.zip','payload.zip'),(out/'payload.sha256','payload.sha256'),(ROOT/'packaging/version.txt','version.txt'),(ROOT/'packaging/ui.json','ui.json'),(ROOT/'packaging/assets/AppIcon.icns','AppIcon.icns'),(ROOT/'packaging/macos/install.command','install.command'),(ROOT/'docs/how-to.html','how-to.html')]:shutil.copy2(source,resources/name)
     for guide in ROOT.glob('docs/INSTALL.*.md'):shutil.copy2(guide,resources/guide.name)
+    notices = resources / 'ThirdPartyNotices'
+    notices.mkdir()
+    shutil.copy2(ROOT / 'THIRD_PARTY_NOTICES.md', notices / 'THIRD_PARTY_NOTICES.txt')
+    shutil.copy2(ROOT / 'licenses/Apache-2.0.txt', notices / 'Apache-2.0.txt')
     short_version, _, preview_number = VERSION.partition('-preview.')
     info={'CFBundleIdentifier':'com.v7rc.microduck-simulator','CFBundleName':'MicroduckV7RC','CFBundleDisplayName':'Microduck V7RC','CFBundleExecutable':'MicroduckV7RC','CFBundlePackageType':'APPL','CFBundleIconFile':'AppIcon.icns','CFBundleShortVersionString':short_version,'CFBundleVersion':preview_number or '1','LSMinimumSystemVersion':'13.0','NSHighResolutionCapable':True}
     with (contents/'Info.plist').open('wb') as f:plistlib.dump(info,f)
@@ -38,6 +42,7 @@ def main():
     stage=out/'dmg-stage'
     if stage.exists():shutil.rmtree(stage)
     stage.mkdir();shutil.copytree(app,stage/app.name);(stage/'Applications').symlink_to('/Applications')
+    shutil.copytree(notices, stage / 'ThirdPartyNotices')
     dmg=out/f'MicroduckV7RC-{VERSION}-macOS-universal.dmg'
     if dmg.exists():dmg.unlink()
     run(['hdiutil','create','-volname','Microduck V7RC','-srcfolder',stage,'-ov','-format','UDZO',dmg])

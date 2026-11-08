@@ -46,7 +46,7 @@ final class Launcher: NSObject, NSApplicationDelegate {
         stack.addArrangedSubview(scroll);scroll.widthAnchor.constraint(equalTo:stack.widthAnchor,constant:-44).isActive=true;scroll.heightAnchor.constraint(greaterThanOrEqualToConstant:330).isActive=true
         status=NSTextField(wrappingLabelWithString:"");stack.addArrangedSubview(status)
         let row=NSStackView();row.spacing=9
-        for key in ["check","install","launch","stop","help"] {let b=NSButton(title:key,target:self,action:#selector(action(_:)));b.identifier=NSUserInterfaceItemIdentifier(key);buttons[key]=b;row.addArrangedSubview(b)}
+        for key in ["check","install","launch","stop","help","notices"] {let b=NSButton(title:key,target:self,action:#selector(action(_:)));b.identifier=NSUserInterfaceItemIdentifier(key);buttons[key]=b;row.addArrangedSubview(b)}
         stack.addArrangedSubview(row);window.center();refresh();window.makeKeyAndOrderFront(nil);NSApp.activate(ignoringOtherApps:true)
         timer=Timer.scheduledTimer(withTimeInterval:2,repeats:true){[weak self] _ in self?.poll()}
         if ready() && !CommandLine.arguments.contains("--no-auto-launch") {launch()}
@@ -68,7 +68,7 @@ final class Launcher: NSObject, NSApplicationDelegate {
         status.stringValue=installing ? t("working") : (isReady ? t("ready") : t("checked"));buttons["launch"]?.isEnabled=isReady;buttons["stop"]?.isEnabled=isReady
         buttons["install"]?.isEnabled = !installing
     }
-    @objc func action(_ sender:NSButton){switch sender.identifier!.rawValue {case "check":refresh();case "install":install();case "launch":launch();case "stop":_ = command("/bin/bash",[root.appendingPathComponent("scripts/desktop").path,"--stop"]);default:NSWorkspace.shared.open(URL(string:resources.appendingPathComponent("how-to.html").absoluteString+"#"+selected)!)}}
+    @objc func action(_ sender:NSButton){switch sender.identifier!.rawValue {case "check":refresh();case "install":install();case "launch":launch();case "stop":_ = command("/bin/bash",[root.appendingPathComponent("scripts/desktop").path,"--stop"]);case "notices":NSWorkspace.shared.open(resources.appendingPathComponent("ThirdPartyNotices"));default:NSWorkspace.shared.open(URL(string:resources.appendingPathComponent("how-to.html").absoluteString+"#"+selected)!)}}
     func error(_ value:String){status.stringValue=t("failed");let a=NSAlert();a.messageText=t("error");a.informativeText=value;a.addButton(withTitle:t("ok"));a.runModal()}
     func openTerminal(_ url:URL){NSWorkspace.shared.open(url)}
     func install(){
@@ -125,7 +125,11 @@ final class Launcher: NSObject, NSApplicationDelegate {
 
 if CommandLine.arguments.contains("--self-test") {
     precondition(shellQuote("a'b") == "'a'\\''b'")
-    print("PASS: native launcher quoting and executable startup")
+    for filename in ["THIRD_PARTY_NOTICES.txt", "Apache-2.0.txt"] {
+        let url = Bundle.main.resourceURL!.appendingPathComponent("ThirdPartyNotices").appendingPathComponent(filename)
+        precondition((try? Data(contentsOf: url))?.isEmpty == false, "Missing notice: \(filename)")
+    }
+    print("PASS: native launcher quoting, third-party notices and executable startup")
 } else {
     let app=NSApplication.shared;let delegate=Launcher();app.delegate=delegate;app.setActivationPolicy(.regular);app.run()
 }

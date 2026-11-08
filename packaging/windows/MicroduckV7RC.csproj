@@ -18,5 +18,30 @@
     <EmbeddedResource Include="../../docs/INSTALL.en.md" LogicalName="INSTALL.en.md" WithCulture="false" />
     <EmbeddedResource Include="../../docs/INSTALL.ja.md" LogicalName="INSTALL.ja.md" WithCulture="false" />
     <EmbeddedResource Include="../assets/app-icon.ico" LogicalName="app-icon.ico" />
+    <EmbeddedResource Include="../../THIRD_PARTY_NOTICES.md" LogicalName="notices/THIRD_PARTY_NOTICES.txt" />
+    <EmbeddedResource Include="../../licenses/Apache-2.0.txt" LogicalName="notices/Apache-2.0.txt" />
   </ItemGroup>
+  <Target Name="EmbedRuntimeNotices" BeforeTargets="AssignTargetPaths"
+          DependsOnTargets="ResolveFrameworkReferences" Condition="'$(SelfContained)' == 'true'">
+    <ItemGroup>
+      <_CorePack Include="@(ResolvedRuntimePack)" Condition="'%(ResolvedRuntimePack.FrameworkName)' == 'Microsoft.NETCore.App'" />
+      <_DesktopPack Include="@(ResolvedRuntimePack)" Condition="'%(ResolvedRuntimePack.FrameworkName)' == 'Microsoft.WindowsDesktop.App'" />
+    </ItemGroup>
+    <Error Condition="'@(_CorePack)' == '' or '@(_DesktopPack)' == ''"
+           Text="Cannot locate the runtime packs for third-party notices." />
+    <PropertyGroup>
+      <_WpfNoticeVersion>@(_DesktopPack->'%(NuGetPackageVersion)')</_WpfNoticeVersion>
+      <_WpfNoticeFile>$(IntermediateOutputPath)third-party/wpf-$(_WpfNoticeVersion).txt</_WpfNoticeFile>
+    </PropertyGroup>
+    <!-- The Windows Desktop runtime pack carries LICENSE but omits the WPF notices. -->
+    <DownloadFile SourceUrl="https://raw.githubusercontent.com/dotnet/wpf/v$(_WpfNoticeVersion)/THIRD-PARTY-NOTICES.TXT"
+                  DestinationFolder="$(IntermediateOutputPath)third-party" DestinationFileName="wpf-$(_WpfNoticeVersion).txt"
+                  Condition="!Exists('$(_WpfNoticeFile)')" />
+    <ItemGroup>
+      <EmbeddedResource Include="@(_CorePack->'%(PackageDirectory)/LICENSE.TXT')" LogicalName="notices/DotNet-Runtime-LICENSE.txt" />
+      <EmbeddedResource Include="@(_CorePack->'%(PackageDirectory)/THIRD-PARTY-NOTICES.TXT')" LogicalName="notices/DotNet-Runtime-NOTICES.txt" />
+      <EmbeddedResource Include="@(_DesktopPack->'%(PackageDirectory)/LICENSE')" LogicalName="notices/WPF-LICENSE.txt" />
+      <EmbeddedResource Include="$(_WpfNoticeFile)" LogicalName="notices/WPF-NOTICES.txt" />
+    </ItemGroup>
+  </Target>
 </Project>
