@@ -4,14 +4,22 @@
 
 透過 V7RC APP，以 Wi-Fi UDP 控制 Microduck 模擬器，並回傳 640×360 頭部相機影像。包含 SRT 四通道橋接、接收 FPS、雙搖桿、連線 IP／Port 與相機送出影格 HUD。
 
+## 控制台與操作比較
+
+從桌面圖示開啟控制台。選擇「自由練習」或「S 型迷宮」，再選鍵盤、V7RC APP 或自訂 UDP 控制程式。面板可啟動、停止、回到起點，也會顯示手機連線資訊與即時狀態。碼錶可開始、停止、歸零，時間以 `分:秒.毫秒` 同步顯示在面板和模擬器。
+
+控制台從 GitHub Releases 查詢程式、場景、ONNX 步態模型和控制設定。支援 Schema 2 的版本可單獨更新控制設定；單軸和斜推使用各自的右轉曲線。
+
+控制台新增「控制曲線」和「步態模型」選單。在同一場景可選內建曲線、線性曲線或先前下載的設定，也可切換相容的 ONNX 模型。選好後按「啟動」或「回到起點」，面板會顯示實際套用的組合。模擬器左下角會顯示程式版號。Mac 和 Windows 安裝器提供繁體中文、簡體中文、英文和日文選擇；安裝器會記住語言選擇。控制台改用獨立的 MuJoCo 內部連接埠，修正這台 Mac 上自由練習啟動後無法穩定轉向的問題。
+
 ## 下載與安裝
 
-**目前版本: `0.1.0-preview.7`** · [GitHub Release](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.7)
+**目前版本: `0.1.0-preview.8`** · [GitHub Release](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.8)
 
 | 平台 | 安裝包 | 校驗檔 |
 | --- | --- | --- |
-| macOS 13+ · Apple Silicon / Intel | [MicroduckV7RC-0.1.0-preview.7-macOS-universal.dmg](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.7/MicroduckV7RC-0.1.0-preview.7-macOS-universal.dmg) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.7/MicroduckV7RC-0.1.0-preview.7-macOS-universal.dmg.sha256) |
-| Windows 11 x64 · WSL2 Ubuntu | [MicroduckV7RC-0.1.0-preview.7-Windows-x64.exe](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.7/MicroduckV7RC-0.1.0-preview.7-Windows-x64.exe) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.7/MicroduckV7RC-0.1.0-preview.7-Windows-x64.exe.sha256) |
+| macOS 13+ · Apple Silicon / Intel | [MicroduckV7RC-0.1.0-preview.8-macOS-universal.dmg](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.8/MicroduckV7RC-0.1.0-preview.8-macOS-universal.dmg) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.8/MicroduckV7RC-0.1.0-preview.8-macOS-universal.dmg.sha256) |
+| Windows 11 x64 · WSL2 Ubuntu | [MicroduckV7RC-0.1.0-preview.8-Windows-x64.exe](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.8/MicroduckV7RC-0.1.0-preview.8-Windows-x64.exe) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.8/MicroduckV7RC-0.1.0-preview.8-Windows-x64.exe.sha256) |
 
 下載後開啟安裝包，檢查環境並確認安裝；完成後從桌面圖示啟動。Repo 已公開，可直接下載 Release 安裝包，無須登入 GitHub。
 

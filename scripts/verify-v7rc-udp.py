@@ -3,7 +3,7 @@
 from pathlib import Path
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]/'bridge'))
-from platform_support import robot_socket
+from platform_support import desktop_body_port, robot_socket
 from v7rc_udp import Config, map_channels
 import argparse
 import datetime
@@ -19,12 +19,13 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--host", required=True, help="Mac LAN IPv4, or loopback for a local test")
     parser.add_argument("--port", type=int, default=6188)
+    parser.add_argument("--body-port", type=int, help="Override the current desktop session's MuJoCo TCP port")
     parser.add_argument("--drive-profile", choices=("linear", "velstand-v8"), default="velstand-v8")
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=True)
     udp = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    body = socket.create_connection(("127.0.0.1",7801), timeout=3)
+    body = socket.create_connection(("127.0.0.1", args.body_port or desktop_body_port() or 7801), timeout=3)
     bf = body.makefile("rw")
 
     def body_call(value):

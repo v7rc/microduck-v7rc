@@ -8,6 +8,10 @@ eval "$platform_env"
 if [ "${1:-}" = doctor ]; then
     exec python3 "$ROOT/bridge/platform_support.py" doctor
 fi
+if [ "${1:-}" = down ] && [ -z "${DUCK_SIM_PORT:-}" ]; then
+    DUCK_SIM_PORT="$(python3 "$ROOT/bridge/platform_support.py" desktop-body-port)"
+    export DUCK_SIM_PORT
+fi
 if [ "${1:-}" = prepare ]; then
     # Installer mode builds without starting or stopping any robot process.
     (cd "$ROOT/microduck" && cargo build --locked -p robotd -p robotctl -p tof -p sounds -p configd -p updater)

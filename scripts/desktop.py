@@ -15,7 +15,8 @@ ROOT=Path(__file__).resolve().parents[1]
 STATE=ROOT/'.runtime/desktop-session.json'
 sys.path.insert(0, str(ROOT/'bridge'))
 from platform_support import ensure_short_root
-from console_content import active_model, scene_for_root, scenes
+from console_content import active_model, downloaded_options, scene_for_root, scenes
+from control_profile import active_profile, control_options
 from stopwatch import update_timer
 
 
@@ -28,19 +29,21 @@ def write_state(status,**extra):
 
 def port_conflicts():
     used=[]
-    for port,kind in [(6188,socket.SOCK_DGRAM),(8800,socket.SOCK_DGRAM),(1234,socket.SOCK_DGRAM),(7801,socket.SOCK_STREAM)]:
-        with socket.socket(socket.AF_INET,kind) as s:
+    for port in (6188,8800,1234):
+        with socket.socket(socket.AF_INET,socket.SOCK_DGRAM) as s:
             try:
-                if kind == socket.SOCK_STREAM:
-                    # Match MuJoCo's reusable listener so a recent connection can be in TIME_WAIT.
-                    s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-                    s.bind(('127.0.0.1',port))
-                    s.listen()
-                else:
-                    s.bind(('0.0.0.0',port))
+                s.bind(('0.0.0.0',port))
             except OSError:
                 used.append(port)
     return used
+
+
+def allocate_body_port():
+    # A robotd left behind by an older session keeps reconnecting to its old TCP
+    # endpoint. Do not hand it the new body alongside the new session's robotd.
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as probe:
+        probe.bind(('127.0.0.1', 0))
+        return probe.getsockname()[1]
 
 
 def main():
@@ -48,6 +51,8 @@ def main():
     parser.add_argument('--stop',action='store_true')
     parser.add_argument('--scene', default='free')
     parser.add_argument('--keyboard', action='store_true')
+    parser.add_argument('--control-option', default='auto')
+    parser.add_argument('--model-option', default='auto')
     args=parser.parse_args()
     if args.stop:
         if not STATE.exists():return
@@ -68,8 +73,24 @@ def main():
         scene = scenes(ROOT).get(args.scene)
         if scene is None:
             raise SystemExit('Unknown scene: ' + args.scene)
-        model = active_model(ROOT)
-        extra = dict(scene=args.scene, keyboard=args.keyboard, model=model[0])
+        controls = control_options(ROOT)
+        if args.control_option not in controls:
+            parser.error('Unknown control option')
+        models = downloaded_options(ROOT, 'model', 'velstand.onnx')
+        if args.model_option == 'auto':
+            model = active_model(ROOT)
+        elif args.model_option == 'bundled':
+            model = ('bundled', None)
+        elif args.model_option in models:
+            model = models[args.model_option]
+        else:
+            parser.error('Unknown model option')
+        control_label = controls[args.control_option]
+        if args.control_option == 'auto':
+            version, _ = active_profile(ROOT)
+            control_label = f'控制設定 {version}' if version else controls['bundled']
+        extra = dict(scene=args.scene, keyboard=args.keyboard, model=model[0],
+                     model_option=args.model_option, control_option=args.control_option, control_label=control_label)
         write_state('starting', **extra)
         used=port_conflicts()
         if used:
@@ -87,6 +108,10 @@ def main():
         try:
             environment = os.environ.copy()
             environment['MICRODUCK_DESKTOP_READY_FILE'] = str(ready_file)
+            body_port = allocate_body_port()
+            environment['DUCK_SIM_PORT'] = str(body_port)
+            extra['body_port'] = body_port
+            write_state('starting', **extra)
             environment.pop('DUCK_SIM_SCENE', None)
             environment.pop('DUCK_SIM_WALK_POLICY', None)
             short = ensure_short_root(ROOT)
@@ -105,6 +130,13 @@ def main():
                 environment['DUCK_SIM_WALK_POLICY'] = str(short / link.relative_to(ROOT))
             processes.append(subprocess.Popen([str(ROOT/'scripts/microduck-sim'),'serve'],env=environment,start_new_session=True))
             bridge = [str(ROOT/'scripts/v7rc-bridge')]
+            if args.control_option in ('bundled', 'linear'):
+                bridge += ['--control-file', str(ROOT/'bridge/control-profile.json')]
+                if args.control_option == 'linear':
+                    bridge += ['--drive-profile', 'linear']
+            elif args.control_option != 'auto':
+                _, path = downloaded_options(ROOT, 'control', 'control-profile.json')[args.control_option]
+                bridge += ['--control-file', str(path)]
             if args.keyboard:
                 bridge += ['--source-ip', '127.0.0.1']
             processes.append(subprocess.Popen(bridge,start_new_session=True))
@@ -134,7 +166,7 @@ def main():
                             pass
                         p.wait()
             if processes:
-                subprocess.run([str(ROOT/'scripts/microduck-sim'),'down'],check=False)
+                subprocess.run([str(ROOT/'scripts/microduck-sim'),'down'],env=environment,check=False)
             ready_file.unlink(missing_ok=True)
             update_timer(STATE.parent / 'stopwatch.json', 'stop')
             write_state('failed' if failure else 'stopped',error=failure, **extra)

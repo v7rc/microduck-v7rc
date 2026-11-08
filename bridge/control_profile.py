@@ -3,7 +3,7 @@ import json
 import math
 from pathlib import Path
 
-from console_content import selected
+from console_content import downloaded_options, selected
 
 CURVES = {'forward', 'reverse', 'left', 'right'}
 ASSIST_LIMITS = {
@@ -59,3 +59,14 @@ def active_profile(root):
         if profile['schema'] >= BUNDLED['schema']:
             return receipt['version'], profile
     return None, BUNDLED
+
+
+def control_options(root):
+    options = {'auto': '自動選用目前設定', 'bundled': '內建曲線', 'linear': '線性曲線'}
+    for key, (version, path) in downloaded_options(root, 'control', 'control-profile.json').items():
+        try:
+            profile = load_profile(path)
+        except (OSError, ValueError):
+            continue
+        options[key] = f'控制設定 {version} · Schema {profile["schema"]}'
+    return options

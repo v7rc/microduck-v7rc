@@ -6,12 +6,12 @@ macOS Apple Silicon 已完成本机与手机控制／图像验收。Linux 提供
 
 ## 下载与安装
 
-**当前版本: `0.1.0-preview.7`** · [GitHub Release](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.7)
+**当前版本: `0.1.0-preview.8`** · [GitHub Release](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.8)
 
 | 平台 | 安装包 | 校验文件 |
 | --- | --- | --- |
-| macOS 13+ · Apple Silicon / Intel | [MicroduckV7RC-0.1.0-preview.7-macOS-universal.dmg](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.7/MicroduckV7RC-0.1.0-preview.7-macOS-universal.dmg) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.7/MicroduckV7RC-0.1.0-preview.7-macOS-universal.dmg.sha256) |
-| Windows 11 x64 · WSL2 Ubuntu | [MicroduckV7RC-0.1.0-preview.7-Windows-x64.exe](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.7/MicroduckV7RC-0.1.0-preview.7-Windows-x64.exe) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.7/MicroduckV7RC-0.1.0-preview.7-Windows-x64.exe.sha256) |
+| macOS 13+ · Apple Silicon / Intel | [MicroduckV7RC-0.1.0-preview.8-macOS-universal.dmg](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.8/MicroduckV7RC-0.1.0-preview.8-macOS-universal.dmg) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.8/MicroduckV7RC-0.1.0-preview.8-macOS-universal.dmg.sha256) |
+| Windows 11 x64 · WSL2 Ubuntu | [MicroduckV7RC-0.1.0-preview.8-Windows-x64.exe](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.8/MicroduckV7RC-0.1.0-preview.8-Windows-x64.exe) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.8/MicroduckV7RC-0.1.0-preview.8-Windows-x64.exe.sha256) |
 
 下载后打开安装包，检查环境并确认安装；完成后从桌面图标启动。Repo 已公开，可直接下载 Release 安装包，无需登录 GitHub。
 
@@ -25,7 +25,7 @@ Mac：打开 DMG 中的 Microduck V7RC App，选择语言并检查环境。计�
 
 Windows：打开 EXE，检查环境后确认安装。缺少 WSL／Ubuntu 时会请求系统安装，需要重启时完成后重新打开安装程序。先在 Ubuntu 初始化普通 Linux 用户，再点击安装；Linux 系统软件包可能要求 sudo 密码。成功后桌面图标同时启动模拟器和桥接，不会自动停止其他 WSL 发行版或修改防火墙。手机通信仍需配置上文的 mirrored networking 和必要 UDP 规则。
 
-桌面图标自动启动已完成的安装，并保留终端显示下载、编译和运行信息。首次安装预编译 runtime 并取得策略；之后由同一图标启动。如果其他程序占用 6188／8800／1234／7801，会提示并停止，不会自动停止其他项目。可点击停止模拟器或关闭启动终端。
+桌面图标自动启动已完成的安装，并保留终端显示下载、编译和运行信息。首次安装预编译 runtime 并取得策略；之后由同一图标启动。如果其他程序占用 6188／8800／1234，会提示并停止，不会自动停止其他项目。可点击停止模拟器或关闭启动终端。
 
 当前为未签名／未公证测试版，系统可能提示发布者或信任问题；正式部署应使用组织签名。Mac 数据默认位于 ~/Library/Application Support/MicroduckV7RC；Windows 启动器位于 %LocalAppData%/Programs/MicroduckV7RC，模拟器位于 Ubuntu ~/.local/share/microduck-v7rc。版本目录分离，现有研究 Repo 不会被移动或覆盖。
 

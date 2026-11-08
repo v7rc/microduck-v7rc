@@ -6,12 +6,12 @@ macOS Apple Silicon has passed local simulation and phone control/video acceptan
 
 ## Download and install
 
-**Current version: `0.1.0-preview.7`** · [GitHub Release](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.7)
+**Current version: `0.1.0-preview.8`** · [GitHub Release](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.8)
 
 | Platform | Installer | Checksum |
 | --- | --- | --- |
-| macOS 13+ · Apple Silicon / Intel | [MicroduckV7RC-0.1.0-preview.7-macOS-universal.dmg](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.7/MicroduckV7RC-0.1.0-preview.7-macOS-universal.dmg) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.7/MicroduckV7RC-0.1.0-preview.7-macOS-universal.dmg.sha256) |
-| Windows 11 x64 · WSL2 Ubuntu | [MicroduckV7RC-0.1.0-preview.7-Windows-x64.exe](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.7/MicroduckV7RC-0.1.0-preview.7-Windows-x64.exe) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.7/MicroduckV7RC-0.1.0-preview.7-Windows-x64.exe.sha256) |
+| macOS 13+ · Apple Silicon / Intel | [MicroduckV7RC-0.1.0-preview.8-macOS-universal.dmg](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.8/MicroduckV7RC-0.1.0-preview.8-macOS-universal.dmg) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.8/MicroduckV7RC-0.1.0-preview.8-macOS-universal.dmg.sha256) |
+| Windows 11 x64 · WSL2 Ubuntu | [MicroduckV7RC-0.1.0-preview.8-Windows-x64.exe](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.8/MicroduckV7RC-0.1.0-preview.8-Windows-x64.exe) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.8/MicroduckV7RC-0.1.0-preview.8-Windows-x64.exe.sha256) |
 
 Open the downloaded installer, check prerequisites and confirm installation. Launch from the desktop icon after setup completes. This repository is public; Release installers can be downloaded without signing in to GitHub.
 
@@ -25,7 +25,7 @@ Mac: open Microduck V7RC inside the DMG, select a language and check the environ
 
 Windows: open the EXE, inspect the environment and confirm installation. Missing WSL/Ubuntu triggers system installation; if Windows requests a reboot, complete it and reopen the installer. Initialize a normal Linux user in Ubuntu first, then install the simulator; Linux packages may require your sudo password. The desktop icon starts the simulator and bridge after success. The installer does not shut down unrelated WSL distributions or change firewall rules. Configure mirrored networking and the specific UDP rules described above for phone access.
 
-The desktop icon automatically launches a completed installation and leaves a terminal showing download/build/runtime output. Initial setup prebuilds the runtime and downloads policies. Ports 6188/8800/1234/7801 are checked before launch: another application using them causes a clear stop, never automatic termination of another project. Use Stop simulator or close the session terminal to stop.
+The desktop icon automatically launches a completed installation and leaves a terminal showing download/build/runtime output. Initial setup prebuilds the runtime and downloads policies. Ports 6188/8800/1234 are checked before launch: another application using them causes a clear stop, never automatic termination of another project. Use Stop simulator or close the session terminal to stop.
 
 This preview has no publisher signature/notarization, so the OS may display trust prompts. Use organizational signing for production deployment. Mac data defaults to ~/Library/Application Support/MicroduckV7RC; the Windows frontend lives in %LocalAppData%/Programs/MicroduckV7RC and simulator data in Ubuntu ~/.local/share/microduck-v7rc. Installations use separate version directories and do not move or overwrite the research workspace.
 

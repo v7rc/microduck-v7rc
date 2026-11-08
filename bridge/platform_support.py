@@ -9,8 +9,21 @@ import platform
 import shlex
 import socket
 import subprocess
+import time
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def desktop_body_port(root=ROOT):
+    try:
+        session = json.loads((root / '.runtime/desktop-session.json').read_text())
+        if session.get('status') in ('starting', 'running') and 0 <= time.time() - session['updated'] < 5:
+            port = session.get('body_port')
+            if type(port) is int and 0 < port <= 65535:
+                return port
+    except (OSError, ValueError, TypeError, KeyError, AttributeError):
+        pass
+    return None
 
 
 def require_posix():
@@ -117,12 +130,14 @@ def shell_environment(root=ROOT):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('action', choices=['shell-env', 'doctor'])
+    parser.add_argument('action', choices=['shell-env', 'doctor', 'desktop-body-port'])
     args = parser.parse_args()
     try:
         if args.action == 'shell-env':
             for name, value in shell_environment().items():
                 print(f'export {name}={shlex.quote(value)}')
+        elif args.action == 'desktop-body-port':
+            print(desktop_body_port() or 7801)
         else:
             require_posix()
             print(json.dumps({'system': platform.system(), 'release': platform.release(),

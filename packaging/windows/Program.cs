@@ -7,6 +7,7 @@ using System.Text;
 using System.Text.Json;
 using System.Windows;
 using System.Windows.Controls;
+using Microsoft.Win32;
 
 namespace MicroduckV7RC;
 
@@ -42,25 +43,46 @@ sealed class Launcher:Window {
     readonly string local=Path.Combine(InstallRoot,"versions",Assets.Version);
     readonly TextBox plan=new(){IsReadOnly=true,AcceptsReturn=true,TextWrapping=TextWrapping.Wrap,VerticalScrollBarVisibility=ScrollBarVisibility.Auto,MinHeight=330,Margin=new Thickness(0,12,0,12)};
     readonly TextBlock status=new(){TextWrapping=TextWrapping.Wrap,Margin=new Thickness(0,8,0,8)};
+    readonly TextBlock languageLabel=new(){VerticalAlignment=VerticalAlignment.Center,Margin=new Thickness(0,0,10,0)};
+    readonly ComboBox language=new(){Width=180,HorizontalAlignment=HorizontalAlignment.Left};
     readonly Dictionary<string,Button> buttons=new();bool ubuntu=false,initialized=false,ready=false,busy=false;string linuxHome="",root="";
     string T(string key)=>strings[selected].GetValueOrDefault(key,key);
     public Launcher() {
         Width=860;Height=650;MinWidth=720;MinHeight=550;WindowStartupLocation=WindowStartupLocation.CenterScreen;
-        var locale=System.Globalization.CultureInfo.CurrentUICulture.Name;
-        selected=locale.StartsWith("zh-TW")||locale.StartsWith("zh-HK")?"zh-TW":locale.StartsWith("zh")?"zh-CN":locale.StartsWith("ja")?"ja":"en";
+        var locale=System.Globalization.CultureInfo.CurrentUICulture.Name.ToLowerInvariant();
+        selected=new[]{"zh-hant","zh-tw","zh-hk","zh-mo"}.Any(prefix=>locale.StartsWith(prefix,StringComparison.Ordinal))?"zh-TW":locale.StartsWith("zh")?"zh-CN":locale.StartsWith("ja")?"ja":"en";
+        try{if(Registry.GetValue(@"HKEY_CURRENT_USER\Software\MicroduckV7RC","InstallerLanguage",null) is string saved && languages.Contains(saved))selected=saved;}catch(System.Security.SecurityException){}catch(UnauthorizedAccessException){}
         var panel=new DockPanel{Margin=new Thickness(22)};Content=panel;
         var top=new StackPanel();DockPanel.SetDock(top,Dock.Top);panel.Children.Add(top);
         top.Children.Add(new TextBlock{Text="Microduck V7RC  "+Assets.Version,FontSize=24,FontWeight=FontWeights.Bold});
-        var language=new ComboBox{ItemsSource=new[]{"繁體中文","简体中文","English","日本語"},SelectedIndex=Array.IndexOf(languages,selected),Width=180,HorizontalAlignment=HorizontalAlignment.Left,Margin=new Thickness(0,12,0,0)};
-        language.SelectionChanged+=async(_,_)=>{selected=languages[language.SelectedIndex];if(!busy)await Check(false);};top.Children.Add(language);
+        language.ItemsSource=new[]{"繁體中文","简体中文","English","日本語"};language.SelectedIndex=Array.IndexOf(languages,selected);
+        language.SelectionChanged+=async(_,_)=>{
+            if(busy||language.SelectedIndex<0)return;
+            selected=languages[language.SelectedIndex];
+            try{Registry.SetValue(@"HKEY_CURRENT_USER\Software\MicroduckV7RC","InstallerLanguage",selected);}catch(System.Security.SecurityException){}catch(UnauthorizedAccessException){}
+            await Check(false);
+        };
+        var languageRow=new StackPanel{Orientation=Orientation.Horizontal,Margin=new Thickness(0,12,0,0)};
+        languageRow.Children.Add(languageLabel);languageRow.Children.Add(language);top.Children.Add(languageRow);
         var bottom=new StackPanel();DockPanel.SetDock(bottom,Dock.Bottom);panel.Children.Add(bottom);bottom.Children.Add(status);
         var row=new WrapPanel();bottom.Children.Add(row);
         foreach(var key in new[]{"check","install","launch","stop","help"}) {var b=new Button{Content=key,Padding=new Thickness(12,7,12,7),Margin=new Thickness(0,0,9,4)};buttons[key]=b;row.Children.Add(b);b.Click+=async(_,_)=>await Action(key);}
         panel.Children.Add(plan);
         Loaded+=async(_,_)=>{await Check(false);if(ready&&!Environment.GetCommandLineArgs().Contains("--no-auto-launch"))await Launch();};
     }
-    void Labels(){Title=T("title");foreach(var (key,b) in buttons)b.Content=T(key);}
-    void SetBusy(bool value){busy=value;foreach(var (key,b) in buttons)b.IsEnabled=!value&&(key!="launch"||ready);status.Text=value?T("working"):ready?T("ready"):T("waiting");}
+    void Labels(){Title=T("title");languageLabel.Text=T("language");language.ToolTip=T("language");System.Windows.Automation.AutomationProperties.SetName(language,T("language"));foreach(var (key,b) in buttons)b.Content=T(key);}
+    void SetBusy(bool value){busy=value;language.IsEnabled=!value;foreach(var (key,b) in buttons)b.IsEnabled=!value&&(key!="launch"||ready);status.Text=value?T("working"):ready?T("ready"):T("waiting");}
+    bool Dialog(string title,string message,bool confirm=false) {
+        var box=new Window{Title=T(title),Owner=this,Width=620,SizeToContent=SizeToContent.Height,ResizeMode=ResizeMode.NoResize,WindowStartupLocation=WindowStartupLocation.CenterOwner,ShowInTaskbar=false};
+        var panel=new DockPanel{Margin=new Thickness(20)};box.Content=panel;
+        var row=new WrapPanel{HorizontalAlignment=HorizontalAlignment.Right,Margin=new Thickness(0,14,0,0)};
+        DockPanel.SetDock(row,Dock.Bottom);panel.Children.Add(row);
+        var primary=new Button{Content=T(confirm?"yes":"ok"),Padding=new Thickness(14,6,14,6),IsDefault=!confirm,IsCancel=!confirm};
+        primary.Click+=(_,_)=>box.DialogResult=true;row.Children.Add(primary);
+        if(confirm)row.Children.Add(new Button{Content=T("no"),Padding=new Thickness(14,6,14,6),Margin=new Thickness(8,0,0,0),IsCancel=true,IsDefault=true});
+        panel.Children.Add(new ScrollViewer{MaxHeight=330,VerticalScrollBarVisibility=ScrollBarVisibility.Auto,Content=new TextBlock{Text=message,TextWrapping=TextWrapping.Wrap}});
+        return box.ShowDialog()==true;
+    }
     async Task Check(bool report) {
         SetBusy(true);Labels();ubuntu=false;initialized=false;ready=false;
         var details=new StringBuilder(T("plan")+"\n\n"+T("wsl")+"\n\n"+T("downloads"));
@@ -72,7 +94,7 @@ sealed class Launcher:Window {
                 initialized=id.Code==0&&id.Output.Trim()!="0";
                 if(initialized) {
                     var home=await Commands.Run("wsl.exe",new[]{"-d",distro,"--","printenv","HOME"});
-                    if(home.Code!=0||!home.Output.StartsWith('/'))throw new IOException("Cannot determine Linux home");
+                    if(home.Code!=0||!home.Output.StartsWith('/'))throw new IOException(T("linux_home"));
                     linuxHome=home.Output.Trim();root=linuxHome+"/.local/share/microduck-v7rc/versions/"+Assets.Version+"/application";
                     var receipt=await Commands.Run("wsl.exe",new[]{"-d",distro,"--","cat",root+"/.install-ready.json"});
                     if(receipt.Code==0) {using var doc=JsonDocument.Parse(receipt.Output);ready=doc.RootElement.GetProperty("ready").GetBoolean()&&doc.RootElement.GetProperty("version").GetString()==Assets.Version;}
@@ -81,12 +103,12 @@ sealed class Launcher:Window {
                     details.Append("\n\n"+T("location")+":\n"+root);
                 } else details.Append("\n\n"+T("initialize"));
             }
-        }catch(Exception e){details.Append("\n\n"+e.Message);if(report)MessageBox.Show(e.Message,T("error"));}
+        }catch(Exception e){details.Append("\n\n"+e.Message);if(report)Dialog("error",e.Message);}
         details.Append("\n\n"+T("next")+"\n\n"+T("copy")+"\n\n"+T("unsigned"));plan.Text=details.ToString();SetBusy(false);status.Text=ready?T("ready"):T("checked");
     }
-    async Task Action(string key) {try{switch(key){case "check":await Check(true);break;case "install":await Install();break;case "launch":await Launch();break;case "stop":if(root.Length>0)await Commands.Run("wsl.exe",Commands.WslCommand(distro,root,"stop"));break;default:Directory.CreateDirectory(local);var guide=Path.Combine(local,"how-to.html");File.WriteAllBytes(guide,Assets.Read("how-to.html"));foreach(var lang in languages)File.WriteAllBytes(Path.Combine(local,"INSTALL."+lang+".md"),Assets.Read("INSTALL."+lang+".md"));Process.Start(new ProcessStartInfo(new Uri(guide).AbsoluteUri+"#"+selected){UseShellExecute=true});break;}}catch(Exception e){SetBusy(false);status.Text=T("failed");MessageBox.Show(e.Message,T("error"));}}
+    async Task Action(string key) {try{switch(key){case "check":await Check(true);break;case "install":await Install();break;case "launch":await Launch();break;case "stop":if(root.Length>0)await Commands.Run("wsl.exe",Commands.WslCommand(distro,root,"stop"));break;default:Directory.CreateDirectory(local);var guide=Path.Combine(local,"how-to.html");File.WriteAllBytes(guide,Assets.Read("how-to.html"));foreach(var lang in languages)File.WriteAllBytes(Path.Combine(local,"INSTALL."+lang+".md"),Assets.Read("INSTALL."+lang+".md"));Process.Start(new ProcessStartInfo(new Uri(guide).AbsoluteUri+"#"+selected){UseShellExecute=true});break;}}catch(Exception e){SetBusy(false);status.Text=T("failed");Dialog("error",e.Message);}}
     void Materialize() {
-        Assets.ValidatePayload();Directory.CreateDirectory(local);
+        try{Assets.ValidatePayload();}catch(InvalidDataException e){throw new IOException(T("integrity"),e);}Directory.CreateDirectory(local);
         foreach(var name in new[]{"payload.zip","payload.sha256","install-linux.sh","app-icon.ico"})File.WriteAllBytes(Path.Combine(local,name),Assets.Read(name));
         File.WriteAllText(Path.Combine(local,"install-linux.sh"),Encoding.UTF8.GetString(Assets.Read("install-linux.sh")).Replace("\r\n","\n"),new UTF8Encoding(false));
         var self=Environment.ProcessPath!;var destination=Path.Combine(local,"MicroduckV7RC.exe");
@@ -96,7 +118,7 @@ sealed class Launcher:Window {
         }
     }
     async Task Install() {
-        if(MessageBox.Show(plan.Text,T("confirm"),MessageBoxButton.YesNo,MessageBoxImage.Question)!=MessageBoxResult.Yes)return;
+        if(!Dialog("confirm",plan.Text,true))return;
         Materialize();SetBusy(true);
         if(!ubuntu) {
             var text="wsl.exe --install --distribution Ubuntu-24.04 --no-launch";
@@ -107,12 +129,12 @@ sealed class Launcher:Window {
         if(!initialized) {Process.Start(Commands.Info("wsl.exe",new[]{"-d",distro},false));SetBusy(false);status.Text=T("initialize");return;}
         var linuxPayload=await Commands.Run("wsl.exe",new[]{"-d",distro,"--","wslpath","-u",Path.Combine(local,"payload.zip")});
         var linuxScript=await Commands.Run("wsl.exe",new[]{"-d",distro,"--","wslpath","-u",Path.Combine(local,"install-linux.sh")});
-        if(linuxPayload.Code!=0||linuxScript.Code!=0)throw new IOException("Cannot map installer resources into WSL");
-        using var process=Process.Start(Commands.Info("wsl.exe",new[]{"-d",distro,"--","bash",linuxScript.Output.Trim(),linuxPayload.Output.Trim(),root,Assets.Version,"--approved"},false)) ?? throw new IOException("Cannot start Ubuntu installer");
+        if(linuxPayload.Code!=0||linuxScript.Code!=0)throw new IOException(T("wsl_files"));
+        using var process=Process.Start(Commands.Info("wsl.exe",new[]{"-d",distro,"--","bash",linuxScript.Output.Trim(),linuxPayload.Output.Trim(),root,Assets.Version,"--approved"},false)) ?? throw new IOException(T("linux_install"));
         await process.WaitForExitAsync();
-        if(process.ExitCode!=0)throw new IOException(T("failed")+" Exit code "+process.ExitCode);
+        if(process.ExitCode!=0)throw new IOException(T("failed")+" "+T("exit_code")+" "+process.ExitCode);
         await Check(false);
-        if(!ready)throw new IOException("Setup exited but no verified ready receipt exists");
+        if(!ready)throw new IOException(T("no_receipt"));
         CreateShortcut();status.Text=T("complete");
     }
     void CreateShortcut() {
@@ -124,7 +146,7 @@ sealed class Launcher:Window {
             var owned=previous.Equals(Path.Combine(InstallRoot,"MicroduckV7RC.exe"),StringComparison.OrdinalIgnoreCase) ||
                 (previous.StartsWith(Path.Combine(InstallRoot,"versions")+Path.DirectorySeparatorChar,StringComparison.OrdinalIgnoreCase) &&
                  Path.GetFileName(previous).Equals("MicroduckV7RC.exe",StringComparison.OrdinalIgnoreCase));
-            if(!owned)throw new IOException("An unrelated desktop shortcut already exists; it was not overwritten");
+            if(!owned)throw new IOException(T("shortcut"));
         }
         shortcut.TargetPath=Path.Combine(local,"MicroduckV7RC.exe");shortcut.WorkingDirectory=local;shortcut.IconLocation=Path.Combine(local,"app-icon.ico");shortcut.Description="Microduck V7RC";shortcut.Save();
     }
@@ -132,7 +154,7 @@ sealed class Launcher:Window {
         if(!ready)return;
         var verify=await Commands.Run("wsl.exe",new[]{"-d",distro,"--cd",root,"--","python3","scripts/verify-installation.py"});
         if(verify.Code!=0)throw new IOException(verify.Output);
-        using var child=Process.Start(Commands.Info("wsl.exe",new[]{"-d",distro,"--cd",root,"--","bash","scripts/console"},false)) ?? throw new IOException("Cannot open the console");
+        using var child=Process.Start(Commands.Info("wsl.exe",new[]{"-d",distro,"--cd",root,"--","bash","scripts/console"},false)) ?? throw new IOException(T("console_launch"));
     }
 }
 

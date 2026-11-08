@@ -51,7 +51,7 @@ class InstallerTests(unittest.TestCase):
   with tempfile.TemporaryDirectory() as folder:
    root=Path(folder);(root/'scripts').mkdir();(root/'.runtime').mkdir()
    sim=root/'scripts/microduck-sim'
-   sim.write_text('#!/bin/sh\nif [ "$1" = down ]; then touch .runtime/down-ack; exit 0; fi\ntrap "exit 0" TERM\ntouch "$MICRODUCK_DESKTOP_READY_FILE"\nwhile :; do sleep 1; done\n');sim.chmod(0o755)
+   sim.write_text('#!/bin/sh\nif [ "$1" = down ]; then echo "$DUCK_SIM_PORT" > .runtime/down-ack; exit 0; fi\ntrap "exit 0" TERM\necho "$DUCK_SIM_PORT" > .runtime/body-port\ntouch "$MICRODUCK_DESKTOP_READY_FILE"\nwhile :; do sleep 1; done\n');sim.chmod(0o755)
    bridge=root/'scripts/v7rc-bridge'
    fake=root/'fake_bridge.py'
    fake.write_text('import signal,time,json\nfrom pathlib import Path\ndef stop(*_):\n Path(".runtime/neutral-ack").write_text("neutral")\n raise SystemExit(0)\nsignal.signal(signal.SIGTERM,stop)\nwhile True:\n Path(".runtime/v7rc-input.json").write_text(json.dumps({"robot_connected":True,"published_monotonic":time.monotonic()}))\n time.sleep(.1)\n')
@@ -68,9 +68,13 @@ class InstallerTests(unittest.TestCase):
      except (OSError,ValueError):pass
      time.sleep(.1)
     else:self.fail('Supervisor did not reach running')
+    session=json.loads((root/'.runtime/desktop-session.json').read_text())
+    self.assertGreater(session['body_port'],0)
+    self.assertNotEqual(session['body_port'],7801)
+    self.assertEqual(session['body_port'],int((root/'.runtime/body-port').read_text()))
     p.send_signal(signal.SIGHUP);self.assertEqual(p.wait(timeout=10),0)
     self.assertTrue((root/'.runtime/neutral-ack').is_file())
-    self.assertTrue((root/'.runtime/down-ack').is_file())
+    self.assertEqual(session['body_port'],int((root/'.runtime/down-ack').read_text()))
     self.assertEqual(json.loads((root/'.runtime/desktop-session.json').read_text())['status'],'stopped')
    finally:
     if p.poll() is None:p.terminate();p.wait(timeout=10)

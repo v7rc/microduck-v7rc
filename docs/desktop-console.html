@@ -26,6 +26,9 @@ dl{margin:0}dd{margin:0 0 8px}a{color:#9fd4ff}summary{cursor:pointer}#message{mi
 <h2>場景與模擬器</h2>
 <label for="scene">場景</label><select id="scene"></select>
 <label for="mode">控制方式</label><select id="mode"><option value="udp">V7RC APP／自訂程式</option><option value="keyboard">鍵盤</option></select>
+<label for="curve">控制曲線</label><select id="curve"></select>
+<label for="model">步態模型</label><select id="model"></select>
+<p id="active-profile" class="sub">啟動或回到起點時套用選項</p>
 <div class="actions"><button data-action="start">啟動</button><button data-action="stop">停止</button><button data-action="restart">回到起點</button></div>
 <p id="session">連線中</p>
 </section>
@@ -83,8 +86,24 @@ function render() {
     if (state.scenes[previous]) scene.value = previous;
     scene.dataset.catalog = signature;
   }
+  for (const [id, options, current] of [
+    ['curve', state.controls, state.session.control_option],
+    ['model', state.models, state.session.model_option],
+  ]) {
+    const select = get(id);
+    const signature = JSON.stringify(options);
+    if (select.dataset.catalog !== signature) {
+      const previous = select.value || current || 'auto';
+      select.replaceChildren(...Object.entries(options).map(([key, label]) => new Option(label, key)));
+      if (options[previous]) select.value = previous;
+      select.dataset.catalog = signature;
+    }
+  }
   const status = state.session.status || 'stopped';
   const active = status === 'running' || status === 'starting';
+  get('active-profile').textContent = status === 'running' ?
+    '使用中 · ' + (state.session.control_label || '目前設定') + ' · 步態 ' + (state.session.model || '目前模型') :
+    '啟動或回到起點時套用選項';
   get('session').textContent = sessionLabels[status] + (state.session.error ? ' · ' + state.session.error : '');
   get('ip').textContent = state.ip || '—';
   get('control').textContent = state.control ? (state.session.keyboard ? '鍵盤' : state.control) : '等待輸入';
@@ -119,6 +138,7 @@ async function poll() {
   } catch (error) {
     snapshot = undefined;
     ticking = false;
+    get('active-profile').textContent = '啟動或回到起點時套用選項';
     get('session').textContent = '控制台連線中斷';
   }
 }
@@ -129,7 +149,8 @@ async function action(name, extra = {}) {
   if (snapshot) render();
   get('message').textContent = '處理中…';
   try {
-    const result = await request('/' + name, {scene:get('scene').value, keyboard:get('mode').value === 'keyboard', ...extra});
+    const result = await request('/' + name, {scene:get('scene').value, keyboard:get('mode').value === 'keyboard',
+      control_option:get('curve').value, model_option:get('model').value, ...extra});
     get('message').textContent = result.message || '';
   } catch (error) {
     get('message').textContent = error.message;

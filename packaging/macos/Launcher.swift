@@ -12,7 +12,8 @@ func command(_ executable: String, _ arguments: [String]) -> (Int32,String) {
 }
 
 final class Launcher: NSObject, NSApplicationDelegate {
-    var window:NSWindow!;var text:NSTextView!;var status:NSTextField!;var language:NSPopUpButton!
+    var window:NSWindow!;var text:NSTextView!;var status:NSTextField!;var language:NSPopUpButton!;var languageLabel:NSTextField!
+    let languages=["zh-TW","zh-CN","en","ja"]
     var buttons:[String:NSButton]=[:];var selected="en";var timer:Timer?;var installing=false
     let fm=FileManager.default
     let resources=Bundle.main.resourceURL!
@@ -28,14 +29,18 @@ final class Launcher: NSObject, NSApplicationDelegate {
     func json(_ url:URL)->[String:Any] {guard let data=try? Data(contentsOf:url),let value=try? JSONSerialization.jsonObject(with:data) as? [String:Any] else{return [:]};return value}
     func ready()->Bool {let value=json(root.appendingPathComponent(".install-ready.json"));return value["ready"] as? Bool == true && value["version"] as? String == version}
     func applicationDidFinishLaunching(_ notification:Notification) {
-        let locale=Locale.preferredLanguages.first ?? "en"
-        if locale.hasPrefix("zh-Hant") || locale.hasPrefix("zh-TW") {selected="zh-TW"} else if locale.hasPrefix("zh") {selected="zh-CN"} else if locale.hasPrefix("ja") {selected="ja"}
+        let locale=(Locale.preferredLanguages.first ?? "en").lowercased().replacingOccurrences(of:"_",with:"-")
+        if let saved=UserDefaults.standard.string(forKey:"InstallerLanguage"),languages.contains(saved) {selected=saved}
+        else if ["zh-hant","zh-tw","zh-hk","zh-mo"].contains(where:{locale.hasPrefix($0)}) {selected="zh-TW"}
+        else if locale.hasPrefix("zh") {selected="zh-CN"} else if locale.hasPrefix("ja") {selected="ja"}
         window=NSWindow(contentRect:NSRect(x:0,y:0,width:760,height:610),styleMask:[.titled,.closable,.miniaturizable,.resizable],backing:.buffered,defer:false)
         let stack=NSStackView();stack.orientation = .vertical;stack.spacing=14;stack.edgeInsets=NSEdgeInsets(top:22,left:22,bottom:22,right:22)
         stack.translatesAutoresizingMaskIntoConstraints=false;window.contentView!.addSubview(stack)
         NSLayoutConstraint.activate([stack.leadingAnchor.constraint(equalTo:window.contentView!.leadingAnchor),stack.trailingAnchor.constraint(equalTo:window.contentView!.trailingAnchor),stack.topAnchor.constraint(equalTo:window.contentView!.topAnchor),stack.bottomAnchor.constraint(equalTo:window.contentView!.bottomAnchor)])
         let heading=NSTextField(labelWithString:"Microduck V7RC  \(version)");heading.font = .boldSystemFont(ofSize:24);stack.addArrangedSubview(heading)
-        language=NSPopUpButton();language.addItems(withTitles:["繁體中文","简体中文","English","日本語"]);language.selectItem(at:["zh-TW","zh-CN","en","ja"].firstIndex(of:selected)!);language.target=self;language.action=#selector(changeLanguage);stack.addArrangedSubview(language)
+        language=NSPopUpButton();language.addItems(withTitles:["繁體中文","简体中文","English","日本語"]);language.selectItem(at:languages.firstIndex(of:selected)!);language.target=self;language.action=#selector(changeLanguage)
+        languageLabel=NSTextField(labelWithString:t("language"))
+        stack.addArrangedSubview(NSStackView(views:[languageLabel,language]))
         let scroll=NSScrollView();scroll.hasVerticalScroller=true;scroll.borderType = .bezelBorder
         text=NSTextView();text.isVerticallyResizable=true;text.isHorizontallyResizable=false;text.autoresizingMask=[.width];text.textContainer?.widthTracksTextView=true;text.isEditable=false;text.font = .monospacedSystemFont(ofSize:12,weight:.regular);text.textContainerInset=NSSize(width:12,height:12);scroll.documentView=text
         stack.addArrangedSubview(scroll);scroll.widthAnchor.constraint(equalTo:stack.widthAnchor,constant:-44).isActive=true;scroll.heightAnchor.constraint(greaterThanOrEqualToConstant:330).isActive=true
@@ -46,28 +51,34 @@ final class Launcher: NSObject, NSApplicationDelegate {
         timer=Timer.scheduledTimer(withTimeInterval:2,repeats:true){[weak self] _ in self?.poll()}
         if ready() && !CommandLine.arguments.contains("--no-auto-launch") {launch()}
     }
-    @objc func changeLanguage(){selected=["zh-TW","zh-CN","en","ja"][language.indexOfSelectedItem];refresh()}
+    @objc func changeLanguage(){
+        guard languages.indices.contains(language.indexOfSelectedItem) else{return}
+        selected=languages[language.indexOfSelectedItem]
+        UserDefaults.standard.set(selected,forKey:"InstallerLanguage")
+        refresh()
+    }
     func refresh(){
-        window.title=t("title");for (key,b) in buttons {b.title=t(key)}
+        window.title=t("title");languageLabel.stringValue=t("language");language.setAccessibilityLabel(t("language"));for (key,b) in buttons {b.title=t(key)}
         var missing:[String]=[]
         if command("/usr/bin/xcode-select",["-p"]).0 != 0 {missing.append("Apple Command Line Tools (Python 3 / Git / C compiler)")}
         for tool in ["cmake","pkg-config"] {if command("/bin/sh",["-c","command -v \(tool)"]).0 != 0 {missing.append(tool+" (Homebrew)")}}
         if missing.contains(where:{$0.contains("Homebrew")}) && !fm.fileExists(atPath:"/opt/homebrew/bin/brew") && !fm.fileExists(atPath:"/usr/local/bin/brew") {missing.append("Homebrew")}
-        text.string="\(t("plan"))\n\n\(t("missing")): \(missing.isEmpty ? t("none") : missing.joined(separator:", "))\n\n\(t("downloads"))\n\n\(t("location")):\n\(root.path)\n\n\(t("copy"))\n\n\(t("unsigned"))"
-        status.stringValue=ready() ? t("ready") : t("checked");buttons["launch"]?.isEnabled=ready();buttons["stop"]?.isEnabled=ready()
+        text.string="\(t("plan"))\n\n\(t("missing")): \(missing.isEmpty ? t("none") : missing.joined(separator:", "))\n\n\(t("downloads"))\n\n\(t("location")):\n\(root.path)\n\n\(t("copy"))\n\n\(t("unsigned_mac"))"
+        let isReady=ready() && !installing
+        status.stringValue=installing ? t("working") : (isReady ? t("ready") : t("checked"));buttons["launch"]?.isEnabled=isReady;buttons["stop"]?.isEnabled=isReady
         buttons["install"]?.isEnabled = !installing
     }
     @objc func action(_ sender:NSButton){switch sender.identifier!.rawValue {case "check":refresh();case "install":install();case "launch":launch();case "stop":_ = command("/bin/bash",[root.appendingPathComponent("scripts/desktop").path,"--stop"]);default:NSWorkspace.shared.open(URL(string:resources.appendingPathComponent("how-to.html").absoluteString+"#"+selected)!)}}
-    func error(_ value:String){status.stringValue=t("failed");let a=NSAlert();a.messageText=t("error");a.informativeText=value;a.runModal()}
+    func error(_ value:String){status.stringValue=t("failed");let a=NSAlert();a.messageText=t("error");a.informativeText=value;a.addButton(withTitle:t("ok"));a.runModal()}
     func openTerminal(_ url:URL){NSWorkspace.shared.open(url)}
     func install(){
         let a=NSAlert();a.messageText=t("confirm");a.informativeText=text.string;a.addButton(withTitle:t("yes"));a.addButton(withTitle:t("no"));guard a.runModal() == .alertFirstButtonReturn else{return}
         do {
             let payload=resources.appendingPathComponent("payload.zip");let expected=try String(contentsOf:resources.appendingPathComponent("payload.sha256"),encoding:.utf8).trimmingCharacters(in:.whitespacesAndNewlines)
-            let actual=SHA256.hash(data:try Data(contentsOf:payload)).map{String(format:"%02x",$0)}.joined();guard expected==actual else{throw NSError(domain:"Payload integrity",code:1)}
+            let actual=SHA256.hash(data:try Data(contentsOf:payload)).map{String(format:"%02x",$0)}.joined();guard expected==actual else{error(t("integrity"));return}
             try fm.createDirectory(at:support,withIntermediateDirectories:true)
             if fm.fileExists(atPath:root.path) {
-                guard json(root.appendingPathComponent(".installer-source.json"))["version"] as? String == version else{throw NSError(domain:"Target is not owned by this installer",code:2)}
+                guard json(root.appendingPathComponent(".installer-source.json"))["version"] as? String == version else{error(t("ownership"));return}
             } else {
                 try fm.createDirectory(at:root,withIntermediateDirectories:true)
                 let result=command("/usr/bin/ditto",["-x","-k",payload.path,root.path]);guard result.0==0 else{throw NSError(domain:result.1,code:3)}
@@ -89,7 +100,7 @@ final class Launcher: NSObject, NSApplicationDelegate {
         if installed.standardizedFileURL != Bundle.main.bundleURL.standardizedFileURL && !fm.fileExists(atPath:installed.path) {try fm.copyItem(at:Bundle.main.bundleURL,to:installed)}
         let desktop=fm.homeDirectoryForCurrentUser.appendingPathComponent("Desktop/Microduck V7RC.app")
         if fm.fileExists(atPath:desktop.path) {
-            guard let previous=try? fm.destinationOfSymbolicLink(atPath:desktop.path), Bundle(url:URL(fileURLWithPath:previous))?.bundleIdentifier==Bundle.main.bundleIdentifier else{throw NSError(domain:"Desktop shortcut already exists; it was not overwritten",code:4)}
+            guard let previous=try? fm.destinationOfSymbolicLink(atPath:desktop.path), Bundle(url:URL(fileURLWithPath:previous))?.bundleIdentifier==Bundle.main.bundleIdentifier else{throw NSError(domain:"MicroduckV7RC",code:4,userInfo:[NSLocalizedDescriptionKey:t("shortcut")])}
             try fm.removeItem(at:desktop)
         }
         try fm.createSymbolicLink(at:desktop,withDestinationURL:installed)

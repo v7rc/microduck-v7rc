@@ -19,9 +19,9 @@ SESSION = RUNTIME / 'desktop-session.json'
 TIMER = RUNTIME / 'stopwatch.json'
 sys.path.insert(0, str(ROOT / 'bridge'))
 
-from console_content import active_model, read_json, scenes, selected
+from console_content import active_model, downloaded_options, program_version, read_json, scenes, selected
 from console_updates import check, install
-from control_profile import active_profile
+from control_profile import active_profile, control_options
 from platform_support import advertised_ip
 from stopwatch import elapsed_ns, read_timer, update_timer
 
@@ -33,9 +33,7 @@ class Console:
         self.updates = {}
         self.next_ip = 0
         self.ip = ''
-        self.version = read_json(ROOT / '.installer-source.json').get('version')
-        if self.version is None:
-            self.version = (ROOT / 'packaging/version.txt').read_text().strip()
+        self.version = program_version(ROOT)
 
     def session(self):
         value = read_json(SESSION)
@@ -61,6 +59,10 @@ class Console:
             'control': (control.get('owner') or '') if control_live else '',
             'camera': bool(camera_live), 'fps': video.get('tx_fps', 0) if camera_live else 0,
             'scenes': {key: value['title'] for key, value in scenes(ROOT).items()},
+            'controls': control_options(ROOT),
+            'models': {'auto':'自動選用目前模型', 'bundled':'內建步態模型', **{
+                key: f'步態模型 {value[0]}' for key, value in downloaded_options(ROOT, 'model', 'velstand.onnx').items()
+            }},
             'timer_ms': elapsed_ns(timer, time.monotonic_ns()) // 1_000_000,
             'timer_running': timer['started_ns'] is not None,
             'versions': {'program': self.version, 'scenes': selected(ROOT, 'scenes').get('version', 'bundled'),
@@ -84,13 +86,14 @@ class Console:
             raise TimeoutError('Simulator did not stop')
         self.process = None
 
-    def start(self, scene, keyboard):
+    def start(self, scene, keyboard, control_option, model_option):
         if scene not in scenes(ROOT):
             raise ValueError('Unknown scene')
         if self.session().get('status') in ('starting', 'running') or (
                 self.process is not None and self.process.poll() is None):
             raise ValueError('Stop the current scene first')
-        command = [ROOT / 'scripts/desktop', '--scene', scene]
+        command = [ROOT / 'scripts/desktop', '--scene', scene,
+                   '--control-option', control_option, '--model-option', model_option]
         if keyboard:
             command.append('--keyboard')
         with (RUNTIME / 'console-simulator.log').open('ab') as log:
@@ -122,9 +125,15 @@ class Console:
                 scene = body['scene']
                 if scene not in scenes(ROOT):
                     raise ValueError('Unknown scene')
+                control_option = body.get('control_option', 'auto')
+                model_option = body.get('model_option', 'auto')
+                if control_option not in control_options(ROOT):
+                    raise ValueError('Unknown control option')
+                if model_option not in ('auto', 'bundled') and model_option not in downloaded_options(ROOT, 'model', 'velstand.onnx'):
+                    raise ValueError('Unknown model option')
                 if name == 'restart':
                     self.stop()
-                self.start(scene, body.get('keyboard') is True)
+                self.start(scene, body.get('keyboard') is True, control_option, model_option)
             elif name == 'stop':
                 self.stop()
             elif name in ('timer-start', 'timer-stop', 'timer-reset'):

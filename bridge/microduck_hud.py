@@ -2,6 +2,7 @@
 import json
 import math
 import os
+from console_content import program_version
 from platform_support import advertised_ip
 from stopwatch import elapsed_ns, format_timer, read_timer
 from pathlib import Path
@@ -86,6 +87,7 @@ class HudViewer:
         self.logged_viewport = False
         self.ip='checking...'
         self.next_ip=0
+        self.version = program_version(Path(__file__).resolve().parents[1])
 
     def __getattr__(self, name):
         return getattr(self.viewer, name)
@@ -120,7 +122,9 @@ class HudViewer:
                     (mujoco.mjtFontScale.mjFONTSCALE_150,mujoco.mjtGridPos.mjGRID_TOPLEFT,
                      f'V7RC RX  {data["fps"]:.0f} FPS\n{data["status"]}\n{camera["status"]}\nTX FRAMES  {camera["frames"]}  ({camera["fps"]:.0f} FPS)\nPEER  {camera["peer"]}', ''),
                     (mujoco.mjtFontScale.mjFONTSCALE_150,mujoco.mjtGridPos.mjGRID_TOPRIGHT,
-                     f'V7RC CONNECT\nIP  {self.ip}\nCONTROL UDP  {data.get("port",6188)}\nVIDEO UDP  8800\nTIME  {clock}','')])
+                     f'V7RC CONNECT\nIP  {self.ip}\nCONTROL UDP  {data.get("port",6188)}\nVIDEO UDP  8800\nTIME  {clock}',''),
+                    (mujoco.mjtFontScale.mjFONTSCALE_100,mujoco.mjtGridPos.mjGRID_BOTTOMLEFT,
+                     f'Microduck V7RC  {self.version}', '')])
             self.next_draw = now + 0.1
         return self.viewer.sync(*args, **kwargs)
 

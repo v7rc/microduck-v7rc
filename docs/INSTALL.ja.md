@@ -6,12 +6,12 @@ macOS Apple Silicon ではシミュレーション、スマートフォン操作
 
 ## ダウンロードと導入
 
-**現在のバージョン: `0.1.0-preview.7`** · [GitHub Release](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.7)
+**現在のバージョン: `0.1.0-preview.8`** · [GitHub Release](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.8)
 
 | プラットフォーム | インストーラー | チェックサム |
 | --- | --- | --- |
-| macOS 13+ · Apple Silicon / Intel | [MicroduckV7RC-0.1.0-preview.7-macOS-universal.dmg](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.7/MicroduckV7RC-0.1.0-preview.7-macOS-universal.dmg) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.7/MicroduckV7RC-0.1.0-preview.7-macOS-universal.dmg.sha256) |
-| Windows 11 x64 · WSL2 Ubuntu | [MicroduckV7RC-0.1.0-preview.7-Windows-x64.exe](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.7/MicroduckV7RC-0.1.0-preview.7-Windows-x64.exe) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.7/MicroduckV7RC-0.1.0-preview.7-Windows-x64.exe.sha256) |
+| macOS 13+ · Apple Silicon / Intel | [MicroduckV7RC-0.1.0-preview.8-macOS-universal.dmg](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.8/MicroduckV7RC-0.1.0-preview.8-macOS-universal.dmg) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.8/MicroduckV7RC-0.1.0-preview.8-macOS-universal.dmg.sha256) |
+| Windows 11 x64 · WSL2 Ubuntu | [MicroduckV7RC-0.1.0-preview.8-Windows-x64.exe](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.8/MicroduckV7RC-0.1.0-preview.8-Windows-x64.exe) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.8/MicroduckV7RC-0.1.0-preview.8-Windows-x64.exe.sha256) |
 
 取得したインストーラーを開き、環境を確認して導入を承認してください。完了後はデスクトップアイコンから起動できます。この Repo は公開されており、GitHub にログインせずに Release のインストーラーを取得できます。
 
@@ -25,7 +25,7 @@ Mac：DMG 内の Microduck V7RC を開き、言語を選んで環境を確認し
 
 Windows：EXE を開き、環境確認後に導入を承認します。WSL／Ubuntu がなければシステム導入を開始します。再起動を求められたら完了後に再度開いてください。Ubuntu で一般 Linux ユーザーの初期設定後、シミュレーターを導入します。Linux パッケージには sudo パスワードが必要な場合があります。成功後はアイコンから本体とブリッジを起動できます。他の WSL を停止したりファイアウォールを自動変更したりしません。スマートフォン通信には前述の mirrored networking と UDP 規則を設定してください。
 
-導入済みならアイコンから自動起動し、端末に取得・ビルド・実行内容を表示します。初回導入時に runtime のビルドと方策取得を行います。6188／8800／1234／7801 が使用中なら通知して停止し、他プロジェクトを自動停止しません。停止ボタンまたは実行端末を閉じて終了できます。
+導入済みならアイコンから自動起動し、端末に取得・ビルド・実行内容を表示します。初回導入時に runtime のビルドと方策取得を行います。6188／8800／1234 が使用中なら通知して停止し、他プロジェクトを自動停止しません。停止ボタンまたは実行端末を閉じて終了できます。
 
 未署名／未公証プレビューのため、OS の信頼確認が表示される場合があります。本番配布には組織の署名を使用してください。Mac データは ~/Library/Application Support/MicroduckV7RC、Windows 本体は %LocalAppData%/Programs/MicroduckV7RC、シミュレーターは Ubuntu ~/.local/share/microduck-v7rc に置きます。バージョン別ディレクトリを使い、研究 Repo を移動・上書きしません。
 

@@ -4,14 +4,20 @@
 
 V7RC アプリから Wi-Fi UDP で Microduck シミュレーターを操作し、640×360 の頭部カメラ映像を受信します。SRT 4 チャンネルブリッジ、受信 FPS、左右スティック、接続先 IP／Port、送信フレーム数の HUD を含みます。
 
+## 操作パネルと操作感の比較
+
+デスクトップのショートカットから操作パネルを開き、自由練習または S 字迷路を選びます。キーボード、V7RC アプリ、自作の UDP プログラムを使えます。起動・停止・スタート地点への復帰、接続状況、シミュレーターと同期するストップウォッチ（`分:秒.ミリ秒`）を利用できます。アプリ、シーン、ONNX モデル、制御設定の更新には GitHub Releases を使用します。Schema 2 対応版では制御設定だけを更新できます。
+
+操作パネルでは、制御カーブと歩行モデルを個別に選べます。内蔵カーブ、線形カーブ、ダウンロードした設定、対応する ONNX モデルを選び、起動またはスタート地点への復帰を押して同じシーンで比較できます。シミュレーターの左下にアプリのバージョンを表示します。Mac と Windows のインストーラーは繁体字中国語、簡体字中国語、英語、日本語に対応し、選択を記憶します。操作パネルの MuJoCo 内部ポートを分け、検証した Mac で自由練習の旋回が不安定になる問題を解消しました。
+
 ## ダウンロードと導入
 
-**現在のバージョン: `0.1.0-preview.7`** · [GitHub Release](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.7)
+**現在のバージョン: `0.1.0-preview.8`** · [GitHub Release](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.8)
 
 | プラットフォーム | インストーラー | チェックサム |
 | --- | --- | --- |
-| macOS 13+ · Apple Silicon / Intel | [MicroduckV7RC-0.1.0-preview.7-macOS-universal.dmg](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.7/MicroduckV7RC-0.1.0-preview.7-macOS-universal.dmg) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.7/MicroduckV7RC-0.1.0-preview.7-macOS-universal.dmg.sha256) |
-| Windows 11 x64 · WSL2 Ubuntu | [MicroduckV7RC-0.1.0-preview.7-Windows-x64.exe](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.7/MicroduckV7RC-0.1.0-preview.7-Windows-x64.exe) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.7/MicroduckV7RC-0.1.0-preview.7-Windows-x64.exe.sha256) |
+| macOS 13+ · Apple Silicon / Intel | [MicroduckV7RC-0.1.0-preview.8-macOS-universal.dmg](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.8/MicroduckV7RC-0.1.0-preview.8-macOS-universal.dmg) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.8/MicroduckV7RC-0.1.0-preview.8-macOS-universal.dmg.sha256) |
+| Windows 11 x64 · WSL2 Ubuntu | [MicroduckV7RC-0.1.0-preview.8-Windows-x64.exe](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.8/MicroduckV7RC-0.1.0-preview.8-Windows-x64.exe) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.8/MicroduckV7RC-0.1.0-preview.8-Windows-x64.exe.sha256) |
 
 取得したインストーラーを開き、環境を確認して導入を承認してください。完了後はデスクトップアイコンから起動できます。この Repo は公開されており、GitHub にログインせずに Release のインストーラーを取得できます。
 

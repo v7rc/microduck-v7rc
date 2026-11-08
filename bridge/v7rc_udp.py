@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """V7RC SRT datagrams to Microduck robotd; Python standard library only."""
 from platform_support import robot_socket
-from control_profile import BUNDLED, active_profile
+from control_profile import BUNDLED, active_profile, load_profile
 
 import argparse
 from collections import deque
@@ -361,6 +361,7 @@ def main():
     parser.add_argument("--max-head-yaw", type=float, default=0.4)
     parser.add_argument("--max-head-pitch", type=float, default=0.25)
     parser.add_argument("--drive-profile", choices=("linear", "velstand-v8"), default="linear")
+    parser.add_argument("--control-file", type=Path, help="Use a specific validated control profile")
     args = parser.parse_args()
     if not (1 <= args.port <= 65535 and 5 <= args.hz <= 50 and 0.1 <= args.timeout <= 0.5):
         parser.error("port 1..65535, hz 5..50, timeout 0.1..0.5 required")
@@ -370,7 +371,10 @@ def main():
     if any(not math.isfinite(value) or not 0 < value <= limit for value, limit in limits):
         parser.error("Invalid command limit: forward <=0.3, turn <=1.5, head yaw <=0.5, pitch <=0.4")
     try:
-        _, profile = active_profile(Path(__file__).resolve().parents[1])
+        if args.control_file:
+            profile = load_profile(args.control_file)
+        else:
+            _, profile = active_profile(Path(__file__).resolve().parents[1])
     except (OSError, ValueError, KeyError, TypeError) as error:
         parser.error(f"Invalid installed control profile: {error}")
     cfg = Config(args.pwm_min, args.pwm_center, args.pwm_max, args.deadzone,

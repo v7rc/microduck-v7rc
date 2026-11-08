@@ -4,14 +4,20 @@
 
 Control the Microduck simulator with the V7RC app over Wi-Fi UDP and stream its 640×360 head camera. Includes a four-channel SRT bridge and an overlay showing input FPS, two joysticks, connection addresses, and camera frame counts.
 
+## Console and control comparisons
+
+Open the console from the desktop shortcut to choose Free Practice or the S Maze. Use the keyboard, V7RC app, or your own UDP controller. The console can start, stop, and return the simulator to its starting point, show connection status, and display a stopwatch synchronized with the simulator (`mm:ss.mmm`). GitHub Releases supplies updates for the program, scenes, ONNX models, and control profiles. Versions that support Schema 2 can update control profiles independently.
+
+The console has separate dropdowns for control curves and gait models. Choose the built-in curve, linear response, a downloaded control profile, or a compatible ONNX model, then start or return to the starting point to compare combinations in the same scene. The simulator shows its program version in the bottom left. Both installers let you choose Traditional Chinese, Simplified Chinese, English, or Japanese and remember that choice. The console uses a separate internal MuJoCo port to resolve inconsistent turning on the tested Mac.
+
 ## Download and install
 
-**Current version: `0.1.0-preview.7`** · [GitHub Release](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.7)
+**Current version: `0.1.0-preview.8`** · [GitHub Release](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.8)
 
 | Platform | Installer | Checksum |
 | --- | --- | --- |
-| macOS 13+ · Apple Silicon / Intel | [MicroduckV7RC-0.1.0-preview.7-macOS-universal.dmg](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.7/MicroduckV7RC-0.1.0-preview.7-macOS-universal.dmg) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.7/MicroduckV7RC-0.1.0-preview.7-macOS-universal.dmg.sha256) |
-| Windows 11 x64 · WSL2 Ubuntu | [MicroduckV7RC-0.1.0-preview.7-Windows-x64.exe](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.7/MicroduckV7RC-0.1.0-preview.7-Windows-x64.exe) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.7/MicroduckV7RC-0.1.0-preview.7-Windows-x64.exe.sha256) |
+| macOS 13+ · Apple Silicon / Intel | [MicroduckV7RC-0.1.0-preview.8-macOS-universal.dmg](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.8/MicroduckV7RC-0.1.0-preview.8-macOS-universal.dmg) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.8/MicroduckV7RC-0.1.0-preview.8-macOS-universal.dmg.sha256) |
+| Windows 11 x64 · WSL2 Ubuntu | [MicroduckV7RC-0.1.0-preview.8-Windows-x64.exe](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.8/MicroduckV7RC-0.1.0-preview.8-Windows-x64.exe) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.8/MicroduckV7RC-0.1.0-preview.8-Windows-x64.exe.sha256) |
 
 Open the downloaded installer, check prerequisites and confirm installation. Launch from the desktop icon after setup completes. This repository is public; Release installers can be downloaded without signing in to GitHub.
 
