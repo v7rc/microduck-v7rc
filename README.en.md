@@ -10,6 +10,14 @@ Open the console from the desktop shortcut to choose Free Practice or the S Maze
 
 The console has separate dropdowns for control curves and gait models. Choose the built-in curve, linear response, a downloaded control profile, or a compatible ONNX model, then start or return to the starting point to compare combinations in the same scene. The simulator shows its program version in the bottom left. Both installers let you choose Traditional Chinese, Simplified Chinese, English, or Japanese and remember that choice. The console uses a separate internal MuJoCo port to resolve inconsistent turning on the tested Mac.
 
+## 9 × 6 Grid Maze
+
+In the preview.8 console, stop the simulator, check for updates, and install the preview.10 scene pack. Select “9 × 6 Grid Maze” from the scene list and start the simulator.
+
+Microduck starts in the orange START cell at the lower left. The orange END cell is at the upper right. The floor is white, and the upper-left corner is enclosed. Grid spacing is 300 mm between wall centerlines. Walls are 3 mm thick and 400 mm tall. The outside dimensions are 2703 × 1803 mm (about 4.87 m²), excluding supports and the base.
+
+[Scene update](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.10) · [Build dimensions and wall coordinates (Traditional Chinese)](docs/microduck/grid-maze-build.md)
+
 ## Download and install
 
 **Current version: `0.1.0-preview.8`** · [GitHub Release](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.8)

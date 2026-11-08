@@ -12,6 +12,14 @@
 
 控制台新增「控制曲線」和「步態模型」選單。在同一場景可選內建曲線、線性曲線或先前下載的設定，也可切換相容的 ONNX 模型。選好後按「啟動」或「回到起點」，面板會顯示實際套用的組合。模擬器左下角會顯示程式版號。Mac 和 Windows 安裝器提供繁體中文、簡體中文、英文和日文選擇；安裝器會記住語言選擇。控制台改用獨立的 MuJoCo 內部連接埠，修正這台 Mac 上自由練習啟動後無法穩定轉向的問題。
 
+## 九乘六格迷宮
+
+使用 preview.8 控制台。先停止模擬器，再按「檢查更新」並安裝 preview.10 場景包。從場景選單選「九乘六格迷宮」，然後按「啟動」。
+
+Microduck 從左下角橘色 START 格出發，右上角橘色 END 格是終點。場內地面為白色，左上角已補牆。格距為 300 mm（牆中心線到中心線），牆厚 3 mm、牆高 400 mm。場地外緣為 2703 × 1803 mm，約 4.87 m²，支架與底座另計。
+
+[場景更新](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.10) · [施工尺寸與牆段座標（繁中）](docs/microduck/grid-maze-build.md)
+
 ## 下載與安裝
 
 **目前版本: `0.1.0-preview.8`** · [GitHub Release](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.8)

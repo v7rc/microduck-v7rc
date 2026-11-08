@@ -182,6 +182,14 @@ CONSOLE_FEATURES = {
 }
 
 
+GRID_MAZE = {
+    'zh-TW': ('九乘六格迷宮', '使用 preview.8 控制台。先停止模擬器，再按「檢查更新」並安裝 preview.10 場景包。從場景選單選「九乘六格迷宮」，然後按「啟動」。\n\nMicroduck 從左下角橘色 START 格出發，右上角橘色 END 格是終點。場內地面為白色，左上角已補牆。格距為 300 mm（牆中心線到中心線），牆厚 3 mm、牆高 400 mm。場地外緣為 2703 × 1803 mm，約 4.87 m²，支架與底座另計。\n\n[場景更新](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.10) · [施工尺寸與牆段座標（繁中）](docs/microduck/grid-maze-build.md)'),
+    'zh-CN': ('九乘六格迷宫', '使用 preview.8 控制台。先停止模拟器，再点击「检查更新」并安装 preview.10 场景包。从场景列表选择「九乘六格迷宫」，然后点击「启动」。\n\nMicroduck 从左下角橙色 START 格出发，右上角橙色 END 格是终点。场地地面为白色，左上角已补墙。格距为 300 mm（按墙体中心线计算），墙厚 3 mm、墙高 400 mm。场地外缘为 2703 × 1803 mm，约 4.87 m²，支架与底座另计。\n\n[场景更新](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.10) · [施工尺寸与墙段坐标（繁体中文）](docs/microduck/grid-maze-build.md)'),
+    'en': ('9 × 6 Grid Maze', 'In the preview.8 console, stop the simulator, check for updates, and install the preview.10 scene pack. Select “9 × 6 Grid Maze” from the scene list and start the simulator.\n\nMicroduck starts in the orange START cell at the lower left. The orange END cell is at the upper right. The floor is white, and the upper-left corner is enclosed. Grid spacing is 300 mm between wall centerlines. Walls are 3 mm thick and 400 mm tall. The outside dimensions are 2703 × 1803 mm (about 4.87 m²), excluding supports and the base.\n\n[Scene update](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.10) · [Build dimensions and wall coordinates (Traditional Chinese)](docs/microduck/grid-maze-build.md)'),
+    'ja': ('9 × 6 グリッド迷路', 'preview.8 の操作パネルでシミュレーターを停止し、更新を確認して preview.10 のシーンパックをインストールします。シーン一覧から「9 × 6 Grid Maze」を選んで起動します。\n\nMicroduck は左下のオレンジ色の START マスから出発し、右上のオレンジ色の END マスを目指します。床は白色で、左上の角は壁で閉じています。マスの間隔は壁の中心線間で 300 mm、壁の厚さは 3 mm、高さは 400 mm です。外寸は 2703 × 1803 mm（約 4.87 m²）で、支持材と台座は別途必要です。\n\n[シーンの更新](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.10) · [製作寸法と壁の座標（繁体字中国語）](docs/microduck/grid-maze-build.md)'),
+}
+
+
 def release_downloads(lang):
     current, platform, installer, checksum, _, instruction, validation = RELEASE_TEXT[lang]
     text = f'**{current}: `{VERSION}`** · [GitHub Release]({RELEASE})\n\n'
@@ -215,6 +223,7 @@ def main():
         nav=' | '.join(f'[{NAMES[k]}]({"README.md" if k=="zh-TW" else "README."+k+".md"})' for k in LANGS)
         text=f'# {t["title"]}\n\n{nav}\n\n{t["overview"]}\n\n'
         text+=md_block(*CONSOLE_FEATURES[lang])
+        text+=md_block(*GRID_MAZE[lang])
         text+=md_block(RELEASE_TEXT[lang][4],release_downloads(lang))
         text+=md_block(PACKAGE_GUIDE[lang][0],PACKAGE_GUIDE[lang][1])
         text+=md_block(t['support'],t['status'])+md_block(t['quick'],t['fresh'],START)
