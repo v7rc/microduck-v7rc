@@ -24,3 +24,7 @@ ONNX 資產目前使用既有 VelStand 步態格式，輸入 `obs[1,61]`，輸�
 從 `0.1.0-preview.5` 起，可以把 `control-profile.json` 和 `control-profile.json.sha256` 附到版本號更高的 GitHub Release。這個 Release 可以只放控制設定資產。控制台會把它列為「控制設定」更新，下載並驗證後在下次啟動橋接時套用。
 
 以 [內建設定](../../bridge/control-profile.json) 為範本。Schema 1 包含轉向死區、四條比例曲線，以及起步輔助的幅度與時間。曲線使用扣除死區後的 0–1 正規化輸入及輸出。更新程式會先校驗 SHA256，再檢查欄位、曲線與數值範圍，驗證完成後才切換設定。版本標籤採同一套預覽版版本號規則。
+
+支援分開右轉曲線的橋接可讀取 Schema 2。它在 `curves` 內增加 `right_diagonal`，前後軸有有效輸入時使用此曲線。單軸右轉沿用 `right`。原有 Schema 1 使用共用右轉曲線，仍可讀取。從 `preview.5` 升級時，須先更新控制台和橋接程式，之後可獨立更新 Schema 2 設定。
+
+`preview.7` 會先使用內建的 Schema 2 控制設定，並保留舊版安裝所用的 Schema 1 檔案。後續可發布更高版本的 Schema 2 控制設定包。

@@ -21,6 +21,7 @@ sys.path.insert(0, str(ROOT / 'bridge'))
 
 from console_content import active_model, read_json, scenes, selected
 from console_updates import check, install
+from control_profile import active_profile
 from platform_support import advertised_ip
 from stopwatch import elapsed_ns, read_timer, update_timer
 
@@ -64,7 +65,7 @@ class Console:
             'timer_running': timer['started_ns'] is not None,
             'versions': {'program': self.version, 'scenes': selected(ROOT, 'scenes').get('version', 'bundled'),
                          'model': active_model(ROOT)[0],
-                         'control': selected(ROOT, 'control').get('version', self.version)},
+                         'control': active_profile(ROOT)[0] or self.version},
             'updates': {key: value['version'] for key, value in self.updates.items()},
         }
 

@@ -3,6 +3,8 @@ import json
 import math
 from pathlib import Path
 
+from console_content import selected
+
 CURVES = {'forward', 'reverse', 'left', 'right'}
 ASSIST_LIMITS = {
     'forward_travel': (0.001, 1), 'reverse_travel': (0.001, 1),
@@ -24,13 +26,14 @@ def load_profile(path):
         raise ValueError('Control profile exceeds 16 KiB')
     profile = json.loads(contents)
     if (not isinstance(profile, dict) or set(profile) != {'schema', 'turn_deadzone', 'curves', 'assist'}
-            or type(profile['schema']) is not int or profile['schema'] != 1):
+            or type(profile['schema']) is not int or profile['schema'] not in (1, 2)):
         raise ValueError('Unsupported control profile schema')
     if not in_range(profile['turn_deadzone'], 0, .49):
         raise ValueError('Invalid turn deadzone')
     curves = profile['curves']
-    if not isinstance(curves, dict) or curves.keys() != CURVES:
-        raise ValueError('Expected four drive curves')
+    expected_curves = CURVES | {'right_diagonal'} if profile['schema'] == 2 else CURVES
+    if not isinstance(curves, dict) or curves.keys() != expected_curves:
+        raise ValueError('Drive curves do not match the control profile schema')
     for name, points in curves.items():
         if (not isinstance(points, list) or not 2 <= len(points) <= 32
                 or any(not isinstance(point, list) or len(point) != 2
@@ -46,3 +49,13 @@ def load_profile(path):
 
 
 BUNDLED = load_profile(Path(__file__).with_name('control-profile.json'))
+
+
+def active_profile(root):
+    """Keep older settings available for older installs without masking a new schema."""
+    receipt = selected(root, 'control')
+    if receipt:
+        profile = load_profile(Path(receipt['path']))
+        if profile['schema'] >= BUNDLED['schema']:
+            return receipt['version'], profile
+    return None, BUNDLED

@@ -6,12 +6,12 @@ macOS Apple Silicon 已完成本机与手机控制／图像验收。Linux 提供
 
 ## 下载与安装
 
-**当前版本: `0.1.0-preview.5`** · [GitHub Release](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.5)
+**当前版本: `0.1.0-preview.7`** · [GitHub Release](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.7)
 
 | 平台 | 安装包 | 校验文件 |
 | --- | --- | --- |
-| macOS 13+ · Apple Silicon / Intel | [MicroduckV7RC-0.1.0-preview.5-macOS-universal.dmg](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.5/MicroduckV7RC-0.1.0-preview.5-macOS-universal.dmg) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.5/MicroduckV7RC-0.1.0-preview.5-macOS-universal.dmg.sha256) |
-| Windows 11 x64 · WSL2 Ubuntu | [MicroduckV7RC-0.1.0-preview.5-Windows-x64.exe](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.5/MicroduckV7RC-0.1.0-preview.5-Windows-x64.exe) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.5/MicroduckV7RC-0.1.0-preview.5-Windows-x64.exe.sha256) |
+| macOS 13+ · Apple Silicon / Intel | [MicroduckV7RC-0.1.0-preview.7-macOS-universal.dmg](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.7/MicroduckV7RC-0.1.0-preview.7-macOS-universal.dmg) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.7/MicroduckV7RC-0.1.0-preview.7-macOS-universal.dmg.sha256) |
+| Windows 11 x64 · WSL2 Ubuntu | [MicroduckV7RC-0.1.0-preview.7-Windows-x64.exe](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.7/MicroduckV7RC-0.1.0-preview.7-Windows-x64.exe) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.7/MicroduckV7RC-0.1.0-preview.7-Windows-x64.exe.sha256) |
 
 下载后打开安装包，检查环境并确认安装；完成后从桌面图标启动。Repo 已公开，可直接下载 Release 安装包，无需登录 GitHub。
 

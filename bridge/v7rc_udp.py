@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """V7RC SRT datagrams to Microduck robotd; Python standard library only."""
 from platform_support import robot_socket
-from control_profile import BUNDLED, load_profile
-from console_content import selected
+from control_profile import BUNDLED, active_profile
 
 import argparse
 from collections import deque
@@ -70,7 +69,11 @@ def map_channels(channels, cfg):
     if cfg.drive_profile == "velstand-v8":
         travel = abs(a[1])
         forward_curve = cfg.control["curves"]["reverse" if a[1] < 0 else "forward"]
-        yaw_curve = cfg.control["curves"]["right" if a[0] > 0 else "left"]
+        curves = cfg.control["curves"]
+        if a[0] > 0:
+            yaw_curve = curves.get("right_diagonal", curves["right"]) if a[1] else curves["right"]
+        else:
+            yaw_curve = curves["left"]
         move["vx"] = math.copysign(cfg.max_forward * interpolate_curve(travel, forward_curve), a[1])
         move["vyaw"] = math.copysign(cfg.max_turn * interpolate_curve(abs(a[0]), yaw_curve), -a[0])
     head = {"neck_pitch": 0.0, "head_pitch": -a[2] * cfg.max_head_pitch,
@@ -366,13 +369,10 @@ def main():
     limits = [(args.max_forward, 0.3), (args.max_turn, 1.5), (args.max_head_yaw, 0.5), (args.max_head_pitch, 0.4)]
     if any(not math.isfinite(value) or not 0 < value <= limit for value, limit in limits):
         parser.error("Invalid command limit: forward <=0.3, turn <=1.5, head yaw <=0.5, pitch <=0.4")
-    profile = BUNDLED
-    receipt = selected(Path(__file__).resolve().parents[1], "control")
-    if receipt:
-        try:
-            profile = load_profile(Path(receipt["path"]))
-        except (OSError, ValueError, KeyError, TypeError) as error:
-            parser.error(f"Invalid installed control profile: {error}")
+    try:
+        _, profile = active_profile(Path(__file__).resolve().parents[1])
+    except (OSError, ValueError, KeyError, TypeError) as error:
+        parser.error(f"Invalid installed control profile: {error}")
     cfg = Config(args.pwm_min, args.pwm_center, args.pwm_max, args.deadzone,
                  args.max_forward, args.max_turn, args.max_head_yaw, args.max_head_pitch,
                  tuple(i in args.invert for i in range(1, 5)), args.timeout, args.drive_profile, profile)

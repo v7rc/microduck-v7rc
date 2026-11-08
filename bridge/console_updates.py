@@ -14,7 +14,7 @@ import xml.etree.ElementTree as ET
 import zipfile
 
 from console_content import content_root, selected
-from control_profile import load_profile
+from control_profile import BUNDLED, active_profile, load_profile
 
 REPO = 'v7rc/microduck-v7rc'
 RELEASES = f'https://api.github.com/repos/{REPO}/releases?per_page=100'
@@ -54,7 +54,7 @@ def candidates(root, version, releases):
     versions = {'program': version, **{
         kind: selected(root, kind).get('version', '0.0.0') for kind in ('scenes', 'model')
     }}
-    versions['control'] = selected(root, 'control').get('version', version)
+    versions['control'] = active_profile(root)[0] or version
     updates = {}
     for release in releases:
         tag = release.get('tag_name', '')
@@ -165,7 +165,8 @@ def install(root, kind, asset):
         if kind == 'model':
             validate_model(payload)
         elif kind == 'control':
-            load_profile(payload)
+            if load_profile(payload)['schema'] < BUNDLED['schema']:
+                raise ValueError('Control profile schema is older than the bundled profile')
         else:
             items = install_scenes(root, payload, stage)
             payload.unlink()
