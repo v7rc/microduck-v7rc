@@ -5,6 +5,13 @@ on:
     paths:
       - 'packaging/**'
       - 'scripts/desktop*'
+      - 'scripts/console*'
+      - 'docs/desktop-console.html'
+      - 'docs/integration/desktop-console-todo.html'
+      - 'bridge/**'
+      - 'scenes/**'
+      - 'patches/**'
+      - 'upstream-revisions.json'
       - 'scripts/setup*'
       - 'scripts/verify-installation.py'
       - '.github/workflows/installers.yml'

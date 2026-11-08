@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-Hant">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Microduck 控制台驗收清單</title>
+<style>
+body{font:16px/1.6 system-ui,sans-serif;max-width:900px;margin:40px auto;padding:0 20px;color:#132338;background:#f7f9fc}fieldset{background:white;border:1px solid #a9bace;border-radius:10px;margin:20px 0;padding:16px}label{display:block;padding:7px}legend{font-weight:700}input{margin-right:10px}
+</style>
+<h1>Microduck 控制台驗收清單</h1>
+<p>各平台獨立驗收。勾選記錄本次結果，測試證據另留存。</p>
+<fieldset><legend>第一階段 · 啟停、場景與碼錶</legend>
+<label><input type="checkbox">Mac 安裝後可開啟控制台，選自由練習或 S 型迷宮，啟動並停止。</label>
+<label><input type="checkbox">Windows 安裝後可開啟控制台，透過 WSL2 選自由練習或 S 型迷宮，啟動並停止。</label>
+<label><input type="checkbox">回到起點會重開所選場景，Microduck 回到起點，保留停止後的成績。</label>
+<label><input type="checkbox">碼錶開始、停止、繼續、歸零正確。控制台及模擬器 HUD 的停止值相同，顯示 mm:ss.mmm。</label>
+<label><input type="checkbox">控制台顯示可複製的 IP 與 UDP 連接埠、控制來源及主機送出 FPS。手機可操作並收圖。</label>
+</fieldset>
+<fieldset><legend>第二階段 · GitHub Releases 更新</legend>
+<label><input type="checkbox">較新的已發布預覽版且有適用平台的安裝包時顯示更新。無更新及網路失敗有各自提示。</label>
+<label><input type="checkbox">Mac 與 Windows 下載、校驗並開啟新版安裝包。新版本安裝成功後可啟動。</label>
+<label><input type="checkbox">場景包校驗與載入成功後出現在清單，可選擇並進入場景。</label>
+<label><input type="checkbox">ONNX 驗證成功後安裝，下次啟動使用新版模型。失敗維持原本可用版本。</label>
+<label><input type="checkbox">控制設定包校驗與驗證後，下次啟動套用新版曲線。失敗時保留原設定。</label>
+<label><input type="checkbox">下載中斷、檔案不完整或不相容時，介面回報原因，原本版本可繼續使用。</label>
+</fieldset>
+<fieldset><legend>操作說明與發行</legend>
+<label><input type="checkbox">鍵盤、V7RC APP 與自訂程式接入說明可從控制台開啟，各模式完成一趟操作。</label>
+<label><input type="checkbox">Mac DMG 與 Windows EXE 完成建置及校驗，兩平台分別驗收安裝與操作。</label>
+</fieldset>
+</html>

@@ -6,12 +6,12 @@ Control the Microduck simulator with the V7RC app over Wi-Fi UDP and stream its 
 
 ## Download and install
 
-**Current version: `0.1.0-preview.3`** · [GitHub Release](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.3)
+**Current version: `0.1.0-preview.5`** · [GitHub Release](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.5)
 
 | Platform | Installer | Checksum |
 | --- | --- | --- |
-| macOS 13+ · Apple Silicon / Intel | [MicroduckV7RC-0.1.0-preview.3-macOS-universal.dmg](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.3/MicroduckV7RC-0.1.0-preview.3-macOS-universal.dmg) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.3/MicroduckV7RC-0.1.0-preview.3-macOS-universal.dmg.sha256) |
-| Windows 11 x64 · WSL2 Ubuntu | [MicroduckV7RC-0.1.0-preview.3-Windows-x64.exe](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.3/MicroduckV7RC-0.1.0-preview.3-Windows-x64.exe) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.3/MicroduckV7RC-0.1.0-preview.3-Windows-x64.exe.sha256) |
+| macOS 13+ · Apple Silicon / Intel | [MicroduckV7RC-0.1.0-preview.5-macOS-universal.dmg](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.5/MicroduckV7RC-0.1.0-preview.5-macOS-universal.dmg) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.5/MicroduckV7RC-0.1.0-preview.5-macOS-universal.dmg.sha256) |
+| Windows 11 x64 · WSL2 Ubuntu | [MicroduckV7RC-0.1.0-preview.5-Windows-x64.exe](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.5/MicroduckV7RC-0.1.0-preview.5-Windows-x64.exe) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.5/MicroduckV7RC-0.1.0-preview.5-Windows-x64.exe.sha256) |
 
 Open the downloaded installer, check prerequisites and confirm installation. Launch from the desktop icon after setup completes. This repository is public; Release installers can be downloaded without signing in to GitHub.
 

@@ -3,7 +3,8 @@
     "url": "https://github.com/pollen-robotics/microduck.git",
     "branch": "main",
     "commit": "98ce17e4868ba9370713c4d11f3d934e5a1b7687",
-    "patch": "patches/microduck-body-module.patch"
+    "patch": "patches/microduck-body-module.patch",
+    "patches": ["patches/microduck-walk-policy.patch"]
   },
   "microduck_rl": {
     "url": "https://github.com/pollen-robotics/microduck_rl.git",

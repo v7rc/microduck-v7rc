@@ -1,0 +1,7 @@
+#!/bin/sh
+set -eu
+ROOT="$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)"
+if [ -x "$ROOT/microduck_rl/.venv/bin/python" ]; then
+    exec "$ROOT/microduck_rl/.venv/bin/python" "$ROOT/scripts/console.py" "$@"
+fi
+exec python3 "$ROOT/scripts/console.py" "$@"

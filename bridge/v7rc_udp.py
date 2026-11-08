@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """V7RC SRT datagrams to Microduck robotd; Python standard library only."""
 from platform_support import robot_socket
+from control_profile import BUNDLED, load_profile
+from console_content import selected
 
 import argparse
 from collections import deque
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 import json
 import logging
 import math
@@ -18,17 +20,6 @@ import time
 
 LOG = logging.getLogger("v7rc")
 FRAME = re.compile(rb"SRT([0-9]{4})([0-9]{4})([0-9]{4})([0-9]{4})#")
-
-# Input fractions are after the default 8% deadzone. Output fractions scale
-# with the configured limits, using the flat MuJoCo velstand v8 measurements.
-REVERSE_CURVE = ((0, 0), (17 / 92, .185 / .3), (42 / 92, .22 / .3),
-                 (67 / 92, .26 / .3), (1, 1))
-FORWARD_CURVE = ((0, 0), (17 / 92, .102 / .3), (42 / 92, .145 / .3),
-                 (67 / 92, .213 / .3), (1, 1))
-LEFT_CURVE = ((0, 0), (17 / 92, .22 / .8), (42 / 92, 42 / 92), (1, 1))
-RIGHT_CURVE = ((0, 0), (17 / 92, .165 / .8), (42 / 92, .21 / .8),
-               (67 / 92, .42 / .8), (1, .9))
-
 
 def interpolate_curve(travel, points):
     for (left, low), (right, high) in zip(points, points[1:]):
@@ -50,6 +41,7 @@ class Config:
     invert: tuple = (False, False, False, False)
     timeout: float = 0.3
     drive_profile: str = "linear"
+    control: dict = field(default_factory=lambda: BUNDLED)
 
 
 def parse_srt(payload, cfg):
@@ -62,22 +54,23 @@ def parse_srt(payload, cfg):
     return channels
 
 
-def axis(value, cfg):
+def axis(value, cfg, index=None):
     span = cfg.high - cfg.center if value >= cfg.center else cfg.center - cfg.low
     value = (value - cfg.center) / span
-    if abs(value) <= cfg.deadzone:
+    deadzone = cfg.control["turn_deadzone"] if index == 0 else cfg.deadzone
+    if abs(value) <= deadzone:
         return 0.0
-    return math.copysign((abs(value) - cfg.deadzone) / (1 - cfg.deadzone), value)
+    return math.copysign((abs(value) - deadzone) / (1 - deadzone), value)
 
 
 def map_channels(channels, cfg):
-    a = tuple(axis(value, cfg) * (-1 if cfg.invert[i] else 1) for i, value in enumerate(channels))
+    a = tuple(axis(value, cfg, i) * (-1 if cfg.invert[i] else 1) for i, value in enumerate(channels))
     # Increasing steering/head-yaw PWM means right; robotd's positive yaw means left.
     move = {"vx": a[1] * cfg.max_forward, "vy": 0.0, "vyaw": -a[0] * cfg.max_turn}
     if cfg.drive_profile == "velstand-v8":
         travel = abs(a[1])
-        forward_curve = REVERSE_CURVE if a[1] < 0 else FORWARD_CURVE
-        yaw_curve = RIGHT_CURVE if a[0] > 0 else LEFT_CURVE
+        forward_curve = cfg.control["curves"]["reverse" if a[1] < 0 else "forward"]
+        yaw_curve = cfg.control["curves"]["right" if a[0] > 0 else "left"]
         move["vx"] = math.copysign(cfg.max_forward * interpolate_curve(travel, forward_curve), a[1])
         move["vyaw"] = math.copysign(cfg.max_turn * interpolate_curve(abs(a[0]), yaw_curve), -a[0])
     head = {"neck_pitch": 0.0, "head_pitch": -a[2] * cfg.max_head_pitch,
@@ -94,42 +87,56 @@ class GaitStart:
     def reset(self):
         self.direction = None
         self.started = None
-        self.mixed = False
+        self.mixed_start = False
+        self.yaw_started = None
 
     def apply(self, move, channels, cfg, now):
         if cfg.drive_profile != "velstand-v8":
             return move
-        active = [axis for axis in ("vx", "vyaw") if move[axis]]
-        if not active:
+        if not (move["vx"] or move["vyaw"]):
             self.reset()
             return move
-        if len(active) > 1:
-            self.mixed = True
-            return move
-        component = active[0]
+
+        if self.direction is None:
+            # Forward thrust establishes the gait before adding yaw on a diagonal.
+            component = "vx" if move["vx"] else "vyaw"
+            self.direction = component, move[component] > 0
+            self.started = now
+            self.mixed_start = bool(move["vx"] and move["vyaw"])
+
+        component, positive = self.direction
         target = move[component]
-        direction = (component, target > 0)
-        limit = cfg.max_forward if component == "vx" else cfg.max_turn
-        if component == "vyaw" and target < 0:
-            limit = max(abs(target), limit * 0.825)
-        travel = abs(axis(channels[1 if component == "vx" else 0], cfg))
-        # At 25% raw stick travel, the default deadzone leaves about 18.5%.
-        # Smaller inputs receive a proportionally smaller assist.
-        assist = min(1.0, travel / 0.18)
-        if direction != self.direction:
-            self.started = now if self.direction is None and not self.mixed else None
-            self.direction = direction
-        if self.started is None or self.mixed:
+        if not target or (target > 0) != positive:
+            self.started = None
+        if self.started is None:
             return move
+
         elapsed = now - self.started
-        if component == "vx" and target < 0:
-            hold, release = 1.75, 0.10
+        tuning = cfg.control["assist"]
+        if component == "vx":
+            limit = cfg.max_forward
+            travel = abs(axis(channels[1], cfg, 1))
+            assist = min(1.0, travel / tuning["forward_travel" if target > 0 else "reverse_travel"])
         else:
-            hold, release = 0.55, 0.35
-        fade = min(1.0, max(0.0, (hold + release - elapsed) / release))
-        fade = fade * fade * (3.0 - 2.0 * fade)
+            limit = cfg.max_turn if positive else max(abs(target), cfg.max_turn * tuning["right_limit"])
+            assist = min(1.0, abs(axis(channels[0], cfg, 0)) / tuning["turn_travel"])
+        prefix = "reverse_" if component == "vx" and not positive else ""
+        hold, release = tuning[prefix + "hold"], tuning[prefix + "release"]
+        fade = self.smooth((hold + release - elapsed) / release)
+        if self.mixed_start:
+            fade *= self.smooth(elapsed / tuning["diagonal_ramp"])
+        if component == "vx" and move["vyaw"]:
+            if self.yaw_started is None and elapsed < hold + release:
+                self.yaw_started = now
+            if self.yaw_started is not None:
+                move = {**move, "vyaw": move["vyaw"] * self.smooth((now - self.yaw_started) / tuning["yaw_ramp"])}
         boost = (math.copysign(limit, target) - target) * assist * fade
         return {**move, component: target + boost}
+
+    @staticmethod
+    def smooth(fraction):
+        fraction = min(1.0, max(0.0, fraction))
+        return fraction * fraction * (3.0 - 2.0 * fraction)
 
 
 class InputState:
@@ -173,7 +180,7 @@ class InputState:
         self.last_received_at = now
         self.last_received_channels = channels
         if not self.armed:
-            if any(axis(value, self.cfg) != 0 for value in channels):
+            if any(axis(value, self.cfg, i) != 0 for i, value in enumerate(channels)):
                 self.waiting_neutral += 1
                 return False
             self.owner = sender_ip
@@ -359,9 +366,16 @@ def main():
     limits = [(args.max_forward, 0.3), (args.max_turn, 1.5), (args.max_head_yaw, 0.5), (args.max_head_pitch, 0.4)]
     if any(not math.isfinite(value) or not 0 < value <= limit for value, limit in limits):
         parser.error("Invalid command limit: forward <=0.3, turn <=1.5, head yaw <=0.5, pitch <=0.4")
+    profile = BUNDLED
+    receipt = selected(Path(__file__).resolve().parents[1], "control")
+    if receipt:
+        try:
+            profile = load_profile(Path(receipt["path"]))
+        except (OSError, ValueError, KeyError, TypeError) as error:
+            parser.error(f"Invalid installed control profile: {error}")
     cfg = Config(args.pwm_min, args.pwm_center, args.pwm_max, args.deadzone,
                  args.max_forward, args.max_turn, args.max_head_yaw, args.max_head_pitch,
-                 tuple(i in args.invert for i in range(1, 5)), args.timeout, args.drive_profile)
+                 tuple(i in args.invert for i in range(1, 5)), args.timeout, args.drive_profile, profile)
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
     try:
         run(args, cfg)

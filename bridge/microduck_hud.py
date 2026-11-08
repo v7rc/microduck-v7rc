@@ -3,6 +3,7 @@ import json
 import math
 import os
 from platform_support import advertised_ip
+from stopwatch import elapsed_ns, format_timer, read_timer
 from pathlib import Path
 import time
 
@@ -103,6 +104,8 @@ class HudViewer:
             if viewport and viewport.width >= 320 and viewport.height >= 230:
                 data=snapshot(self.path,now)
                 camera=camera_snapshot(Path(self.path).with_name('v7rc-video.json'),now)
+                timer = read_timer(Path(self.path).with_name('stopwatch.json'))
+                clock = format_timer(elapsed_ns(timer, time.monotonic_ns()))
                 points=sticks(data['channels'],data.get('pwm_min',1000),data.get('pwm_center',1500),data.get('pwm_max',2000))
                 size=min(240,(viewport.width-36)//2)
                 panel_height=min(450,max(80,viewport.height-254))
@@ -117,7 +120,7 @@ class HudViewer:
                     (mujoco.mjtFontScale.mjFONTSCALE_150,mujoco.mjtGridPos.mjGRID_TOPLEFT,
                      f'V7RC RX  {data["fps"]:.0f} FPS\n{data["status"]}\n{camera["status"]}\nTX FRAMES  {camera["frames"]}  ({camera["fps"]:.0f} FPS)\nPEER  {camera["peer"]}', ''),
                     (mujoco.mjtFontScale.mjFONTSCALE_150,mujoco.mjtGridPos.mjGRID_TOPRIGHT,
-                     f'V7RC CONNECT\nIP  {self.ip}\nCONTROL UDP  {data.get("port",6188)}\nVIDEO UDP  8800','')])
+                     f'V7RC CONNECT\nIP  {self.ip}\nCONTROL UDP  {data.get("port",6188)}\nVIDEO UDP  8800\nTIME  {clock}','')])
             self.next_draw = now + 0.1
         return self.viewer.sync(*args, **kwargs)
 

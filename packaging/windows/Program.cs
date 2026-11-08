@@ -38,7 +38,8 @@ sealed class Launcher:Window {
     readonly Dictionary<string,Dictionary<string,string>> strings=JsonSerializer.Deserialize<Dictionary<string,Dictionary<string,string>>>(Assets.Text("ui.json"))!;
     readonly string[] languages={"zh-TW","zh-CN","en","ja"};string selected="en";
     readonly string distro="Ubuntu-24.04";
-    readonly string local=Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),"Programs","MicroduckV7RC");
+    static readonly string InstallRoot=Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),"Programs","MicroduckV7RC");
+    readonly string local=Path.Combine(InstallRoot,"versions",Assets.Version);
     readonly TextBox plan=new(){IsReadOnly=true,AcceptsReturn=true,TextWrapping=TextWrapping.Wrap,VerticalScrollBarVisibility=ScrollBarVisibility.Auto,MinHeight=330,Margin=new Thickness(0,12,0,12)};
     readonly TextBlock status=new(){TextWrapping=TextWrapping.Wrap,Margin=new Thickness(0,8,0,8)};
     readonly Dictionary<string,Button> buttons=new();bool ubuntu=false,initialized=false,ready=false,busy=false;string linuxHome="",root="";
@@ -118,28 +119,20 @@ sealed class Launcher:Window {
         var desktop=Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory),"Microduck V7RC.lnk");
         var type=Type.GetTypeFromProgID("WScript.Shell") ?? throw new IOException("Windows shortcut service unavailable");
         dynamic shell=Activator.CreateInstance(type)!;dynamic shortcut=shell.CreateShortcut(desktop);
-        if(File.Exists(desktop)&&!string.Equals((string)shortcut.TargetPath,Path.Combine(local,"MicroduckV7RC.exe"),StringComparison.OrdinalIgnoreCase))throw new IOException("An unrelated desktop shortcut already exists; it was not overwritten");
+        if(File.Exists(desktop)) {
+            var previous=Path.GetFullPath((string)shortcut.TargetPath);
+            var owned=previous.Equals(Path.Combine(InstallRoot,"MicroduckV7RC.exe"),StringComparison.OrdinalIgnoreCase) ||
+                (previous.StartsWith(Path.Combine(InstallRoot,"versions")+Path.DirectorySeparatorChar,StringComparison.OrdinalIgnoreCase) &&
+                 Path.GetFileName(previous).Equals("MicroduckV7RC.exe",StringComparison.OrdinalIgnoreCase));
+            if(!owned)throw new IOException("An unrelated desktop shortcut already exists; it was not overwritten");
+        }
         shortcut.TargetPath=Path.Combine(local,"MicroduckV7RC.exe");shortcut.WorkingDirectory=local;shortcut.IconLocation=Path.Combine(local,"app-icon.ico");shortcut.Description="Microduck V7RC";shortcut.Save();
     }
     async Task Launch() {
         if(!ready)return;
         var verify=await Commands.Run("wsl.exe",new[]{"-d",distro,"--cd",root,"--","python3","scripts/verify-installation.py"});
         if(verify.Code!=0)throw new IOException(verify.Output);
-        var previous=await Commands.Run("wsl.exe",new[]{"-d",distro,"--","cat",root+"/.runtime/desktop-session.json"});
-        if(previous.Code==0) {using var old=JsonDocument.Parse(previous.Output);var value=old.RootElement;if(value.GetProperty("status").GetString()=="running"&&DateTimeOffset.UtcNow.ToUnixTimeSeconds()-value.GetProperty("updated").GetDouble()<3){status.Text=T("running");return;}}
-        var launchedAt=DateTimeOffset.UtcNow.ToUnixTimeMilliseconds()/1000.0;
-        using var child=Process.Start(Commands.Info("wsl.exe",Commands.WslCommand(distro,root,"launch"),false)) ?? throw new IOException("Cannot start WSL session");status.Text=T("working");
-        while(!child.HasExited) {
-            await Task.Delay(2000);
-            var snapshot=await Commands.Run("wsl.exe",new[]{"-d",distro,"--","cat",root+"/.runtime/desktop-session.json"});
-            if(snapshot.Code!=0)continue;
-            using var state=JsonDocument.Parse(snapshot.Output);var value=state.RootElement;
-            if(value.GetProperty("updated").GetDouble()<launchedAt)continue;
-            if(value.GetProperty("status").GetString()=="running"){status.Text=T("running");return;}
-            if(value.GetProperty("status").GetString()=="failed")throw new IOException(value.GetProperty("error").GetString());
-        }
-        if(child.ExitCode!=0)throw new IOException("Desktop session exited with code "+child.ExitCode);
-        status.Text=T("ready");
+        using var child=Process.Start(Commands.Info("wsl.exe",new[]{"-d",distro,"--cd",root,"--","bash","scripts/console"},false)) ?? throw new IOException("Cannot open the console");
     }
 }
 

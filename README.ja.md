@@ -6,12 +6,12 @@ V7RC アプリから Wi-Fi UDP で Microduck シミュレーターを操作し�
 
 ## ダウンロードと導入
 
-**現在のバージョン: `0.1.0-preview.3`** · [GitHub Release](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.3)
+**現在のバージョン: `0.1.0-preview.5`** · [GitHub Release](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.5)
 
 | プラットフォーム | インストーラー | チェックサム |
 | --- | --- | --- |
-| macOS 13+ · Apple Silicon / Intel | [MicroduckV7RC-0.1.0-preview.3-macOS-universal.dmg](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.3/MicroduckV7RC-0.1.0-preview.3-macOS-universal.dmg) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.3/MicroduckV7RC-0.1.0-preview.3-macOS-universal.dmg.sha256) |
-| Windows 11 x64 · WSL2 Ubuntu | [MicroduckV7RC-0.1.0-preview.3-Windows-x64.exe](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.3/MicroduckV7RC-0.1.0-preview.3-Windows-x64.exe) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.3/MicroduckV7RC-0.1.0-preview.3-Windows-x64.exe.sha256) |
+| macOS 13+ · Apple Silicon / Intel | [MicroduckV7RC-0.1.0-preview.5-macOS-universal.dmg](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.5/MicroduckV7RC-0.1.0-preview.5-macOS-universal.dmg) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.5/MicroduckV7RC-0.1.0-preview.5-macOS-universal.dmg.sha256) |
+| Windows 11 x64 · WSL2 Ubuntu | [MicroduckV7RC-0.1.0-preview.5-Windows-x64.exe](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.5/MicroduckV7RC-0.1.0-preview.5-Windows-x64.exe) | [SHA256](https://github.com/v7rc/microduck-v7rc/releases/download/v0.1.0-preview.5/MicroduckV7RC-0.1.0-preview.5-Windows-x64.exe.sha256) |
 
 取得したインストーラーを開き、環境を確認して導入を承認してください。完了後はデスクトップアイコンから起動できます。この Repo は公開されており、GitHub にログインせずに Release のインストーラーを取得できます。
 

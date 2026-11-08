@@ -34,7 +34,7 @@ SRT 在此作為四個原始通道的封包格式；本橋接將 CH1／CH2 解�
 
 CH3 已依手機操作回饋設定上下反相；CH4 維持左右方向。`vy`、`neck_pitch`、`head_roll` 固定為 0。頭部數值進入既有策略的命令觀測，由策略控制關節；不直接寫馬達或關節 PWM，因此實際角度不等於請求值。
 
-每軸設 8% 死區（1460–1540 視為中立）。`scripts/v7rc-bridge` 預設選用 `velstand-v8`，按方向校正前後速度及轉向命令，並在由中立開始單軸移動時暫時加大命令，再退回所選幅度。使用 `scripts/v7rc-bridge --drive-profile linear` 可重現原始線性映射。各軸可反向，例如 `scripts/v7rc-bridge --invert 1 4` 會反轉 CH1、CH4。若 APP 已反向，避免兩側重複反向。
+使用預設 PWM 設定時，CH1 轉向在 1400–1600（含端點）輸出零轉向，CH2–CH4 維持 8% 死區（1460–1540）。`scripts/v7rc-bridge` 預設選用 `velstand-v8`。從中立前進時短暫加大前進指令，再退回所選幅度。斜推起步會先建立步態，再漸入轉向；前推後才加入轉向時，起步期間也會逐步加入轉向。回中或失聯會清除起步狀態。使用 `--drive-profile linear` 可選用線性映射，兩種模式共用轉向死區。各軸可用 `--invert` 反向，例如 `--invert 1 4`。
 
 校正後的平地前後與左右轉速度，以及低幅起步時的暫時加速，見 [54 輪比例控制對照](../validation/2026-11-07-proportional-control-calibrated.md)。
 

@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Microduck V7RC 控制台</title>
+<style>
+*{box-sizing:border-box}body{font:16px/1.5 system-ui,sans-serif;color:#eaf0fa;background:#101827;margin:0}
+main{max-width:900px;margin:auto;padding:32px 20px}h1{margin:0;font-size:30px}h2{font-size:19px;margin:0 0 12px}
+p{margin:8px 0}.sub,dt{color:#b8c8dd}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+section,details{background:#1b2940;border:1px solid #405574;border-radius:10px;padding:18px}label{display:block;margin:8px 0 4px}
+button,select{background:#253a57;color:#fff;border:1px solid #627c9e;border-radius:6px;padding:8px 12px;font:inherit}
+button:not(:disabled){cursor:pointer}button:hover:not(:disabled),button:focus-visible{background:#386497}button:disabled{opacity:.5}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}select{width:100%}
+#clock{font:700 clamp(32px,7vw,56px)/1.4 ui-monospace,monospace;font-variant-numeric:tabular-nums}
+dl{margin:0}dd{margin:0 0 8px}a{color:#9fd4ff}summary{cursor:pointer}#message{min-height:1.5em;color:#fed787}
+@media(max-width:670px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main>
+<h1>Microduck V7RC 控制台</h1>
+<p class="sub">選擇場景、開始試走並記錄成績</p>
+<div class="grid">
+<section>
+<h2>場景與模擬器</h2>
+<label for="scene">場景</label><select id="scene"></select>
+<label for="mode">控制方式</label><select id="mode"><option value="udp">V7RC APP／自訂程式</option><option value="keyboard">鍵盤</option></select>
+<div class="actions"><button data-action="start">啟動</button><button data-action="stop">停止</button><button data-action="restart">回到起點</button></div>
+<p id="session">連線中</p>
+</section>
+<section>
+<h2>碼錶</h2>
+<div id="clock" role="timer">00:00.000</div>
+<div class="actions"><button data-action="timer-start">開始／繼續</button><button data-action="timer-stop">停止計時</button><button data-action="timer-reset">歸零</button></div>
+<p class="sub">回到起點時暫停碼錶並保留成績。</p>
+</section>
+<section>
+<h2>手機連線</h2>
+<dl><dt>區網 IP</dt><dd id="ip">—</dd><dt>控制</dt><dd>UDP 6188 · SRT 四通道</dd><dt>影像</dt><dd id="camera">UDP 8800</dd><dt>目前控制來源</dt><dd id="control">—</dd></dl>
+<button id="copy" type="button">複製連線資訊</button>
+</section>
+<section>
+<h2>GitHub Releases 更新</h2>
+<p id="versions">讀取版本中</p>
+<div class="actions"><button data-action="check">檢查更新</button></div>
+<div class="actions" id="updates"></div>
+<p class="sub">安裝更新前先停止模擬器。</p>
+</section>
+</div>
+<p id="message" role="status"></p>
+<details>
+<summary>操作說明</summary>
+<p><strong>鍵盤</strong>　選鍵盤模式後啟動，保持控制台在前景。W/S 前後，A/D 轉向，方向鍵調整頭部，空白鍵停車。切換到其他視窗會停止輸入。</p>
+<p><strong>V7RC APP</strong>　從 <a href="https://www.v7rc.io/" target="_blank" rel="noopener">V7RC 官方網站</a>取得 APP，填入上方 IP 與連接埠。控制模式選 SRT 四通道，影像來源選 UDP，四通道先回到 1500。</p>
+<p><strong>自訂大腦</strong>　選 V7RC APP／自訂程式模式，先送 <code>SRT1500150015001500#</code> 接管 UDP 6188。向 UDP 8800 傳送 <code>EF 00 04 00</code> 訂閱頭部影像，從同一個接收 socket 重組 FF/45 JPEG 分片。影像中斷時送中立。<a href="https://github.com/v7rc/microduck-v7rc/blob/main/docs/integration/v7rc-video-feasibility.md" target="_blank" rel="noopener">影像封包說明</a></p>
+<p><a href="/checklist" target="_blank" rel="noopener">開啟驗收清單</a></p>
+</details>
+</main>
+<script>
+const get = id => document.getElementById(id);
+const token = location.hash.slice(1);
+const headers = {'X-Microduck-Token': token, 'Content-Type': 'application/json'};
+const sessionLabels = {running:'模擬器就緒', starting:'啟動中', stopped:'已停止', failed:'啟動失敗'};
+const kinds = {program:'程式', scenes:'場景包', model:'ONNX 模型', control:'控制設定'};
+const keys = new Set();
+let snapshot, busy = false, ticking = false, lastClock = 0, receivedAt = performance.now(), sending = false;
+
+async function request(path, data) {
+  const response = await fetch(path, data === undefined ? {headers} : {method:'POST', headers, body:JSON.stringify(data)});
+  const result = await response.json();
+  if (!response.ok) throw Error(result.error || response.statusText);
+  return result;
+}
+
+function render() {
+  const state = snapshot;
+  const scene = get('scene');
+  const signature = JSON.stringify(state.scenes);
+  if (scene.dataset.catalog !== signature) {
+    const previous = scene.value || state.session.scene || 'free';
+    scene.replaceChildren(...Object.entries(state.scenes).map(([key, label]) => new Option(label, key)));
+    if (state.scenes[previous]) scene.value = previous;
+    scene.dataset.catalog = signature;
+  }
+  const status = state.session.status || 'stopped';
+  const active = status === 'running' || status === 'starting';
+  get('session').textContent = sessionLabels[status] + (state.session.error ? ' · ' + state.session.error : '');
+  get('ip').textContent = state.ip || '—';
+  get('control').textContent = state.control ? (state.session.keyboard ? '鍵盤' : state.control) : '等待輸入';
+  get('camera').textContent = 'UDP 8800 · ' + (state.camera ? '已訂閱 · 主機送出 ' + state.fps + ' FPS' : '等待訂閱');
+  get('versions').textContent = Object.entries(kinds).map(([key,label]) => label + ' ' + state.versions[key]).join(' · ') +
+    (active ? ' · 執行中模型 ' + (state.session.model || 'bundled') : '');
+  const updates = get('updates');
+  const updateSignature = JSON.stringify([state.updates, active, busy]);
+  if (updates.dataset.state !== updateSignature) {
+    updates.replaceChildren(...Object.entries(state.updates).map(([key, version]) => {
+      const button = document.createElement('button');
+      button.textContent = '更新' + kinds[key] + ' ' + version;
+      button.disabled = active || busy;
+      button.onclick = () => action('install', {kind:key});
+      return button;
+    }));
+    updates.dataset.state = updateSignature;
+  }
+  for (const button of document.querySelectorAll('[data-action]')) {
+    button.disabled = busy || (button.dataset.action === 'start' && active) ||
+      (['stop','restart'].includes(button.dataset.action) && !active);
+  }
+}
+
+async function poll() {
+  try {
+    snapshot = await request('/state');
+    lastClock = snapshot.timer_ms;
+    ticking = snapshot.timer_running;
+    receivedAt = performance.now();
+    render();
+  } catch (error) {
+    snapshot = undefined;
+    ticking = false;
+    get('session').textContent = '控制台連線中斷';
+  }
+}
+
+async function action(name, extra = {}) {
+  if (busy) return;
+  busy = true;
+  if (snapshot) render();
+  get('message').textContent = '處理中…';
+  try {
+    const result = await request('/' + name, {scene:get('scene').value, keyboard:get('mode').value === 'keyboard', ...extra});
+    get('message').textContent = result.message || '';
+  } catch (error) {
+    get('message').textContent = error.message;
+  } finally {
+    busy = false;
+    await poll();
+  }
+}
+
+for (const button of document.querySelectorAll('[data-action]')) button.onclick = () => action(button.dataset.action);
+get('copy').onclick = async () => {
+  await navigator.clipboard.writeText(get('ip').textContent + '\nUDP 控制 6188\nUDP 影像 8800');
+  get('message').textContent = '已複製連線資訊。';
+};
+
+function isKeyboard() { return snapshot?.session.status === 'running' && snapshot.session.keyboard; }
+function keyEvent(event) {
+  const key = event.key.length === 1 ? event.key.toLowerCase() : event.key;
+  if (!isKeyboard() || !['w','a','s','d',' ','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(key)) return;
+  if (event.target.closest('button,select,summary,a') && key !== ' ') return;
+  event.preventDefault();
+  if (event.type === 'keydown') keys.add(key); else keys.delete(key);
+}
+addEventListener('keydown', keyEvent);
+addEventListener('keyup', keyEvent);
+addEventListener('blur', () => keys.clear());
+setInterval(async () => {
+  if (!isKeyboard() || !document.hasFocus() || sending) return;
+  sending = true;
+  try { await request('/keyboard', {keys:[...keys]}); } catch (error) { keys.clear(); }
+  finally { sending = false; }
+}, 80);
+
+function displayClock(now) {
+  const ms = Math.max(0, Math.floor(lastClock + (ticking ? now - receivedAt : 0)));
+  const pad = (n, width) => String(n).padStart(width, '0');
+  get('clock').textContent = pad(Math.floor(ms / 60000), 2) + ':' +
+    pad(Math.floor(ms / 1000) % 60, 2) + '.' + pad(ms % 1000, 3);
+  requestAnimationFrame(displayClock);
+}
+requestAnimationFrame(displayClock);
+(async function refresh() { await poll(); setTimeout(refresh, 300); })();
+</script>
+</body>
+</html>

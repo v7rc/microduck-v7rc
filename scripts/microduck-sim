@@ -30,6 +30,9 @@ if [ "${1:-}" = serve ]; then
     fi
     trap '"$ROOT/microduck/scripts/duck-sim" down; exit 0' INT TERM
     "$ROOT/microduck/scripts/duck-sim" "$@"
+    if [ -n "${MICRODUCK_DESKTOP_READY_FILE:-}" ]; then
+        touch "$MICRODUCK_DESKTOP_READY_FILE"
+    fi
     while [ -f "$DUCK_SIM_STATE/body.pid" ] && kill -0 "$(cat "$DUCK_SIM_STATE/body.pid")" 2>/dev/null; do
         sleep 2
     done

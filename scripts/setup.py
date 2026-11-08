@@ -29,8 +29,8 @@ def prepare_upstream(name, revision):
     head = subprocess.check_output(['git', '-C', str(target), 'rev-parse', 'HEAD'], text=True).strip()
     if head != revision['commit']:
         raise RuntimeError(f'{name} is at {head}, expected {revision["commit"]}; refusing to reset your checkout')
-    patch = revision.get('patch')
-    if patch:
+    patches = [revision['patch']] if 'patch' in revision else []
+    for patch in patches + revision.get('patches', []):
         patch = ROOT/patch
         applied = subprocess.run(['git', '-C', str(target), 'apply', '--reverse', '--check', str(patch)], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL).returncode == 0
         if not applied:

@@ -3,13 +3,27 @@ from pathlib import Path
 import sys
 import tempfile
 import unittest
+from unittest.mock import Mock
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]/'bridge'))
-from microduck_hud import snapshot, sticks, camera_snapshot
+from microduck_hud import HudViewer, snapshot, sticks, camera_snapshot
 from v7rc_udp import Config, InputState
 
 
 class HudTests(unittest.TestCase):
+    def test_stopped_stopwatch_is_drawn_with_milliseconds(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            (root / 'stopwatch.json').write_text(json.dumps({'elapsed_ns': 127_045_000_000, 'started_ns': None}))
+            viewer = Mock()
+            viewer.viewport = Mock(width=640, height=480, left=0, bottom=0)
+            hud = HudViewer(viewer, root / 'v7rc-input.json')
+            hud.next_ip = float('inf')
+            hud.logged_viewport = True
+            hud.sync()
+            right = viewer.set_texts.call_args.args[0][1][2]
+            self.assertIn('TIME  02:07.045', right)
+
     def test_camera_on_requires_live_subscription_and_publisher(self):
         with tempfile.TemporaryDirectory() as folder:
             path=Path(folder)/'video.json'

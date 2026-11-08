@@ -62,16 +62,46 @@ class ProtocolTests(unittest.TestCase):
         self.assertEqual(start.apply(neutral, center, cfg, 21), neutral)
         self.assertAlmostEqual(start.apply(move, channels, cfg, 22)["vx"], .3)
 
-    def test_calibrated_reversal_and_mixed_input_do_not_trigger_boost(self):
+    def test_turn_deadzone_is_inclusive_and_keeps_forward_input(self):
+        for profile in ("linear", "velstand-v8"):
+            cfg = Config(drive_profile=profile)
+            for steering in (1400, 1425, 1500, 1575, 1600):
+                move, _ = map_channels((steering, 1575, 1500, 1500), cfg)
+                self.assertEqual(move["vyaw"], 0)
+                self.assertGreater(move["vx"], 0)
+            self.assertGreater(map_channels((1399, 1500, 1500, 1500), cfg)[0]["vyaw"], 0)
+            self.assertLess(map_channels((1601, 1500, 1500, 1500), cfg)[0]["vyaw"], 0)
+
+    def test_diagonal_assist_ramps_then_settles_and_reversal_cancels_it(self):
+        cfg = Config(drive_profile="velstand-v8")
+        start = GaitStart()
+        mixed = (1625, 1625, 1500, 1500)
+        move, _ = map_channels(mixed, cfg)
+        first = start.apply(move, mixed, cfg, 10)
+        self.assertEqual(first["vx"], move["vx"])
+        self.assertEqual(first["vyaw"], 0)
+        rising = start.apply(move, mixed, cfg, 10.15)
+        self.assertGreater(rising["vx"], move["vx"])
+        self.assertTrue(move["vyaw"] < rising["vyaw"] < 0)
+        self.assertEqual(start.apply(move, mixed, cfg, 11), move)
+
+        start.reset()
+        start.apply(move, mixed, cfg, 12)
+        reverse = (1625, 1375, 1500, 1500)
+        reverse_move, _ = map_channels(reverse, cfg)
+        self.assertEqual(start.apply(reverse_move, reverse, cfg, 12.1), reverse_move)
+        self.assertEqual(start.apply(move, mixed, cfg, 12.2), move)
+
+    def test_steering_added_during_forward_start_ramps_from_entry(self):
         cfg = Config(drive_profile="velstand-v8")
         start = GaitStart()
         forward = (1500, 1625, 1500, 1500)
-        backward = (1500, 1375, 1500, 1500)
-        mixed = (1625, 1625, 1500, 1500)
+        diagonal = (1375, 1625, 1500, 1500)
         start.apply(map_channels(forward, cfg)[0], forward, cfg, 10)
-        for now, channels in [(10.1, backward), (10.2, mixed), (10.3, forward)]:
-            move, _ = map_channels(channels, cfg)
-            self.assertEqual(start.apply(move, channels, cfg, now), move)
+        move = map_channels(diagonal, cfg)[0]
+        self.assertEqual(start.apply(move, diagonal, cfg, 10.2)["vyaw"], 0)
+        self.assertGreater(start.apply(move, diagonal, cfg, 10.4)["vyaw"], 0)
+        self.assertEqual(start.apply(move, diagonal, cfg, 11), move)
 
     def test_ch3_pitch_and_ch4_yaw_are_independent(self):
         move, head = map_channels((1500, 1500, 2000, 1500), Config())

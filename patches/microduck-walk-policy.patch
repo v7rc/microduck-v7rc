@@ -1,0 +1,12 @@
+diff --git a/scripts/duck-sim b/scripts/duck-sim
+--- a/scripts/duck-sim
++++ b/scripts/duck-sim
+@@ -251,7 +251,7 @@
+ # A robot's own defaults (deploy/robotd.toml): velstand walks and stands, and there is no separate
+ # standing network. alpha_walking with alpha_stand is the pre-v5 pair, and it does not walk in
+ # MuJoCo at all — commanded 0.15 m/s, it stands, in this simulator's own inference script too.
+-walk = "$POLICIES/velstand.onnx"
++walk = "${DUCK_SIM_WALK_POLICY:-$POLICIES/velstand.onnx}"
+ stand = "none"
+ sitstand = "$POLICIES/alpha_sitstand.onnx"
+ ground_pick = "$POLICIES/alpha_ground_pick.onnx"

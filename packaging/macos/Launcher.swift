@@ -13,7 +13,7 @@ func command(_ executable: String, _ arguments: [String]) -> (Int32,String) {
 
 final class Launcher: NSObject, NSApplicationDelegate {
     var window:NSWindow!;var text:NSTextView!;var status:NSTextField!;var language:NSPopUpButton!
-    var buttons:[String:NSButton]=[:];var selected="en";var timer:Timer?;var installing=false;var starting=false;var launchAt:TimeInterval=0
+    var buttons:[String:NSButton]=[:];var selected="en";var timer:Timer?;var installing=false
     let fm=FileManager.default
     let resources=Bundle.main.resourceURL!
     lazy var version=String(data:try! Data(contentsOf:resources.appendingPathComponent("version.txt")),encoding:.utf8)!.trimmingCharacters(in:.whitespacesAndNewlines)
@@ -96,13 +96,11 @@ final class Launcher: NSObject, NSApplicationDelegate {
     }
     func launch(){
         guard ready() else{refresh();return}
-        let session=json(root.appendingPathComponent(".runtime/desktop-session.json"))
-        if session["status"] as? String == "running" && Date().timeIntervalSince1970-(session["updated"] as? Double ?? 0)<3 {status.stringValue=t("running");return}
         let result=command("/usr/bin/python3",[root.appendingPathComponent("scripts/verify-installation.py").path]);guard result.0==0 else{error(result.1);return}
         do {
             let file=support.appendingPathComponent("launch-\(version).command")
-            try ("#!/bin/bash\ncd "+shellQuote(root.path)+"\nexec scripts/desktop\n").write(to:file,atomically:true,encoding:.utf8)
-            try fm.setAttributes([.posixPermissions:0o755],ofItemAtPath:file.path);starting=true;launchAt=Date().timeIntervalSince1970;status.stringValue=t("working");openTerminal(file)
+            try ("#!/bin/bash\ncd "+shellQuote(root.path)+"\nexec scripts/console\n").write(to:file,atomically:true,encoding:.utf8)
+            try fm.setAttributes([.posixPermissions:0o755],ofItemAtPath:file.path);openTerminal(file)
         } catch {self.error(error.localizedDescription)}
     }
     func poll(){
@@ -110,7 +108,6 @@ final class Launcher: NSObject, NSApplicationDelegate {
             if state=="complete" {installing=false;refresh();if ready(){do{try finishIcons();status.stringValue=t("complete")}catch{self.error(error.localizedDescription)}}else{error(t("failed"))}}
             else if state=="failed" {installing=false;refresh();status.stringValue=t("failed")}
         }
-        if starting {let state=json(root.appendingPathComponent(".runtime/desktop-session.json"));guard (state["updated"] as? Double ?? 0) >= launchAt else {return};if state["status"] as? String == "running" {status.stringValue=t("running");starting=false}else if state["status"] as? String == "failed" {starting=false;error(state["error"] as? String ?? t("failed"))}}
     }
     func applicationShouldTerminateAfterLastWindowClosed(_ sender:NSApplication)->Bool{true}
 }
