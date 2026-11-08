@@ -16,7 +16,7 @@ def sources():
     files=[]
     for folder in ['bridge','scripts','patches','windows']:
         files.extend(p for p in (ROOT/folder).rglob('*') if p.is_file() and '__pycache__' not in p.parts and not p.is_symlink())
-    files += [ROOT/'upstream-revisions.json',ROOT/'README.md',*ROOT.glob('README.*.md'),ROOT/'docs/how-to.html',*ROOT.glob('docs/INSTALL.*.md')]
+    files += [ROOT/'scenes/maze.xml',ROOT/'upstream-revisions.json',ROOT/'README.md',*ROOT.glob('README.*.md'),ROOT/'docs/how-to.html',*ROOT.glob('docs/INSTALL.*.md')]
     return sorted(set(files))
 
 

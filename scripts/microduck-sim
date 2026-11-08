@@ -24,6 +24,10 @@ if [ "${1:-}" = serve ]; then
     # Keep a foreground owner alive: task runners may reap detached children when the
     # startup command exits. Ctrl-C stops only this simulator's pidfile-owned processes.
     shift
+    if [ "${1:-}" = --maze ]; then
+        export DUCK_SIM_SCENE="$SHORT/scenes/maze.xml"
+        shift
+    fi
     trap '"$ROOT/microduck/scripts/duck-sim" down; exit 0' INT TERM
     "$ROOT/microduck/scripts/duck-sim" "$@"
     while [ -f "$DUCK_SIM_STATE/body.pid" ] && kill -0 "$(cat "$DUCK_SIM_STATE/body.pid")" 2>/dev/null; do

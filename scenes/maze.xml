@@ -1,0 +1,42 @@
+<mujoco model="microduck_maze">
+    <include file="../microduck_rl/src/mjlab_microduck/robot/microduck/scene_backlash.xml" />
+    <compiler meshdir="../microduck_rl/src/mjlab_microduck/robot/microduck/assets" />
+
+    <default>
+        <default class="maze_obstacle">
+            <geom type="box" contype="3" conaffinity="3" rgba="0.23 0.43 0.56 1" />
+        </default>
+        <default class="maze_marker">
+            <geom type="box" contype="0" conaffinity="0" />
+        </default>
+    </default>
+
+    <worldbody>
+        <!-- The duck spawns at (0, 0), facing +X. Follow +X, +Y, +X, -Y, +X.
+             Wall centers trace the course perimeter; all dimensions are in meters. -->
+        <geom name="maze_start_back" class="maze_obstacle" pos="-0.55 0 0.18" size="0.025 0.525 0.18" />
+        <geom name="maze_start_right" class="maze_obstacle" pos="1.10 -0.50 0.18" size="1.675 0.025 0.18" />
+        <geom name="maze_start_left" class="maze_obstacle" pos="0.40 0.50 0.18" size="0.975 0.025 0.18" />
+        <geom name="maze_first_outer" class="maze_obstacle" pos="1.35 1.175 0.18" size="0.025 0.70 0.18" />
+        <geom name="maze_top" class="maze_obstacle" pos="2.70 1.85 0.18" size="1.375 0.025 0.18" />
+        <geom name="maze_second_outer" class="maze_obstacle" pos="4.05 1.175 0.18" size="0.025 0.70 0.18" />
+        <geom name="maze_first_inner" class="maze_obstacle" pos="2.35 0.675 0.18" size="0.025 0.20 0.18" />
+        <geom name="maze_middle_inner" class="maze_obstacle" pos="2.70 0.85 0.18" size="0.375 0.025 0.18" />
+        <geom name="maze_second_inner" class="maze_obstacle" pos="3.05 0.175 0.18" size="0.025 0.70 0.18" />
+        <geom name="maze_finish_right" class="maze_obstacle" pos="4.20 -0.50 0.18" size="1.175 0.025 0.18" />
+        <geom name="maze_finish_left" class="maze_obstacle" pos="4.70 0.50 0.18" size="0.675 0.025 0.18" />
+        <geom name="maze_finish_end" class="maze_obstacle" pos="5.35 0 0.18" size="0.025 0.525 0.18" />
+
+        <!-- Continuing straight instead of making the first left leads to a dead end. -->
+        <geom name="maze_dead_end_side" class="maze_obstacle" pos="2.55 0.50 0.18" size="0.225 0.025 0.18" />
+        <geom name="maze_dead_end_cap" class="maze_obstacle" pos="2.75 0 0.18" size="0.025 0.525 0.18" rgba="0.67 0.24 0.18 1" />
+
+        <geom name="maze_crate" class="maze_obstacle" pos="4.55 0.26 0.09" size="0.12 0.14 0.09" rgba="0.83 0.43 0.13 1" />
+
+        <!-- The floor stripe and green gate are visual markers. -->
+        <geom name="maze_finish_line" class="maze_marker" pos="4.94 0 0.001" size="0.045 0.47 0.001" rgba="0.24 0.95 0.37 1" />
+        <geom name="maze_gate_left" class="maze_marker" pos="4.94 0.43 0.18" size="0.035 0.035 0.18" rgba="0.24 0.95 0.37 1" />
+        <geom name="maze_gate_right" class="maze_marker" pos="4.94 -0.43 0.18" size="0.035 0.035 0.18" rgba="0.24 0.95 0.37 1" />
+        <geom name="maze_gate_top" class="maze_marker" pos="4.94 0 0.36" size="0.035 0.465 0.035" rgba="0.24 0.95 0.37 1" />
+    </worldbody>
+</mujoco>
