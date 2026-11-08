@@ -18,6 +18,13 @@ Microduck は左下のオレンジ色の START マスから出発し、右上の
 
 [シーンの更新](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.10) · [製作寸法と壁の座標（繁体字中国語）](docs/microduck/grid-maze-build.md)
 
+## ライセンスと商用利用
+
+- MuJoCo エンジンは Apache-2.0 で、商用利用が可能です。現行のインストーラーはセットアップ時に MuJoCo を取得します。MuJoCo を再梱包または再配布する場合は、ライセンス全文を同梱し、該当する第三者の告知を保持してください。 [MuJoCo LICENSE](https://raw.githubusercontent.com/google-deepmind/mujoco/3.10.0/LICENSE)
+- Pollen Robotics が指定する Microduck の STL メッシュは CC BY-NC-SA 4.0 です。商用利用するには別途許諾を得るか、商用利用が許可された素材に差し替えてください。 [LICENSE-MODELS.md](https://github.com/pollen-robotics/microduck_rl/blob/bae39f5900b318f7e87fc485c30a31213cfa14eb/LICENSE-MODELS.md)
+- セットアップ時に取得する公式 ONNX 方策の重み microduck-policies v8 は、配布元で Apache-2.0 と表示されています。その他の重みには各配布元のライセンスが適用されます。 [microduck-policies v8](https://huggingface.co/pollen-robotics/microduck-policies/tree/v8)
+- このリポジトリ独自の統合コードとシーンの正式なライセンスは未定です。第三者のライセンスは、それぞれが対象とする内容に適用されます。
+
 ## ダウンロードと導入
 
 **現在のバージョン: `0.1.0-preview.8`** · [GitHub Release](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.8)
@@ -65,7 +72,7 @@ bridge/ は操作・カメラ・HUD・共通処理、scripts/ は導入と起動
 
 ## 既知の制限
 
-受信側 iPhone 自身がインターネット共有を提供する構成ではカメラ購読が届かず、共通 Wi-Fi では映像表示を確認済みです。低速歩行、速度追従、直進精度には上流の制限があります。UDP 受信だけで動作精度は保証できません。CAMERA ON と TX FRAMES は購読と PC の送信を示し、アプリ表示は別途確認します。モデルのライセンスは上流 LICENSE-MODELS.md（CC BY-NC-SA 4.0 を含む）を確認してください。
+受信側 iPhone 自身がインターネット共有を提供する構成ではカメラ購読が届かず、共通 Wi-Fi では映像表示を確認済みです。低速歩行、速度追従、直進精度には上流の制限があります。UDP 受信だけで動作精度は保証できません。CAMERA ON と TX FRAMES は購読と PC の送信を示し、アプリ表示は別途確認します。
 
 ## 資料とテスト
 

@@ -18,6 +18,13 @@ Microduck 从左下角橙色 START 格出发，右上角橙色 END 格是终点�
 
 [场景更新](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.10) · [施工尺寸与墙段坐标（繁体中文）](docs/microduck/grid-maze-build.md)
 
+## 授权与商用
+
+- MuJoCo 引擎采用 Apache-2.0，允许商用。现有安装程序在安装时下载 MuJoCo。如果重新打包或分发 MuJoCo，应附上许可证全文并保留适用的第三方声明。 [MuJoCo LICENSE](https://raw.githubusercontent.com/google-deepmind/mujoco/3.10.0/LICENSE)
+- Pollen Robotics 指定的 Microduck STL 网格采用 CC BY-NC-SA 4.0。商用这些网格须另行取得相应授权，或使用具有商用许可的替代素材。 [LICENSE-MODELS.md](https://github.com/pollen-robotics/microduck_rl/blob/bae39f5900b318f7e87fc485c30a31213cfa14eb/LICENSE-MODELS.md)
+- 安装时下载的官方 ONNX 策略权重 microduck-policies v8 在上游标注为 Apache-2.0。其他权重遵循各自的许可。 [microduck-policies v8](https://huggingface.co/pollen-robotics/microduck-policies/tree/v8)
+- 本仓库自有集成代码和场景的正式许可证尚待确定。第三方许可仅适用于各自涵盖的内容。
+
 ## 下载与安装
 
 **当前版本: `0.1.0-preview.8`** · [GitHub Release](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.8)
@@ -65,7 +72,7 @@ bridge/ 包含控制、相机、HUD 和平台公共程序；scripts/ 包含安�
 
 ## 已知限制
 
-个人热点模式曾无法收到 iOS 相机订阅；同一 Wi-Fi 下已验收正常。低速步行、速度跟踪和直线精度有上游限制，不能以收到 UDP 推断动作精度。CAMERA ON 和 TX FRAMES 表示订阅有效／主机发送，仍须实际确认 APP 显示。模型许可证请阅读上游 LICENSE-MODELS.md（含 CC BY-NC-SA 4.0）。
+个人热点模式曾无法收到 iOS 相机订阅；同一 Wi-Fi 下已验收正常。低速步行、速度跟踪和直线精度有上游限制，不能以收到 UDP 推断动作精度。CAMERA ON 和 TX FRAMES 表示订阅有效／主机发送，仍须实际确认 APP 显示。
 
 ## 文档与测试
 

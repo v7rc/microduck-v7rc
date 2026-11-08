@@ -20,6 +20,13 @@ Microduck 從左下角橘色 START 格出發，右上角橘色 END 格是終點�
 
 [場景更新](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.10) · [施工尺寸與牆段座標（繁中）](docs/microduck/grid-maze-build.md)
 
+## 授權與商用
+
+- MuJoCo 引擎採 Apache-2.0，允許商用。現有安裝器在安裝時下載 MuJoCo。如果重新封裝或散布 MuJoCo，應隨附授權全文並保留適用的第三方聲明。 [MuJoCo LICENSE](https://raw.githubusercontent.com/google-deepmind/mujoco/3.10.0/LICENSE)
+- Pollen Robotics 指定的 Microduck STL 網格採 CC BY-NC-SA 4.0。商用這些網格須另取得相應授權，或改用具商用授權的素材。 [LICENSE-MODELS.md](https://github.com/pollen-robotics/microduck_rl/blob/bae39f5900b318f7e87fc485c30a31213cfa14eb/LICENSE-MODELS.md)
+- 安裝時下載的官方 ONNX 策略權重 microduck-policies v8 在上游標示為 Apache-2.0。其他權重依各自的授權。 [microduck-policies v8](https://huggingface.co/pollen-robotics/microduck-policies/tree/v8)
+- 本 Repo 自有整合程式與場景的正式授權尚待決定。第三方授權只適用於各自涵蓋的內容。
+
 ## 下載與安裝
 
 **目前版本: `0.1.0-preview.8`** · [GitHub Release](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.8)
@@ -67,7 +74,7 @@ bridge/ 為控制、相機、HUD 與平台共用程式；scripts/ 為安裝及�
 
 ## 已知限制
 
-個人熱點模式曾收不到 iOS 相機訂閱；同一 Wi-Fi 下已驗收正常。低速步行、速度追蹤及直線精度有上游限制，不能以收到 UDP 推定動作精度。CAMERA ON 與 TX FRAMES 代表訂閱有效／主機送出，仍須實際確認 APP 顯示。模型授權請閱讀上游 LICENSE-MODELS.md（含 CC BY-NC-SA 4.0）。
+個人熱點模式曾收不到 iOS 相機訂閱；同一 Wi-Fi 下已驗收正常。低速步行、速度追蹤及直線精度有上游限制，不能以收到 UDP 推定動作精度。CAMERA ON 與 TX FRAMES 代表訂閱有效／主機送出，仍須實際確認 APP 顯示。
 
 ## 文件與測試
 

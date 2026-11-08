@@ -16,7 +16,7 @@ D = {
  'settings':'APP 設定與通道', 'ip':'IP 使用目前的 LAN IPv4，不使用固定範例 IP。控制：Wi-Fi UDP／SRT／6188；相機：UDP／8800。1234 是電腦的影像送出來源 Port，不是 APP 設定的目的 Port。',
  'channels':'CH1 左右轉向；CH2 前後；CH3 頭部上下（反相）；CH4 頭部左右。範圍 1000–2000，中立 1500。啟動、失聯或重連後，四通道先回中才會重新啟用控制。',
  'structure':'原始碼與上游', 'deps':'bridge/ 為控制、相機、HUD 與平台共用程式；scripts/ 為安裝及啟動；windows/ 為 WSL 啟動器；tests/ 為測試。upstream-revisions.json 固定上游 commit。上游 Repo、.venv、.tools、.runtime 均不提交；本機依賴可以是 Repo 內的 clone 或連到既有環境的 symlink。上游 runtime 只有兩行啟動補丁；不修改模擬物理或行走策略。',
- 'limits':'已知限制', 'limittext':'個人熱點模式曾收不到 iOS 相機訂閱；同一 Wi-Fi 下已驗收正常。低速步行、速度追蹤及直線精度有上游限制，不能以收到 UDP 推定動作精度。CAMERA ON 與 TX FRAMES 代表訂閱有效／主機送出，仍須實際確認 APP 顯示。模型授權請閱讀上游 LICENSE-MODELS.md（含 CC BY-NC-SA 4.0）。',
+ 'limits':'已知限制', 'limittext':'個人熱點模式曾收不到 iOS 相機訂閱；同一 Wi-Fi 下已驗收正常。低速步行、速度追蹤及直線精度有上游限制，不能以收到 UDP 推定動作精度。CAMERA ON 與 TX FRAMES 代表訂閱有效／主機送出，仍須實際確認 APP 顯示。',
  'links':'文件與測試', 'prereq':'前置條件', 'prereqtext':'建議 Ubuntu 24.04 桌面／WSL2 Ubuntu-24.04；Linux x86_64 或 aarch64。需 Git、curl、C/C++ 工具鏈、CMake、pkg-config、OpenSSL／udev／ALSA 開發套件與 OpenGL／EGL。桌面需要可用的圖形驅動與 DISPLAY／Wayland；無視窗運算仍須依相機需求配置 EGL。這是單機模擬與推論安裝，不是 GPU 訓練環境。',
  'linux':'Linux 安裝', 'apt':'以下系統套件安裝需管理員權限；setup 不會自行執行 sudo，也不會調整防火牆。',
  'clone':'從空環境取得整合 Repo', 'setuptext':'setup 下載專案內 uv 0.13.7、Rust 1.94.1 與 Python 3.12.16，依版本清單 clone 上游並套用補丁，再以上游 uv.lock 安裝依賴。第一次下載與 Rust 編譯可能需較長時間及數 GB 空間。若現有上游 HEAD 不符會停止，不會 reset、覆寫使用者變更或停止其他專案。首次啟動會下載官方策略；網路需能存取 GitHub、Rust、PyPI 與 Hugging Face。',
@@ -47,7 +47,7 @@ D = {
  'settings':'APP 设置与通道', 'ip':'IP 使用当前 LAN IPv4，不使用固定示例 IP。控制：Wi-Fi UDP／SRT／6188；相机：UDP／8800。1234 是电脑发送图像的源 Port，不是 APP 设置的目标 Port。',
  'channels':'CH1 左右转向；CH2 前后；CH3 头部上下（反相）；CH4 头部左右。范围 1000–2000，中立 1500。启动、失联或重连后，四通道先回中才能重新启用控制。',
  'structure':'源代码与上游', 'deps':'bridge/ 包含控制、相机、HUD 和平台公共程序；scripts/ 包含安装和启动；windows/ 包含 WSL 启动器；tests/ 包含测试。upstream-revisions.json 固定上游 commit。上游 Repo、.venv、.tools、.runtime 均不提交；本机依赖可为 Repo 内 clone 或指向现有环境的 symlink。上游 runtime 只有两行启动补丁，不修改模拟物理或行走策略。',
- 'limits':'已知限制', 'limittext':'个人热点模式曾无法收到 iOS 相机订阅；同一 Wi-Fi 下已验收正常。低速步行、速度跟踪和直线精度有上游限制，不能以收到 UDP 推断动作精度。CAMERA ON 和 TX FRAMES 表示订阅有效／主机发送，仍须实际确认 APP 显示。模型许可证请阅读上游 LICENSE-MODELS.md（含 CC BY-NC-SA 4.0）。',
+ 'limits':'已知限制', 'limittext':'个人热点模式曾无法收到 iOS 相机订阅；同一 Wi-Fi 下已验收正常。低速步行、速度跟踪和直线精度有上游限制，不能以收到 UDP 推断动作精度。CAMERA ON 和 TX FRAMES 表示订阅有效／主机发送，仍须实际确认 APP 显示。',
  'links':'文档与测试', 'prereq':'前置条件', 'prereqtext':'建议 Ubuntu 24.04 桌面／WSL2 Ubuntu-24.04；Linux x86_64 或 aarch64。需要 Git、curl、C/C++ 工具链、CMake、pkg-config、OpenSSL／udev／ALSA 开发包及 OpenGL／EGL。桌面需要可用的图形驱动和 DISPLAY／Wayland；无窗口计算仍须按相机需求配置 EGL。本安装用于单机模拟与推理，并非 GPU 训练环境。',
  'linux':'Linux 安装', 'apt':'以下系统软件包安装需要管理员权限；setup 不会自行执行 sudo，也不会调整防火墙。',
  'clone':'从新环境获取集成 Repo', 'setuptext':'setup 下载项目内 uv 0.13.7、Rust 1.94.1 和 Python 3.12.16，按版本清单 clone 上游并应用补丁，再按上游 uv.lock 安装依赖。首次下载和 Rust 编译可能耗时较长并占用数 GB。现有上游 HEAD 不匹配时会停止，不会 reset、覆盖用户修改或停止其他项目。首次启动会下载官方策略；网络需能访问 GitHub、Rust、PyPI 和 Hugging Face。',
@@ -78,7 +78,7 @@ D = {
  'settings':'App settings and channels', 'ip':'Use the current LAN IPv4 address, not a fixed example address. Control: Wi-Fi UDP / SRT / 6188. Camera: UDP / 8800. Port 1234 is the computer’s outgoing video source port, not the camera destination configured in the app.',
  'channels':'CH1 steering; CH2 forward/reverse; CH3 head pitch (inverted); CH4 head yaw. Range 1000–2000, neutral 1500. All four channels must return to neutral after startup, timeout or reconnection before control is armed again.',
  'structure':'Source and upstream projects', 'deps':'bridge/ contains control, camera, HUD and platform helpers; scripts/ contains setup and launch commands; windows/ contains the WSL frontend; tests/ contains checks. upstream-revisions.json pins upstream commits. Upstream repositories, .venv, .tools and .runtime are excluded from Git. Dependencies may be local clones or symlinks to existing checkouts. Only two upstream runtime launch lines are patched; physics and walking policies are unchanged.',
- 'limits':'Known limitations', 'limittext':'iOS camera subscriptions failed when the same iPhone provided Personal Hotspot; video passed on a shared Wi-Fi router. Low-speed walking, velocity tracking and straight-line accuracy have upstream limitations. Receiving UDP does not establish motion accuracy. CAMERA ON and TX FRAMES indicate an active subscription and host transmission; confirm the app display separately. Read upstream LICENSE-MODELS.md for model licensing, including CC BY-NC-SA 4.0.',
+ 'limits':'Known limitations', 'limittext':'iOS camera subscriptions failed when the same iPhone provided Personal Hotspot; video passed on a shared Wi-Fi router. Low-speed walking, velocity tracking and straight-line accuracy have upstream limitations. Receiving UDP does not establish motion accuracy. CAMERA ON and TX FRAMES indicate an active subscription and host transmission; confirm the app display separately.',
  'links':'Guides and tests', 'prereq':'Prerequisites', 'prereqtext':'Recommended target: Ubuntu 24.04 desktop or WSL2 Ubuntu-24.04; Linux x86_64 or aarch64. Requires Git, curl, a C/C++ toolchain, CMake, pkg-config, OpenSSL/udev/ALSA development packages and OpenGL/EGL. Desktop use requires graphics drivers and DISPLAY/Wayland. Headless camera rendering requires a working EGL configuration. This installs single-robot simulation and inference, not a GPU training environment.',
  'linux':'Linux installation', 'apt':'Install these system packages with administrator privileges. The setup program does not run sudo or modify firewall settings.',
  'clone':'Get the integration repository', 'setuptext':'Setup installs project-local uv 0.13.7, Rust 1.94.1 and Python 3.12.16, checks out the upstream commits, applies the launch patch and installs dependencies using the upstream uv.lock. Initial downloads and Rust compilation may take time and several GB. A mismatched existing upstream HEAD stops setup; it never resets a checkout, overwrites user work or stops another project. The first simulator launch downloads official policies. Allow network access to GitHub, Rust, PyPI and Hugging Face.',
@@ -109,7 +109,7 @@ D = {
  'settings':'アプリ設定とチャンネル', 'ip':'固定のサンプル IP ではなく現在の LAN IPv4 を使用します。操作は Wi-Fi UDP／SRT／6188、カメラは UDP／8800 です。1234 は PC の映像送信元 Port で、アプリに設定する宛先 Port ではありません。',
  'channels':'CH1 は旋回、CH2 は前後、CH3 は頭部上下（反転）、CH4 は頭部左右です。範囲 1000–2000、中立 1500。起動、通信断、再接続後は全 4 チャンネルを中立に戻すまで操作を再開しません。',
  'structure':'ソースと上流プロジェクト', 'deps':'bridge/ は操作・カメラ・HUD・共通処理、scripts/ は導入と起動、windows/ は WSL フロントエンド、tests/ は試験です。upstream-revisions.json で上流 commit を固定します。上流 Repo、.venv、.tools、.runtime は Git に含めません。依存先は Repo 内の clone または既存環境への symlink です。上流 runtime の起動部分 2 行のみを変更し、物理モデルや歩行方策は変更しません。',
- 'limits':'既知の制限', 'limittext':'受信側 iPhone 自身がインターネット共有を提供する構成ではカメラ購読が届かず、共通 Wi-Fi では映像表示を確認済みです。低速歩行、速度追従、直進精度には上流の制限があります。UDP 受信だけで動作精度は保証できません。CAMERA ON と TX FRAMES は購読と PC の送信を示し、アプリ表示は別途確認します。モデルのライセンスは上流 LICENSE-MODELS.md（CC BY-NC-SA 4.0 を含む）を確認してください。',
+ 'limits':'既知の制限', 'limittext':'受信側 iPhone 自身がインターネット共有を提供する構成ではカメラ購読が届かず、共通 Wi-Fi では映像表示を確認済みです。低速歩行、速度追従、直進精度には上流の制限があります。UDP 受信だけで動作精度は保証できません。CAMERA ON と TX FRAMES は購読と PC の送信を示し、アプリ表示は別途確認します。',
  'links':'資料とテスト', 'prereq':'前提条件', 'prereqtext':'推奨環境は Ubuntu 24.04 デスクトップ／WSL2 Ubuntu-24.04、Linux x86_64 または aarch64 です。Git、curl、C/C++ ツールチェーン、CMake、pkg-config、OpenSSL／udev／ALSA 開発パッケージ、OpenGL／EGL が必要です。GUI にはドライバーと DISPLAY／Wayland、ヘッドレスのカメラ描画には動作する EGL 構成が必要です。単体シミュレーションと推論用であり、GPU 学習環境の導入ではありません。',
  'linux':'Linux への導入', 'apt':'以下のシステムパッケージには管理者権限が必要です。setup は sudo の実行やファイアウォール変更を自動では行いません。',
  'clone':'新規環境への Repo 取得', 'setuptext':'setup はプロジェクト内に uv 0.13.7、Rust 1.94.1、Python 3.12.16 を導入し、上流 commit を取得してパッチを適用し、上流 uv.lock で依存関係を導入します。初回ダウンロードと Rust コンパイルには時間と数 GB の空き容量が必要です。既存の上流 HEAD が異なる場合は停止し、reset、ユーザー変更の上書き、他プロジェクトの停止は行いません。初回起動で公式方策をダウンロードするため、GitHub、Rust、PyPI、Hugging Face への接続が必要です。',
@@ -190,6 +190,56 @@ GRID_MAZE = {
 }
 
 
+LICENSE_SOURCES = {
+    'mujoco': 'https://raw.githubusercontent.com/google-deepmind/mujoco/3.10.0/LICENSE',
+    'meshes': 'https://github.com/pollen-robotics/microduck_rl/blob/bae39f5900b318f7e87fc485c30a31213cfa14eb/LICENSE-MODELS.md',
+    'policies': 'https://huggingface.co/pollen-robotics/microduck-policies/tree/v8',
+}
+
+LICENSING = {
+    'zh-TW': (
+        '授權與商用',
+        'MuJoCo 引擎採 Apache-2.0，允許商用。現有安裝器在安裝時下載 MuJoCo。如果重新封裝或散布 MuJoCo，應隨附授權全文並保留適用的第三方聲明。',
+        'Pollen Robotics 指定的 Microduck STL 網格採 CC BY-NC-SA 4.0。商用這些網格須另取得相應授權，或改用具商用授權的素材。',
+        '安裝時下載的官方 ONNX 策略權重 microduck-policies v8 在上游標示為 Apache-2.0。其他權重依各自的授權。',
+        '本 Repo 自有整合程式與場景的正式授權尚待決定。第三方授權只適用於各自涵蓋的內容。',
+    ),
+    'zh-CN': (
+        '授权与商用',
+        'MuJoCo 引擎采用 Apache-2.0，允许商用。现有安装程序在安装时下载 MuJoCo。如果重新打包或分发 MuJoCo，应附上许可证全文并保留适用的第三方声明。',
+        'Pollen Robotics 指定的 Microduck STL 网格采用 CC BY-NC-SA 4.0。商用这些网格须另行取得相应授权，或使用具有商用许可的替代素材。',
+        '安装时下载的官方 ONNX 策略权重 microduck-policies v8 在上游标注为 Apache-2.0。其他权重遵循各自的许可。',
+        '本仓库自有集成代码和场景的正式许可证尚待确定。第三方许可仅适用于各自涵盖的内容。',
+    ),
+    'en': (
+        'Licensing and commercial use',
+        'The MuJoCo engine uses Apache-2.0, which permits commercial use. The installer downloads MuJoCo during setup. If you repackage or redistribute MuJoCo, include the full license text and retain applicable third-party notices.',
+        'The Microduck STL meshes identified by Pollen Robotics use CC BY-NC-SA 4.0. Obtain separate permission to use those meshes commercially, or use assets licensed for commercial use.',
+        'The official ONNX policy weights downloaded at setup, microduck-policies v8, are labeled Apache-2.0 upstream. Other weights follow their own license terms.',
+        'A formal license for this repository’s original integration code and scenes is pending. Third-party licenses apply to the material each license covers.',
+    ),
+    'ja': (
+        'ライセンスと商用利用',
+        'MuJoCo エンジンは Apache-2.0 で、商用利用が可能です。現行のインストーラーはセットアップ時に MuJoCo を取得します。MuJoCo を再梱包または再配布する場合は、ライセンス全文を同梱し、該当する第三者の告知を保持してください。',
+        'Pollen Robotics が指定する Microduck の STL メッシュは CC BY-NC-SA 4.0 です。商用利用するには別途許諾を得るか、商用利用が許可された素材に差し替えてください。',
+        'セットアップ時に取得する公式 ONNX 方策の重み microduck-policies v8 は、配布元で Apache-2.0 と表示されています。その他の重みには各配布元のライセンスが適用されます。',
+        'このリポジトリ独自の統合コードとシーンの正式なライセンスは未定です。第三者のライセンスは、それぞれが対象とする内容に適用されます。',
+    ),
+}
+
+
+def licensing_section(lang):
+    title, mujoco, meshes, policies, original = LICENSING[lang]
+    components = (
+        (mujoco, 'MuJoCo LICENSE', LICENSE_SOURCES['mujoco']),
+        (meshes, 'LICENSE-MODELS.md', LICENSE_SOURCES['meshes']),
+        (policies, 'microduck-policies v8', LICENSE_SOURCES['policies']),
+    )
+    lines = [f'- {description} [{label}]({url})' for description, label, url in components]
+    lines.append(f'- {original}')
+    return md_block(title, '\n'.join(lines))
+
+
 def release_downloads(lang):
     current, platform, installer, checksum, _, instruction, validation = RELEASE_TEXT[lang]
     text = f'**{current}: `{VERSION}`** · [GitHub Release]({RELEASE})\n\n'
@@ -224,6 +274,7 @@ def main():
         text=f'# {t["title"]}\n\n{nav}\n\n{t["overview"]}\n\n'
         text+=md_block(*CONSOLE_FEATURES[lang])
         text+=md_block(*GRID_MAZE[lang])
+        text+=licensing_section(lang)
         text+=md_block(RELEASE_TEXT[lang][4],release_downloads(lang))
         text+=md_block(PACKAGE_GUIDE[lang][0],PACKAGE_GUIDE[lang][1])
         text+=md_block(t['support'],t['status'])+md_block(t['quick'],t['fresh'],START)

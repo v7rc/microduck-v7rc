@@ -18,6 +18,13 @@ Microduck starts in the orange START cell at the lower left. The orange END cell
 
 [Scene update](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.10) · [Build dimensions and wall coordinates (Traditional Chinese)](docs/microduck/grid-maze-build.md)
 
+## Licensing and commercial use
+
+- The MuJoCo engine uses Apache-2.0, which permits commercial use. The installer downloads MuJoCo during setup. If you repackage or redistribute MuJoCo, include the full license text and retain applicable third-party notices. [MuJoCo LICENSE](https://raw.githubusercontent.com/google-deepmind/mujoco/3.10.0/LICENSE)
+- The Microduck STL meshes identified by Pollen Robotics use CC BY-NC-SA 4.0. Obtain separate permission to use those meshes commercially, or use assets licensed for commercial use. [LICENSE-MODELS.md](https://github.com/pollen-robotics/microduck_rl/blob/bae39f5900b318f7e87fc485c30a31213cfa14eb/LICENSE-MODELS.md)
+- The official ONNX policy weights downloaded at setup, microduck-policies v8, are labeled Apache-2.0 upstream. Other weights follow their own license terms. [microduck-policies v8](https://huggingface.co/pollen-robotics/microduck-policies/tree/v8)
+- A formal license for this repository’s original integration code and scenes is pending. Third-party licenses apply to the material each license covers.
+
 ## Download and install
 
 **Current version: `0.1.0-preview.8`** · [GitHub Release](https://github.com/v7rc/microduck-v7rc/releases/tag/v0.1.0-preview.8)
@@ -65,7 +72,7 @@ bridge/ contains control, camera, HUD and platform helpers; scripts/ contains se
 
 ## Known limitations
 
-iOS camera subscriptions failed when the same iPhone provided Personal Hotspot; video passed on a shared Wi-Fi router. Low-speed walking, velocity tracking and straight-line accuracy have upstream limitations. Receiving UDP does not establish motion accuracy. CAMERA ON and TX FRAMES indicate an active subscription and host transmission; confirm the app display separately. Read upstream LICENSE-MODELS.md for model licensing, including CC BY-NC-SA 4.0.
+iOS camera subscriptions failed when the same iPhone provided Personal Hotspot; video passed on a shared Wi-Fi router. Low-speed walking, velocity tracking and straight-line accuracy have upstream limitations. Receiving UDP does not establish motion accuracy. CAMERA ON and TX FRAMES indicate an active subscription and host transmission; confirm the app display separately.
 
 ## Guides and tests
 
